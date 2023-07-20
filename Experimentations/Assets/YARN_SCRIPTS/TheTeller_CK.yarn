@@ -1,0 +1,79 @@
+title: Start
+position: -425,-429
+---
+
+//title: Start at the top of the yarn script needs to be the same as what is placed in the dialogue system prefab in the 'Start Node' function. This can be changed to anything, just ensure it's the same as what is placed in the function.
+//node titles must not contain spaces. While they can contain a range of different characters the first character must be a letter. In general your titles will be made up of only letters, numbers and underscores.
+<color=yellow>  The Knight in Gold </color>: “You’re the Teller?”  She looks you up and down. There's genuine surprise there. “My sources didn’t say you’d be…” and trails off. #line:Teller1
+
+//There is a little bit of unity set up in order to get the lines playing. 
+
+//First, create a folder titled 'EN' in the Assets folder and drag your audio. 
+//Next, click on the Yarn Project (the green file with the cog) and go to the inspector. Open Localisations and click the plus, which creates 'Element 0'. Add in the language being used. 
+//Create an empty gameobject and call it 'Voiceover'. Add in two components, titled 'Voice Over View' and 'Audio Line Provider'. 
+//Return to the Dialogue System in the hierarchy and drag the Voiceover gameobject into 'Line Provider.'
+//Add an additional element under 'Dialgoue Views' and select the 'Voiceover' object.
+//Once created, go to the end of the line in the .yarn project and type  #line:[Exact name of audiofile]
+
+
+//Typing name of character with : creates an automatic 'character name'
+//adding colours to any part of the text is simple. Place '<color=[whatever colour]>' before the section where the colour change is to happen. Place '</color>' after the section where the colour is meant to stop. 
+
+-> “I’d be what? Dazzling enough to send one mad?”  //adding arrows creates options for dialogue
+  <<jump T1_2>>  //'<<jump>>' and 'title' lets yarnspinner know where it's going to take the option to in terms of nodes. when adding jump, make sure to add a space after placing it under the option/line of code, otherwise yarnspinner doesn't register the jump point or the other dialogue options.
+-> “The one and only.”
+  <<jump T1_2>>     
+-> Forget the antics, you're a professional. 
+  <<jump T_4>>
+
+
+===
+
+title: T1_2
+
+position: -420,-184
+---
+
+//The name of the node function allows for yarnspinner to know where to jump to in options. Ensure it's the same name as the jump command. EXMAPLE 
+//title: NEW OPTION
+
+
+The Knight in Gold: She doesn't waver… not even a budge. 
+
+((Raised brow speaking)) 
+“Right…” Her face hardens by the syllable. She isn't impressed by this. 
+
+<<jump T_4>>
+
+===
+
+title:  T_4
+position: -124,-320
+---
+
+“Let's talk prices.”
+
+Your fingers twitch in anticipation.
+
+
+The Knight in Gold: “If your information qualifies… <b>then</b> we’ll talk terms.” 
+
+
+One of those types? Oh no she doesn't. This talking <i>later</i> tactic has already shredded some serious holes in your coin pouch before. 
+//Bolding '<b> [written text] '</b'>
+//Italics '<i> [written text] '</i'>
+
+
+===
+
+
+title: Hearing
+tags:
+---
+What a beautiful dress!
+Well I love that tie of yours.
+An exicting time of year this auction, isn't yet?
+Oh but of course. An exciting time to see the new collection.
+Flowers galour! 
+===
+
