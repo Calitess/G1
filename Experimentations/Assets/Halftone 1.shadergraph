@@ -32,6 +32,9 @@
         },
         {
             "m_Id": "f81cf88c393d493b815e50db172f9150"
+        },
+        {
+            "m_Id": "4610c76e22314b269fa6a7170fa99f17"
         }
     ],
     "m_Keywords": [
@@ -201,6 +204,9 @@
         },
         {
             "m_Id": "65c1d80a385843359efad0f7d62ed5fd"
+        },
+        {
+            "m_Id": "94a5889cf2d24f138aa11560e1d57adc"
         }
     ],
     "m_GroupDatas": [],
@@ -1699,6 +1705,19 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Texture2DMaterialSlot",
+    "m_ObjectId": "229d6d7257fd4cc8a6709f4fda85474c",
+    "m_Id": 0,
+    "m_DisplayName": "Halftone Texture",
+    "m_SlotType": 1,
+    "m_Hidden": false,
+    "m_ShaderOutputName": "Out",
+    "m_StageCapability": 3,
+    "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.Vector1MaterialSlot",
     "m_ObjectId": "237b5f65398f44809b1ecd44421fdda1",
     "m_Id": 4,
@@ -2312,6 +2331,35 @@
     "m_ShaderOutputName": "Out",
     "m_StageCapability": 3,
     "m_BareResource": false
+}
+
+{
+    "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Texture2DShaderProperty",
+    "m_ObjectId": "4610c76e22314b269fa6a7170fa99f17",
+    "m_Guid": {
+        "m_GuidSerialized": "7b3740d0-9230-4071-9297-2a7a19592b9f"
+    },
+    "m_Name": "Halftone Texture",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Halftone Texture",
+    "m_DefaultReferenceName": "_Halftone_Texture",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": {
+        "m_SerializedTexture": "{\"texture\":{\"instanceID\":0}}",
+        "m_Guid": ""
+    },
+    "isMainTexture": false,
+    "useTilingAndOffset": false,
+    "m_Modifiable": true,
+    "m_DefaultType": 0
 }
 
 {
@@ -4377,6 +4425,41 @@
 
 {
     "m_SGVersion": 0,
+    "m_Type": "UnityEditor.ShaderGraph.PropertyNode",
+    "m_ObjectId": "94a5889cf2d24f138aa11560e1d57adc",
+    "m_Group": {
+        "m_Id": ""
+    },
+    "m_Name": "Property",
+    "m_DrawState": {
+        "m_Expanded": true,
+        "m_Position": {
+            "serializedVersion": "2",
+            "x": 217.00001525878907,
+            "y": -126.00003814697266,
+            "width": 171.99998474121095,
+            "height": 33.99999237060547
+        }
+    },
+    "m_Slots": [
+        {
+            "m_Id": "229d6d7257fd4cc8a6709f4fda85474c"
+        }
+    ],
+    "synonyms": [],
+    "m_Precision": 0,
+    "m_PreviewExpanded": true,
+    "m_PreviewMode": 0,
+    "m_CustomColors": {
+        "m_SerializableColors": []
+    },
+    "m_Property": {
+        "m_Id": "4610c76e22314b269fa6a7170fa99f17"
+    }
+}
+
+{
+    "m_SGVersion": 0,
     "m_Type": "UnityEditor.ShaderGraph.DynamicVectorMaterialSlot",
     "m_ObjectId": "94c97095caff440d9c0024922722c3bb",
     "m_Id": 3,
@@ -5166,6 +5249,9 @@
         },
         {
             "m_Id": "f81cf88c393d493b815e50db172f9150"
+        },
+        {
+            "m_Id": "4610c76e22314b269fa6a7170fa99f17"
         }
     ]
 }
