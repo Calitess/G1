@@ -23,7 +23,8 @@ Material:
   m_Name: Clothes_HalfTone
   m_Shader: {fileID: -6465566751694194690, guid: 7163a9a9ad8709e42aabe75a5349861e,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _USE_SCREEN_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -35,11 +36,15 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _Base_Texture:
-        m_Texture: {fileID: 2800000, guid: 53ff1cdf93fc0ce4e89887a41b5a2715, type: 3}
+        m_Texture: {fileID: 2800000, guid: ffef0ffb78c0a8f4babe5c2886b66467, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _Halftone_Texture:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
-        m_Texture: {fileID: 2800000, guid: 04aba10ec5ac70048b01a7f1adc8f854, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5f026db88f014374dae3bdd44b9a55bf, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Texture2DAsset_808e7019e19a40e48175c7462e0debe4_Out_0:
@@ -64,7 +69,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Circle_Density: 28.18
+    - _Circle_Density: 77.9
     - _Falloff_Threshold: 2.5
     - _Lit_Threshold: 1
     - _NormalStrength: 1
@@ -73,7 +78,7 @@ Material:
     - _Rotation: 9.64
     - _Shading_Multiplier: 4.28
     - _Softness: 0
-    - _USE_SCREEN_SPACE: 0
+    - _USE_SCREEN_SPACE: 1
     m_Colors:
-    - _Base_Color: {r: 0.8018868, g: 0.7809219, b: 0.631675, a: 0}
+    - _Base_Color: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 0}
   m_BuildTextureStacks: []
