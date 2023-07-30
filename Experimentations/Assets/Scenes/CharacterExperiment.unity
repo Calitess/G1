@@ -1471,7 +1471,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56eda8f7b71a2bc428843ae2789e6e54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1.08
+  radius: 1
   lerpDuration: 3
   targetValue: 30
   outTargetValue: 0
