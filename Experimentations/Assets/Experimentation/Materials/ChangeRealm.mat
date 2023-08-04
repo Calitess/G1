@@ -49,7 +49,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Edge_Width: 0.05
-    - _Move_Speed: 1.64
+    - _Move_Speed: 0.22
     - _Noise_Scale: -17.43
     - _Noise_Strength: 0.6
     - _QueueControl: 0
@@ -57,7 +57,7 @@ Material:
     - _Radius_Noise_CutOff: 0.4
     - _STYLE: 0
     m_Colors:
-    - _Edge_Color: {r: 0.043137252, g: 0.97299993, b: 1, a: 0.11372549}
+    - _Edge_Color: {r: 0.7264151, g: 0.68008554, b: 0.17475079, a: 0.11372549}
     - _Primary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Secondary_Base_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
   m_BuildTextureStacks: []
