@@ -2,15 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(AudioSource))]
 [ExecuteInEditMode]
 public class Interactor : MonoBehaviour
 {
+    
+    
     [SerializeField] float radius;
-
     [SerializeField] float lerpDuration = 3f;
     [SerializeField] float targetValue = 4.5f;
-
     [SerializeField] float outTargetValue = 0f;
+
+    [SerializeField] RealmPostProcess VoronoiShaderManager;
+    [SerializeField] AudioSource RealmWhoosh;
+    [SerializeField] AudioClip[] RealmSoundClips;
+    [SerializeField] bool isWhooshSoundPlaying = false;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -21,11 +29,20 @@ public class Interactor : MonoBehaviour
 
     }
 
+    
+
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Player"))
         {
             CloseRealm();
+
+            if(VoronoiShaderManager == null)
+            {
+                VoronoiShaderManager = GameObject.Find("VoronoiShaderManager").GetComponent<RealmPostProcess>();
+            }
+
+            VoronoiShaderManager.FadeVoronoiShaderOut();
         }
     }
 
@@ -34,13 +51,36 @@ public class Interactor : MonoBehaviour
     {
 
         StartCoroutine(LerpFunction(targetValue, lerpDuration, "opening"));
+        
+        if(RealmWhoosh == null)
+        {
+            RealmWhoosh = this.GetComponent<AudioSource>();
+        }
+
+        if(isWhooshSoundPlaying == false)
+        {
+            isWhooshSoundPlaying = true;
+            PlayWhooshSound();
+
+        }
     }
 
+    public void PlayWhooshSound()
+    {
+        RealmWhoosh.PlayOneShot(RealmSoundClips[Random.Range(0,RealmSoundClips.Length)]);
+    }
 
     public void CloseRealm()
     {
         StopAllCoroutines();
         StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
+
+        if (isWhooshSoundPlaying == true)
+        {
+            isWhooshSoundPlaying = false;
+            PlayWhooshSound();
+
+        }
     }
 
     IEnumerator LerpFunction(float endValue, float duration, string comment)
