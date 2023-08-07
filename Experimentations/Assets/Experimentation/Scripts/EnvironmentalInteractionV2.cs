@@ -36,6 +36,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     float _angle;
 
     [SerializeField] float _wallTouchHeight;
+    [SerializeField] private  bool isRising, isLettingGo;
 
     MultiRotationConstraint _multiRotationConstraint;
     TwoBoneIKConstraint _ikConstraint;
@@ -84,18 +85,22 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
             //_armForward = isRightDirection ? _rootTransform.right : -_rootTransform.right;
             //_angle = Vector3.Angle(_armForward, toClosestPoint);
 
-            StartCoroutine(LerpFunction(1, 2, "touching Wall"));
+            StartCoroutine(LerpFunction(0.5f, 2, "touching Wall"));
 
-            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _armLength - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity/10));
-            _prepPointPosition = new Vector3(_closestPointPosition.x, 0, _closestPointPosition.z);
+            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity/10));
+            _prepPointPosition = new Vector3(_closestPointPosition.x, _closestPointPosition.y, _closestPointPosition.z);
             _ikTargetTransform.position = _prepPointPosition;
+
+            isRising = true;
+            StartCoroutine(changeBool(false, 2));
         }
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (other == _currentColliderTarget)
+        if (other == _currentColliderTarget && !isRising && !isLettingGo)
         {
+            StartCoroutine(LerpFunction(1f, 2, "touching Wall"));
             _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity /10));
             _prepPointPosition = new Vector3(_closestPointPosition.x, _closestPointPosition.y, _closestPointPosition.z);
             _ikTargetTransform.position = _prepPointPosition;
@@ -110,10 +115,25 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
         {
             _currentColliderTarget = null;
             _closestPointPosition = Vector3.positiveInfinity;
+            
+            
             //ChangeState(InteractorState2.Reset);
             StartCoroutine(LerpFunction(0, 2, "letting go"));
+            isLettingGo = true;
+            StartCoroutine(changeBool(false, 2));
+
         }
     }
+
+    IEnumerator changeBool(bool changeBoolTo, float durationToChangeBool)
+    {
+        yield return new WaitForSecondsRealtime(durationToChangeBool);
+
+        
+        isRising = changeBoolTo;
+        isLettingGo = changeBoolTo;
+    }
+
 
     private void OnDrawGizmos()
     {
