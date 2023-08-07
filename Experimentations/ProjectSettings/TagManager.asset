@@ -35,11 +35,11 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NavigationLayer
   - Water
   - UI
-  - 
-  - 
+  - Walls
+  - Objects and Furnitures
   - Player
   - Enemy
   - CompanionAI
