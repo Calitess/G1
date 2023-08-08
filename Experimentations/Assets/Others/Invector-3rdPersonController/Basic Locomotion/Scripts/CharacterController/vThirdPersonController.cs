@@ -6,6 +6,7 @@ namespace Invector.vCharacterController
     [vClassHeader("THIRD PERSON CONTROLLER", iconName = "controllerIcon")]
     public class vThirdPersonController : vThirdPersonAnimator
     {
+
         /// <summary>
         /// Move the controller to a specific Position, you must Lock the Input first 
         /// </summary>
