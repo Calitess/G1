@@ -8,6 +8,7 @@ namespace Invector.vCharacterController
     [vClassHeader("Input Manager", iconName = "inputIcon")]
     public class vThirdPersonInput : vMonoBehaviour, vIAnimatorMoveReceiver
     {
+
         public delegate void OnUpdateEvent();
         public event OnUpdateEvent onUpdate;
         public event OnUpdateEvent onLateUpdate;
