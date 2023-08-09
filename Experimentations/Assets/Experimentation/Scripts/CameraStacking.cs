@@ -9,6 +9,8 @@ public class CameraStacking : MonoBehaviour
     [SerializeField] bool journalOpened;
     
 
+
+
     // Update is called once per frame
     void Update()
     {
