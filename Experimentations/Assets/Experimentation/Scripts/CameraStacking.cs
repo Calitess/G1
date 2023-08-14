@@ -14,14 +14,14 @@ public class CameraStacking : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && journalOpened)
+        if(Input.GetKeyDown(KeyCode.J) && !journalOpened)
         {
             var cameraData = camera.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Add(myOverlayCamera);
             journalOpened = false;
         }
 
-        else if (Input.GetKeyDown(KeyCode.Q) && !journalOpened)
+        else if (Input.GetKeyDown(KeyCode.J) && journalOpened)
         {
             var cameraData = camera.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Remove(myOverlayCamera);

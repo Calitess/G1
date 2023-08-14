@@ -63,7 +63,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
         Vector3 forearm = _handTransform.position - _elbowTransform.position;
 
         _ikTargetTransform = _ikConstraint.data.target.transform;
-        ConstructColliders();
+        //ConstructColliders();
 
     }
 
@@ -72,7 +72,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         _boxCollider = gameObject.AddComponent<BoxCollider>();
         _boxCollider.center = new Vector3(_elbowTransform.position.x*1.5f, _colliderCenterOffset, _wingspan/3);
-        _boxCollider.size = new Vector3(.3f, _wingspan, _wingspan/2);
+        _boxCollider.size = new Vector3(.3f, _wingspan/4, _wingspan/2);
         _boxCollider.isTrigger = true;
     }
 

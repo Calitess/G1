@@ -19,6 +19,24 @@ public class simpleNavFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        agent.SetDestination(playerTransform.position);
+        FollowPlayer();
+    }
+
+    private void FollowPlayer()
+    {
+        if(Vector3.Distance(playerTransform.position, this.transform.position) > 5f)
+        {
+
+            agent.SetDestination(playerTransform.position);
+        }
+        else
+        {
+            StopFollowing();
+        }
+    }
+
+    private void StopFollowing()
+    {
+        agent.stoppingDistance = 4;
     }
 }
