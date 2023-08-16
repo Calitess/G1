@@ -25,7 +25,7 @@ public class simpleNavFollow : MonoBehaviour
 
     private void FollowPlayer()
     {
-        if(Vector3.Distance(playerTransform.position, this.transform.position) > 5f)
+        if(Vector3.Distance(playerTransform.position, this.transform.position) > 2f)
         {
             npcAnimator.SetFloat("InputMagnitude",0.4f);
             agent.SetDestination(playerTransform.position);

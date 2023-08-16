@@ -6,6 +6,8 @@ position: -425,-429
 //node titles must not contain spaces. While they can contain a range of different characters the first character must be a letter. In general your titles will be made up of only letters, numbers and underscores.
 <color=yellow>  The Knight in Gold </color>: “You’re the Teller?”  She looks you up and down. There's genuine surprise there. “My sources didn’t say you’d be…” and trails off. #line:Teller1
 
+<<JournalEntry ReachingOut>>
+
 //There is a little bit of unity set up in order to get the lines playing. 
 
 //First, create a folder titled 'EN' in the Assets folder and drag your audio. 
@@ -42,6 +44,8 @@ The Knight in Gold: She doesn't waver… not even a budge.
 
 ((Raised brow speaking)) 
 “Right…” Her face hardens by the syllable. She isn't impressed by this. 
+
+<<NewPageEntry ReachingOut>>
 
 <<jump T_4>>
 

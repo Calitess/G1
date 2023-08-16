@@ -85,6 +85,17 @@ public class GameManager : MonoBehaviour
         Debug.Log("I am now playing");
     }
 
+    public void InDialogue()
+    {
+        thirdPersonInput.ShowCursor(true);
+        thirdPersonInput.LockCursor(true);
+    }
+    public void OutDialogue()
+    {
+        thirdPersonInput.ShowCursor(false);
+        thirdPersonInput.LockCursor(false);
+    }
+
     private void PauseGame()
     {
         thirdPersonInput.ShowCursor(true);
