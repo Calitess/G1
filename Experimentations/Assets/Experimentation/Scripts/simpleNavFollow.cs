@@ -8,6 +8,7 @@ public class simpleNavFollow : MonoBehaviour
 
     [SerializeField] private NavMeshAgent agent;
     [SerializeField] private Transform playerTransform;
+    [SerializeField] private Animator npcAnimator;
 
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class simpleNavFollow : MonoBehaviour
     {
         if(Vector3.Distance(playerTransform.position, this.transform.position) > 5f)
         {
-
+            npcAnimator.SetFloat("InputMagnitude",0.4f);
             agent.SetDestination(playerTransform.position);
         }
         else
@@ -37,6 +38,7 @@ public class simpleNavFollow : MonoBehaviour
 
     private void StopFollowing()
     {
-        agent.stoppingDistance = 4;
+        npcAnimator.SetFloat("InputMagnitude", 0f);
+        agent.stoppingDistance = 2;
     }
 }
