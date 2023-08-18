@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3843,6 +3843,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   journalEntryText: {fileID: 97659817}
   whatToWrite: Please God make this work
+  blankMaterial: {fileID: 2100000, guid: ce83bef3263e42944ae7401807484d94, type: 2}
   pageMaterial: {fileID: 2100000, guid: 4275fe744eb32d34594849527adebad3, type: 2}
   book: {fileID: 25963936992446247}
 --- !u!1 &1030151445
@@ -10890,21 +10891,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   maxRayCastDistance: 1000
-  chapterJumps:
-  - gameObjectName: Chapter 01
-    pageNumber: 3
-  - gameObjectName: Chapter 02
-    pageNumber: 5
-  - gameObjectName: Chapter 03
-    pageNumber: 7
-  - gameObjectName: Chapter 04
-    pageNumber: 9
-  - gameObjectName: Chapter 05
-    pageNumber: 13
-  - gameObjectName: Chapter 06
-    pageNumber: 17
-  - gameObjectName: Chapter 07
-    pageNumber: 999
+  chapterJumps: []
 --- !u!1 &25963936560091942
 GameObject:
   m_ObjectHideFlags: 0
@@ -10921,7 +10908,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &25963936560091943
 Transform:
   m_ObjectHideFlags: 0
@@ -13434,6 +13421,7 @@ MonoBehaviour:
     mappings: []
   pageData:
   - material: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+  - material: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
   pages:
   - {fileID: 25963937776089973}
   - {fileID: 25963938382524924}
@@ -15048,7 +15036,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &25963937258989439
 Transform:
   m_ObjectHideFlags: 0
@@ -15715,7 +15703,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &25963937353132042
 Transform:
   m_ObjectHideFlags: 0
@@ -18212,7 +18200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &25963937824607601
 Transform:
   m_ObjectHideFlags: 0
@@ -18370,7 +18358,7 @@ MonoBehaviour:
   groupPageTurnType: 1
   singlePageTurnTime: 0.6
   groupPageTurnTime: 0.6
-  tableOfContentsPageNumber: 2
+  tableOfContentsPageNumber: 0
   bookOpenSound: {fileID: 25963938283966849}
   bookCloseSound: {fileID: 25963937942359348}
   pageTurnSound: {fileID: 25963936758841837}
@@ -18379,10 +18367,6 @@ MonoBehaviour:
   touchPad: {fileID: 25963937318685935}
   pageViews:
   - {fileID: 25963937173822079}
-  - {fileID: 25963936560091936}
-  - {fileID: 25963937258989432}
-  - {fileID: 25963937824607602}
-  - {fileID: 25963937353132043}
 --- !u!1 &25963937853657254
 GameObject:
   m_ObjectHideFlags: 0

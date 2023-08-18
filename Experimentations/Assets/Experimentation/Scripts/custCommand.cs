@@ -5,13 +5,13 @@ using TMPro;
 using UnityEngine;
 using Yarn.Unity;
 using echo17.EndlessBook;
-
+using Unity.VisualScripting;
 
 public class custCommand : MonoBehaviour
 {
     [SerializeField] TMP_Text journalEntryText;
     [SerializeField][TextArea] string whatToWrite;
-    [SerializeField] Material pageMaterial;
+    [SerializeField] Material blankMaterial, pageMaterial;
     [SerializeField] EndlessBook book;
 
 
@@ -27,8 +27,18 @@ public class custCommand : MonoBehaviour
     [YarnCommand("NewPageEntry")]
     public void NewPageEntry()
     {
-        Debug.Log("page entry is inserted");
-       
-       book.AddPageData(pageMaterial);
+        Debug.Log("page entry is addedd");
+        book.AddPageData(blankMaterial);
+        book.AddPageData(pageMaterial);
     }
+
+    [YarnCommand("InsertEntry")]
+    public void InsertEntry()
+    {
+        Debug.Log("page entry is inserted");
+
+        book.InsertPageData(book.pages.Count-1,pageMaterial);
+    }
+
+
 }
