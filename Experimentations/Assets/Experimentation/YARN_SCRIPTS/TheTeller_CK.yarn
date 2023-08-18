@@ -4,10 +4,9 @@ position: -425,-429
 
 //title: Start at the top of the yarn script needs to be the same as what is placed in the dialogue system prefab in the 'Start Node' function. This can be changed to anything, just ensure it's the same as what is placed in the function.
 //node titles must not contain spaces. While they can contain a range of different characters the first character must be a letter. In general your titles will be made up of only letters, numbers and underscores.
+<<Talk Bro CharacterTalk>>
 <color=yellow>  The Knight in Gold </color>: “You’re the Teller?”  She looks you up and down. There's genuine surprise there. “My sources didn’t say you’d be…” and trails off. #line:Teller1
-
-<<JournalEntry ReachingOut>>
-
+<<Talk Bro CharacterIdle>>
 //There is a little bit of unity set up in order to get the lines playing. 
 
 //First, create a folder titled 'EN' in the Assets folder and drag your audio. 
@@ -43,9 +42,8 @@ position: -420,-184
 The Knight in Gold: She doesn't waver… not even a budge. 
 
 ((Raised brow speaking)) 
+<<Talk Bro CharacterTalk>>
 “Right…” Her face hardens by the syllable. She isn't impressed by this. 
-
-<<NewPageEntry ReachingOut>>
 
 <<jump T_4>>
 
