@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 [ExecuteInEditMode]
@@ -18,6 +19,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] AudioClip[] RealmSoundClips;
     [SerializeField] bool isWhooshSoundPlaying = false;
 
+
     
 
     // Update is called once per frame
@@ -29,10 +31,11 @@ public class Interactor : MonoBehaviour
 
     }
 
-    
+
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
             CloseRealm();
@@ -81,6 +84,11 @@ public class Interactor : MonoBehaviour
             PlayWhooshSound();
 
         }
+    }
+
+    public void DeactivateInteractor()
+    {
+
     }
 
     IEnumerator LerpFunction(float endValue, float duration, string comment)

@@ -96,7 +96,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         if (other == _currentColliderTarget)
         {
-            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity /10));
+            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity / 10));
             _prepPointPosition = new Vector3(_closestPointPosition.x, _closestPointPosition.y, _closestPointPosition.z);
             _ikTargetTransform.position = _prepPointPosition;
 
@@ -108,6 +108,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         if (other == _currentColliderTarget)
         {
+            StopCoroutine(LerpFunction(1, 2, "touching Wall"));
             _currentColliderTarget = null;
             _closestPointPosition = Vector3.positiveInfinity;
             //ChangeState(InteractorState2.Reset);
