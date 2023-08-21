@@ -4,26 +4,22 @@ tags:
 <<InDialogue Char_Bro>>
 <<Talk Char_Bro CharacterTalk>>
 
-Brother: Pssstt... Pssttt.... It's me, the brother
-Manaia: Nice to see you finally, it's been so long....I.....
-Brother: Of course I couldnt stand to just let things unfold. But Shh. Not so loud. You'll draw attention. 
-Manaia: I didnt think I'd see you in such short notice, thanks again for meeting me. 
-Brother: You got the letter right? I couldn't detail the specifics in case it was...compromised. 
-Manaia: It's been years since I've been to a place like this. Vedura Isle is becoming a devistating place very quickly. 
-Brother: Yeah, you're right. The opulence is perfect cover for the darkness beneath. Thanks for meeting me here, M.
-Manaia: Of course, S. I know how much you loved your sister, and I want to help you uncover the truth about what happened to her.
-Brother: My sister didn't deserve to die the way she did. She was my world. And the way she died... it's haunting me. I've managed to get close to the host of this event by posing as a servant. I need to find evidence about her death. I believe this mansion holds answers.
-Manaia: I'm here for you, S. We've been through so much together. 
-Manaia: Even though we've grown apart, I can't ignore your pain. What do you need me to do?
-Brother:I need you to help me search the mansion for any clues, any documents, anything that might link to her death. 
-Brother: With the black market auction happening, there's bound to be shady dealings connected to her murder.
-Manaia: I'll do whatever it takes to help you find the truth. Let's start by splitting up. 
-I'll mingle with the guests, trying to eavesdrop on conversations and gather information discreetly. You keep an eye out for anything suspicious among the staff. We'll rendezvous later.
-Brother: Thank you, M. I knew I could count on you. Just be careful. 
-There's no telling what dangers are lurking in the shadows here.
-Manaia: You too, S. Remember, we're not alone in this.
-Brother:  Alright, let's get to work. And M... it's good to have you back, even if it's just for tonight.
-Mania:  It's good to be here, S. Let's find the answers you're looking for.
+Brother: Pssstt... Pssttt.... It's me, Niamh's brother. #line:S1L2
+Manaia: Nice to see you finally, it's been so long....I.....  #line:S1L3
+Brother: Of course I couldnt stand to just let things unfold. But Shh. Not so loud. You'll draw attention. #line:S1L4
+Manaia: I didnt think I'd see you in such short notice, thanks again for meeting me. #line:S1L5
+Brother: You got the letter right? I couldn't detail the specifics in case it was...compromised. #line:S1L6
+Manaia: *mmhm* It's been years since I've been to a place like Vedura Isle, it's becoming a deeply unsettling place very quickly. #line:S1L7
+Brother: Yeah, you're right. The opulence is perfect cover for the darkness beneath. Thanks for meeting me here, M. #line:S1L8
+Manaia: Of course. I know how much you loved your sister, and I want to help you uncover the truth about what happened to her. #line:S1L9
+Brother: My sister didn't deserve to die the way she did... it's haunting me. I've managed to get close to the host of this event by posing as a servant. I need to find evidence about her death. I believe this mansion holds answers. #line:S1L10
+Manaia: I'm here for you. We've been through so much together. (Pauses) Even though we've grown apart, I can't ignore your pain. What do you need me to do? #line:S1L11
+Brother:I need help SEARCHING the mansion for clues, documents and anything that might link to her death. With the black market auction happening, there's bound to be shady dealings connected to her murder. #line:S1L12
+Manaia: I'll do whatever it takes to help you find the truth. Let's start by splitting up. I'll mingle with the guests, AND TRY to eavesdrop on conversations and gather information discreetly. #line:S1L13
+Manaia: You keep an eye out for anything suspicious among the staff. We'll rendezvous later. //continue on from previous line. no audio here
+Brother:Thank you, M. I knew I could count on you. Just be careful. There's no telling what dangers are lurking in the shadows here. #line:S1L14
+Manaia: You too. Remember, we're not alone in this. #line:S1L15
+
 
 <<OutDialogue Char_Bro>>
 ===
@@ -83,15 +79,15 @@ title: RiftIntro
 ---
 
 <<InDialogue ReachingOut>>
-Manaia: This is........wait............what's happening 
+Manaia: This is........wait............what's happening #line:S7L40
 the world around Manaia start to shift and change. 
-Manaia: *looks around intensely* this is strange...
-Niamh: You made it. You must find the answers 
+Manaia: *looks around intensely* this is strange... #line:S8L44
+Niamh: You made it. You must find the answers  #line:S8L45
 
-Manaia:Whos there?? Why do you sound so farmiliar. Wait..... 
-Niamh: It's the only way...
+Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
+Niamh: It's the only way... #line:S8L47
 <<JournalEntryText ReachingOut>>
-Manaia: Niamh?? Is it really you?  
+Manaia: Niamh?? Is it really you?  #line:S8L48
 <<OutDialogue ReachingOut>> 
 ===
 
