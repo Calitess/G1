@@ -9,24 +9,17 @@ public class CameraStacking : MonoBehaviour
     [SerializeField] bool journalOpened;
     
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void OpenJournal()
     {
-        if(Input.GetKeyDown(KeyCode.J) && !journalOpened)
-        {
-            var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
-            cameraData.cameraStack.Add(myOverlayCamera);
-            journalOpened = false;
-        }
+        var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
+        cameraData.cameraStack.Add(myOverlayCamera);
+        journalOpened = false;
+    }
 
-        else if (Input.GetKeyDown(KeyCode.J) && journalOpened)
-        {
-            var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
-            cameraData.cameraStack.Remove(myOverlayCamera);
-            journalOpened = true;
-
-        }
+    public void CloseJournal()
+    {
+        var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
+        cameraData.cameraStack.Remove(myOverlayCamera);
+        journalOpened = true;
     }
 }

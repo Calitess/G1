@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private GameObject pauseMenu, journal;
 
+    [SerializeField] CameraStacking playerCamera;
+
+
     private void Awake()
     {
         Instance = this;
@@ -88,7 +91,7 @@ public class GameManager : MonoBehaviour
 
     private void JournalState()
     {
-        
+        playerCamera.OpenJournal();
 
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
@@ -98,6 +101,8 @@ public class GameManager : MonoBehaviour
 
     private void PlayGame()
     {
+        playerCamera.CloseJournal();
+        pauseMenu.SetActive(false);
 
         thirdPersonInput.enabled = true;
         thirdPersonInput.ShowCursor(false);
@@ -128,7 +133,7 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        
+        pauseMenu.SetActive(true);
 
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);

@@ -19416,7 +19416,7 @@ PrefabInstance:
     - target: {fileID: 2300947958592680017, guid: 2cc3ba72d014d4a4ab4471208e612899,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2300947958592680028, guid: 2cc3ba72d014d4a4ab4471208e612899,
         type: 3}
@@ -23095,6 +23095,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 595723467}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1505131621 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7327301777517830340, guid: 6aee34190687d3d48acf9ca117b9560c,
+    type: 3}
+  m_PrefabInstance: {fileID: 595723467}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505131619}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d5114df50d137469cb7906fef9953e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1505131624 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 7327301779191264587, guid: 6aee34190687d3d48acf9ca117b9560c,
@@ -23632,7 +23644,7 @@ PrefabInstance:
     - target: {fileID: 8780432548317545363, guid: 21a9494afc8dba44a83839ae23fa5b96,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8780432548339490402, guid: 21a9494afc8dba44a83839ae23fa5b96,
         type: 3}
@@ -23644,6 +23656,11 @@ PrefabInstance:
       propertyPath: pauseMenu
       value: 
       objectReference: {fileID: 1850649677}
+    - target: {fileID: 8780432548339490402, guid: 21a9494afc8dba44a83839ae23fa5b96,
+        type: 3}
+      propertyPath: playerCamera
+      value: 
+      objectReference: {fileID: 1505131621}
     - target: {fileID: 8780432548339490402, guid: 21a9494afc8dba44a83839ae23fa5b96,
         type: 3}
       propertyPath: thirdPersonInput
