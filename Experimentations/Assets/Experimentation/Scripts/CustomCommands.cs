@@ -7,6 +7,7 @@ using Cinemachine;
 using echo17.EndlessBook;
 using TMPro;
 using Unity.VisualScripting;
+using Invector.vCharacterController.vActions;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -19,12 +20,18 @@ public class CustomCommands : MonoBehaviour
     [SerializeField][TextArea] string whatToWrite;
     [SerializeField] Material blankMaterial, pageMaterial;
     [SerializeField] EndlessBook book;
+    [SerializeField] bool deleteTriggeAfterDialogue;
+    vTriggerGenericAction action;
+    AudioSource scribbleSource;
 
 
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
+        scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
+        book = FindObjectOfType<EndlessBook>();
+        action = gameObject.GetComponent<vTriggerGenericAction>();
     
     }
 
@@ -43,13 +50,14 @@ public class CustomCommands : MonoBehaviour
 
     public void CurInDialogue()
     {
-       gameManager.isInDialogue = true;
-
         if (virtualCamera != null)
         {
-            virtualCamera.Priority = 0;
+            virtualCamera.Priority = 100;
             playerCam.SetActive(false);
         }
+
+        gameManager.isInDialogue = true;
+
 
     }
 
@@ -57,12 +65,19 @@ public class CustomCommands : MonoBehaviour
 
     public void CurOutDialogue()
     {
-        gameManager.isInDialogue = false;
-
         if (virtualCamera != null)
         {
-            virtualCamera.Priority = 100;
+            virtualCamera.Priority = 0;
             playerCam.SetActive(true);
+        }
+
+
+        gameManager.isInDialogue = false;
+
+        
+        if(deleteTriggeAfterDialogue)
+        {
+            action.enabled = false;
         }
 
 
@@ -73,6 +88,8 @@ public class CustomCommands : MonoBehaviour
     {
         Debug.Log("journal entry is inserted");
 
+        scribbleSource.Play();
+
         journalEntryText.text = whatToWrite;
 
     }
@@ -80,6 +97,8 @@ public class CustomCommands : MonoBehaviour
     [YarnCommand("NewPageEntry")]
     public void NewPageEntry()
     {
+        scribbleSource.Play();
+
         Debug.Log("page entry is addedd");
         book.AddPageData(blankMaterial);
         book.AddPageData(pageMaterial);
@@ -88,10 +107,16 @@ public class CustomCommands : MonoBehaviour
     [YarnCommand("InsertEntry")]
     public void InsertEntry()
     {
+
+        scribbleSource.Play();
+
         Debug.Log("page entry is inserted");
 
         book.InsertPageData(book.pages.Count - 1, pageMaterial);
     }
+
+
+
 
 
 }
