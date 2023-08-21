@@ -1,7 +1,8 @@
 ﻿title: BrotherDialogue
 tags:
 ---
-<<Talk Bro CharacterTalk>>
+<<InDialogue Char_Bro>>
+<<Talk Char_Bro CharacterTalk>>
 
 Brother: Pssstt... Pssttt.... It's me, the brother
 Manaia: Nice to see you finally, it's been so long....I.....
@@ -23,15 +24,22 @@ There's no telling what dangers are lurking in the shadows here.
 Manaia: You too, S. Remember, we're not alone in this.
 Brother:  Alright, let's get to work. And M... it's good to have you back, even if it's just for tonight.
 Mania:  It's good to be here, S. Let's find the answers you're looking for.
+
+<<OutDialogue Char_Bro>>
 ===
 
 
 title: JournalStart
 ---
+
+<<InDialogue JournalTrigger_Scene2>>
 Manaia: Umm.. Right. Lets get into the head space. What do I have to do? 
 Manaia: I should check my journal
 
 <b>Press J to check journal for objective </b>
+<<JournalEntryText JournalTrigger_Scene2>>
+<<OutDialogue JournalTrigger_Scene2>>
+<<DeleteTrigger JournalTrigger_Scene2>>
 
 ===
 
@@ -73,13 +81,17 @@ Manaia: *hums along* That song...
 
 title: RiftIntro
 ---
+
+<<InDialogue ReachingOut>>
 Manaia: This is........wait............what's happening 
 the world around Manaia start to shift and change. 
 Manaia: *looks around intensely* this is strange...
 Niamh: You made it. You must find the answers 
+
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... 
 Niamh: It's the only way...
-Manaia: Niamh?? Is it really you?   
+Manaia: Niamh?? Is it really you?  
+<<OutDialogue ReachingOut>> 
 ===
 
 title: RiftFirstExit

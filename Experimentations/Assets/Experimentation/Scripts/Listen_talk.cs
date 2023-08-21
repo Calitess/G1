@@ -7,7 +7,7 @@ public class Listen_talk : MonoBehaviour
 {
     public DialogueRunner dialogueRunner;
     [SerializeField] string NodeName;
-
+ 
 
     void OnTriggerEnter(Collider other)
     {
@@ -18,5 +18,13 @@ public class Listen_talk : MonoBehaviour
             dialogueRunner.StartDialogue(NodeName);
             //}
         }
+    }
+
+    [YarnCommand("DeleteTrigger")]
+    public void DeleteTrigger()
+    {
+         Destroy(this);
+     
+        
     }
 }

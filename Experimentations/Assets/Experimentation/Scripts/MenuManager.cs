@@ -28,7 +28,9 @@ public class MenuManager : MonoBehaviour
         pauseMenu.SetActive(state == GameState.Pause); //only show the pause menu when in the pause game state, otherwise, hide it.
 
         journal.SetActive(state == GameState.Journal);
-        
+
+
+
     }
 
 

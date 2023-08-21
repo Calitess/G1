@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class CameraStacking : MonoBehaviour
 {
-    [SerializeField] Camera camera, myOverlayCamera;
+    [SerializeField] Camera cameraPlayer, myOverlayCamera;
     [SerializeField] bool journalOpened;
     
 
@@ -16,14 +16,14 @@ public class CameraStacking : MonoBehaviour
     {
         if(Input.GetKeyDown(KeyCode.J) && !journalOpened)
         {
-            var cameraData = camera.GetUniversalAdditionalCameraData();
+            var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Add(myOverlayCamera);
             journalOpened = false;
         }
 
         else if (Input.GetKeyDown(KeyCode.J) && journalOpened)
         {
-            var cameraData = camera.GetUniversalAdditionalCameraData();
+            var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
             cameraData.cameraStack.Remove(myOverlayCamera);
             journalOpened = true;
 
