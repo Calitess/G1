@@ -19,6 +19,8 @@ public class Interactor : MonoBehaviour
     [SerializeField] AudioClip[] RealmSoundClips;
     [SerializeField] bool isWhooshSoundPlaying = false;
 
+    [SerializeField] ParticleSystem realmSmoke;
+
 
     
 
@@ -38,6 +40,7 @@ public class Interactor : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
+            
             CloseRealm();
 
             if(VoronoiShaderManager == null)
@@ -46,9 +49,13 @@ public class Interactor : MonoBehaviour
             }
 
             VoronoiShaderManager.FadeVoronoiShaderOut();
+
+            
+            realmSmoke.playbackSpeed = 8;
+            realmSmoke.Stop();
+
         }
     }
-
 
     public void OpenRealm()
     {
@@ -105,6 +112,10 @@ public class Interactor : MonoBehaviour
         radius = endValue;
     }
 
+    public void ResetParticleSpeed(float speed)
+    {
+        realmSmoke.playbackSpeed = speed;
+    }
 
 
 }
