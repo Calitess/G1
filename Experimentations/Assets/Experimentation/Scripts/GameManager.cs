@@ -17,11 +17,9 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] public bool isInDialogue;
 
-    //[SerializeField] private GameObject pauseMenu, journal;
+    [SerializeField] private GameObject pauseMenu, journal;
 
     [SerializeField] CameraStacking playerCamera;
-
-    [SerializeField] AudioListener playerListener, cutsceneListener;
 
 
     private void Awake()
@@ -94,7 +92,6 @@ public class GameManager : MonoBehaviour
     private void JournalState()
     {
         playerCamera.OpenJournal();
-        //journal.SetActive(true);
 
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
@@ -104,12 +101,8 @@ public class GameManager : MonoBehaviour
 
     private void PlayGame()
     {
-        cutsceneListener.enabled = false;
-        playerListener.enabled = true;
-
         playerCamera.CloseJournal();
-        //journal.SetActive(false);
-        //pauseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
 
         thirdPersonInput.enabled = true;
         thirdPersonInput.ShowCursor(false);
@@ -123,10 +116,7 @@ public class GameManager : MonoBehaviour
 
     private void InDialogue()
     {
-        cutsceneListener.enabled = true;
-        playerListener.enabled = false;
-
-
+        
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
         thirdPersonInput.enabled = false;
@@ -143,7 +133,7 @@ public class GameManager : MonoBehaviour
 
     private void PauseGame()
     {
-        //pauseMenu.SetActive(true);
+        pauseMenu.SetActive(true);
 
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);

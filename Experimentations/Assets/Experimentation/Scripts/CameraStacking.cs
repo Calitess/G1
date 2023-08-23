@@ -13,13 +13,13 @@ public class CameraStacking : MonoBehaviour
     {
         var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
         cameraData.cameraStack.Add(myOverlayCamera);
-        journalOpened = true;
+        journalOpened = false;
     }
 
     public void CloseJournal()
     {
         var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
         cameraData.cameraStack.Remove(myOverlayCamera);
-        journalOpened = false;
+        journalOpened = true;
     }
 }
