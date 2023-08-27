@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Invector.vCharacterController;
 using Cinemachine;
+using static UnityEngine.Rendering.DebugUI;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,6 +33,14 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         UpdateGameState(GameState.Play);
+    }
+
+    [HideInInspector] public float ignoreFixedFrame = -1;
+
+    void SetKinematic(bool value)
+    {
+        ignoreFixedFrame = Time.fixedTime + Time.fixedDeltaTime * 1.5f;
+        thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = value;
     }
 
     public void UpdateGameState(GameState newState)
@@ -114,7 +123,7 @@ public class GameManager : MonoBehaviour
         thirdPersonInput.enabled = true;
         thirdPersonInput.ShowCursor(false);
         thirdPersonInput.LockCursor(false);
-        thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+        SetKinematic(false);
 
 
         Time.timeScale = 1;
@@ -131,7 +140,7 @@ public class GameManager : MonoBehaviour
         thirdPersonInput.LockCursor(true);
         thirdPersonInput.enabled = false;
         thirdPersonInput.gameObject.GetComponent<Animator>().SetFloat("InputMagnitude", 0f);
-        thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+        SetKinematic(true);
     }
 
     

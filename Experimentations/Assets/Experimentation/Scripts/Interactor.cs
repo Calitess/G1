@@ -21,8 +21,16 @@ public class Interactor : MonoBehaviour
 
     [SerializeField] ParticleSystem realmSmoke;
 
+    GameManager gameManager;
 
-    
+    [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
+
+
+
+    private void Start()
+    {
+        gameManager = FindObjectOfType<GameManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -33,26 +41,40 @@ public class Interactor : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
 
+            OnInteractorEnter.Invoke();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
+
+            OnInteractorStay.Invoke();
+        }
+    }
 
     private void OnTriggerExit(Collider other)
     {
+        
 
         if (other.CompareTag("Player"))
         {
             
-            CloseRealm();
 
-            if(VoronoiShaderManager == null)
-            {
-                VoronoiShaderManager = GameObject.Find("VoronoiShaderManager").GetComponent<RealmPostProcess>();
-            }
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
 
-            VoronoiShaderManager.FadeVoronoiShaderOut();
-
-            
-            realmSmoke.playbackSpeed = 8;
-            realmSmoke.Stop();
+            OnInteractorExit.Invoke();
 
         }
     }
@@ -91,6 +113,9 @@ public class Interactor : MonoBehaviour
             PlayWhooshSound();
 
         }
+
+        realmSmoke.playbackSpeed = 8;
+        realmSmoke.Stop();
     }
 
     public void DeactivateInteractor()
