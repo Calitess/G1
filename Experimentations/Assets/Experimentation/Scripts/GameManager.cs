@@ -22,8 +22,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] CameraStacking playerCamera;
 
-    [SerializeField] AudioListener playerListener, cutsceneListener;
-
 
     private void Awake()
     {
@@ -113,8 +111,6 @@ public class GameManager : MonoBehaviour
 
     private void PlayGame()
     {
-        cutsceneListener.enabled = false;
-        playerListener.enabled = true;
 
         playerCamera.CloseJournal();
         //journal.SetActive(false);
@@ -132,8 +128,6 @@ public class GameManager : MonoBehaviour
 
     private void InDialogue()
     {
-        cutsceneListener.enabled = true;
-        playerListener.enabled = false;
 
 
         thirdPersonInput.ShowCursor(true);

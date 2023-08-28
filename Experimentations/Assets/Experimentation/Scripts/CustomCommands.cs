@@ -52,6 +52,8 @@ public class CustomCommands : MonoBehaviour
     {
         if (virtualCamera != null)
         {
+            var vcamBrain = CinemachineCore.Instance.FindPotentialTargetBrain(virtualCamera);
+            vcamBrain.gameObject.GetComponent<AudioListener>().enabled = true;
             virtualCamera.Priority = 100;
             playerCam.SetActive(false);
         }
@@ -67,6 +69,8 @@ public class CustomCommands : MonoBehaviour
     {
         if (virtualCamera != null)
         {
+            var vcamBrain = CinemachineCore.Instance.FindPotentialTargetBrain(virtualCamera);
+            vcamBrain.gameObject.GetComponent<AudioListener>().enabled = false;
             virtualCamera.Priority = 0;
             playerCam.SetActive(true);
         }
