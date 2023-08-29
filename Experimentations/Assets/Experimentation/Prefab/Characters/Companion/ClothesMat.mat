@@ -10,7 +10,8 @@ Material:
   m_Name: ClothesMat
   m_Shader: {fileID: -6465566751694194690, guid: 7163a9a9ad8709e42aabe75a5349861e,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _USE_SCREEN_SPACE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
