@@ -5,14 +5,9 @@ using UnityEngine;
 public class Billboarding : MonoBehaviour
 {
     public float rotateAmount;
-    Camera mainCam;
+    [SerializeField] Camera mainCam;
     public bool noBoard;
-    // Start is called before the first frame update
-    void Start()
-    {
-        mainCam = Camera.main;
-        //rotateAmount = 0f;
-    }
+ 
 
     // Update is called once per frame
     void LateUpdate()

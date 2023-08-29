@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Invector.vCharacterController;
+using Cinemachine;
 
 public class GameManager : MonoBehaviour
 {
@@ -13,6 +14,15 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> onGameStateChanged;
 
     [SerializeField] private vThirdPersonInput thirdPersonInput;
+
+    [SerializeField] public bool isInDialogue;
+
+    //[SerializeField] private GameObject pauseMenu, journal;
+
+    [SerializeField] CameraStacking playerCamera;
+
+    [SerializeField] AudioListener playerListener, cutsceneListener;
+
 
     private void Awake()
     {
@@ -38,6 +48,9 @@ public class GameManager : MonoBehaviour
                 break;
             case GameState.Journal:
                 JournalState();
+                break;
+            case GameState.Dialogue:
+                InDialogue();
                 break;
             default:
                 break;
@@ -67,26 +80,71 @@ public class GameManager : MonoBehaviour
         {
             GameManager.Instance.UpdateGameState(GameState.Play);
         }
+        
+        if(isInDialogue && State == GameState.Play)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Dialogue);
+        }
+        else if(!isInDialogue && State == GameState.Dialogue)
+        {
+            GameManager.Instance.UpdateGameState(GameState.Play);
+        }
     }
 
     private void JournalState()
     {
+        playerCamera.OpenJournal();
+        //journal.SetActive(true);
+
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
         Time.timeScale = 0;
-        Debug.Log("I am now inside the journal");
+        //Debug.Log("I am now inside the journal");
     }
 
     private void PlayGame()
     {
+        cutsceneListener.enabled = false;
+        playerListener.enabled = true;
+
+        playerCamera.CloseJournal();
+        //journal.SetActive(false);
+        //pauseMenu.SetActive(false);
+
+        thirdPersonInput.enabled = true;
         thirdPersonInput.ShowCursor(false);
         thirdPersonInput.LockCursor(false);
+        thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = false;
+
+
         Time.timeScale = 1;
         Debug.Log("I am now playing");
     }
 
+    private void InDialogue()
+    {
+        cutsceneListener.enabled = true;
+        playerListener.enabled = false;
+
+
+        thirdPersonInput.ShowCursor(true);
+        thirdPersonInput.LockCursor(true);
+        thirdPersonInput.enabled = false;
+        thirdPersonInput.gameObject.GetComponent<Animator>().SetFloat("InputMagnitude", 0f);
+        thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = true;
+    }
+
+    
+    public void OutDialogue()
+    {
+        thirdPersonInput.ShowCursor(false);
+        thirdPersonInput.LockCursor(false);
+    }
+
     private void PauseGame()
     {
+        //pauseMenu.SetActive(true);
+
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
         Time.timeScale = 0;
@@ -99,4 +157,5 @@ public enum GameState
     Pause,
     Play,
     Journal,
+    Dialogue,
 }

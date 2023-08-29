@@ -1,0 +1,112 @@
+﻿title: BrotherDialogue
+tags:
+---
+<<InDialogue Char_Bro>>
+<<Talk Char_Bro CharacterTalk>>
+
+Brother: Pssstt... Pssttt.... It's me, Niamh's brother. #line:S1L2
+Manaia: Nice to see you finally, it's been so long....I.....  #line:S1L3
+Brother: Of course I couldnt stand to just let things unfold. But Shh. Not so loud. You'll draw attention. #line:S1L4
+Manaia: I didnt think I'd see you in such short notice, thanks again for meeting me. #line:S1L5
+Brother: You got the letter right? I couldn't detail the specifics in case it was...compromised. #line:S1L6
+Manaia: *mmhm* It's been years since I've been to a place like Vedura Isle, it's becoming a deeply unsettling place very quickly. #line:S1L7
+Brother: Yeah, you're right. The opulence is perfect cover for the darkness beneath. Thanks for meeting me here, M. #line:S1L8
+Manaia: Of course. I know how much you loved your sister, and I want to help you uncover the truth about what happened to her. #line:S1L9
+Brother: My sister didn't deserve to die the way she did... it's haunting me. I've managed to get close to the host of this event by posing as a servant. I need to find evidence about her death. I believe this mansion holds answers. #line:S1L10
+Manaia: I'm here for you. We've been through so much together. (Pauses) Even though we've grown apart, I can't ignore your pain. What do you need me to do? #line:S1L11
+Brother:I need help SEARCHING the mansion for clues, documents and anything that might link to her death. With the black market auction happening, there's bound to be shady dealings connected to her murder. #line:S1L12
+Manaia: I'll do whatever it takes to help you find the truth. Let's start by splitting up. I'll mingle with the guests, AND TRY to eavesdrop on conversations and gather information discreetly. #line:S1L13
+Manaia: You keep an eye out for anything suspicious among the staff. We'll rendezvous later. //continue on from previous line. no audio here
+Brother:Thank you, M. I knew I could count on you. Just be careful. There's no telling what dangers are lurking in the shadows here. #line:S1L14
+Manaia: You too. Remember, we're not alone in this. #line:S1L15
+
+
+<<OutDialogue Char_Bro>>
+===
+
+
+title: JournalStart
+---
+
+<<InDialogue JournalTrigger_Scene2>>
+Manaia: Umm.. Right. Lets get into the head space. What do I have to do? 
+Manaia: I should check my journal
+
+<b>Press J to check journal for objective </b>
+<<JournalEntryText JournalTrigger_Scene2>>
+<<OutDialogue JournalTrigger_Scene2>>
+<<DeleteTrigger JournalTrigger_Scene2>>
+
+===
+
+title: BarIntro
+---
+Manaia: Interesting, how did they get a hold of such extinct material.
+Bartender: Could I be so kind in offering you a drink?
+Manaia: I'm fine thank you, just taking a look at this instillation.
+Bartender: Oh yes, our Host is very fond of this new flora matter that they've discovered. 
+===
+
+
+
+
+title: Terrarium
+---
+Servant: I see this fine piece of vegetation has caught your eye, no? 
+Manaia: Um...Sure.
+Servant: Well, allow me to enlighten you. It's quite rare, and you should be thankful the Host has allowed even people like you to see it. 
+Sevant: *Info dump*
+Servant: There's even rumours about connections with the supposed ghost realm. Take that as you will
+Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialogue)
+===
+
+title: Eavesdrop_1
+---
+Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way 
+Servant2: No, no, we're not talking occult during work time again. Let's just get this to the next room. 
+===
+
+
+title: NearRift
+---
+Manaia hears humming, humming gets louder as player gets nearer
+Manaia: I feel a bit....i cant describe it
+*rift sound/ effect gets more prominent/ sound reverbs more*
+Manaia: *hums along* That song... 
+===
+
+title: RiftIntro
+---
+
+<<InDialogue ReachingOut>>
+Manaia: This is........wait............what's happening #line:S7L40
+the world around Manaia start to shift and change. 
+Manaia: *looks around intensely* this is strange... #line:S8L44
+Niamh: You made it. You must find the answers  #line:S8L45
+
+Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
+Niamh: It's the only way... #line:S8L47
+<<JournalEntryText ReachingOut>>
+Manaia: Niamh?? Is it really you?  #line:S8L48
+<<OutDialogue ReachingOut>> 
+===
+
+title: RiftFirstExit
+---
+Manaia: I need to hum to a rift to open up the rift ? Interesting
+Manaia: Let's see what the realm can help me find out
+===
+
+
+title: ClueAsk_1
+---
+Manaia: So, anything of interest lately? 
+Servant: What exactly do you mean.?
+Manaia: Oh. Um, I meant in terms of pieces.
+Manaia: There's a lot of new items, this year. I was interested what you thought. Do you have a favourite?
+Servant: Hm, no one's asked me personally...
+Servant: I'd have to say the big item of the night, the *insert flower name*
+Servant: Though I heard it was a pain to get here. Goes to show how hard the Host and his team work.
+===
+
+

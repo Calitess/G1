@@ -63,7 +63,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
         Vector3 forearm = _handTransform.position - _elbowTransform.position;
 
         _ikTargetTransform = _ikConstraint.data.target.transform;
-        ConstructColliders();
+        //ConstructColliders();
 
     }
 
@@ -72,7 +72,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         _boxCollider = gameObject.AddComponent<BoxCollider>();
         _boxCollider.center = new Vector3(_elbowTransform.position.x*1.5f, _colliderCenterOffset, _wingspan/3);
-        _boxCollider.size = new Vector3(.3f, _wingspan, _wingspan/2);
+        _boxCollider.size = new Vector3(.3f, _wingspan/4, _wingspan/2);
         _boxCollider.isTrigger = true;
     }
 
@@ -96,7 +96,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         if (other == _currentColliderTarget)
         {
-            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity /10));
+            _closestPointPosition = other.ClosestPoint(new Vector3(_shoulderTransform.position.x, _shoulderTransform.position.y - _wallTouchHeight, _shoulderTransform.position.z) + (_rb.velocity / 10));
             _prepPointPosition = new Vector3(_closestPointPosition.x, _closestPointPosition.y, _closestPointPosition.z);
             _ikTargetTransform.position = _prepPointPosition;
 
@@ -108,6 +108,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     {
         if (other == _currentColliderTarget)
         {
+            StopCoroutine(LerpFunction(1, 2, "touching Wall"));
             _currentColliderTarget = null;
             _closestPointPosition = Vector3.positiveInfinity;
             //ChangeState(InteractorState2.Reset);

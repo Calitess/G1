@@ -5,28 +5,21 @@ using UnityEngine.Rendering.Universal;
 
 public class CameraStacking : MonoBehaviour
 {
-    [SerializeField] Camera camera, myOverlayCamera;
+    [SerializeField] Camera cameraPlayer, myOverlayCamera;
     [SerializeField] bool journalOpened;
     
 
-
-
-    // Update is called once per frame
-    void Update()
+    public void OpenJournal()
     {
-        if(Input.GetKeyDown(KeyCode.Q) && journalOpened)
-        {
-            var cameraData = camera.GetUniversalAdditionalCameraData();
-            cameraData.cameraStack.Add(myOverlayCamera);
-            journalOpened = false;
-        }
+        var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
+        cameraData.cameraStack.Add(myOverlayCamera);
+        journalOpened = true;
+    }
 
-        else if (Input.GetKeyDown(KeyCode.Q) && !journalOpened)
-        {
-            var cameraData = camera.GetUniversalAdditionalCameraData();
-            cameraData.cameraStack.Remove(myOverlayCamera);
-            journalOpened = true;
-
-        }
+    public void CloseJournal()
+    {
+        var cameraData = cameraPlayer.GetUniversalAdditionalCameraData();
+        cameraData.cameraStack.Remove(myOverlayCamera);
+        journalOpened = false;
     }
 }

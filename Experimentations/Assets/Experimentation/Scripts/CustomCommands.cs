@@ -1,0 +1,122 @@
+using Invector.vCharacterController;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using Yarn.Unity;
+using Cinemachine;
+using echo17.EndlessBook;
+using TMPro;
+using Unity.VisualScripting;
+using Invector.vCharacterController.vActions;
+
+public class CustomCommands : MonoBehaviour
+{
+    Animator anim;
+    GameManager gameManager;
+
+    [SerializeField] CinemachineVirtualCamera virtualCamera;
+    [SerializeField] GameObject playerCam;
+    [SerializeField] TMP_Text journalEntryText;
+    [SerializeField][TextArea] string whatToWrite;
+    [SerializeField] Material blankMaterial, pageMaterial;
+    [SerializeField] EndlessBook book;
+    [SerializeField] bool deleteTriggeAfterDialogue;
+    vTriggerGenericAction action;
+    AudioSource scribbleSource;
+
+
+    void Start()
+    {
+        anim = gameObject.GetComponent<Animator>();
+        gameManager = FindObjectOfType<GameManager>();
+        scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
+        book = FindObjectOfType<EndlessBook>();
+        action = gameObject.GetComponent<vTriggerGenericAction>();
+    
+    }
+
+
+    [YarnCommand("Talk")]
+   
+    public void SetTalk(string talkName)
+    {
+     anim.Play("Base Layer." + talkName, 0);
+        Debug.Log("Character switches from idle to talking animation");
+      
+     // anim.Play("CharacterTalk");
+    }
+
+    [YarnCommand("InDialogue")]
+
+    public void CurInDialogue()
+    {
+        if (virtualCamera != null)
+        {
+            virtualCamera.Priority = 100;
+            playerCam.SetActive(false);
+        }
+
+        gameManager.isInDialogue = true;
+
+
+    }
+
+    [YarnCommand("OutDialogue")]
+
+    public void CurOutDialogue()
+    {
+        if (virtualCamera != null)
+        {
+            virtualCamera.Priority = 0;
+            playerCam.SetActive(true);
+        }
+
+
+        gameManager.isInDialogue = false;
+
+        
+        if(deleteTriggeAfterDialogue)
+        {
+            action.enabled = false;
+        }
+
+
+    }
+
+    [YarnCommand("JournalEntryText")]
+    public void JournalEntry()
+    {
+        Debug.Log("journal entry is inserted");
+
+        scribbleSource.Play();
+
+        journalEntryText.text = whatToWrite;
+
+    }
+
+    [YarnCommand("NewPageEntry")]
+    public void NewPageEntry()
+    {
+        scribbleSource.Play();
+
+        Debug.Log("page entry is addedd");
+        book.AddPageData(blankMaterial);
+        book.AddPageData(pageMaterial);
+    }
+
+    [YarnCommand("InsertEntry")]
+    public void InsertEntry()
+    {
+
+        scribbleSource.Play();
+
+        Debug.Log("page entry is inserted");
+
+        book.InsertPageData(book.pages.Count - 1, pageMaterial);
+    }
+
+
+
+
+
+}

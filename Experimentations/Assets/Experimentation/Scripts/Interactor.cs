@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 [ExecuteInEditMode]
@@ -18,6 +19,9 @@ public class Interactor : MonoBehaviour
     [SerializeField] AudioClip[] RealmSoundClips;
     [SerializeField] bool isWhooshSoundPlaying = false;
 
+    [SerializeField] ParticleSystem realmSmoke;
+
+
     
 
     // Update is called once per frame
@@ -29,12 +33,14 @@ public class Interactor : MonoBehaviour
 
     }
 
-    
+
 
     private void OnTriggerExit(Collider other)
     {
+
         if (other.CompareTag("Player"))
         {
+            
             CloseRealm();
 
             if(VoronoiShaderManager == null)
@@ -43,9 +49,13 @@ public class Interactor : MonoBehaviour
             }
 
             VoronoiShaderManager.FadeVoronoiShaderOut();
+
+            
+            realmSmoke.playbackSpeed = 8;
+            realmSmoke.Stop();
+
         }
     }
-
 
     public void OpenRealm()
     {
@@ -83,6 +93,11 @@ public class Interactor : MonoBehaviour
         }
     }
 
+    public void DeactivateInteractor()
+    {
+
+    }
+
     IEnumerator LerpFunction(float endValue, float duration, string comment)
     {
         float time = 0;
@@ -97,6 +112,10 @@ public class Interactor : MonoBehaviour
         radius = endValue;
     }
 
+    public void ResetParticleSpeed(float speed)
+    {
+        realmSmoke.playbackSpeed = speed;
+    }
 
 
 }
