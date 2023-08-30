@@ -4,6 +4,9 @@ tags:
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
 
+-> Skip
+ <<jump Skip_Scene1>>
+-> Continue 
 Brother: Pssstt... Pssttt.... It's me, Niamh's brother. #line:S1L2
 Manaia: Nice to see you finally, it's been so long....I.....  #line:S1L3
 Brother: Of course I couldnt stand to just let things unfold. But Shh. Not so loud. You'll draw attention. #line:S1L4
@@ -24,11 +27,22 @@ Manaia: You too. Remember, we're not alone in this. #line:S1L15
 <<OutDialogue Char_Bro>> //make sure to put at the end of every dialogue sequence. it tells the gamestate to get out of dialoguestate
 ===
 
+title: Skip_Scene1
+---
+//to skip through dialogue from bro
+<<OutDialogue Char_Bro>>
+
+===
+
+
 
 title: JournalStart
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
+-> Skip
+ <<jump Skip_Scene2>>
+-> Continue 
 
 Manaia: Umm.. Right. Lets get into the head space. What do I have to do? 
 Manaia: I should check my journal
@@ -41,10 +55,22 @@ Manaia: I should check my journal
 
 ===
 
+
+title: Skip_Scene2
+---
+//to skip through dialogue from journal
+<<JournalEntryText JournalTrigger_Scene2>>
+<<OutDialogue JournalTrigger_Scene2>>
+<<DeleteTrigger JournalTrigger_Scene2>>
+
+===
+
 title: BarIntro
 ---
-
 <<InDialogue Interactor_Bartender>>
+-> Skip
+ <<jump Skip_Scene4>>
+-> Continue 
 Manaia: Interesting, how did they get a hold of such extinct material.
 Bartender: Could I be so kind in offering you a drink?
 Manaia: I'm fine thank you, just taking a look at this instillation.
@@ -54,6 +80,12 @@ Bartender: Oh yes, our Host is very fond of this new flora matter that they've d
 ===
 
 
+title: Skip_Scene4
+---
+//to skip through dialogue from bartender
+<<OutDialogue Interactor_Bartender>>
+
+===
 
 
 title: Terrarium
@@ -83,8 +115,10 @@ Manaia: *hums along* That song...
 
 title: RiftIntro
 ---
-
 <<InDialogue ReachingOut>>
+-> Skip
+ <<jump Skip_Scene8>>
+-> Continue 
 Manaia: This is........wait............what's happening #line:S7L40
 the world around Manaia start to shift and change. 
 Manaia: *looks around intensely* this is strange... #line:S8L44
@@ -95,6 +129,14 @@ Niamh: It's the only way... #line:S8L47
 <<JournalEntryText ReachingOut>>
 Manaia: Niamh?? Is it really you?  #line:S8L48
 <<OutDialogue ReachingOut>> 
+===
+
+title: Skip_Scene8
+---
+//to skip through dialogue from niamh intro 
+<<JournalEntryText ReachingOut>>
+<<OutDialogue ReachingOut>> 
+
 ===
 
 title: RiftFirstExit
