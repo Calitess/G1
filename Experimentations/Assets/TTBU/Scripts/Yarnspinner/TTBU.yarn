@@ -90,12 +90,17 @@ title: Skip_Scene4
 
 title: Terrarium
 ---
+<<InDialogue Interactor_Terrarium>>
+
 Servant: I see this fine piece of vegetation has caught your eye, no? 
 Manaia: Um...Sure.
 Servant: Well, allow me to enlighten you. It's quite rare, and you should be thankful the Host has allowed even people like you to see it. 
 Sevant: *Info dump*
+<<InsertEntry Interactor_Terrarium>>
 Servant: There's even rumours about connections with the supposed ghost realm. Take that as you will
 Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialogue)
+
+<<OutDialogue Interactor_Terrarium>>
 ===
 
 title: Eavesdrop_1

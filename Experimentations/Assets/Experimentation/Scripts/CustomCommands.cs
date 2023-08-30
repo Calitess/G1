@@ -18,11 +18,14 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] GameObject playerCam;
     [SerializeField] TMP_Text journalEntryText;
     [SerializeField][TextArea] string whatToWrite;
-    [SerializeField] Material blankMaterial, pageMaterial;
+    [SerializeField] Material leftPageMaterial, rightPageMaterial;
     [SerializeField] EndlessBook book;
+    [SerializeField] public int pageNumber;
     [SerializeField] bool deleteTriggeAfterDialogue;
+
     vTriggerGenericAction action;
     AudioSource scribbleSource;
+
 
 
     void Start()
@@ -104,8 +107,8 @@ public class CustomCommands : MonoBehaviour
         scribbleSource.Play();
 
         Debug.Log("page entry is addedd");
-        book.AddPageData(blankMaterial);
-        book.AddPageData(pageMaterial);
+        book.AddPageData(leftPageMaterial);
+        book.AddPageData(rightPageMaterial);
     }
 
     [YarnCommand("InsertEntry")]
@@ -115,8 +118,8 @@ public class CustomCommands : MonoBehaviour
         scribbleSource.Play();
 
         Debug.Log("page entry is inserted");
-
-        book.InsertPageData(book.pages.Count - 1, pageMaterial);
+        book.InsertPageData((pageNumber-1), leftPageMaterial);
+        book.InsertPageData(pageNumber, rightPageMaterial);
     }
 
 
