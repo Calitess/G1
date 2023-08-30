@@ -80,7 +80,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 24dedd2bd0d653e4d945de3ed98b17f9,
         type: 3}
       propertyPath: m_Name
-      value: Env_Pillar_PillarBase_01 1
+      value: Env_Pillar_PillarDownstairs
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dedd2bd0d653e4d945de3ed98b17f9, type: 3}
