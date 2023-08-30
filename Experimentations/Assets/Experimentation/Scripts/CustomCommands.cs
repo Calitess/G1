@@ -33,7 +33,7 @@ public class CustomCommands : MonoBehaviour
         anim = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
-        book = FindObjectOfType<EndlessBook>();
+        //book = FindObjectOfType<EndlessBook>();
         action = gameObject.GetComponent<vTriggerGenericAction>();
     
     }
