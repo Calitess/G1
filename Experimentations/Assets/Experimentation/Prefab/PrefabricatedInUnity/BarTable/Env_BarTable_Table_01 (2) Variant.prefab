@@ -77,10 +77,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4075960573354935177, guid: ec72555cf41b87e42929eacfb470da5e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 04337bcf7abb10548ace967575b55b8a, type: 2}
+    - target: {fileID: -1780853175406399021, guid: ec72555cf41b87e42929eacfb470da5e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cc5da8e22a202649b8067cce5331db8, type: 2}
     - target: {fileID: 919132149155446097, guid: ec72555cf41b87e42929eacfb470da5e,
         type: 3}
       propertyPath: m_Name
-      value: Env_BarTable_Table_01 (2)
+      value: Env_BarTable_Table_01 (2) Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec72555cf41b87e42929eacfb470da5e, type: 3}

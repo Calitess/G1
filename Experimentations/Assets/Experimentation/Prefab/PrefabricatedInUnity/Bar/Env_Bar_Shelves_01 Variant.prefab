@@ -62,10 +62,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 5abac4bb5f6e32840af9c5262a7b78ec,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0cc5da8e22a202649b8067cce5331db8, type: 2}
     - target: {fileID: 919132149155446097, guid: 5abac4bb5f6e32840af9c5262a7b78ec,
         type: 3}
       propertyPath: m_Name
-      value: Env_Bar_Shelves_01
+      value: Env_Bar_Shelves_01 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5abac4bb5f6e32840af9c5262a7b78ec, type: 3}
