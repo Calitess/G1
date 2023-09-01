@@ -5061,8 +5061,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Bar_CornerCounter_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7590447759725232471, guid: eb357026547d6684bbbf78ef6d5a6663,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb357026547d6684bbbf78ef6d5a6663, type: 3}
+--- !u!1 &2391839750537554497 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7590447759725232471, guid: eb357026547d6684bbbf78ef6d5a6663,
+    type: 3}
+  m_PrefabInstance: {fileID: 5217197590871157526}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5443392173841615216
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2391839750537554497}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &3060852596710535419 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7069913269513051117, guid: eb357026547d6684bbbf78ef6d5a6663,

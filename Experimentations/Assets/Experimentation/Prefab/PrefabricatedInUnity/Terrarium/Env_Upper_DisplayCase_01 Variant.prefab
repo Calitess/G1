@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Rock_RockBase_01
       objectReference: {fileID: 0}
+    - target: {fileID: 6092075442211137485, guid: 3a995be5be16f264288a8750f1b2c4f8,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 6899715818273144183, guid: 3a995be5be16f264288a8750f1b2c4f8,
         type: 3}
       propertyPath: m_RootOrder
@@ -81,6 +86,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Rock_RockBase_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8084090339773358296, guid: ea4e114d4e63af74d8570bcab5c2402e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8897887980634241634, guid: ea4e114d4e63af74d8570bcab5c2402e,
         type: 3}
       propertyPath: m_RootOrder
@@ -149,6 +159,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Rock_RockBase_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 1349475327095626033, guid: e6976bcac6144374aa43921d2cc7026b,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1869446868207928203, guid: e6976bcac6144374aa43921d2cc7026b,
         type: 3}
@@ -284,10 +299,25 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -4834138212012588665, guid: 30594ffc22424a845875cbdd005f87cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 299451742491666451, guid: 30594ffc22424a845875cbdd005f87cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 30594ffc22424a845875cbdd005f87cb,
         type: 3}
       propertyPath: m_Name
       value: Env_Upper_DisplayCase_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 30594ffc22424a845875cbdd005f87cb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 30594ffc22424a845875cbdd005f87cb, type: 3}
@@ -297,6 +327,25 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8453637379101215114}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &8759558148475843803 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 30594ffc22424a845875cbdd005f87cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 8453637379101215114}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &7765535977220743189
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8759558148475843803}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.92999905, y: 2.0408728, z: 1.4110329}
+  m_Center: {x: 6.6978045, y: 0.40655604, z: -0.24576984}
 --- !u!1001 &8885340793586780935
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -363,6 +412,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Rock_RockBase_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 665101027207371577, guid: 770e0622b2c14944ba8dfbb48668518a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 770e0622b2c14944ba8dfbb48668518a, type: 3}

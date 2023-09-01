@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673c11f5f9503f74bb695540c19e6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curSpeaker: {fileID: 0}
 --- !u!1 &8780432548224044982
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,8 +285,7 @@ MonoBehaviour:
   thirdPersonInput: {fileID: 0}
   isInDialogue: 0
   playerCamera: {fileID: 0}
-  playerListener: {fileID: 0}
-  cutsceneListener: {fileID: 0}
+  ignoreFixedFrame: -1
 --- !u!1 &8780432548420190858
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,7 +346,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: fa0dd1e1c0e2d9447a074e57d40a8132, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 7bdd0ab481a0d90439375a63c0a8b03a, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &8780432549218628646
 GameObject:

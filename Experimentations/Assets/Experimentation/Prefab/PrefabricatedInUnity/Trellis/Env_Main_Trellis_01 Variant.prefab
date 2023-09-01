@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -9212357903410776340, guid: 6fa544006f720e64b9220b25d64cf4a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -8708655208786346575, guid: 6fa544006f720e64b9220b25d64cf4a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6fa544006f720e64b9220b25d64cf4a2,
         type: 3}
       propertyPath: m_RootOrder
@@ -62,6 +72,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7675538524848910753, guid: 6fa544006f720e64b9220b25d64cf4a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -7619113873674448581, guid: 6fa544006f720e64b9220b25d64cf4a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: -2527468067895649384, guid: 6fa544006f720e64b9220b25d64cf4a2,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -76,6 +96,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Main_Trellis_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6fa544006f720e64b9220b25d64cf4a2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1892876650265417259, guid: 6fa544006f720e64b9220b25d64cf4a2,
         type: 3}

@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 8917903066918954388}
   - component: {fileID: 2356518294854578923}
   - component: {fileID: 7549362454829186358}
-  m_Layer: 0
+  - component: {fileID: 1342033359532988699}
+  m_Layer: 7
   m_Name: seat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,6 +88,22 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &1342033359532988699
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1206035610139718597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1768293739025876520
 GameObject:
   m_ObjectHideFlags: 0
@@ -98,7 +115,7 @@ GameObject:
   - component: {fileID: 4182231250003748432}
   - component: {fileID: 8323623795849568523}
   - component: {fileID: 6884859430183053043}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: seat_cushion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +198,7 @@ GameObject:
   - component: {fileID: 2904364376017194011}
   - component: {fileID: 5818299553942140276}
   - component: {fileID: 6198503696392752253}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: seat_pole
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -264,7 +281,7 @@ GameObject:
   - component: {fileID: 1387351682915108061}
   - component: {fileID: 8939368918435653127}
   - component: {fileID: 7491452378955473505}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: seat_footrest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +364,7 @@ GameObject:
   - component: {fileID: 5536396448357928503}
   - component: {fileID: 326631950956078083}
   - component: {fileID: 1590491370268704391}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: seat_cushion_rim
   m_TagString: Untagged
   m_Icon: {fileID: 0}

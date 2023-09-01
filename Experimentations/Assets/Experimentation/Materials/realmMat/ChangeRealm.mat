@@ -27,7 +27,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Primary_Texture:
-        m_Texture: {fileID: 2800000, guid: 9b113e547a499be4bab225423dfa442f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 5e03988db76cb7c4d80b194eb2221a66, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Secondary_Texture:
@@ -50,7 +50,7 @@ Material:
     m_Floats:
     - _Edge_Width: 0.05
     - _Move_Speed: 0.22
-    - _Noise_Scale: -17.43
+    - _Noise_Scale: 16.55
     - _Noise_Strength: 0.6
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -59,7 +59,7 @@ Material:
     m_Colors:
     - _Edge_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
     - _Primary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
-    - _Secondary_Base_Color: {r: 0.3584906, g: 0.3584906, b: 0.3584906, a: 0}
+    - _Secondary_Base_Color: {r: 0.8396226, g: 0.09109115, b: 0.09109115, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &2965171637272217834
 MonoBehaviour:

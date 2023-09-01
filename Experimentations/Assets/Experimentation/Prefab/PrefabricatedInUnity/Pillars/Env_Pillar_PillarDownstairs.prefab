@@ -82,5 +82,35 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Pillar_PillarDownstairs
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 24dedd2bd0d653e4d945de3ed98b17f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2365560118410617156, guid: 24dedd2bd0d653e4d945de3ed98b17f9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24dedd2bd0d653e4d945de3ed98b17f9, type: 3}
+--- !u!1 &1314095922537584538 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2365560118410617156, guid: 24dedd2bd0d653e4d945de3ed98b17f9,
+    type: 3}
+  m_PrefabInstance: {fileID: 3668378861799110366}
+  m_PrefabAsset: {fileID: 0}
+--- !u!136 &8632122430417616834
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1314095922537584538}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.010486454
+  m_Height: 0.023056965
+  m_Direction: 1
+  m_Center: {x: 0.0000000072327073, y: -0.001493048, z: -0.000000016648725}

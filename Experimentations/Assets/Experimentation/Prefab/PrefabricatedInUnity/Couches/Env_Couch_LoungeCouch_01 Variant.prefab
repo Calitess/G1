@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Pillow_PillowBase_01 Variant (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6542611216164320041, guid: b6efd6dc65258574884eb2b3586f1781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6efd6dc65258574884eb2b3586f1781, type: 3}
 --- !u!1001 &4005660236296551369
@@ -146,10 +151,35 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8432927889242991340, guid: d73b57cf784a56544afad873df2ef50e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: d73b57cf784a56544afad873df2ef50e,
         type: 3}
       propertyPath: m_Name
       value: Env_Couch_LoungeCouch_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d73b57cf784a56544afad873df2ef50e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1192062326224202921, guid: d73b57cf784a56544afad873df2ef50e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3527954150896136271, guid: d73b57cf784a56544afad873df2ef50e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3974634996817255303, guid: d73b57cf784a56544afad873df2ef50e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d73b57cf784a56544afad873df2ef50e, type: 3}
@@ -159,6 +189,28 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4005660236296551369}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4276061275019134616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d73b57cf784a56544afad873df2ef50e,
+    type: 3}
+  m_PrefabInstance: {fileID: 4005660236296551369}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8031470923130221065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4276061275019134616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1001 &4488832611991749238
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -225,6 +277,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Pillow_PillowBase_01 Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542611216164320041, guid: b6efd6dc65258574884eb2b3586f1781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6efd6dc65258574884eb2b3586f1781, type: 3}
@@ -294,6 +351,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Pillow_PillowBase_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 6542611216164320041, guid: b6efd6dc65258574884eb2b3586f1781,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b6efd6dc65258574884eb2b3586f1781, type: 3}

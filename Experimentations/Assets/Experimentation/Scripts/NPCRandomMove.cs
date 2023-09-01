@@ -49,7 +49,7 @@ public class NPCRandomMove : MonoBehaviour
         yield return new WaitUntil(() => ReachedDestinationOrGaveUp());
 
 
-        StartCoroutine(ChooseToWait(Random.Range(0f,30f)));
+        StartCoroutine(ChooseToWait(Random.Range(0f,3f)));
 
 
     }

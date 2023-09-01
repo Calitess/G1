@@ -77,10 +77,67 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7316688905972204107, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -5397316743358414332, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -4237858688084476923, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -1060624749631371359, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 8797cf1f3ee62e04687f2eaff140d390,
         type: 3}
       propertyPath: m_Name
-      value: Env_Couch_CouchBase_01
+      value: Env_Couch_CouchBase_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1914823278910677507, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4919417933014774138, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8797cf1f3ee62e04687f2eaff140d390, type: 3}
+--- !u!1 &5872781904475292350 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 8797cf1f3ee62e04687f2eaff140d390,
+    type: 3}
+  m_PrefabInstance: {fileID: 6719715715661348847}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1255408200360768862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5872781904475292350}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
