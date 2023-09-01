@@ -5,7 +5,8 @@ using UnityEngine;
 public class ProximityDistortion : MonoBehaviour
 {
     [SerializeField] Transform target;
-    [SerializeField] float activationDistance = 5, distancePadding = 2, normalizedDist = 0;
+    [SerializeField] float activationDistance = 5, distancePadding = 2, normalizedDist = 0, timeToCloseRift = 0.5f;
+    public bool enableProximityDistort = true;
     private Material distortionMaterial;
     private MeshRenderer meshRenderer;
 
@@ -20,10 +21,40 @@ public class ProximityDistortion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
-        normalizedDist = 1 - Mathf.Clamp01((distance - distancePadding) / activationDistance);
-        distortionMaterial.SetFloat("_NormalizeAmount", normalizedDist);
+        if (enableProximityDistort)
+        {
+            float distance = Vector3.Distance(target.position, transform.position);
+            normalizedDist = 1 - Mathf.Clamp01((distance - distancePadding) / activationDistance);
+            distortionMaterial.SetFloat("_NormalizeAmount", normalizedDist);
+        }
     }
 
-   
+    public void disableProximityDistort()
+    {
+        enableProximityDistort = false;
+
+
+    }
+
+    IEnumerator closeRift()
+    {
+        yield return new WaitForSeconds(timeToCloseRift);
+        StartCoroutine(LerpFunction(0, 2));
+
+    }
+
+    IEnumerator LerpFunction(float endValue, float duration)
+    {
+        float time = 0;
+        float startValue = normalizedDist;
+        while (time < duration)
+        {
+            normalizedDist = Mathf.Lerp(startValue, endValue, time / duration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        normalizedDist = endValue;
+    }
+
+
 }
