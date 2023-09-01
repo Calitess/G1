@@ -32,12 +32,14 @@ public class ProceduralIvy : MonoBehaviour {
    
     public void DrawIvy()
     {
+#if UNITY_EDITOR
         Ray ray = HandleUtility.GUIPointToWorldRay(Event.current.mousePosition);
         RaycastHit hit;
         if (Physics.Raycast(ray, out hit, 100))
         {
             createIvy(hit);
         }
+#endif
     }
 
     Vector3 findTangentFromArbitraryNormal(Vector3 normal) {
