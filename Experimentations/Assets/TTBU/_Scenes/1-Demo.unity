@@ -1438,11 +1438,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7827927533220645526, guid: a2288802a1af7fe489e73d584551ea48,
         type: 3}
-      propertyPath: radius
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 7827927533220645526, guid: a2288802a1af7fe489e73d584551ea48,
-        type: 3}
       propertyPath: realmSmoke
       value: 
       objectReference: {fileID: 669023815}

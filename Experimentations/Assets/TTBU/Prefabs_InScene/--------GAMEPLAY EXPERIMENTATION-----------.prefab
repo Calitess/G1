@@ -4913,6 +4913,8 @@ MonoBehaviour:
   activationDistance: 5
   distancePadding: 2
   normalizedDist: 0.1
+  timeToCloseRift: 0.5
+  enableProximityDistort: 1
 --- !u!114 &552365062206706890
 MonoBehaviour:
   m_ObjectHideFlags: 0
