@@ -15,7 +15,7 @@ public class ProximityDistortion : MonoBehaviour
     {
         meshRenderer = GetComponent<MeshRenderer>();
         distortionMaterial = meshRenderer.material;
-        
+
     }
 
     // Update is called once per frame
@@ -33,7 +33,7 @@ public class ProximityDistortion : MonoBehaviour
     {
         enableProximityDistort = false;
 
-
+        StartCoroutine(closeRift());
     }
 
     IEnumerator closeRift()
@@ -50,10 +50,17 @@ public class ProximityDistortion : MonoBehaviour
         while (time < duration)
         {
             normalizedDist = Mathf.Lerp(startValue, endValue, time / duration);
+
+
+            distortionMaterial.SetFloat("_NormalizeAmount", normalizedDist);
             time += Time.deltaTime;
             yield return null;
         }
         normalizedDist = endValue;
+
+        distortionMaterial.SetFloat("_NormalizeAmount", normalizedDist);
+
+        this.gameObject.SetActive(false);
     }
 
 
