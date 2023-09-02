@@ -96,7 +96,7 @@ Servant: I see this fine piece of vegetation has caught your eye, no?
 Manaia: Um...Sure.
 Servant: Well, allow me to enlighten you. It's quite rare, and you should be thankful the Host has allowed even people like you to see it. 
 Sevant: *Info dump*
-<<InsertEntry Interactor_Terrarium>>
+<<NewPageEntry Interactor_Terrarium>>
 Servant: There's even rumours about connections with the supposed ghost realm. Take that as you will
 Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialogue)
 
@@ -109,8 +109,9 @@ title: Eavesdrop_1
 Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way 
 <<JournalEntryText Interactor_Eavesdrop>>
 Servant2: No, no, we're not talking occult during work time again. Let's just get this to the next room. 
-<<InsertEntry Interactor_Eavesdrop>>
+<<NewPageEntry Interactor_Eavesdrop>>
 <<OutDialogue Interactor_Eavesdrop>>
+<<ActivateRift Interactor_Eavesdrop>>
 ===
 
 
@@ -137,14 +138,14 @@ Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
 <<JournalEntryText ReachingOut>>
 Manaia: Niamh?? Is it really you?  #line:S8L48
-<<InsertEntry ReachingOut>>
+<<NewPageEntry ReachingOut>>
 <<OutDialogue ReachingOut>> 
 ===
 
 title: Skip_Scene8
 ---
 //to skip through dialogue from niamh intro 
-<<InsertEntry ReachingOut>>
+<<NewPageEntry ReachingOut>>
 <<JournalEntryText ReachingOut>>
 <<OutDialogue ReachingOut>> 
 

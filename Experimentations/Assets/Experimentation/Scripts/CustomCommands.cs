@@ -22,6 +22,7 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] EndlessBook book;
     [SerializeField] public int pageNumber;
     [SerializeField] bool deleteTriggeAfterDialogue;
+    [SerializeField] Interactor activateThisRift;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
@@ -35,18 +36,18 @@ public class CustomCommands : MonoBehaviour
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
         //book = FindObjectOfType<EndlessBook>();
         action = gameObject.GetComponent<vTriggerGenericAction>();
-    
+
     }
 
 
     [YarnCommand("Talk")]
-   
+
     public void SetTalk(string talkName)
     {
-     anim.Play("Base Layer." + talkName, 0);
+        anim.Play("Base Layer." + talkName, 0);
         Debug.Log("Character switches from idle to talking animation");
-      
-     // anim.Play("CharacterTalk");
+
+        // anim.Play("CharacterTalk");
     }
 
     [YarnCommand("InDialogue")]
@@ -81,8 +82,8 @@ public class CustomCommands : MonoBehaviour
 
         gameManager.isInDialogue = false;
 
-        
-        if(deleteTriggeAfterDialogue)
+
+        if (deleteTriggeAfterDialogue)
         {
             action.enabled = false;
         }
@@ -118,10 +119,16 @@ public class CustomCommands : MonoBehaviour
         scribbleSource.Play();
 
         Debug.Log("page entry is inserted");
-        book.InsertPageData((pageNumber-1), leftPageMaterial);
+        book.InsertPageData((pageNumber - 1), leftPageMaterial);
         book.InsertPageData(pageNumber, rightPageMaterial);
     }
 
+
+    [YarnCommand("ActivateRift")]
+    public void ActivateRift()
+    {
+        activateThisRift.gameObject.SetActive(true);
+    }
 
 
 
