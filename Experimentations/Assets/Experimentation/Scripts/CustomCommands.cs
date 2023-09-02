@@ -14,7 +14,7 @@ public class CustomCommands : MonoBehaviour
     Animator anim;
     GameManager gameManager;
 
-    [SerializeField] CinemachineVirtualCamera virtualCamera;
+    [SerializeField] public CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject playerCam;
     [SerializeField] TMP_Text journalEntryText;
     [SerializeField][TextArea] string whatToWrite;

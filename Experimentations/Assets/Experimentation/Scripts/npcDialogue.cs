@@ -5,8 +5,7 @@ using Yarn.Unity;
 
 public class npcDialogue : MonoBehaviour
 {
-    public DialogueRunner dialogueRunner;
-    [SerializeField] string nodeName;
+    public DialogueRunner dialogueRunner, disableThisDialogueRunner;
 
 
     //void OnTriggerStay(Collider other)
@@ -22,6 +21,8 @@ public class npcDialogue : MonoBehaviour
 
     public void dialogue(string nodename)
     {
+        disableThisDialogueRunner.gameObject.SetActive(false);
+        dialogueRunner.gameObject.SetActive(true);
         dialogueRunner.StartDialogue(nodename);
     }
 

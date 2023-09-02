@@ -105,8 +105,12 @@ Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialo
 
 title: Eavesdrop_1
 ---
+<<InDialogue Interactor_Eavesdrop>>
 Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way 
+<<JournalEntryText Interactor_Eavesdrop>>
 Servant2: No, no, we're not talking occult during work time again. Let's just get this to the next room. 
+<<InsertEntry Interactor_Eavesdrop>>
+<<OutDialogue Interactor_Eavesdrop>>
 ===
 
 
@@ -133,12 +137,14 @@ Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
 <<JournalEntryText ReachingOut>>
 Manaia: Niamh?? Is it really you?  #line:S8L48
+<<InsertEntry ReachingOut>>
 <<OutDialogue ReachingOut>> 
 ===
 
 title: Skip_Scene8
 ---
 //to skip through dialogue from niamh intro 
+<<InsertEntry ReachingOut>>
 <<JournalEntryText ReachingOut>>
 <<OutDialogue ReachingOut>> 
 

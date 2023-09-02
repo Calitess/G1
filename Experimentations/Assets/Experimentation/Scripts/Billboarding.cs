@@ -5,7 +5,7 @@ using UnityEngine;
 public class Billboarding : MonoBehaviour
 {
     public float rotateAmount;
-    [SerializeField] Camera mainCam;
+    [SerializeField] public Camera mainCam;
     public bool noBoard;
  
 
