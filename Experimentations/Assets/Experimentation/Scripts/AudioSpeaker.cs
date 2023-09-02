@@ -12,14 +12,14 @@ public class AudioSpeaker : MonoBehaviour
         musicManager = FindObjectOfType<MusicManager>();
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if (other.CompareTag("Player"))
+    //    {
 
-            musicManager.curSpeaker = this;
-            musicManager.ChangePositon();
-        }
+    //        musicManager.curSpeaker = this;
+    //        musicManager.ChangePositon();
+    //    }
 
-    }
+    //}
 }

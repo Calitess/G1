@@ -28,12 +28,12 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
 
     BoxCollider _boxCollider;
 
-    float _approachingDistanceThreshold = 3, _approachWeight = 0.5f;
+    //float _approachingDistanceThreshold = 3, _approachWeight = 0.5f;
 
-    private Coroutine _updateWeightsCoroutine, _resetStateCountdownCoroutine, _approachStateCountdownCoroutine;
+    //private Coroutine _updateWeightsCoroutine, _resetStateCountdownCoroutine, _approachStateCountdownCoroutine;
 
-    Vector3 _armForward;
-    float _angle;
+    //Vector3 _armForward;
+    //float _angle;
 
     [SerializeField] float _wallTouchHeight;
 
@@ -41,7 +41,7 @@ public class EnvironmentalInteractionV2 : MonoBehaviour
     TwoBoneIKConstraint _ikConstraint;
 
     //State Machine
-    InteractorState2 _currentState = InteractorState2.Reset;
+    //InteractorState2 _currentState = InteractorState2.Reset;
 
     private void Awake()
     {
