@@ -8,6 +8,7 @@ using echo17.EndlessBook;
 using TMPro;
 using Unity.VisualScripting;
 using Invector.vCharacterController.vActions;
+using UnityEngine.UI;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] public int pageNumber;
     [SerializeField] bool deleteTriggeAfterDialogue;
     [SerializeField] Interactor activateThisRift;
+    [SerializeField] Image mouseButtonPrompt;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
@@ -39,8 +41,31 @@ public class CustomCommands : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (action.enabled == true && mouseButtonPrompt!=null)
+            {
 
-    [YarnCommand("Talk")]
+                mouseButtonPrompt.gameObject.SetActive(true);
+            }
+            else
+            {
+                mouseButtonPrompt.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player") && mouseButtonPrompt != null)
+        {
+            mouseButtonPrompt.gameObject.SetActive(false);
+        }
+    }
+
+        [YarnCommand("Talk")]
 
     public void SetTalk(string talkName)
     {

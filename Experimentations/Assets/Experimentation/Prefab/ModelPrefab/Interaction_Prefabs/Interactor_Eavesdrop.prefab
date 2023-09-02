@@ -49,8 +49,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.0111198
-  m_Center: {x: 0, y: 0, z: 0.51111984}
+  m_Radius: 2.29
+  m_Center: {x: -0.34, y: 0, z: 0.93}
 --- !u!114 &1104589190455855188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -278,6 +278,7 @@ MonoBehaviour:
   book: {fileID: 0}
   pageNumber: 0
   deleteTriggeAfterDialogue: 0
+  activateThisRift: {fileID: 0}
 --- !u!114 &1463762867152632056
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueRunner: {fileID: 0}
-  nodeName: 
+  disableThisDialogueRunner: {fileID: 0}
 --- !u!1001 &3648848492564738842
 PrefabInstance:
   m_ObjectHideFlags: 0
