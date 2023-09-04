@@ -49,6 +49,10 @@ public class CustomCommands : MonoBehaviour
             {
 
                 mouseButtonPrompt.gameObject.SetActive(true);
+                if(Input.GetMouseButtonDown(0))
+                {
+                    mouseButtonPrompt.gameObject.SetActive(false);
+                }    
             }
             else
             {
