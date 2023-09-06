@@ -5,6 +5,9 @@ using UnityEngine;
 using Invector.vCharacterController;
 using Cinemachine;
 using static UnityEngine.Rendering.DebugUI;
+using echo17.EndlessBook.Demo02;
+using echo17.EndlessBook;
+using static echo17.EndlessBook.EndlessBook;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,13 +18,16 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> onGameStateChanged;
 
     [SerializeField] private vThirdPersonInput thirdPersonInput;
+    [SerializeField] private EndlessBook endlessBook;
+    [SerializeField] private TouchPad touchPad;
 
-    [SerializeField] public bool isInDialogue;
+    [HideInInspector][SerializeField] public bool isInDialogue;
 
     //[SerializeField] private GameObject pauseMenu, journal;
 
     [SerializeField] CameraStacking playerCamera;
 
+    bool isClosing = false;
 
     private void Awake()
     {
@@ -69,28 +75,46 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q) && State == GameState.Play)
+        if (Input.GetKeyDown(KeyCode.Escape) && State == GameState.Play)
         {
            GameManager.Instance.UpdateGameState(GameState.Pause);
             
         }
-        else if(Input.GetKeyDown(KeyCode.Q) && State == GameState.Pause)
+        else if(Input.GetKeyDown(KeyCode.Escape) && State == GameState.Pause)
         {
             GameManager.Instance.UpdateGameState(GameState.Play);
         }
 
-        if (Input.GetKeyDown(KeyCode.J) && State == GameState.Play)
+        if (Input.GetKeyDown(KeyCode.Q) && State == GameState.Play)
         {
+            isClosing = false;
             GameManager.Instance.UpdateGameState(GameState.Journal);
+
         }
-        else if (Input.GetKeyDown(KeyCode.J) && State == GameState.Journal)
+        else if (State == GameState.Journal)
         {
-            GameManager.Instance.UpdateGameState(GameState.Play);
+            if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape))
+            {
+                
+
+                if(isClosing == false && endlessBook.IsTurningPages == false)
+                {
+
+                    isClosing = true;
+                    StartCoroutine(CloseJournal());
+
+                    
+                }
+                
+
+            }
         }
         
         if(isInDialogue && State == GameState.Play)
         {
+            
             GameManager.Instance.UpdateGameState(GameState.Dialogue);
+            
         }
         else if(!isInDialogue && State == GameState.Dialogue)
         {
@@ -103,14 +127,33 @@ public class GameManager : MonoBehaviour
         playerCamera.OpenJournal();
         //journal.SetActive(true);
 
+        touchPad.Toggle(TouchPad.PageEnum.Right,true);
+        touchPad.Toggle(TouchPad.PageEnum.Left, false);
+
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
         Time.timeScale = 0;
         //Debug.Log("I am now inside the journal");
     }
 
+    IEnumerator CloseJournal()
+    {
+      thirdPersonInput.ShowCursor(false);
+      thirdPersonInput.LockCursor(false);
+
+      endlessBook.SetState(StateEnum.ClosedFront, 0.3f, null, true);
+      endlessBook.SetPageNumber(1);
+
+      yield return new WaitForSecondsRealtime(0.8f);
+
+
+      GameManager.Instance.UpdateGameState(GameState.Play);
+
+    }
+
     private void PlayGame()
     {
+        
 
         playerCamera.CloseJournal();
         //journal.SetActive(false);
