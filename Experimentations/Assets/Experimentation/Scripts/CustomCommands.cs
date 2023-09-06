@@ -31,6 +31,8 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] TMP_Text newJournalEntry;
     [SerializeField] TMP_Text newObjective;
 
+    [SerializeField] GameObject sequentialImage;
+
     vTriggerGenericAction action;
     AudioSource scribbleSource;
 
@@ -228,7 +230,13 @@ public class CustomCommands : MonoBehaviour
         activateThisRift.gameObject.SetActive(true);
     }
 
-
+    [YarnCommand("ShowImage")]
+    public void ShowImage()
+    {
+        scribbleSource.Play();
+        StartCoroutine(NewJournalEntry());
+        sequentialImage.SetActive(true);
+    }
 
 
 }
