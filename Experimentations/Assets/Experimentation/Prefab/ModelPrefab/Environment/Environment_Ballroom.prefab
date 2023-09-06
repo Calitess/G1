@@ -24392,6 +24392,7 @@ GameObject:
   - component: {fileID: 1382589881173278259}
   - component: {fileID: 1382589881173278260}
   - component: {fileID: 1382589881173278261}
+  - component: {fileID: 7216393959438191335}
   m_Layer: 0
   m_Name: ProbuilderOutdoorSpace
   m_TagString: Untagged
@@ -24722,6 +24723,22 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &7216393959438191335
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382589881173278262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!1 &1382589881280310445
 GameObject:
   m_ObjectHideFlags: 0
@@ -27379,6 +27396,18 @@ MonoBehaviour:
   deleteTriggeAfterDialogue: 0
   activateThisRift: {fileID: 0}
   mouseButtonPrompt: {fileID: 0}
+  hasInteracted: 0
+  newJournalEntry: {fileID: 0}
+  newObjective: {fileID: 0}
+  OnInteractorEnter:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractorStay:
+    m_PersistentCalls:
+      m_Calls: []
+  OnInteractorExit:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2379626581229715209
 GameObject:
   m_ObjectHideFlags: 0
@@ -60151,6 +60180,22 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.01, y: 0.01, z: 0.01}
   m_Center: {x: 6.9849193e-10, y: -6.9849193e-10, z: 4.5474735e-13}
+--- !u!114 &8326076258453805476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1015907555373567312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e3fdca004f2d45fe8abbed571a8abd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OverrideArea: 1
+  m_Area: 1
+  m_IgnoreFromBuild: 0
+  m_AffectedAgents: ffffffff
 --- !u!4 &4414938607540632286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c1e6853cfd9789747bde389ca3b77633,
