@@ -284,6 +284,19 @@
                     break;
             }
         }
+        public float stateAnimationTime = 1f;
+        public EndlessBook.PageTurnTimeTypeEnum turnTimeType = EndlessBook.PageTurnTimeTypeEnum.TotalTurnTime;
+        public float turnTime = 1f;
+        public virtual void OnPageButtonClicked(int pageNumber)
+        {
+            book.TurnToPage(pageNumber == 999 ? book.LastPageNumber : pageNumber,
+                turnTimeType,
+                turnTime,
+                openTime: stateAnimationTime,
+                onPageTurnStart: OnPageTurnStart,
+                onPageTurnEnd: OnPageTurnEnd
+                );
+        }
 
         /// <summary>
         /// Handler for when a page stops turning.
@@ -696,5 +709,8 @@
                             onPageTurnStart: OnPageTurnStart,
                             onPageTurnEnd: OnPageTurnEnd);
         }
+
+       
+
     }
 }

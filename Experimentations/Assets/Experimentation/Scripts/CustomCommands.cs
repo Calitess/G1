@@ -9,6 +9,7 @@ using TMPro;
 using Unity.VisualScripting;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -25,11 +26,15 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] bool deleteTriggeAfterDialogue;
     [SerializeField] Interactor activateThisRift;
     [SerializeField] Image mouseButtonPrompt;
+    [SerializeField] bool hasInteracted;
+
+    [SerializeField] TMP_Text newJournalEntry;
+    [SerializeField] TMP_Text newObjective;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
 
-
+    [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
     void Start()
     {
@@ -41,35 +46,78 @@ public class CustomCommands : MonoBehaviour
 
     }
 
+    public void ShowMousePrompt(Image mouseButtonPrompt)
+    {
+        
+      if (hasInteracted == false && action.enabled == true && mouseButtonPrompt != null)
+      {
+
+          mouseButtonPrompt.gameObject.SetActive(true);
+
+          if (Input.GetMouseButtonDown(0))
+          {
+              hasInteracted = true;
+              mouseButtonPrompt.gameObject.SetActive(false);
+          }
+
+      }
+      else if (action.enabled == false && mouseButtonPrompt != null)
+      {
+
+          mouseButtonPrompt.gameObject.SetActive(false);
+      }
+
+    }
+
+    public void HideMousePrompt(Image mouseButtonPrompt)
+    {
+        if (mouseButtonPrompt != null)
+        {
+            hasInteracted = false;
+            mouseButtonPrompt.gameObject.SetActive(false);
+        }
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            if (action.enabled == true && mouseButtonPrompt!=null)
-            {
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
 
-                mouseButtonPrompt.gameObject.SetActive(true);
-                if(Input.GetMouseButtonDown(0))
-                {
-                    mouseButtonPrompt.gameObject.SetActive(false);
-                }    
-            }
-            else
-            {
-                mouseButtonPrompt.gameObject.SetActive(false);
-            }
+            OnInteractorEnter.Invoke();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
+
+            OnInteractorStay.Invoke();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player") && mouseButtonPrompt != null)
+
+
+        if (other.CompareTag("Player"))
         {
-            mouseButtonPrompt.gameObject.SetActive(false);
+
+
+            if (Time.fixedTime < gameManager.ignoreFixedFrame)
+                return;
+
+            OnInteractorExit.Invoke();
+
         }
     }
 
-        [YarnCommand("Talk")]
+    [YarnCommand("Talk")]
 
     public void SetTalk(string talkName)
     {
@@ -114,7 +162,10 @@ public class CustomCommands : MonoBehaviour
 
         if (deleteTriggeAfterDialogue)
         {
-            action.enabled = false;
+            if (action != null)
+            {
+                action.enabled = false;
+            }
         }
 
 
@@ -123,20 +174,29 @@ public class CustomCommands : MonoBehaviour
     [YarnCommand("JournalEntryText")]
     public void JournalEntry()
     {
-        Debug.Log("journal entry is inserted");
+        //Debug.Log("journal entry is inserted");
 
         scribbleSource.Play();
-
+        StartCoroutine(NewObjective());
         journalEntryText.text = whatToWrite;
 
+    }
+
+    IEnumerator NewObjective()
+    {
+
+
+        newObjective.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        newObjective.gameObject.SetActive(false);
     }
 
     [YarnCommand("NewPageEntry")]
     public void NewPageEntry()
     {
         scribbleSource.Play();
-
-        Debug.Log("page entry is addedd");
+        StartCoroutine(NewJournalEntry());
+        //Debug.Log("page entry is addedd");
         book.AddPageData(leftPageMaterial);
         book.AddPageData(rightPageMaterial);
     }
@@ -146,10 +206,19 @@ public class CustomCommands : MonoBehaviour
     {
 
         scribbleSource.Play();
-
-        Debug.Log("page entry is inserted");
+        StartCoroutine(NewJournalEntry());
+        //Debug.Log("page entry is inserted");
         book.InsertPageData((pageNumber - 1), leftPageMaterial);
         book.InsertPageData(pageNumber, rightPageMaterial);
+    }
+
+    IEnumerator NewJournalEntry()
+    {
+
+
+        newJournalEntry.gameObject.SetActive(true);
+        yield return new WaitForSecondsRealtime(1f);
+        newJournalEntry.gameObject.SetActive(false);
     }
 
 
