@@ -141,7 +141,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 673c11f5f9503f74bb695540c19e6e5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   curSpeaker: {fileID: 0}
+  audioSpeakers: []
+  dist: 0
+  shortestDist: 0
 --- !u!1 &8780432548224044982
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,6 +251,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8780432548339490413}
   - component: {fileID: 8780432548339490402}
+  - component: {fileID: 4615140406513077403}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -283,9 +288,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   State: 0
   thirdPersonInput: {fileID: 0}
+  endlessBook: {fileID: 0}
+  touchPad: {fileID: 0}
   isInDialogue: 0
   playerCamera: {fileID: 0}
   ignoreFixedFrame: -1
+--- !u!114 &4615140406513077403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8780432548339490412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0943f400ea4a1144802a4ed1f9923a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxInteractionNum: 4
+  thanksText: {fileID: 0}
 --- !u!1 &8780432548420190858
 GameObject:
   m_ObjectHideFlags: 0
