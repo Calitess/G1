@@ -157,3 +157,22 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
+--- !u!1 &8069634174574569532 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2493032399117212594, guid: 5b1197fefd401e649ba25b52290e0a59,
+    type: 3}
+  m_PrefabInstance: {fileID: 3646756517497703538}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &8067102463890791792
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8069634174574569532}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.012201694, y: 0.012479052, z: 0.012201695}
+  m_Center: {x: 0, y: -0.00035347254, z: -0.000000033527613}
