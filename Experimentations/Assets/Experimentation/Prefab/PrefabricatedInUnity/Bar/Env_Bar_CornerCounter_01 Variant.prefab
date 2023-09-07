@@ -62,6 +62,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 25f8ba85d82ec1a4084f446911c6de07,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0333c479665f7e643a243342e561682a, type: 2}
     - target: {fileID: 919132149155446097, guid: 25f8ba85d82ec1a4084f446911c6de07,
         type: 3}
       propertyPath: m_Name
@@ -80,6 +85,19 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7320559225490914310}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &5889981983486819979
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7590447759725232471}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 5.204778, y: 4.567125, z: 4.7197413}
+  m_Center: {x: 0.57552093, y: -0.09363341, z: -0.5399475}
 --- !u!114 &6721253690323528414
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,16 +114,3 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!65 &5889981983486819979
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7590447759725232471}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.204778, y: 4.567125, z: 4.7197413}
-  m_Center: {x: 0.57552093, y: -0.09363341, z: -0.5399475}
