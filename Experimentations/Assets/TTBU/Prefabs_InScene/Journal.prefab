@@ -100,7 +100,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 286.01416
+  orthographic size: 257.96713
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1411,6 +1411,9 @@ MonoBehaviour:
   touchPad: {fileID: 7983969129840160708}
   pageViews:
   - {fileID: 0}
+  stateAnimationTime: 1
+  turnTimeType: 0
+  turnTime: 1
 --- !u!1 &7983969128236159463
 GameObject:
   m_ObjectHideFlags: 0
@@ -10535,67 +10538,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8517030478036472610, guid: c58d9ce7a25e8e840aa4b3870a038d8d,
-        type: 3}
-      propertyPath: m_text
-      value: '
-
-        <s>sdf</s>
-
-
-        <mark=#ffff00aa> gsdfgsdfg </mark>
-
-        fg
-
-        <u>sdf</u>
-
-        g
-
-        zdxfgzdxfgfg
-
-        df
-
-        g
-
-
-        dsfh
-
-        gsd
-
-        fh
-
-        sdfh
-
-        sdfg
-
-        hfg
-
-        hfghf
-
-        gh
-
-        dfg
-
-        h
-
-        dfg
-
-        h
-
-        dfgh
-
-        df
-
-        gh
-
-        fdg
-
-        h
-
-        fh
-
-        fgh'
       objectReference: {fileID: 0}
     - target: {fileID: 8517030478451432484, guid: c58d9ce7a25e8e840aa4b3870a038d8d,
         type: 3}
