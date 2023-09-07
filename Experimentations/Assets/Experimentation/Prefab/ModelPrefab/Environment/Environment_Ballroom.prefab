@@ -27399,6 +27399,7 @@ MonoBehaviour:
   hasInteracted: 0
   newJournalEntry: {fileID: 0}
   newObjective: {fileID: 0}
+  sequentialImage: {fileID: 0}
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -43969,6 +43970,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Char_Bartender
       objectReference: {fileID: 0}
+    - target: {fileID: 3115170065376427896, guid: 4d8f931b213cfdb43a7c8f5708b3b94f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1851507f92926714b8ea515db0049434, type: 2}
+    - target: {fileID: 4317125291233126734, guid: 4d8f931b213cfdb43a7c8f5708b3b94f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1851507f92926714b8ea515db0049434, type: 2}
     - target: {fileID: 5866666021909216657, guid: 4d8f931b213cfdb43a7c8f5708b3b94f,
         type: 3}
       propertyPath: m_Controller
@@ -43979,6 +43990,11 @@ PrefabInstance:
       propertyPath: m_WarningMessage
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 7382217442672173370, guid: 4d8f931b213cfdb43a7c8f5708b3b94f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1851507f92926714b8ea515db0049434, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d8f931b213cfdb43a7c8f5708b3b94f, type: 3}
 --- !u!4 &1487678088046166998 stripped
