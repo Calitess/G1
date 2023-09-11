@@ -1,12 +1,10 @@
 using Invector.vCharacterController;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using Cinemachine;
 using echo17.EndlessBook;
 using TMPro;
-using Unity.VisualScripting;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -18,24 +16,29 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] public CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject playerCam;
+    [Space]
     [SerializeField] TMP_Text journalEntryText;
     [SerializeField][TextArea] string whatToWrite;
-    [SerializeField] Material leftPageMaterial, rightPageMaterial;
+    [Space]
     [SerializeField] EndlessBook book;
+    [SerializeField] Material leftPageMaterial, rightPageMaterial;
     [SerializeField] public int pageNumber;
+    [Space]
     [SerializeField] bool deleteTriggeAfterDialogue;
     [SerializeField] Interactor activateThisRift;
+    [Space]
     [SerializeField] Image mouseButtonPrompt;
     [SerializeField] bool hasInteracted;
-
+    [Space]
     [SerializeField] TMP_Text newJournalEntry;
     [SerializeField] TMP_Text newObjective;
-
+    [Space]
     [SerializeField] GameObject sequentialImage;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
     SpriteController spriteController;
+    RiftManager riftManager;
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
@@ -47,6 +50,7 @@ public class CustomCommands : MonoBehaviour
         //book = FindObjectOfType<EndlessBook>();
         action = gameObject.GetComponent<vTriggerGenericAction>();
         spriteController = FindObjectOfType<SpriteController>();
+        riftManager = FindObjectOfType<RiftManager>();
     }
 
     public void ShowMousePrompt(Image mouseButtonPrompt)
@@ -227,9 +231,11 @@ public class CustomCommands : MonoBehaviour
 
 
     [YarnCommand("ActivateRift")]
-    public void ActivateRift()
+    public void ActivateRift(int indexOfRiftManager)
     {
-        activateThisRift.gameObject.SetActive(true);
+        //activateThisRift.gameObject.SetActive(true);
+
+        riftManager.ActivateThisRift(indexOfRiftManager);
     }
 
     [YarnCommand("ShowImage")]

@@ -27,7 +27,7 @@ public class Interactor : MonoBehaviour
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
-
+    [HideInInspector]public bool realmInteractions = false;
 
     private void Start()
     {
@@ -111,19 +111,38 @@ public class Interactor : MonoBehaviour
 
     public void CloseRealm()
     {
-        StopAllCoroutines();
-        StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
-
-        if (isWhooshSoundPlaying == true)
+        if (realmInteractions)
         {
-            isWhooshSoundPlaying = false;
-            RealmWhoosh.Stop();
-            PlayWhooshSound();
+            StopAllCoroutines();
+            StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
 
+            if (isWhooshSoundPlaying == true)
+            {
+                isWhooshSoundPlaying = false;
+                RealmWhoosh.Stop();
+                PlayWhooshSound();
+
+            }
+
+            realmSmoke.playbackSpeed = 8;
+            realmSmoke.Stop();
         }
+        else
+        {
+            StopAllCoroutines();
+            StartCoroutine(LerpFunction(3, lerpDuration, "closing"));
 
-        realmSmoke.playbackSpeed = 8;
-        realmSmoke.Stop();
+            if (isWhooshSoundPlaying == true)
+            {
+                isWhooshSoundPlaying = false;
+                RealmWhoosh.Stop();
+                PlayWhooshSound();
+
+            }
+
+            realmSmoke.playbackSpeed = 8;
+            realmSmoke.Stop();
+        }
     }
 
     public void DeactivateInteractor()
