@@ -63,10 +63,10 @@ Material:
     - _Cull: 2
     - _Distortion: 0.466
     - _DstBlend: 10
-    - _FresnelPower: 0.96
+    - _FresnelPower: 1.45
     - _Metalic: 0.65
     - _MinSpeed: 0.1
-    - _NormalizeAmount: 0.1
+    - _NormalizeAmount: 0.15
     - _QueueControl: 0
     - _QueueOffset: 6
     - _ReceiveShadows: 0

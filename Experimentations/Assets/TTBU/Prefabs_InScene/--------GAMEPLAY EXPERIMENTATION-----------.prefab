@@ -5586,7 +5586,7 @@ MonoBehaviour:
   target: {fileID: 0}
   activationDistance: 5
   distancePadding: 2
-  normalizedDist: 0.1
+  normalizedDist: 0.15
   timeToCloseRift: 0.5
   enableProximityDistort: 1
 --- !u!114 &552365062206706890
@@ -16092,9 +16092,10 @@ MonoBehaviour:
   targetValue: 10
   outTargetValue: 0
   VoronoiShaderManager: {fileID: 0}
-  RealmWhoosh: {fileID: 0}
+  RealmWhoosh: {fileID: 7827927533220645529}
   RealmSoundClips:
   - {fileID: 8300000, guid: 0513244d01d6de2479dd007e8c431bf9, type: 3}
+  RealmMusicClip: {fileID: 0}
   isWhooshSoundPlaying: 0
   realmSmoke: {fileID: 0}
   OnInteractorEnter:
@@ -16117,7 +16118,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7827927533220645525
 MonoBehaviour:
