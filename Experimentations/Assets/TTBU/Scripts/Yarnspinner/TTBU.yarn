@@ -7,20 +7,36 @@ tags:
 -> Skip
  <<jump Skip_Scene1>>
 -> Continue 
+<<changeSprL SpriteController "Manaia">>
+<<changeSprR SpriteController "Brother">>
+<<sprTalking SpriteController "R">>
 Brother: Pssstt... Pssttt.... It's me, Niamh's brother. #line:S1L2
+<<sprTalking SpriteController "L">>
 Manaia: Nice to see you finally, it's been so long....I.....  #line:S1L3
+<<sprTalking SpriteController "R">>
 Brother: Of course I couldnt stand to just let things unfold. But Shh. Not so loud. You'll draw attention. #line:S1L4
+<<sprTalking SpriteController "L">>
 Manaia: I didnt think I'd see you in such short notice, thanks again for meeting me. #line:S1L5
+<<sprTalking SpriteController "R">>
 Brother: You got the letter right? I couldn't detail the specifics in case it was...compromised. #line:S1L6
+<<sprTalking SpriteController "L">>
 Manaia: *mmhm* It's been years since I've been to a place like Vedura Isle, it's becoming a deeply unsettling place very quickly. #line:S1L7
+<<sprTalking SpriteController "R">>
 Brother: Yeah, you're right. The opulence is perfect cover for the darkness beneath. Thanks for meeting me here, M. #line:S1L8
+<<sprTalking SpriteController "L">>
 Manaia: Of course. I know how much you loved your sister, and I want to help you uncover the truth about what happened to her. #line:S1L9
+<<sprTalking SpriteController "R">>
 Brother: My sister didn't deserve to die the way she did... it's haunting me. I've managed to get close to the host of this event by posing as a servant. I need to find evidence about her death. I believe this mansion holds answers. #line:S1L10
+<<sprTalking SpriteController "L">>
 Manaia: I'm here for you. We've been through so much together. (Pauses) Even though we've grown apart, I can't ignore your pain. What do you need me to do? #line:S1L11
+<<sprTalking SpriteController "R">>
 Brother:I need help SEARCHING the mansion for clues, documents and anything that might link to her death. With the black market auction happening, there's bound to be shady dealings connected to her murder. #line:S1L12
+<<sprTalking SpriteController "L">>
 Manaia: I'll do whatever it takes to help you find the truth. Let's start by splitting up. I'll mingle with the guests, AND TRY to eavesdrop on conversations and gather information discreetly. #line:S1L13
 Manaia: You keep an eye out for anything suspicious among the staff. We'll rendezvous later. //continue on from previous line. no audio here
+<<sprTalking SpriteController "R">>
 Brother:Thank you, M. I knew I could count on you. Just be careful. There's no telling what dangers are lurking in the shadows here. #line:S1L14
+<<sprTalking SpriteController "L">>
 Manaia: You too. Remember, we're not alone in this. #line:S1L15
 
 

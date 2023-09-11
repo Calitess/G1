@@ -35,6 +35,7 @@ public class CustomCommands : MonoBehaviour
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
+    SpriteController spriteController;
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
@@ -45,7 +46,7 @@ public class CustomCommands : MonoBehaviour
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
         //book = FindObjectOfType<EndlessBook>();
         action = gameObject.GetComponent<vTriggerGenericAction>();
-
+        spriteController = FindObjectOfType<SpriteController>();
     }
 
     public void ShowMousePrompt(Image mouseButtonPrompt)
@@ -170,6 +171,7 @@ public class CustomCommands : MonoBehaviour
             }
         }
 
+        spriteController.ClearSpriteContainers();
 
     }
 
