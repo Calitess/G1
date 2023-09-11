@@ -146,6 +146,52 @@ MonoBehaviour:
   audioSpeakers: []
   dist: 0
   shortestDist: 0
+--- !u!1 &5102959717732016131
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6850820671181444777}
+  - component: {fileID: 4381150842338210590}
+  m_Layer: 0
+  m_Name: RiftManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6850820671181444777
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102959717732016131}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -75.43902, y: -28.203697, z: -55.94513}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8780432549218628647}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4381150842338210590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5102959717732016131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8650324d0657e942ab9c0c4f9d5ca3b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curInteractor: {fileID: 0}
+  riftInteractors: []
 --- !u!1 &5373668444328949112
 GameObject:
   m_ObjectHideFlags: 0
@@ -176,7 +222,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8780432549218628647}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2857081534737101327
 MonoBehaviour:
@@ -190,17 +236,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fafc988699a8747aaf699f8253351f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteController: {fileID: 0}
   charSprites: []
+  emptySprite: {fileID: 0}
   spriteL: {fileID: 0}
   spriteR: {fileID: 0}
-  spriteF: {fileID: 0}
-  emptySpr: {fileID: 0}
-  dialogue: {fileID: 0}
-  thought: {fileID: 0}
-  DeathBoy: 0
-  DeathFlame: 0
-  DeathGran: 0
 --- !u!1 &8780432548224044982
 GameObject:
   m_ObjectHideFlags: 0
@@ -457,6 +496,7 @@ Transform:
   - {fileID: 8780432548317545360}
   - {fileID: 8780432548420190859}
   - {fileID: 5656226072574477525}
+  - {fileID: 6850820671181444777}
   - {fileID: 7749010277661182259}
   m_Father: {fileID: 0}
   m_RootOrder: 0
