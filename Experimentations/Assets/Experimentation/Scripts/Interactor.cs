@@ -1,3 +1,4 @@
+using Invector.vCharacterController.vActions;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,6 +25,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] ParticleSystem realmSmoke;
 
     GameManager gameManager;
+    vTriggerGenericAction action;
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
@@ -32,6 +34,7 @@ public class Interactor : MonoBehaviour
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
+        action = this.GetComponent<vTriggerGenericAction>();
     }
 
     // Update is called once per frame
@@ -119,6 +122,7 @@ public class Interactor : MonoBehaviour
             if (isWhooshSoundPlaying == true)
             {
                 isWhooshSoundPlaying = false;
+                action.enabled = false;
                 RealmWhoosh.Stop();
                 PlayWhooshSound();
 
@@ -130,11 +134,12 @@ public class Interactor : MonoBehaviour
         else
         {
             StopAllCoroutines();
-            StartCoroutine(LerpFunction(3, lerpDuration, "closing"));
+            StartCoroutine(LerpFunction(3f, lerpDuration, "closing"));
 
             if (isWhooshSoundPlaying == true)
             {
                 isWhooshSoundPlaying = false;
+                action.enabled = true;
                 RealmWhoosh.Stop();
                 PlayWhooshSound();
 

@@ -25,10 +25,10 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] public int pageNumber;
     [Space]
     [SerializeField] bool deleteTriggeAfterDialogue;
-    [SerializeField] Interactor activateThisRift;
+    [SerializeField] Interactor activateThisRift, closeThisRiftAfterInteraction;
     [Space]
     [SerializeField] Image mouseButtonPrompt;
-    [SerializeField] bool hasInteracted;
+    [HideInInspector][SerializeField] bool hasInteracted;
     [Space]
     [SerializeField] TMP_Text newJournalEntry;
     [SerializeField] TMP_Text newObjective;
@@ -64,6 +64,7 @@ public class CustomCommands : MonoBehaviour
           if (Input.GetMouseButtonDown(0))
           {
               hasInteracted = true;
+              closeThisRiftAfterInteraction.realmInteractions = true;
               mouseButtonPrompt.gameObject.SetActive(false);
           }
 
