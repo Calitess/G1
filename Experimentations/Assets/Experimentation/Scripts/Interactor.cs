@@ -1,6 +1,7 @@
 using Invector.vCharacterController.vActions;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using static Unity.VisualScripting.Member;
@@ -29,12 +30,17 @@ public class Interactor : MonoBehaviour
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
-    [HideInInspector]public bool realmInteractions = false;
+    [HideInInspector]public bool realmInteractionsFinished = false;
+    //[SerializeField] public int interactionNum = 0;
+    [SerializeField] private List<CustomCommands> Interactables;
+
+    [SerializeField] bool realmOpened = false;
 
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
         action = this.GetComponent<vTriggerGenericAction>();
+        //interactionNum = Interactables.Count;
     }
 
     // Update is called once per frame
@@ -87,6 +93,11 @@ public class Interactor : MonoBehaviour
     public void OpenRealm()
     {
 
+        foreach(CustomCommands interactable in Interactables)
+        {
+            interactable.gameObject.SetActive(true);
+        }
+
         StartCoroutine(LerpFunction(targetValue, lerpDuration, "opening"));
         
         if(RealmWhoosh == null)
@@ -104,6 +115,8 @@ public class Interactor : MonoBehaviour
             RealmWhoosh.PlayOneShot(RealmMusicClip);
 
         }
+
+        realmOpened = true;
     }
 
     public void PlayWhooshSound()
@@ -114,7 +127,29 @@ public class Interactor : MonoBehaviour
 
     public void CloseRealm()
     {
-        if (realmInteractions)
+        if(Interactables != null && Interactables.Count != 0)
+        {
+            foreach (CustomCommands interactable in Interactables.ToList())
+            {
+                interactable.gameObject.SetActive(false);
+
+                if (interactable.hasInteracted && realmOpened == true)
+                {
+                    //interactionNum--;
+                    Debug.Log($"{interactable.name} has been interacted and removed from the list.");
+                    Interactables.Remove(interactable);
+                    
+                }
+
+                
+
+            }
+        }
+        
+
+        EvaluateInteractions();
+
+        if (realmInteractionsFinished)
         {
             StopAllCoroutines();
             StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
@@ -130,6 +165,9 @@ public class Interactor : MonoBehaviour
 
             realmSmoke.playbackSpeed = 8;
             realmSmoke.Stop();
+
+            this.GetComponent<SphereCollider>().enabled = false;
+            realmOpened = false;
         }
         else
         {
@@ -147,6 +185,7 @@ public class Interactor : MonoBehaviour
 
             realmSmoke.playbackSpeed = 8;
             realmSmoke.Stop();
+            realmOpened = false;
         }
     }
 
@@ -174,5 +213,16 @@ public class Interactor : MonoBehaviour
         realmSmoke.playbackSpeed = speed;
     }
 
+    public void EvaluateInteractions()
+    {
+        //if(interactionNum == 0)
+        //{
+        //    realmInteractionsFinished = true;
+        //}
 
+        if(Interactables.Count == 0)
+        {
+            realmInteractionsFinished = true;
+        }
+    }
 }

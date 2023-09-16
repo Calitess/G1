@@ -28,7 +28,7 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] Interactor activateThisRift, closeThisRiftAfterInteraction;
     [Space]
     [SerializeField] Image mouseButtonPrompt;
-    [HideInInspector][SerializeField] bool hasInteracted;
+    [SerializeField] public bool hasInteracted;
     [Space]
     [SerializeField] TMP_Text newJournalEntry;
     [SerializeField] TMP_Text newObjective;
@@ -48,7 +48,7 @@ public class CustomCommands : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
         //book = FindObjectOfType<EndlessBook>();
-        action = gameObject.GetComponent<vTriggerGenericAction>();
+        action = this.gameObject.GetComponent<vTriggerGenericAction>();
         spriteController = FindObjectOfType<SpriteController>();
         riftManager = FindObjectOfType<RiftManager>();
     }
@@ -64,7 +64,7 @@ public class CustomCommands : MonoBehaviour
           if (Input.GetMouseButtonDown(0))
           {
               hasInteracted = true;
-              closeThisRiftAfterInteraction.realmInteractions = true;
+              //closeThisRiftAfterInteraction.realmInteractionsFinished = true;
               mouseButtonPrompt.gameObject.SetActive(false);
           }
 
@@ -81,7 +81,7 @@ public class CustomCommands : MonoBehaviour
     {
         if (mouseButtonPrompt != null)
         {
-            hasInteracted = false;
+            //hasInteracted = false;
             mouseButtonPrompt.gameObject.SetActive(false);
         }
     }
@@ -173,12 +173,16 @@ public class CustomCommands : MonoBehaviour
             if (action != null)
             {
                 action.enabled = false;
+                
             }
+
+
         }
 
         spriteController.ClearSpriteContainers();
 
     }
+
 
     [YarnCommand("JournalEntryText")]
     public void JournalEntry()

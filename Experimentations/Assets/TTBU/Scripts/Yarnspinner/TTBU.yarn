@@ -165,6 +165,29 @@ Manaia: Niamh?? Is it really you?  #line:S8L48
 <<OutDialogue ReachingOut>> 
 ===
 
+
+title: Rift_Intro1
+---
+//TO BE DELETED
+<<InDialogue WorkBitch>>
+-> Skip
+ <<jump Skip_Scene81>>
+-> Continue 
+Manaia: This is........wait............what's happening 
+the world around Manaia start to shift and change. 
+Manaia: *looks around intensely* this is strange... 
+Niamh: You made it. You must find the answers  
+
+Manaia:Whos there?? Why do you sound so farmiliar. Wait..... 
+Niamh: It's the only way... 
+<<JournalEntryText WorkBitch>>
+Manaia: Niamh?? Is it really you?  
+
+<<ShowImage WorkBitch>>
+<<NewPageEntry WorkBitch>>
+<<OutDialogue WorkBitch>> 
+===
+
 title: Skip_Scene8
 ---
 //to skip through dialogue from niamh intro 
@@ -173,6 +196,18 @@ title: Skip_Scene8
 <<NewPageEntry ReachingOut>>
 <<JournalEntryText ReachingOut>>
 <<OutDialogue ReachingOut>> 
+
+===
+
+
+title: Skip_Scene81
+---
+//to skip through dialogue from niamh intro 
+//TO BE DELETED
+<<ShowImage WorkBitch>>
+<<NewPageEntry WorkBitch>>
+<<JournalEntryText WorkBitch>>
+<<OutDialogue WorkBitch>> 
 
 ===
 
