@@ -8,16 +8,16 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: SmallCouch
-  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: a4aab04189393764983e4cd22ad3017b,
+    type: 3}
   m_ValidKeywords:
-  - _NORMALMAP
+  - _STYLE_SWAP_TEXTURE
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Opaque
+  stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -102,6 +102,7 @@ Material:
     m_Floats:
     - _AlphaClip: 0
     - _Blend: 0
+    - _BlendOp: 0
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
@@ -122,14 +123,19 @@ Material:
     - _Noise_Strength: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Primary_Normal_Strength: 0
+    - _Primary_Ambient_Occlusion: 10
+    - _Primary_Normal_Strength: 1
+    - _Primary_Smoothness: -1
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius_Noise_CutOff: 1.5
     - _ReceiveShadows: 1
     - _STYLE: 0
+    - _SampleGI: 0
+    - _Secondary_Ambient_Occlusion: 1
     - _Secondary_Normal_Strength: 0.7
-    - _Smoothness: 0.5
+    - _Secondary_Smoothness: 0.5
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
@@ -137,11 +143,12 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
+    - _AOColor: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Primary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Primary_Base_Color: {r: 0.83328754, g: 1, b: 0.7122642, a: 0}
     - _Primary_Tiling: {r: 1, g: 1, b: 0, a: 0}
     - _Secondary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
     - _Secondary_Tiling: {r: 1, g: 1, b: 0, a: 0}
