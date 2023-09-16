@@ -132,7 +132,7 @@ public class GameManager : MonoBehaviour
 
         thirdPersonInput.ShowCursor(true);
         thirdPersonInput.LockCursor(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0.00001f;
         //Debug.Log("I am now inside the journal");
     }
 
