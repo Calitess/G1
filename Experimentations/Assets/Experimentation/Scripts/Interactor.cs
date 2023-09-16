@@ -4,10 +4,11 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 using static Unity.VisualScripting.Member;
 
 [RequireComponent(typeof(AudioSource))]
-//[ExecuteInEditMode]
+[ExecuteInEditMode]
 public class Interactor : MonoBehaviour
 {
     
@@ -36,6 +37,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private vTriggerGenericAction dialogueToTriggerAfterInteractionsFinish;
 
     [SerializeField] bool realmOpened = false;
+    [SerializeField] VisualEffect[] manaiaVfx;
 
     private void Start()
     {
@@ -114,11 +116,18 @@ public class Interactor : MonoBehaviour
 
             new WaitUntil(() => RealmWhoosh.isPlaying);
 
-            RealmWhoosh.PlayOneShot(RealmMusicClip);
+            RealmWhoosh.clip = RealmMusicClip;
+            RealmWhoosh.Play();
+            RealmWhoosh.loop = true;
 
         }
 
         realmOpened = true;
+        
+        for(int i =0;i<manaiaVfx.Length;i++)
+        {
+            manaiaVfx[i].Play();
+        }
     }
 
     public void PlayWhooshSound()
@@ -129,7 +138,12 @@ public class Interactor : MonoBehaviour
 
     public void CloseRealm()
     {
-        if(Interactables != null && Interactables.Count != 0)
+        for (int i = 0; i < manaiaVfx.Length; i++)
+        {
+            manaiaVfx[i].Stop();
+        }
+
+        if (Interactables != null && Interactables.Count != 0)
         {
             foreach (CustomCommands interactable in Interactables.ToList())
             {
@@ -164,6 +178,7 @@ public class Interactor : MonoBehaviour
                 isWhooshSoundPlaying = false;
                 action.enabled = true;
                 RealmWhoosh.Stop();
+                RealmWhoosh.loop = false;
                 PlayWhooshSound();
 
             }
@@ -186,6 +201,7 @@ public class Interactor : MonoBehaviour
             isWhooshSoundPlaying = false;
             action.enabled = false;
             RealmWhoosh.Stop();
+            RealmWhoosh.loop = false;
             PlayWhooshSound();
 
         }
