@@ -7,7 +7,7 @@ using UnityEngine.Events;
 using static Unity.VisualScripting.Member;
 
 [RequireComponent(typeof(AudioSource))]
-[ExecuteInEditMode]
+//[ExecuteInEditMode]
 public class Interactor : MonoBehaviour
 {
     
@@ -150,11 +150,11 @@ public class Interactor : MonoBehaviour
 
         EvaluateInteractions();
 
-        if (realmInteractionsFinished)
+        if (realmInteractionsFinished && realmOpened == true)
         {
             DeactivateInteractor();
         }
-        else
+        else if (realmOpened == true)
         {
             StopAllCoroutines();
             StartCoroutine(LerpFunction(3f, lerpDuration, "closing"));
