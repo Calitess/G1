@@ -36,6 +36,12 @@ public class ProximityDistortion : MonoBehaviour
         StartCoroutine(closeRift());
     }
 
+    public void EnableProximityDistort()
+    {
+        enableProximityDistort = true;
+
+    }
+
     IEnumerator closeRift()
     {
         yield return new WaitForSeconds(timeToCloseRift);

@@ -21,9 +21,10 @@ public class Interactor : MonoBehaviour
     [SerializeField] AudioSource RealmWhoosh;
     [SerializeField] AudioClip[] RealmSoundClips;
     [SerializeField] AudioClip RealmMusicClip;
-    [SerializeField] bool isWhooshSoundPlaying = false;
+    [HideInInspector][SerializeField] bool isWhooshSoundPlaying = false;
 
-    [SerializeField] ParticleSystem realmSmoke;
+    [SerializeField] ParticleSystem realmSmoke, riftSmoke, riftTrail1, riftTrail2;
+    [SerializeField] ProximityDistortion proximityDistortion;
 
     GameManager gameManager;
     vTriggerGenericAction action;
@@ -151,23 +152,7 @@ public class Interactor : MonoBehaviour
 
         if (realmInteractionsFinished)
         {
-            StopAllCoroutines();
-            StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
-
-            if (isWhooshSoundPlaying == true)
-            {
-                isWhooshSoundPlaying = false;
-                action.enabled = false;
-                RealmWhoosh.Stop();
-                PlayWhooshSound();
-
-            }
-
-            realmSmoke.playbackSpeed = 8;
-            realmSmoke.Stop();
-
-            this.GetComponent<SphereCollider>().enabled = false;
-            realmOpened = false;
+            DeactivateInteractor();
         }
         else
         {
@@ -186,11 +171,39 @@ public class Interactor : MonoBehaviour
             realmSmoke.playbackSpeed = 8;
             realmSmoke.Stop();
             realmOpened = false;
+
+            ActivateRealmEffects();
         }
     }
 
     public void DeactivateInteractor()
     {
+        StopAllCoroutines();
+        StartCoroutine(LerpFunction(outTargetValue, lerpDuration, "closing"));
+
+        if (isWhooshSoundPlaying == true)
+        {
+            isWhooshSoundPlaying = false;
+            action.enabled = false;
+            RealmWhoosh.Stop();
+            PlayWhooshSound();
+
+        }
+
+        realmSmoke.playbackSpeed = 8;
+        realmSmoke.Stop();
+
+        this.GetComponent<SphereCollider>().enabled = false;
+        realmOpened = false;
+    }
+
+    void ActivateRealmEffects()
+    {
+        riftSmoke.Play();
+        riftTrail1.Play();
+        riftTrail2.Play();
+        proximityDistortion.gameObject.SetActive(true);
+        proximityDistortion.EnableProximityDistort();
 
     }
 
