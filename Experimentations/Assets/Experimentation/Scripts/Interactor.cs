@@ -32,8 +32,8 @@ public class Interactor : MonoBehaviour
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
     [HideInInspector]public bool realmInteractionsFinished = false;
-    //[SerializeField] public int interactionNum = 0;
     [SerializeField] private List<CustomCommands> Interactables;
+    [SerializeField] private vTriggerGenericAction dialogueToTriggerAfterInteractionsFinish;
 
     [SerializeField] bool realmOpened = false;
 
@@ -41,7 +41,8 @@ public class Interactor : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         action = this.GetComponent<vTriggerGenericAction>();
-        //interactionNum = Interactables.Count;
+        dialogueToTriggerAfterInteractionsFinish.enabled = false;
+        dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = false;
     }
 
     // Update is called once per frame
@@ -136,7 +137,6 @@ public class Interactor : MonoBehaviour
 
                 if (interactable.hasInteracted && realmOpened == true)
                 {
-                    //interactionNum--;
                     Debug.Log($"{interactable.name} has been interacted and removed from the list.");
                     Interactables.Remove(interactable);
                     
@@ -228,14 +228,19 @@ public class Interactor : MonoBehaviour
 
     public void EvaluateInteractions()
     {
-        //if(interactionNum == 0)
-        //{
-        //    realmInteractionsFinished = true;
-        //}
 
         if(Interactables.Count == 0)
         {
             realmInteractionsFinished = true;
+            ActivateDialogue();
         }
+    }
+
+    void ActivateDialogue()
+    {
+        //this is the dialogue to be activated after interactions in rift is finished
+        dialogueToTriggerAfterInteractionsFinish.enabled = true;
+        dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
+
     }
 }

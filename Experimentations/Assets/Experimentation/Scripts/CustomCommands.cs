@@ -25,7 +25,6 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] public int pageNumber;
     [Space]
     [SerializeField] bool deleteTriggeAfterDialogue;
-    [SerializeField] Interactor activateThisRift, closeThisRiftAfterInteraction;
     [Space]
     [SerializeField] Image mouseButtonPrompt;
     [SerializeField] public bool hasInteracted;
@@ -42,6 +41,7 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
+
     void Start()
     {
         anim = gameObject.GetComponent<Animator>();
@@ -51,7 +51,10 @@ public class CustomCommands : MonoBehaviour
         action = this.gameObject.GetComponent<vTriggerGenericAction>();
         spriteController = FindObjectOfType<SpriteController>();
         riftManager = FindObjectOfType<RiftManager>();
+
     }
+
+
 
     public void ShowMousePrompt(Image mouseButtonPrompt)
     {
@@ -64,7 +67,6 @@ public class CustomCommands : MonoBehaviour
           if (Input.GetMouseButtonDown(0))
           {
               hasInteracted = true;
-              //closeThisRiftAfterInteraction.realmInteractionsFinished = true;
               mouseButtonPrompt.gameObject.SetActive(false);
           }
 
@@ -238,10 +240,11 @@ public class CustomCommands : MonoBehaviour
     [YarnCommand("ActivateRift")]
     public void ActivateRift(int indexOfRiftManager)
     {
-        //activateThisRift.gameObject.SetActive(true);
 
         riftManager.ActivateThisRift(indexOfRiftManager);
     }
+
+    
 
     [YarnCommand("ShowImage")]
     public void ShowImage()

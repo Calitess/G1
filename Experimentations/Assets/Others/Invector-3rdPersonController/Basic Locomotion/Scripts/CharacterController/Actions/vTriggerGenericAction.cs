@@ -8,6 +8,7 @@ namespace Invector.vCharacterController.vActions
     [vClassHeader("Trigger Generic Action", false, iconName = "triggerIcon")]
     public class vTriggerGenericAction : vMonoBehaviour
     {
+
         [vEditorToolbar("Input", order = 1)]
 
         public InputType inputType = InputType.GetButtonDown;
