@@ -135,13 +135,17 @@ Material:
     - _Noise_Strength: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
+    - _Primary_Ambient_Occlusion: 0.3
     - _Primary_Normal_Strength: 0
+    - _Primary_Smoothness: 0.5
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius_Noise_CutOff: 1.5
     - _ReceiveShadows: 1
     - _STYLE: 0
+    - _Secondary_Ambient_Occlusion: 1
     - _Secondary_Normal_Strength: 0.7
+    - _Secondary_Smoothness: 0.5
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
