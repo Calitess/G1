@@ -143,7 +143,7 @@ Material:
     - _OcclusionStrength: 0
     - _Opacity: 0.46
     - _OpacityThreshold: 0
-    - _Opacity_Power: 1.1
+    - _Opacity_Power: 1.07
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -170,7 +170,7 @@ Material:
     - _Base_Colour: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 0.84313726}
     - _EmissionColor: {r: 0, g: 0.042881645, b: 0.047169805, a: 1}
-    - _EmissiveColor: {r: 0, g: 0.010259537, b: 0.010259537, a: 1}
+    - _EmissiveColor: {r: 0, g: 0.047058824, b: 0.047058824, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _UvOffset: {r: 0, g: 0, b: 0, a: 0}
     - _UvTiling: {r: 1, g: 1, b: 0, a: 0}
