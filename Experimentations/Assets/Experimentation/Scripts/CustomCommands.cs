@@ -1,12 +1,10 @@
 using Invector.vCharacterController;
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Yarn.Unity;
 using Cinemachine;
 using echo17.EndlessBook;
 using TMPro;
-using Unity.VisualScripting;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
 using UnityEngine.Events;
@@ -18,25 +16,31 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] public CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject playerCam;
+    [Space]
     [SerializeField] TMP_Text journalEntryText;
     [SerializeField][TextArea] string whatToWrite;
-    [SerializeField] Material leftPageMaterial, rightPageMaterial;
+    [Space]
     [SerializeField] EndlessBook book;
+    [SerializeField] Material leftPageMaterial, rightPageMaterial;
     [SerializeField] public int pageNumber;
+    [Space]
     [SerializeField] bool deleteTriggeAfterDialogue;
-    [SerializeField] Interactor activateThisRift;
+    [Space]
     [SerializeField] Image mouseButtonPrompt;
-    [SerializeField] bool hasInteracted;
-
+    [SerializeField] public bool hasInteracted;
+    [Space]
     [SerializeField] TMP_Text newJournalEntry;
     [SerializeField] TMP_Text newObjective;
-
+    [Space]
     [SerializeField] GameObject sequentialImage;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
+    SpriteController spriteController;
+    RiftManager riftManager;
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
+
 
     void Start()
     {
@@ -44,9 +48,13 @@ public class CustomCommands : MonoBehaviour
         gameManager = FindObjectOfType<GameManager>();
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
         //book = FindObjectOfType<EndlessBook>();
-        action = gameObject.GetComponent<vTriggerGenericAction>();
+        action = this.gameObject.GetComponent<vTriggerGenericAction>();
+        spriteController = FindObjectOfType<SpriteController>();
+        riftManager = FindObjectOfType<RiftManager>();
 
     }
+
+
 
     public void ShowMousePrompt(Image mouseButtonPrompt)
     {
@@ -75,7 +83,7 @@ public class CustomCommands : MonoBehaviour
     {
         if (mouseButtonPrompt != null)
         {
-            hasInteracted = false;
+            //hasInteracted = false;
             mouseButtonPrompt.gameObject.SetActive(false);
         }
     }
@@ -167,11 +175,16 @@ public class CustomCommands : MonoBehaviour
             if (action != null)
             {
                 action.enabled = false;
+                
             }
+
+
         }
 
+        spriteController.ClearSpriteContainers();
 
     }
+
 
     [YarnCommand("JournalEntryText")]
     public void JournalEntry()
@@ -225,10 +238,13 @@ public class CustomCommands : MonoBehaviour
 
 
     [YarnCommand("ActivateRift")]
-    public void ActivateRift()
+    public void ActivateRift(int indexOfRiftManager)
     {
-        activateThisRift.gameObject.SetActive(true);
+
+        riftManager.ActivateThisRift(indexOfRiftManager);
     }
+
+    
 
     [YarnCommand("ShowImage")]
     public void ShowImage()

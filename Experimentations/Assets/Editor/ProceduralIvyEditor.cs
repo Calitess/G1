@@ -94,7 +94,7 @@ public class ProceduralIvyEditor : Editor
 
         if (Event.current.type == EventType.MouseDown && Event.current.button == 0)
         {
-
+            proceduralIvy.DrawIvy();
             Debug.Log("clicking down");
 
             Event.current.Use();
@@ -103,13 +103,13 @@ public class ProceduralIvyEditor : Editor
         else if (Event.current.type == EventType.MouseDrag && Event.current.button == 0)
         {
 
-            proceduralIvy.DrawIvy();
+            
             Event.current.Use();
         }
         else if (Event.current.type == EventType.MouseUp && Event.current.button == 0)
         {
             Debug.Log("no longer clicking down");
-
+            proceduralIvy.DrawIvy();
             proceduralIvy.meshManager.combineAll();
             proceduralIvy.combineAndClear();
 
