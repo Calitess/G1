@@ -302,17 +302,14 @@ MonoBehaviour:
   delayBetweenSentences: 2.5
   allText:
   - 'Manaia, '
-  - 'I don''t know who else to turn to. I''m not sure if you''ll get this letter.
-    Or if you''ll even open this, if you do. '
-  - 'If you''re reading this,  Niamh''s wrapped herself up in something. Been weeks
-    since anyones seen her and I fear the worst. '
-  - 'I can''t do this alone. Too many people know my face here. '
-  - 'Niamh''s employer is hosting an auction. Like one of them annual parties we
-    always heard about. The type you wear a mask to. '
-  - 'I''ve "misplaced" an invitation for it in this package. It was a whole lotta
-    trouble getting it. '
-  - 'A Helmsman will come for you in three days to take you to Fluer du Ciel. '
-  - "I hope you've been well.  \n\n- F. "
+  - " \rNiamh's missing and I don't know what to do.  I\u2019ve been in a cold sweat
+    since the first week.  \r\n"
+  - "Her employer is hosting one of them annual masked auctions we always heard about.
+    I've \"misplaced\" an invitation for it in this package and already paid a Helmsman
+    to take you to Fleur du Ciel. \r\n"
+  - "\r\nI don\u2019t know what happened between you two, but...\r\n                                                                   
+    \n\nPlease come. I can\u2019t do this alone."
+  - '-F.  '
 --- !u!320 &458530685
 PlayableDirector:
   m_ObjectHideFlags: 0
