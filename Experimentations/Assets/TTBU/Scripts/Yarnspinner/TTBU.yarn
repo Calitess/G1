@@ -16,11 +16,11 @@ Fionn: You alright? It's you ain't it? You're dressed in the garb I sent you.
 Manaia: Fionn? What you said about your sister—
 <<sprTalking SpriteController "R">>
 Fionn: No time. I won't be able to say the rest if we continue that.  
-Fionn: <b>Pierre Jean Faust</b>, the host of this soiree, has us servants under strict orders. The bastard. Before long someone'll come looking. 
+Fionn: <b>Pierre Jean Faust</b>, the host of this, has us servants under strict orders. The bastard. Before long someone'll come looking. 
 <<sprTalking SpriteController "L">>
 Manaia: Us servants? 
 <<sprTalking SpriteController "R">>
-Fionn: I wanted to do it alone. From the inside. It was the only way I could think, but... god.
+Fionn: I wanted to do it myself. From the inside. It was the only way I could think, but... god.
 Fionn: Sorry... I... you don't know what they've been saying round here. 
 //choices
 -> Slow down. Tell me from the beginning. 
@@ -33,7 +33,7 @@ position: -391,-410
 ---
 <<sprTalking SpriteController "R">>
 Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay.
-Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. It's taken lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair. 
+Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair.  
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could.
 
 //choices
@@ -47,7 +47,7 @@ title: Result_F
 position: -394,-217
 ---
 <<sprTalking SpriteController "R">>
-Fionn: They're calling it an accident but it's muddier than that. I asked some of the others about Niamh but none of 'em can even recall her name.
+Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>.
 Fionn: She <i>has</i> been working here though, told me herself. 
 Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it. 
 Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of junk. 
@@ -88,10 +88,10 @@ position: -93,-352
  <<jump Skip_Scene2>>
 -> Continue 
 
-Manaia: Umm.. Right. Lets get into the head space. What do I have to do? 
-Manaia: I should check my journal
+Manaia: Where to start? I suppose I should check my journal. 
 
-<b>Press Q to check journal for objective </b>
+Press Q to check the journal for objectives. 
+
 
 <<JournalEntryText JournalTrigger_Scene2>>
 <<OutDialogue JournalTrigger_Scene2>>
@@ -110,8 +110,18 @@ position: 152,-347
 
 ===
 
+
+title: Scene3
+position: 270,386
+---
+Manaia: Not yet. There's still some places I should check out on this floor. 
+===
+
+
+
+
 title: BarIntro
-position: -33,-106
+position: 169,-153
 ---
 <<InDialogue Interactor_Bartender>>
 -> Skip
@@ -128,7 +138,7 @@ Bartender: Oh yes, our Host is very fond of this new flora matter that they've d
 
 
 title: Skip_Scene4
-position: 232,-91
+position: 441,-143
 ---
 //to skip through dialogue from bartender
 <<ShowImage Interactor_Bartender>>
@@ -138,22 +148,56 @@ position: 232,-91
 
 
 title: Terrarium
-position: 33,75
+position: 132,151
 ---
 <<InDialogue Interactor_Terrarium>>
 
-Servant: I see this fine piece of vegetation has caught your eye, no? 
+Display Attendant: What we have here is a catagory B item. Lethe's Blessing. 
+Display Attendant: A rare flower, local to the coastlines of <b>Mórport</b>, the City of Soot. 
+Display Attendant: When crushed and mixed into a drink, it has a tart but agreeable taste.
+Display Attendant: Enjoy intoxicated bliss, and be rid of the painful memories which haunt you!
+Display Attendant: You only need a spoonful, to experience its full effects. 
+//Murmur sound if possible?
+<i>You recognise this flower. Lethe's blessing... what an underhanded name. Lethe's curse is closer. A blight upon your hometown. It's hardly the "rare" wonder he's advertising it as. </i>
+<i>Experience minute brain damage... and become addicted to transforming yourself into a drooling vegetable.</i>
+
+-> Warn them.
+    Manaia: Thats not— 
+    <<jump Scene4_Cont>>
+->Stay Silent.
+  <<jump Scene4_Cont>>
+  
 Manaia: Um...Sure.
 Servant: Well, allow me to enlighten you. It's quite rare, and you should be thankful the Host has allowed even people like you to see it. 
 Sevant: *Info dump*
-<<NewPageEntry Interactor_Terrarium>>
+
 Servant: There's even rumours about connections with the supposed ghost realm. Take that as you will
 Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialogue)
+
+
+===
+
+title: Scene4_Cont
+position: 399,145
+---
+//Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
+Display Attendent: Sir...?
+Display Attendant: I appreciate your glee, but I assure you this is no tent show.  
+Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.  
+Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next. 
+Display Attendant: I'm sorry?
+Mysterious Stranger: Do go on. I can scarcely wait to see this completely run to seed.
+Display Attendant: Ah... Well. Lethe's Blessing is... 
+Display Attendant: Erm.  This particular plant's history, yes.
+
+<<NewPageEntry Interactor_Terrarium>>  //'+ 1 tutorial clue (out of three)
 
 <<ShowImage Interactor_Terrarium>>
 <<OutDialogue Interactor_Terrarium>>
 <<ActivateRift Interactor_Terrarium 1>>
 ===
+
+
 
 title: Eavesdrop_1
 position: 11,430
@@ -251,7 +295,7 @@ position: 639,-353
 ===
 
 title: RiftFirstExit
-position: 363,329
+position: 533,565
 ---
 Manaia: I need to hum to a rift to open up the rift ? Interesting
 Manaia: Let's see what the realm can help me find out
