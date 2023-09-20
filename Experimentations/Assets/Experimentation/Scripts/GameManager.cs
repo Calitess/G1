@@ -11,34 +11,48 @@ using static echo17.EndlessBook.EndlessBook;
 
 public class GameManager : MonoBehaviour
 {
+    //an instance of this game manager
     public static GameManager Instance;
 
+    //shows what game state we are in
     public GameState State;
 
+    //action event of the game state to track changes
     public static event Action<GameState> onGameStateChanged;
 
+    //Third person controller
     [SerializeField] private vThirdPersonInput thirdPersonInput;
+
+    //Journal - endless book asset
     [SerializeField] private EndlessBook endlessBook;
+
+    //The colliders that has the touchpad script to click on pages of the journal
     [SerializeField] private TouchPad touchPad;
 
+    //bool to check if it is dialogue or not
     [HideInInspector][SerializeField] public bool isInDialogue;
 
     //[SerializeField] private GameObject pauseMenu, journal;
 
+    //camera stacking script to overlay the journal camera on top of the player camera
     [SerializeField] CameraStacking playerCamera;
 
+    //bool to check if the book is closing or not
     bool isClosing = false;
 
     private void Awake()
     {
+        //create an instance of this game manager
         Instance = this;
     }
 
     private void Start()
     {
+        //Make the game state as 'play' at start
         UpdateGameState(GameState.Play);
     }
 
+    //this is to fix the physX after unity 2019
     [HideInInspector] public float ignoreFixedFrame = -1;
 
     void SetKinematic(bool value)
@@ -47,6 +61,7 @@ public class GameManager : MonoBehaviour
         thirdPersonInput.gameObject.GetComponent<Rigidbody>().isKinematic = value;
     }
 
+    //method to update the game state
     public void UpdateGameState(GameState newState)
     {
         State = newState;
@@ -73,6 +88,7 @@ public class GameManager : MonoBehaviour
         onGameStateChanged?.Invoke(newState); //has anybody subscribed to this function? If so, invoke this function 
     }
 
+    //change the game state according to what is the condition
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape) && State == GameState.Play)
@@ -96,7 +112,7 @@ public class GameManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Q) || Input.GetKeyDown(KeyCode.Escape))
             {
                 
-
+                //if the book is currently closing, dont allow player to close book in journal state
                 if(isClosing == false && endlessBook.IsTurningPages == false)
                 {
 

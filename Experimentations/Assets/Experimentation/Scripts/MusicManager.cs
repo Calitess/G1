@@ -17,30 +17,32 @@ public class MusicManager : MonoBehaviour
 
     private void Update()
     {
+        shortestDist = float.MaxValue;
+        var newSpeaker = curSpeaker;
 
         for (int i = 0; i < audioSpeakers.Count; i++)
         {
-
-
             Vector3 speakerPos = audioSpeakers[i].transform.position;
-
             dist = Vector3.Distance(player.transform.position, speakerPos);
 
-            if (dist < shortestDist)
+            float distY = Mathf.Abs(player.transform.position.y - speakerPos.y);
+
+            if (dist < shortestDist && distY < 1f)
             {
-                curSpeaker = audioSpeakers[i];
-                ChangePositon();
+                newSpeaker = audioSpeakers[i];
+                shortestDist = dist;
             }
         }
 
+        if (newSpeaker != curSpeaker)
+        {
+            curSpeaker = newSpeaker;
+            ChangePositon();
 
-        
-
-
-
+        }
 
     }
-  
+
     // Update is called once per frame
     public void ChangePositon()
     {
@@ -59,8 +61,8 @@ public class MusicManager : MonoBehaviour
             }
             else
             {
-                Gizmos.color = Color.white;
-                Gizmos.DrawLine(player.transform.position, audioSpeakers[i].transform.position);
+                //Gizmos.color = Color.white;
+                //Gizmos.DrawLine(player.transform.position, audioSpeakers[i].transform.position);
             }
         }
 
