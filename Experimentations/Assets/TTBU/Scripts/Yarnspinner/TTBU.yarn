@@ -1,4 +1,55 @@
-﻿title: BrotherDialogue
+﻿title: Start
+---
+<<set $intro = true>>
+<<set $companionStart = true>>
+===
+
+
+title: Companion
+---
+<<if $companionStart == true>>
+  <<set $companionStart = false>>
+  <<jump Companion1>>
+<<else>>
+  <<jump Companion2>>
+<<endif>>
+===
+
+title: Companion1
+---
+<<InDialogue NPC_Companion>>
+???: I know what you did.
+Manaia: Huh?
+???: I overhead everything. And I want in.
+<<OutDialogue NPC_Companion>>
+===
+
+
+title: Companion2
+---
+<<InDialogue NPC_Companion>>
+???: The name's Blorbo.
+Manaia: Can I trust you?
+Blorbo: Yes.
+<<OutDialogue NPC_Companion>>
+===
+
+
+title: Brother
+---
+<<InDialogue Char_Bro>>
+<<if $intro == true>>
+  <<set $intro = false>>
+  <<jump BrotherDialogue>>
+<<else>>
+  //<<jump Brother2>>
+<<endif>>
+<<OutDialogue Char_Bro>>
+===
+
+
+
+title: BrotherDialogue
 tags:
 position: -394,-598
 ---
@@ -28,6 +79,15 @@ Fionn: Sorry... I... you don't know what they've been saying round here.
 -> What have they been saying?
  <<jump Result_C>>
 ===
+
+title: Brother2
+---
+<<InDialogue Char_Bro>>
+Fionn: Psh whateveerrrr
+<<OutDialogue Char_Bro>> 
+===
+
+
 title: Result_C
 position: -391,-410
 ---
