@@ -13,7 +13,7 @@ public class CustomCommands : MonoBehaviour
 {
     Animator anim;
     GameManager gameManager;
-
+    [SerializeField] bool thisIsPartOfTutorial;
     [SerializeField] public CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject playerCam;
     [Space]
@@ -34,10 +34,12 @@ public class CustomCommands : MonoBehaviour
     [Space]
     [SerializeField] GameObject sequentialImage;
 
+
     vTriggerGenericAction action;
     AudioSource scribbleSource;
     SpriteController spriteController;
     RiftManager riftManager;
+    TutorialInteractions tutorialInteractions;
 
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
@@ -51,6 +53,12 @@ public class CustomCommands : MonoBehaviour
         action = this.gameObject.GetComponent<vTriggerGenericAction>();
         spriteController = FindObjectOfType<SpriteController>();
         riftManager = FindObjectOfType<RiftManager>();
+        tutorialInteractions = FindObjectOfType<TutorialInteractions>();
+
+        if(thisIsPartOfTutorial)
+        {
+            tutorialInteractions.Interactables.Add(this);   
+        }
 
     }
 
@@ -181,9 +189,17 @@ public class CustomCommands : MonoBehaviour
 
         }
 
+        if (thisIsPartOfTutorial)
+        {
+
+            //this looks at the index of TutorialInteraction and then removes it
+            tutorialInteractions.EvaluateInteractions(this);
+        }
+
         spriteController.ClearSpriteContainers();
 
     }
+
 
 
     [YarnCommand("JournalEntryText")]

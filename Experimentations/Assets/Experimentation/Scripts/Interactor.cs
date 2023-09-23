@@ -39,6 +39,10 @@ public class Interactor : MonoBehaviour
     [SerializeField] bool realmOpened = false;
     [SerializeField] VisualEffect[] manaiaVfx;
 
+
+    [SerializeField] bool deactivateInvisibleWall;
+    [SerializeField] GameObject invisibleWall;
+
     private void Start()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -249,7 +253,18 @@ public class Interactor : MonoBehaviour
         {
             realmInteractionsFinished = true;
             ActivateDialogue();
+
+            if (deactivateInvisibleWall)
+            {
+                if (invisibleWall != null)
+                {
+
+                    invisibleWall.SetActive(false);
+                }
+            }
         }
+
+        
     }
 
     void ActivateDialogue()
