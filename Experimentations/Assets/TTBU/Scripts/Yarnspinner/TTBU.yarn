@@ -226,14 +226,6 @@ Display Attendant: You only need a spoonful, to experience its full effects.
     <<jump Scene4_Cont>>
 ->Stay Silent.
   <<jump Scene4_Cont>>
-  
-Manaia: Um...Sure.
-Servant: Well, allow me to enlighten you. It's quite rare, and you should be thankful the Host has allowed even people like you to see it. 
-Sevant: *Info dump*
-
-Servant: There's even rumours about connections with the supposed ghost realm. Take that as you will
-Manaia: A ghost realm? That exists? I thought that was a myth... (internal dialogue)
-
 
 ===
 
@@ -272,6 +264,69 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 <<OutDialogue Interactor_Eavesdrop>>
 //<<ActivateRift Interactor_Eavesdrop 0>>
 ===
+
+title: Scene5
+---
+<<InDialogue Char_Bro>>  //change name of character/interactor
+Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i>
+Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me! 
+Servant 2: That’s just you being a clutz. 
+Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible. 
+Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me so I could nab some of her hairpins? Not like I'd know she'd get <b>her brains blown out.</b>
+Servant 2: What! How could you? 
+Servant 2: I had dibs on those!
+
+<<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+===
+
+title: Scene6
+---
+<<InDialogue Char_Bro>>  //change name of character/interactor
+Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold. 
+Display Attendant: You ought to have many questions about it, I'm sure.
+
+-> Manaia: I have a different question in mind.
+    Manaia: Do you-
+    <<jump Scene6_1>>
+-> Manaia: Not really.
+    Display Attendant: Of course you do! You must be grateful Sir Faust has even allowed you to view an item such as this. 
+    <<jump Scene6_1>>
+
+===
+
+title: Scene6_1
+---
+Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders. 
+Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.   
+Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue. 
+Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age!
+Display Attendant: Isn't that facinating?
+
+> Manaia: Sure is. Now my question.... 
+ <<jump Scene6_2>>
+-> Manaia: Wait, I don't really care about this. 
+    It's like his ears are packed with cotton. 
+    <<jump Scene6_2>>
+===
+
+title: Scene6_2
+---
+Display Attendant: And that's not all!
+Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself. 
+Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined? 
+He takes a breath. Nows your chance!
+
+-> Manaia: Ask about "recent events". 
+   Manaia: I heard there was an accident in the docking area. What can you tell me about that?
+   Display Attendant: Eh? The explosion? 
+   Display Attendant: Crap. You made me lose my train of thought. What part of the script was I up to? //set bool explosion = true
+    <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+   
+-> Manaia: Walk away (End Conversation)
+<<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+
+===
+
 
 
 title: NearRift
