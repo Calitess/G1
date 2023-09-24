@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 5872781904475292350, guid: 1a70c3e40419711498e93f6a1875cddb,
         type: 3}
       propertyPath: m_Name
-      value: Env_Couch_CouchBase_01 Variant
+      value: Env_Couch_CouchBase_01 Variant Variant
       objectReference: {fileID: 0}
     - target: {fileID: 6542464352411703300, guid: 1a70c3e40419711498e93f6a1875cddb,
         type: 3}
@@ -105,17 +105,17 @@ PrefabInstance:
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0064399955
+      value: -0.01131
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02181
+      value: 0.00302
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.07854002
+      value: 0.01289
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
@@ -189,17 +189,17 @@ PrefabInstance:
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.0068800077
+      value: -0.01151
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.02188
+      value: 0.00337
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.063090004
+      value: -0.00199
       objectReference: {fileID: 0}
     - target: {fileID: 5874900153835825555, guid: b6efd6dc65258574884eb2b3586f1781,
         type: 3}
