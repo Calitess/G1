@@ -47,8 +47,13 @@ public class Interactor : MonoBehaviour
     {
         gameManager = FindObjectOfType<GameManager>();
         action = this.GetComponent<vTriggerGenericAction>();
-        dialogueToTriggerAfterInteractionsFinish.enabled = false;
-        dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = false;
+
+        if(dialogueToTriggerAfterInteractionsFinish !=null)
+        {
+
+            dialogueToTriggerAfterInteractionsFinish.enabled = false;
+            dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = false;
+        }
     }
 
     // Update is called once per frame
@@ -270,8 +275,12 @@ public class Interactor : MonoBehaviour
     void ActivateDialogue()
     {
         //this is the dialogue to be activated after interactions in rift is finished
-        dialogueToTriggerAfterInteractionsFinish.enabled = true;
-        dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
+        if(dialogueToTriggerAfterInteractionsFinish !=null)
+        {
+
+            dialogueToTriggerAfterInteractionsFinish.enabled = true;
+            dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
+        }
 
     }
 }

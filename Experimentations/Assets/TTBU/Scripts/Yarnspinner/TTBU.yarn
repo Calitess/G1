@@ -194,6 +194,7 @@ Bartender: Oh yes, our Host is very fond of this new flora matter that they've d
 
 <<ShowImage Interactor_Bartender>>
 <<OutDialogue Interactor_Bartender>>
+<<ActivateRift Interactor_Bartender 1>>
 ===
 
 
@@ -203,6 +204,7 @@ position: 441,-143
 //to skip through dialogue from bartender
 <<ShowImage Interactor_Bartender>>
 <<OutDialogue Interactor_Bartender>>
+<<ActivateRift Interactor_Bartender 1>>
 
 ===
 
@@ -281,7 +283,7 @@ Servant 2: I had dibs on those!
 
 title: Scene6
 ---
-<<InDialogue Char_Bro>>  //change name of character/interactor
+<<InDialogue Interactor_Terrarium_Scene6>>  //change name of character/interactor
 Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold. 
 Display Attendant: You ought to have many questions about it, I'm sure.
 
@@ -302,7 +304,7 @@ Display Attendant: This is truely a one of a kind item, the highest ranking in o
 Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age!
 Display Attendant: Isn't that facinating?
 
-> Manaia: Sure is. Now my question.... 
+-> Manaia: Sure is. Now my question.... 
  <<jump Scene6_2>>
 -> Manaia: Wait, I don't really care about this. 
     It's like his ears are packed with cotton. 
@@ -320,10 +322,10 @@ He takes a breath. Nows your chance!
    Manaia: I heard there was an accident in the docking area. What can you tell me about that?
    Display Attendant: Eh? The explosion? 
    Display Attendant: Crap. You made me lose my train of thought. What part of the script was I up to? //set bool explosion = true
-    <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+    <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
    
 -> Manaia: Walk away (End Conversation)
-<<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+<<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
 
 ===
 
