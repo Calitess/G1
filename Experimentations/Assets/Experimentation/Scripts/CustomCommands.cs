@@ -40,7 +40,10 @@ public class CustomCommands : MonoBehaviour
     SpriteController spriteController;
     RiftManager riftManager;
     TutorialInteractions tutorialInteractions;
+    ShowInteractable InteractionIcon;
+    npcDialogue npcDialogue;
 
+    [SerializeField] private vTriggerGenericAction dialogueToTriggerAfterInteractionsFinish;
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
 
@@ -54,10 +57,18 @@ public class CustomCommands : MonoBehaviour
         spriteController = FindObjectOfType<SpriteController>();
         riftManager = FindObjectOfType<RiftManager>();
         tutorialInteractions = FindObjectOfType<TutorialInteractions>();
+        InteractionIcon = GetComponent<ShowInteractable>();
+        npcDialogue = GetComponent<npcDialogue>();
 
         if(thisIsPartOfTutorial)
         {
             tutorialInteractions.Interactables.Add(this);   
+        }
+        if (dialogueToTriggerAfterInteractionsFinish != null)
+        {
+
+            dialogueToTriggerAfterInteractionsFinish.enabled = false;
+            dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = false;
         }
 
     }
@@ -157,6 +168,13 @@ public class CustomCommands : MonoBehaviour
             playerCam.SetActive(false);
         }
 
+
+        if (InteractionIcon !=null && InteractionIcon.InteractableIcon != null)
+        {
+            InteractionIcon.inDialogue = true;
+            InteractionIcon.InteractableIcon.SetActive(false);
+        }
+        
         gameManager.isInDialogue = true;
 
 
@@ -201,6 +219,18 @@ public class CustomCommands : MonoBehaviour
 
             //this looks at the index of TutorialInteraction and then removes it
             tutorialInteractions.EvaluateInteractions(this);
+        }
+
+        if (InteractionIcon != null && InteractionIcon.InteractableIcon != null)
+        {
+            InteractionIcon.inDialogue = false;
+        }
+
+        if (dialogueToTriggerAfterInteractionsFinish != null)
+        {
+
+            dialogueToTriggerAfterInteractionsFinish.enabled = true;
+            dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
         }
 
         spriteController.ClearSpriteContainers();

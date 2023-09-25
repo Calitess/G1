@@ -5,8 +5,10 @@ using Yarn.Unity;
 
 public class npcDialogue : MonoBehaviour
 {
-    public DialogueRunner dialogueRunner, disableThisDialogueRunner;
+    public DialogueRunner TalkDialogue, ThoughtDialogue,EavesdropDialogue;
 
+
+    [SerializeField] bool Talk, Thought, Eavesdrop;
 
     //void OnTriggerStay(Collider other)
     //{
@@ -21,9 +23,34 @@ public class npcDialogue : MonoBehaviour
 
     public void dialogue(string nodename)
     {
-        disableThisDialogueRunner.gameObject.SetActive(false);
-        dialogueRunner.gameObject.SetActive(true);
-        dialogueRunner.StartDialogue(nodename);
+
+        if(Talk)
+        {
+            ThoughtDialogue.gameObject.SetActive(false);
+            EavesdropDialogue.gameObject.SetActive(false);
+
+            TalkDialogue.gameObject.SetActive(true);
+            TalkDialogue.StartDialogue(nodename);
+        }
+        else if (Thought)
+        {
+           
+            TalkDialogue.gameObject.SetActive(false);
+            EavesdropDialogue.gameObject.SetActive(false);
+
+            ThoughtDialogue.gameObject.SetActive(true);
+            ThoughtDialogue.StartDialogue(nodename);
+        }
+        else if(Eavesdrop)
+        {
+            
+            ThoughtDialogue.gameObject.SetActive(false);
+            TalkDialogue.gameObject.SetActive(false);
+
+            EavesdropDialogue.gameObject.SetActive(true);
+            EavesdropDialogue.StartDialogue(nodename);
+        }
+
     }
 
 

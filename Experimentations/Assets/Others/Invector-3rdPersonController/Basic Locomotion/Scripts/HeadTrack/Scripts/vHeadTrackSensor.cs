@@ -20,6 +20,7 @@ namespace Invector.vCharacterController
 
         void Start()
         {
+            tag = "Untagged";
             var _rigidB = GetComponent<Rigidbody>();
             sphere = GetComponent<SphereCollider>();
             sphere.isTrigger = true;

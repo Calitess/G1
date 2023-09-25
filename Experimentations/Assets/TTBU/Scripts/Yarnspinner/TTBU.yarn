@@ -366,16 +366,6 @@ Manaia: Niamh. Where are you?
 
 ===
 
-
-title: NearRift
-position: -389,417
----
-Manaia hears humming, humming gets louder as player gets nearer
-Manaia: I feel a bit....i cant describe it
-*rift sound/ effect gets more prominent/ sound reverbs more*
-Manaia: *hums along* That song... 
-===
-
 title: RiftIntro
 position: 372,-568
 ---
@@ -384,7 +374,6 @@ position: 372,-568
  <<jump Skip_Scene8>>
 -> Continue 
 Niamh: You made it. You must find the answers  #line:S8L45
-
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
 <<JournalEntryText ReachingOut>>
