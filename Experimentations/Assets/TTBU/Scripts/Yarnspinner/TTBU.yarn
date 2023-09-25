@@ -56,11 +56,11 @@ position: -394,-598
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-
+Skip is for debugging purposes for the devs, please continue the dialogue.
 -> Skip
  <<jump Skip_Scene1>>
 -> Continue 
-<<changeSprL SpriteController "Manaia">>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "Brother">>
 <<sprTalking SpriteController "R">>
 Fionn: You alright? It's you ain't it? You're dressed in the garb I sent you.
@@ -145,6 +145,7 @@ position: -93,-352
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
+Skip is for debugging purposes for the devs, please continue the dialogue.
 -> Skip
  <<jump Skip_Scene2>>
 -> Continue 
@@ -185,6 +186,7 @@ title: BarIntro
 position: 169,-153
 ---
 <<InDialogue Interactor_Bartender>>
+Skip is for debugging purposes for the devs, please continue the dialogue.
 -> Skip
  <<jump Skip_Scene4>>
 -> Continue 
@@ -346,6 +348,7 @@ Manaia: This song...
 
 title: Scene7_1
 ---
+<<InDialogue WorkBitch>>
 Niamh: What? What are you doing here?
 Manaia: ...
 Niamh: Leave! 
@@ -360,8 +363,10 @@ Niamh: It's too late for me, so just—
 Niamh: get
 Niamh: out!
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-Manaia: Niamh. Where are you? 
+//Manaia: Niamh. Where are you? 
 // Downstairs is now openn
+//rift opens, niamg fades into view
+<<OutDialogue WorkBitch>>
 
 
 ===
@@ -370,6 +375,7 @@ title: RiftIntro
 position: 372,-568
 ---
 <<InDialogue ReachingOut>>
+Skip is for debugging purposes for the devs, please continue the dialogue.
 -> Skip
  <<jump Skip_Scene8>>
 -> Continue 
@@ -390,6 +396,7 @@ position: 399,-356
 ---
 //TO BE DELETED
 <<InDialogue WorkBitch>>
+Skip is for debugging purposes for the devs, please continue the dialogue.
 -> Skip
  <<jump Skip_Scene81>>
 -> Continue 
