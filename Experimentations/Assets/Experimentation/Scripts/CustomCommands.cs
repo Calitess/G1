@@ -44,7 +44,7 @@ public class CustomCommands : MonoBehaviour
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
 
-    void Start()
+    void Awake()
     {
         anim = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
@@ -180,11 +180,18 @@ public class CustomCommands : MonoBehaviour
 
         if (deleteTriggeAfterDialogue)
         {
+            SphereCollider col = this.GetComponent<SphereCollider>();
             if (action != null)
             {
                 action.enabled = false;
                 
             }
+            if (col != null)
+            {
+                col.enabled = false;
+
+            }
+
 
 
         }

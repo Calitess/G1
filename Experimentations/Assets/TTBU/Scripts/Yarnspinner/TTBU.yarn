@@ -2,6 +2,7 @@
 ---
 <<set $intro = true>>
 <<set $companionStart = true>>
+<<set $warned = false>>
 ===
 
 
@@ -224,10 +225,13 @@ Display Attendant: You only need a spoonful, to experience its full effects.
 <i>Experience minute brain damage... and become addicted to transforming yourself into a drooling vegetable.</i>
 
 -> Warn them.
+  <<set $warned = true>>
     Manaia: Thats not— 
+    <i>Before you can finish, you're interruppted by sharp laughter.</i>
     <<jump Scene4_Cont>>
-->Stay Silent.
-  <<jump Scene4_Cont>>
+-> Stay Silent.
+  <i>As the attendant is about to continue, he's interrupted by sharp laughter.</i> 
+    <<jump Scene4_Cont>>
 
 ===
 
@@ -235,6 +239,7 @@ title: Scene4_Cont
 position: 399,145
 ---
 //Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
+<i></i>
 Display Attendent: Sir...?
 Display Attendant: I appreciate your glee, but I assure you this is no tent show.  
 Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.  
@@ -331,10 +336,16 @@ He takes a breath. Nows your chance!
 
 title: Scene7
 ---
+<<InDialogue NiamhHummingQuestion>>
 Manaia: One of those illusions? 
 Manaia: This song...
 //rift opens, niamg fades into view
+<<OutDialogue NiamhHummingQuestion>>
 
+===
+
+title: Scene7_1
+---
 Niamh: What? What are you doing here?
 Manaia: ...
 Niamh: Leave! 
