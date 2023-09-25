@@ -270,5 +270,11 @@ public class CustomCommands : MonoBehaviour
         sequentialImage.SetActive(true);
     }
 
+    [YarnCommand("Cinematic")]
+    public void Cinematic(CinemachineVirtualCamera cameraFrom, CinemachineVirtualCamera cameraTo)
+    {
+        cameraFrom.Priority = 0;
+        cameraTo.Priority = 100;
+    }
 
 }

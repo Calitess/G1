@@ -372,9 +372,6 @@ position: 372,-568
 -> Skip
  <<jump Skip_Scene8>>
 -> Continue 
-Manaia: This is........wait............what's happening #line:S7L40
-the world around Manaia start to shift and change. 
-Manaia: *looks around intensely* this is strange... #line:S8L44
 Niamh: You made it. You must find the answers  #line:S8L45
 
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
@@ -456,4 +453,13 @@ Servant: I'd have to say the big item of the night, the *insert flower name*
 Servant: Though I heard it was a pain to get here. Goes to show how hard the Host and his team work.
 ===
 
+title: RiftCinemachine
+---
+<<InDialogue Interactor>>
+Manaia: This is........wait............what's happening #line:S7L40
+<<Cinematic Interactor Cam_Niamh_Scene8 Cam_Niamh_Scene8_1>>
+the world around Manaia start to shift and change. 
+Manaia: *looks around intensely* this is strange... #line:S8L44
+<<OutDialogue Interactor>> 
+===
 

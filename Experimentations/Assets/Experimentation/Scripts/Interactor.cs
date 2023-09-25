@@ -1,3 +1,4 @@
+using Cinemachine;
 using Invector.vCharacterController.vActions;
 using System.Collections;
 using System.Collections.Generic;
@@ -105,6 +106,8 @@ public class Interactor : MonoBehaviour
 
     public void OpenRealm()
     {
+
+        
 
         foreach(CustomCommands interactable in Interactables)
         {
@@ -283,4 +286,5 @@ public class Interactor : MonoBehaviour
         }
 
     }
+
 }
