@@ -19,9 +19,9 @@ title: Companion
 title: Companion1
 ---
 <<InDialogue NPC_Companion>>
-???: I know what you did.
-Manaia: Huh?
-???: I overhead everything. And I want in.
+???: I know what you did. #line:0aba378 
+Manaia: Huh? #line:05f5df0 
+???: I overhead everything. And I want in. #line:0e6df2f 
 <<OutDialogue NPC_Companion>>
 ===
 
@@ -29,9 +29,9 @@ Manaia: Huh?
 title: Companion2
 ---
 <<InDialogue NPC_Companion>>
-???: The name's Blorbo.
-Manaia: Can I trust you?
-Blorbo: Yes.
+???: The name's Blorbo. #line:0a915a1 
+Manaia: Can I trust you? #line:0a84d2b 
+Blorbo: Yes. #line:0f3ba87 
 <<OutDialogue NPC_Companion>>
 ===
 
@@ -56,37 +56,37 @@ position: -394,-598
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-Skip is for debugging purposes for the devs, please continue the dialogue.
--> Skip
+Skip is for debugging purposes for the devs, please continue the dialogue. #line:0148e05 
+-> Skip #line:08d94bc 
  <<jump Skip_Scene1>>
--> Continue 
+-> Continue  #line:0d5e095 
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
-Fionn: You alright? It's you ain't it? You're dressed in the garb I sent you.
+Fionn: You alright? It's you ain't it? You're dressed in the garb I sent you. #line:005daaa 
 <<sprTalking SpriteController "L">>
-Manaia: Fionn? What you said about your sister—
+Manaia: Fionn? What you said about your sister— #line:0d68b0a 
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: No time. I won't be able to say the rest if we continue that.  
-Fionn: <b>Pierre Jean Faust</b>, the host of this, has us servants under strict orders. The bastard. Before long someone'll come looking. 
+Fionn: No time. I won't be able to say the rest if we continue that.   #line:06a9a61 
+Fionn: <b>Pierre Jean Faust</b>, the host of this, has us servants under strict orders. The bastard. Before long someone'll come looking.  #line:0cb1d49 
 <<sprTalking SpriteController "L">>
-Manaia: Us servants? 
+Manaia: Us servants?  #line:07100c3 
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: I wanted to do it myself. From the inside. It was the only way I could think, but... god.
-Fionn: Sorry... I... you don't know what they've been saying round here. 
+Fionn: I wanted to do it myself. From the inside. It was the only way I could think, but... god. #line:0b9315d 
+Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
--> Slow down. Tell me from the beginning. 
+-> Slow down. Tell me from the beginning.  #line:06ef997 
  <<jump Result_C>>
--> What have they been saying?
+-> What have they been saying? #line:0f92d02 
  <<jump Result_C>>
 ===
 
 title: Brother2
 ---
 <<InDialogue Char_Bro>>
-Fionn: Psh whateveerrrr
+Fionn: Psh whateveerrrr #line:0f67ace 
 <<OutDialogue Char_Bro>> 
 ===
 
@@ -96,14 +96,14 @@ position: -391,-410
 ---
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay.
-Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair.  
-Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could.
+Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay. #line:0bd2c01 
+Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair.   #line:05df8e1 
+Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
--> Manaia: Are you implying what I think you are? 
+-> Manaia: Are you implying what I think you are?  #line:030a332 
  <<jump Result_F>>
--> Manaia: ...
+-> Manaia: ... #line:017d916 
  <<jump Result_F>>
 ===
 
@@ -112,29 +112,29 @@ position: -394,-217
 ---
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>.
-Fionn: She <i>has</i> been working here though, told me herself. 
-Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it. 
+Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>. #line:04ea975 
+Fionn: She <i>has</i> been working here though, told me herself.  #line:01cbb2b 
+Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it.  #line:0a172ab 
 <<Talk Char_Bro CharacterTalk>>
-Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of junk. 
-Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em. 
+Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of junk.  #line:0b01533 
+Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
 <<sprTalking SpriteController "L">>
-Manaia: So this is where I come in? 
+Manaia: So this is where I come in?  #line:0ab85a5 
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: Exactly... well.. that isn't to say it'll be easier for you. 
-Fionn: As an unknown here, it'll take a bit to get people to talk without causing suspicion. Get their trust. Tell them things they want to hear. Or find another way around.
+Fionn: Exactly... well.. that isn't to say it'll be easier for you.  #line:0920fef 
+Fionn: As an unknown here, it'll take a bit to get people to talk without causing suspicion. Get their trust. Tell them things they want to hear. Or find another way around. #line:094943b 
 //// A sound of a kerfuffle near the doorway (( the companion giving away his position slightly, apoligising to someone?))
  //cut the camera towards the doorway with nothing there. A few moments later, cut back to fionn
 <<sprTalking SpriteController "R">>
-Fionn: Look, it won't be long before the first night of bidding starts. Find out as much as you can and I'll get you after. We can't be seen together once we're inside. 
+Fionn: Look, it won't be long before the first night of bidding starts. Find out as much as you can and I'll get you after. We can't be seen together once we're inside.  #line:07825cd 
 <<sprTalking SpriteController "L">>
-Manaia: I won't let you down. 
+Manaia: I won't let you down.  #line:09cdc0a 
 <<sprTalking SpriteController "R">>
-Fionn: Good luck.
-Fionn: Despite everything, I'm glad you're here. 
+Fionn: Good luck. #line:04a1ebe 
+Fionn: Despite everything, I'm glad you're here.  #line:03a1a91 
 <<sprTalking SpriteController "L">>
-Manaia: ...
+Manaia: ... #line:0b763bb 
 
 <<OutDialogue Char_Bro>> //make sure to put at the end of every dialogue sequence. it tells the gamestate to get out of dialoguestate
 ===
@@ -151,14 +151,14 @@ position: -93,-352
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
-Skip is for debugging purposes for the devs, please continue the dialogue.
--> Skip
+Skip is for debugging purposes for the devs, please continue the dialogue. #line:04f739d 
+-> Skip #line:09a9d70 
  <<jump Skip_Scene2>>
--> Continue 
+-> Continue  #line:0e320ba 
 
-Manaia: Where to start? I suppose I should check my journal. 
+Manaia: Where to start? I suppose I should check my journal.  #line:0f5d477 
 
-Press Q to check the journal for objectives. 
+Press Q to check the journal for objectives.  #line:044524e 
 
 
 <<JournalEntryText JournalTrigger_Scene2>>
@@ -182,7 +182,7 @@ position: 152,-347
 title: Scene3
 position: 270,386
 ---
-Manaia: Not yet. There's still some places I should check out on this floor. 
+Manaia: Not yet. There's still some places I should check out on this floor.  #line:000b820 
 ===
 
 
@@ -192,14 +192,14 @@ title: BarIntro
 position: 169,-153
 ---
 <<InDialogue Interactor_Bartender>>
-Skip is for debugging purposes for the devs, please continue the dialogue.
--> Skip
+Skip is for debugging purposes for the devs, please continue the dialogue. #line:0a5beeb 
+-> Skip #line:0daaf70 
  <<jump Skip_Scene4>>
--> Continue 
-Manaia: Interesting, how did they get a hold of such extinct material.
-Bartender: Could I be so kind in offering you a drink?
-Manaia: I'm fine thank you, just taking a look at this instillation.
-Bartender: Oh yes, our Host is very fond of this new flora matter that they've discovered. 
+-> Continue  #line:086528c 
+Manaia: Interesting, how did they get a hold of such extinct material. #line:06f5e99 
+Bartender: Could I be so kind in offering you a drink? #line:08f3b11 
+Manaia: I'm fine thank you, just taking a look at this instillation. #line:0c200e6 
+Bartender: Oh yes, our Host is very fond of this new flora matter that they've discovered.  #line:0351218 
 
 <<ShowImage Interactor_Bartender>>
 <<OutDialogue Interactor_Bartender>>
@@ -223,22 +223,22 @@ position: 132,151
 ---
 <<InDialogue Interactor_Terrarium>>
 
-Display Attendant: What we have here is a catagory B item. Lethe's Blessing. 
-Display Attendant: A rare flower, local to the coastlines of <b>Mórport</b>, the City of Soot. 
-Display Attendant: When crushed and mixed into a drink, it has a tart but agreeable taste.
-Display Attendant: Enjoy intoxicated bliss, and be rid of the painful memories which haunt you!
-Display Attendant: You only need a spoonful, to experience its full effects. 
+Display Attendant: What we have here is a catagory B item. Lethe's Blessing.  #line:0b57077 
+Display Attendant: A rare flower, local to the coastlines of <b>Mórport</b>, the City of Soot.  #line:0c49ec1 
+Display Attendant: When crushed and mixed into a drink, it has a tart but agreeable taste. #line:0278150 
+Display Attendant: Enjoy intoxicated bliss, and be rid of the painful memories which haunt you! #line:02f5eec 
+Display Attendant: You only need a spoonful, to experience its full effects.  #line:0051487 
 //Murmur sound if possible?
-<i>You recognise this flower. Lethe's blessing... what an underhanded name. Lethe's curse is closer. A blight upon your hometown. It's hardly the "rare" wonder he's advertising it as. </i>
-<i>Experience minute brain damage... and become addicted to transforming yourself into a drooling vegetable.</i>
+<i>You recognise this flower. Lethe's blessing... what an underhanded name. Lethe's curse is closer. A blight upon your hometown. It's hardly the "rare" wonder he's advertising it as. </i> #line:02e77e1 
+<i>Experience minute brain damage... and become addicted to transforming yourself into a drooling vegetable.</i> #line:02ebabe 
 
--> Warn them.
+-> Warn them. #line:0cf0619 
   <<set $warned = true>>
-    Manaia: Thats not— 
-    <i>Before you can finish, you're interruppted by sharp laughter.</i>
+    Manaia: Thats not—  #line:05a6c2c 
+    <i>Before you can finish, you're interruppted by sharp laughter.</i> #line:08b9200 
     <<jump Scene4_Cont>>
--> Stay Silent.
-  <i>As the attendant is about to continue, he's interrupted by sharp laughter.</i> 
+-> Stay Silent. #line:05247db 
+  <i>As the attendant is about to continue, he's interrupted by sharp laughter.</i>  #line:06478d1 
     <<jump Scene4_Cont>>
 
 ===
@@ -247,15 +247,15 @@ title: Scene4_Cont
 position: 399,145
 ---
 //Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
-<i></i>
-Display Attendent: Sir...?
-Display Attendant: I appreciate your glee, but I assure you this is no tent show.  
-Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.  
-Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next. 
-Display Attendant: I'm sorry?
-Mysterious Stranger: Do go on. I can scarcely wait to see this completely run to seed.
-Display Attendant: Ah... Well. 
-Display Attendant: Lethe's Blessing is... This particular plant's history, yes.
+<i></i> #line:0428891 
+Display Attendent: Sir...? #line:02a5af0 
+Display Attendant: I appreciate your glee, but I assure you this is no tent show.   #line:073cabb 
+Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.   #line:041f6cf 
+Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next.  #line:0f27493 
+Display Attendant: I'm sorry? #line:02e413e 
+Mysterious Stranger: Do go on. I can scarcely wait to see this completely run to seed. #line:026e204 
+Display Attendant: Ah... Well.  #line:07f16cc 
+Display Attendant: Lethe's Blessing is... This particular plant's history, yes. #line:0508a7a 
 
 <<NewPageEntry Interactor_Terrarium>>  //'+ 1 tutorial clue (out of three)
 
@@ -270,9 +270,9 @@ title: Eavesdrop_1
 position: 11,430
 ---
 <<InDialogue Interactor_Eavesdrop>>
-Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way 
+Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way  #line:01f85f9 
 <<JournalEntryText Interactor_Eavesdrop>>
-Servant2: No, no, we're not talking occult during work time again. Let's just get this to the next room. 
+Servant2: No, no, we're not talking occult during work time again. Let's just get this to the next room.  #line:05e8f91 
 
 <<NewPageEntry Interactor_Eavesdrop>>
 <<ShowImage Interactor_Eavesdrop>>
@@ -283,13 +283,13 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 title: Scene5
 ---
 <<InDialogue Char_Bro>>  //change name of character/interactor
-Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i>
-Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me! 
-Servant 2: That’s just you being a clutz. 
-Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible. 
-Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me so I could nab some of her hairpins? Not like I'd know she'd get <b>her brains blown out.</b>
-Servant 2: What! How could you? 
-Servant 2: I had dibs on those!
+Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
+Servant 2: That’s just you being a clutz.  #line:019a693 
+Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
+Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me so I could nab some of her hairpins? Not like I'd know she'd get <b>her brains blown out.</b> #line:08ae447 
+Servant 2: What! How could you?  #line:03d29a5 
+Servant 2: I had dibs on those! #line:0c856e8 
 
 <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
 ===
@@ -297,47 +297,47 @@ Servant 2: I had dibs on those!
 title: Scene6
 ---
 <<InDialogue Interactor_Terrarium_Scene6>>  //change name of character/interactor
-Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold. 
-Display Attendant: You ought to have many questions about it, I'm sure.
+Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold.  #line:0ad5c91 
+Display Attendant: You ought to have many questions about it, I'm sure. #line:012379a 
 
--> Manaia: I have a different question in mind.
-    Manaia: Do you-
+-> Manaia: I have a different question in mind. #line:0ee144d 
+    Manaia: Do you- #line:015fa13 
     <<jump Scene6_1>>
--> Manaia: Not really.
-    Display Attendant: Of course you do! You must be grateful Sir Faust has even allowed you to view an item such as this. 
+-> Manaia: Not really. #line:0f6152d 
+    Display Attendant: Of course you do! You must be grateful Sir Faust has even allowed you to view an item such as this.  #line:0cd712d 
     <<jump Scene6_1>>
 
 ===
 
 title: Scene6_1
 ---
-Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders. 
-Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.   
-Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue. 
-Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age!
-Display Attendant: Isn't that facinating?
+Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders.  #line:06d12ea 
+Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.    #line:048c6e1 
+Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue.  #line:097c783 
+Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age! #line:01ba6dd 
+Display Attendant: Isn't that facinating? #line:00b5fd3 
 
--> Manaia: Sure is. Now my question.... 
+-> Manaia: Sure is. Now my question....  #line:0e85da1 
  <<jump Scene6_2>>
--> Manaia: Wait, I don't really care about this. 
-    It's like his ears are packed with cotton. 
+-> Manaia: Wait, I don't really care about this.  #line:0f50771 
+    It's like his ears are packed with cotton.  #line:00f0b70 
     <<jump Scene6_2>>
 ===
 
 title: Scene6_2
 ---
-Display Attendant: And that's not all!
-Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself. 
-Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined? 
-He takes a breath. Nows your chance!
+Display Attendant: And that's not all! #line:090d8de 
+Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself.  #line:0915ba6 
+Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined?  #line:001c9bd 
+He takes a breath. Nows your chance! #line:0d65d2f 
 
--> Manaia: Ask about "recent events". 
-   Manaia: I heard there was an accident in the docking area. What can you tell me about that?
-   Display Attendant: Eh? The explosion? 
-   Display Attendant: Crap. You made me lose my train of thought. What part of the script was I up to? //set bool explosion = true
+-> Manaia: Ask about "recent events".  #line:031f430 
+   Manaia: I heard there was an accident in the docking area. What can you tell me about that? #line:098b8a1 
+   Display Attendant: Eh? The explosion?  #line:093ddf8 
+   Display Attendant: Crap. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
     <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
    
--> Manaia: Walk away (End Conversation)
+-> Manaia: Walk away (End Conversation) #line:068590c 
 <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
 
 ===
@@ -345,8 +345,8 @@ He takes a breath. Nows your chance!
 title: Scene7
 ---
 <<InDialogue NiamhHummingQuestion>>
-Manaia: One of those illusions? 
-Manaia: This song...
+Manaia: One of those illusions?  #line:042ea19 
+Manaia: This song... #line:0e4879e 
 //rift opens, niamg fades into view
 <<OutDialogue NiamhHummingQuestion>>
 
@@ -355,19 +355,19 @@ Manaia: This song...
 title: Scene7_1
 ---
 <<InDialogue WorkBitch>>
-Niamh: What? What are you doing here?
-Manaia: ...
-Niamh: Leave! 
-Manaia: Niamh?
-Niamh: Why are you doing this? You think you owe me? 
-Manaia: ... I'm  sorry. 
-Niamh: You...
-Niamh: Go away. Give up on me. 
-Manaia: I'm not doing that. 
-Niamh: This? You're being stubborn about this now? 
-Niamh: It's too late for me, so just—
-Niamh: get
-Niamh: out!
+Niamh: What? What are you doing here? #line:095ea7e 
+Manaia: ... #line:0660f2f 
+Niamh: Leave!  #line:014273c 
+Manaia: Niamh? #line:0680762 
+Niamh: Why are you doing this? You think you owe me?  #line:0eb6df4 
+Manaia: ... I'm  sorry.  #line:0b2046a 
+Niamh: You... #line:0a3d676 
+Niamh: Go away. Give up on me.  #line:091dc73 
+Manaia: I'm not doing that.  #line:0921543 
+Niamh: This? You're being stubborn about this now?  #line:0de356e 
+Niamh: It's too late for me, so just— #line:0401041 
+Niamh: get #line:0766484 
+Niamh: out! #line:02c8e7d 
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
 //Manaia: Niamh. Where are you? 
 // Downstairs is now openn
@@ -381,10 +381,10 @@ title: RiftIntro
 position: 372,-568
 ---
 <<InDialogue ReachingOut>>
-Skip is for debugging purposes for the devs, please continue the dialogue.
--> Skip
+Skip is for debugging purposes for the devs, please continue the dialogue. #line:03445c3 
+-> Skip #line:0a6598d 
  <<jump Skip_Scene8>>
--> Continue 
+-> Continue  #line:0d4e3e4 
 Niamh: You made it. You must find the answers  #line:S8L45
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
@@ -402,19 +402,19 @@ position: 399,-356
 ---
 //TO BE DELETED
 <<InDialogue WorkBitch>>
-Skip is for debugging purposes for the devs, please continue the dialogue.
--> Skip
+Skip is for debugging purposes for the devs, please continue the dialogue. #line:0a9adb1 
+-> Skip #line:09679bb 
  <<jump Skip_Scene81>>
--> Continue 
-Manaia: This is........wait............what's happening 
-the world around Manaia start to shift and change. 
-Manaia: *looks around intensely* this is strange... 
-Niamh: You made it. You must find the answers  
+-> Continue  #line:00b3b27 
+Manaia: This is........wait............what's happening  #line:073b6f9 
+the world around Manaia start to shift and change.  #line:0682cd8 
+Manaia: *looks around intensely* this is strange...  #line:02a7e88 
+Niamh: You made it. You must find the answers   #line:04f8421 
 
-Manaia:Whos there?? Why do you sound so farmiliar. Wait..... 
-Niamh: It's the only way... 
+Manaia:Whos there?? Why do you sound so farmiliar. Wait.....  #line:0828135 
+Niamh: It's the only way...  #line:035fbe3 
 <<JournalEntryText WorkBitch>>
-Manaia: Niamh?? Is it really you?  
+Manaia: Niamh?? Is it really you?   #line:017dcd5 
 
 <<ShowImage WorkBitch>>
 <<NewPageEntry WorkBitch>>
@@ -449,21 +449,21 @@ position: 639,-353
 title: RiftFirstExit
 position: 533,565
 ---
-Manaia: I need to hum to a rift to open up the rift ? Interesting
-Manaia: Let's see what the realm can help me find out
+Manaia: I need to hum to a rift to open up the rift ? Interesting #line:0a61647 
+Manaia: Let's see what the realm can help me find out #line:058f017 
 ===
 
 
 title: ClueAsk_1
 position: -383,97
 ---
-Manaia: So, anything of interest lately? 
-Servant: What exactly do you mean.?
-Manaia: Oh. Um, I meant in terms of pieces.
-Manaia: There's a lot of new items, this year. I was interested what you thought. Do you have a favourite?
-Servant: Hm, no one's asked me personally...
-Servant: I'd have to say the big item of the night, the *insert flower name*
-Servant: Though I heard it was a pain to get here. Goes to show how hard the Host and his team work.
+Manaia: So, anything of interest lately?  #line:0a47104 
+Servant: What exactly do you mean.? #line:03478ef 
+Manaia: Oh. Um, I meant in terms of pieces. #line:06c3f37 
+Manaia: There's a lot of new items, this year. I was interested what you thought. Do you have a favourite? #line:0a9de8d 
+Servant: Hm, no one's asked me personally... #line:0ab2a34 
+Servant: I'd have to say the big item of the night, the *insert flower name* #line:0317274 
+Servant: Though I heard it was a pain to get here. Goes to show how hard the Host and his team work. #line:0602aae 
 ===
 
 title: RiftCinemachine
@@ -471,7 +471,7 @@ title: RiftCinemachine
 <<InDialogue Interactor>>
 Manaia: This is........wait............what's happening #line:S7L40
 <<Cinematic Interactor Cam_Niamh_Scene8 Cam_Niamh_Scene8_1>>
-the world around Manaia start to shift and change. 
+the world around Manaia start to shift and change.  #line:06761fd 
 Manaia: *looks around intensely* this is strange... #line:S8L44
 <<OutDialogue Interactor>> 
 ===
