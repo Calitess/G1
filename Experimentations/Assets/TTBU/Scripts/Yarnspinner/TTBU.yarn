@@ -224,6 +224,7 @@ position: 132,151
 <<InDialogue Interactor_Terrarium>>
 
 Display Attendant: What we have here is a catagory B item. Lethe's Blessing.  #line:0b57077 
+<<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3 Cam_Terrarium_Scene3_1>>
 Display Attendant: A rare flower, local to the coastlines of <b>Mórport</b>, the City of Soot.  #line:0c49ec1 
 Display Attendant: When crushed and mixed into a drink, it has a tart but agreeable taste. #line:0278150 
 Display Attendant: Enjoy intoxicated bliss, and be rid of the painful memories which haunt you! #line:02f5eec 
@@ -234,10 +235,12 @@ Display Attendant: You only need a spoonful, to experience its full effects.  #l
 
 -> Warn them. #line:0cf0619 
   <<set $warned = true>>
+    <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
     Manaia: Thats not—  #line:05a6c2c 
     <i>Before you can finish, you're interruppted by sharp laughter.</i> #line:08b9200 
     <<jump Scene4_Cont>>
 -> Stay Silent. #line:05247db 
+  <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
   <i>As the attendant is about to continue, he's interrupted by sharp laughter.</i>  #line:06478d1 
     <<jump Scene4_Cont>>
 
@@ -249,6 +252,7 @@ position: 399,145
 //Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
 <i></i> #line:0428891 
 Display Attendent: Sir...? #line:02a5af0 
+<<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_2 Cam_Terrarium_Scene3>>
 Display Attendant: I appreciate your glee, but I assure you this is no tent show.   #line:073cabb 
 Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.   #line:041f6cf 
 Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next.  #line:0f27493 

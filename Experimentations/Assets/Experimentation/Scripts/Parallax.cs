@@ -8,14 +8,14 @@ public class Parallax : MonoBehaviour
     [SerializeField] Vector2 parallaxClamp;
 
     private Vector2 startPosition;
-    private Camera _cam;
+    [SerializeField] private Camera _cam;
 
 
     // Start is called before the first frame update
     void Start()
     {
         startPosition = transform.position;
-        _cam = Camera.main;
+        //_cam = Camera.main;
     }
 
     // Update is called once per frame

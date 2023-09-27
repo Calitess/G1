@@ -123,14 +123,14 @@ Material:
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
     - _DetailNormalMapScale: 1
-    - _Detail_1_Shading: -0.62
+    - _Detail_1_Shading: -1
     - _DstBlend: 0
     - _EnvironmentReflections: 1
     - _Falloff_Threshold: 1.23
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
-    - _Lit_Threshold: 0.01
+    - _Lit_Threshold: 0.33
     - _Metallic: 0
     - _NormalStrength: 0.123
     - _OcclusionStrength: 1
@@ -138,11 +138,11 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Rim_Light_Power: 4.27
-    - _Rim_Light_Scale: 0.08
+    - _Rim_Light_Power: 5.33
+    - _Rim_Light_Scale: 0.17
     - _Rotation: 0
-    - _Shading_Multiplier: -0.35
-    - _Smoothness: 0
+    - _Shading_Multiplier: -1
+    - _Smoothness: 0.436
     - _SmoothnessTextureChannel: 0
     - _Snoothness: 0
     - _Softness: -0.43
@@ -154,10 +154,10 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Base_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0}
+    - _Base_Color: {r: 0.7169812, g: 0.7169812, b: 0.7169812, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Highlight_Colour: {r: 0.9245283, g: 0.9114454, b: 0.9114454, a: 0}
+    - _Highlight_Colour: {r: 1, g: 1, b: 1, a: 0}
     - _Shadow_Colour: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

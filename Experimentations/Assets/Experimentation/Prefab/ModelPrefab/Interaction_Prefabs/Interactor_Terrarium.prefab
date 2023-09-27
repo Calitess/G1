@@ -283,6 +283,7 @@ MonoBehaviour:
   newJournalEntry: {fileID: 0}
   newObjective: {fileID: 0}
   sequentialImage: {fileID: 0}
+  dialogueToTriggerAfterInteractionsFinish: {fileID: 0}
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -304,8 +305,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb03eba69ac38e47bf403054e8c6a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 0}
-  disableThisDialogueRunner: {fileID: 0}
+  TalkDialogue: {fileID: 0}
+  ThoughtDialogue: {fileID: 0}
+  EavesdropDialogue: {fileID: 0}
+  Talk: 0
+  Thought: 0
+  Eavesdrop: 0
 --- !u!1001 &5412071552511304208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -373,6 +378,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9204022360271916816, guid: 2b3e8e73641cad84ebab50cb9d932b08,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad57efab0b64f1e419002ab992e48af1, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3e8e73641cad84ebab50cb9d932b08, type: 3}
 --- !u!4 &7385558738629672720 stripped

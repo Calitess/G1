@@ -8,7 +8,8 @@ public class MovingImages : MonoBehaviour
     [SerializeField] float randomValue, durationForLerp;
     private Vector3 pointsToMove, curPoint, oriPoint;
 
-    // Start is called before the first frame update
+    
+
     void Start()
     {
         menuImagesToMove = this.GetComponent<Transform>();
