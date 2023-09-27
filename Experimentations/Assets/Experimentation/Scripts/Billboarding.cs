@@ -7,7 +7,7 @@ public class Billboarding : MonoBehaviour
     public float rotateAmount;
     [SerializeField] public Camera mainCam;
     public bool noBoard;
- 
+
 
     // Update is called once per frame
     void LateUpdate()

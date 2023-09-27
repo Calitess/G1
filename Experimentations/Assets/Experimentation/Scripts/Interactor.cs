@@ -31,7 +31,7 @@ public class Interactor : MonoBehaviour
     GameManager gameManager;
     vTriggerGenericAction action;
 
-    [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
+    [SerializeField] UnityEvent OnRealmOpen,OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
     [HideInInspector]public bool realmInteractionsFinished = false;
     [SerializeField] private List<CustomCommands> Interactables;
@@ -107,9 +107,9 @@ public class Interactor : MonoBehaviour
     public void OpenRealm()
     {
 
-        
+        OnRealmOpen.Invoke();
 
-        foreach(CustomCommands interactable in Interactables)
+        foreach (CustomCommands interactable in Interactables)
         {
             interactable.gameObject.SetActive(true);
         }
