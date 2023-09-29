@@ -26,6 +26,10 @@ Material:
         m_Texture: {fileID: 2800000, guid: 2832df29e51ac154bb42a5f3b66d3262, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Base_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BumpMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -46,6 +50,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Halftone_Texture:
+        m_Texture: {fileID: 2800000, guid: 28dc3ab6127f8854cbafd0ac6c6038ba, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 2800000, guid: 2832df29e51ac154bb42a5f3b66d3262, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -56,6 +64,10 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _Noise_Texture:
         m_Texture: {fileID: 2800000, guid: e9d8641531bfa1942a0e7ebbcac9d593, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NormalMap:
+        m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
@@ -86,6 +98,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Texture2DAsset_808e7019e19a40e48175c7462e0debe4_Out_0:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -103,6 +119,7 @@ Material:
     - _AlphaClip: 0
     - _Blend: 0
     - _BumpScale: 1
+    - _Circle_Density: 5
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _Cull: 2
@@ -112,14 +129,17 @@ Material:
     - _DstBlend: 0
     - _Edge_Width: 0.2
     - _EnvironmentReflections: 1
+    - _Falloff_Threshold: 2.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
     - _Gradient_Noise_Scale: 130
+    - _Lit_Threshold: 1
     - _Metallic: 0
     - _Move_Speed: 0.5
     - _Noise_Scale: 3
     - _Noise_Strength: 0.5
+    - _NormalStrength: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _Primary_Ambient_Occlusion: 4.5
@@ -129,23 +149,28 @@ Material:
     - _QueueOffset: 0
     - _Radius_Noise_CutOff: 1.5
     - _ReceiveShadows: 1
+    - _Rotation: 0
     - _STYLE: 0
     - _Secondary_Ambient_Occlusion: 1
     - _Secondary_Normal_Strength: 0.7
     - _Secondary_Smoothness: 0.5
+    - _Shading_Multiplier: 0.1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Softness: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _USE_SCREEN_SPACE: 1
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _Base_Color: {r: 0.8018868, g: 0.7809219, b: 0.631675, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Edge_Color: {r: 1, g: 1, b: 1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _Primary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Primary_Base_Color: {r: 0.6392157, g: 0.6, b: 0.30588236, a: 0}
     - _Secondary_Base_Color: {r: 1, g: 1, b: 1, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
