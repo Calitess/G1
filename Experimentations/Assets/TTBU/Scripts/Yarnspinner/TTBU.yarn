@@ -22,6 +22,7 @@ title: Companion1
 ???: I know what you did. #line:0aba378 
 Manaia: Huh? #line:05f5df0 
 ???: I overhead everything. And I want in. #line:0e6df2f 
+<<ButtonInput NPC_Companion>>
 <<OutDialogue NPC_Companion>>
 ===
 

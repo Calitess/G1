@@ -23,7 +23,7 @@ public class simpleNavFollow : MonoBehaviour
         FollowPlayer();
     }
 
-    private void FollowPlayer()
+    public void FollowPlayer()
     {
         if(Vector3.Distance(playerTransform.position, this.transform.position) > 2f)
         {
@@ -41,4 +41,6 @@ public class simpleNavFollow : MonoBehaviour
         npcAnimator.SetFloat("InputMagnitude", 0f);
         agent.stoppingDistance = 2;
     }
+
+
 }
