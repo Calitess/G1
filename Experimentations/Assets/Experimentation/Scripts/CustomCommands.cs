@@ -314,4 +314,15 @@ public class CustomCommands : MonoBehaviour
         cameraTo.Priority = 100;
     }
 
+    [YarnCommand("AutoInput")]
+    public void AutoInput()
+    {
+        action.inputType = vTriggerGenericAction.InputType.AutoAction;
+    }
+
+    [YarnCommand("ButtonInput")]
+    public void ButtonInput()
+    {
+        action.inputType = vTriggerGenericAction.InputType.GetButtonDown;
+    }
 }
