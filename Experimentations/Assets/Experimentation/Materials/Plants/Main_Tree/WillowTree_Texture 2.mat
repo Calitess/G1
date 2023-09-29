@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Base_Texture:
-        m_Texture: {fileID: 2800000, guid: b1355675b941c3a43bbbb7fe875cf54f, type: 3}
+        m_Texture: {fileID: 2800000, guid: 9e407ddc069a30d4ba8310bf02e3cf57, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -122,7 +122,7 @@ Material:
     - _ZWriteControl: 0
     m_Colors:
     - _BaseColor: {r: 0.9245283, g: 0.5451228, b: 0.63883805, a: 0.77254903}
-    - _Base_Tint: {r: 0.6886792, g: 0.30210927, b: 0.60653305, a: 0}
+    - _Base_Tint: {r: 1, g: 1, b: 1, a: 0}
     - _Color: {r: 0.9245283, g: 0.5451228, b: 0.63883805, a: 0.77254903}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _SSS_Color: {r: 0.49803922, g: 0.327451, b: 0.5, a: 0}
