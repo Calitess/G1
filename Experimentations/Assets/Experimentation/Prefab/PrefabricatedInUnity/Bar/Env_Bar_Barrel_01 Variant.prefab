@@ -62,10 +62,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5715030762056317207, guid: ed0834712ac521d4d94db4ca2b53597f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59983cac217090c4abe35343e95320d8, type: 2}
     - target: {fileID: 919132149155446097, guid: ed0834712ac521d4d94db4ca2b53597f,
         type: 3}
       propertyPath: m_Name
-      value: Env_Bar_Barrel_01
+      value: Env_Bar_Barrel_01 Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ed0834712ac521d4d94db4ca2b53597f, type: 3}

@@ -157,5 +157,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Bar_InnerCounterCorner_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5961047921551960336, guid: b4f987d404bb2cf4bbac80791fa4f4da,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 59983cac217090c4abe35343e95320d8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4f987d404bb2cf4bbac80791fa4f4da, type: 3}

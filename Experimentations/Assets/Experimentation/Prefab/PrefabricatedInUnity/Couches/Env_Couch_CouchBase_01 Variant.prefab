@@ -122,6 +122,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.0010999879
       objectReference: {fileID: 0}
+    - target: {fileID: -3599237351474993533, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 198a5efa7eb6c3746b70f99acc61b5da, type: 2}
+    - target: {fileID: -2987116021313317214, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 198a5efa7eb6c3746b70f99acc61b5da, type: 2}
     - target: {fileID: -2886087021375908577, guid: 8797cf1f3ee62e04687f2eaff140d390,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -137,6 +147,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.01245
       objectReference: {fileID: 0}
+    - target: {fileID: -1711259398882681968, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 198a5efa7eb6c3746b70f99acc61b5da, type: 2}
     - target: {fileID: -1060624749631371359, guid: 8797cf1f3ee62e04687f2eaff140d390,
         type: 3}
       propertyPath: m_Layer
@@ -172,6 +187,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.012270025
       objectReference: {fileID: 0}
+    - target: {fileID: 2741731076926448511, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 198a5efa7eb6c3746b70f99acc61b5da, type: 2}
+    - target: {fileID: 3163294293399089368, guid: 8797cf1f3ee62e04687f2eaff140d390,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 198a5efa7eb6c3746b70f99acc61b5da, type: 2}
     - target: {fileID: 4919417933014774138, guid: 8797cf1f3ee62e04687f2eaff140d390,
         type: 3}
       propertyPath: m_Layer
