@@ -180,6 +180,93 @@ position: 152,-347
 ===
 
 
+title: Scene2.5
+---
+<<InDialogue NPC_Companion>>
+
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "R">>
+Strange Person: I know what you are. 
+Strange Person: I heard everything, the two of you talking outside. 
+<i>Crap</i>
+Strange Person: You’re foreign intelligence, aren’t you? 
+-> Manaia: ...
+    <<sprTalking SpriteController "R">>
+    Strange Person: Ah, Silence.
+    Strange Person: It’s alright, I’m rather good at reading between the lines.
+    <<jump ResultPartner>>
+-> Manaia: I'm really not. 
+    <<sprTalking SpriteController "L">>
+    Manaia: I'm really not.
+    <<jump ResultPartner>>
+
+===
+
+
+title: ResultPartner
+---
+<<sprTalking SpriteController "R">>
+Strange Person: You’re looking for your partner, right? Your fellow agent? 
+<<sprTalking SpriteController "L">>
+Manaia: I’m not a spy.
+<i> It’s much more complicated than that. </i>
+-> Manaia: We were practising parts for a play.
+   <<sprTalking SpriteController "L">>
+   Manaia: We were practising parts for a play.
+   <<sprTalking SpriteController "R">>
+   Strange Person: Of course, of course, you were practising.
+   <i>If you could see his face, you think he'd be winking right now.</i>
+    <<jump Cont2_5>>
+-> Manaia: I'm a safety inspector. Investigating... the accident. 
+    <<sprTalking SpriteController "L">>
+    Manaia:I'm a safety inspector. Investigating... the accident. 
+    <<sprTalking SpriteController "R">>
+    Strange Person: An inspector, huh? An... undercover inspector? 
+    <<jump Cont2_5>>
+
+===
+
+title: Cont2_5
+---
+-> Manaia: Are you going to tell someone?
+   <<sprTalking SpriteController "L">>
+   Manaia: Are you going to tell someone?
+   <<sprTalking SpriteController "R">>
+   Strange Person: Hmm? Why would I? 
+     <<jump Complete2_5>>
+-> Manaia: What do you want from me? 
+   <<sprTalking SpriteController "L">>
+   Manaia: What do you want from me? 
+   <<sprTalking SpriteController "R">>
+   Strange Person: I think we should be pals. You and I. 
+    <<jump Complete2_5>>
+===
+
+title: Complete2_5
+---
+<<sprTalking SpriteController "R">>
+Strange Person: To see a professional at work, would be an unmissable opportunity. 
+Strange Person: For the both of us!
+
+<<sprTalking SpriteController "R">>
+Strange Person: One moment. 
+He reaches for your journal.
+<<sprTalking SpriteController "L">>
+Manaia: Wait, what are you—
+Reaching into one pocket, he pulls out a pen and starts scrawling something on a blank page.
+He hands it back. It reads <b>Claude Dupont</b> in large, cursive lettering. 
+<<sprTalking SpriteController "R">>
+Claude: My signature. After I release my next novel, this will be priceless. 
+Claude: How lucky for us to have met. Espionage is quite a popular genre nowadays. 
+Claude: You don't mind if I tag along right? For research? 
+<i>Who the hell is this guy?</i>
+Claude: Great! Don't mind me. Act as if I'm not even here. 
+<<ButtonInput NPC_Companion>>
+<<OutDialogue NPC_Companion>>
+===
+
+
 title: Scene3
 position: 270,386
 ---
@@ -350,7 +437,7 @@ He takes a breath. Nows your chance! #line:0d65d2f
 title: Scene7
 ---
 <<InDialogue NiamhHummingQuestion>>
-Manaia: One of those illusions?  #line:042ea19 
+Manaia: What is this? A side effect from Brimstone's Beacon? #line:042ea19 
 Manaia: This song... #line:0e4879e 
 //rift opens, niamg fades into view
 <<OutDialogue NiamhHummingQuestion>>
@@ -360,26 +447,69 @@ Manaia: This song... #line:0e4879e
 title: Scene7_1
 ---
 <<InDialogue WorkBitch>>
-Niamh: What? What are you doing here? #line:095ea7e 
-Manaia: ... #line:0660f2f 
-Niamh: Leave!  #line:014273c 
-Manaia: Niamh? #line:0680762 
-Niamh: Why are you doing this? You think you owe me?  #line:0eb6df4 
-Manaia: ... I'm  sorry.  #line:0b2046a 
-Niamh: You... #line:0a3d676 
-Niamh: Go away. Give up on me.  #line:091dc73 
-Manaia: I'm not doing that.  #line:0921543 
-Niamh: This? You're being stubborn about this now?  #line:0de356e 
-Niamh: It's too late for me, so just— #line:0401041 
-Niamh: get #line:0766484 
-Niamh: out! #line:02c8e7d 
+...
+Niamh: Manaia… #line:095ea7e 
+Niamh: You idiot! What are you doing here? #line:0660f2f 
+Manaia: Niamh? #line:014273c 
+Niamh: Take Fionn and leave. You should have never come here.  #line:0680762 
+-> Manaia: Is this real?
+   <<sprTalking SpriteController "L">>
+   Manaia: Is this real?
+     <<jump Complete2_5>>
+-> Manaia: This isn't real. 
+   <<sprTalking SpriteController "L">>
+   Manaia: This isn't real. 
+   Manaia: This isn't real. 
+     <<jump Complete2_5>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-//Manaia: Niamh. Where are you? 
 // Downstairs is now openn
 //rift opens, niamg fades into view
 <<OutDialogue WorkBitch>>
+===
 
 
+title: Scene7_2
+---
+Manaia:What is this? 
+Niamh: I’m not sure how you opened this… doorway, but I could care less. 
+Niamh: I don't need you here. You're letting Fionn lead you both to your death. 
+Manaia: I’m not leaving you. 
+Niamh: You’re not– You’re… 
+She laughs bitterly. Then rakes her hands down her face. 
+Niamh: You always do this. You’re always stubborn at the worst of times. 
+Niamh: We’re never going back to the way we were. It’s impossible, Manaia. 
+Manaia: I have something to say to you. But I’ll only say it to your face. 
+Niamh: You don’t get it. It’s too late for that. Don’t pry any more. You can’t do anything for me.
+Niamh: Manaia. If I ever meant anything to you, you would listen. Give up. 
+-> Manaia: This isn’t real, I’m not listening to you.
+   <<sprTalking SpriteController "L">>
+   Manaia: This isn’t real, I’m not listening to you.
+   Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex.
+     <<jump Scene7_3>>
+-> Manaia: Let me help you. 
+   <<sprTalking SpriteController "L">>
+   Manaia: Let me help you. 
+   Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex.
+     <<jump Scene7_3>>
+===
+
+title: Scene7_3
+---
+
+//  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
+Manaia: If it’s like the fog, that must've been a mirage. 
+Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why? 
+
+Claude: Outstanding performance! Was that a monologue? 
+Manaia: ... 
+Claude: The determination! The confusion! It was like a punch to the gut! 
+Claude: One piece of criticism though, your script was just awful. Made no sense.  
+
+// Downstairs is now openn
+//rift opens, niamg fades into view
+//<<ShowImage ReachingOut>>  might need to change name of dialogue jump
+//<<NewPageEntry ReachingOut>>  might need to change name of dialogue jump
+<<OutDialogue WorkBitch>>
 ===
 
 title: RiftIntro
