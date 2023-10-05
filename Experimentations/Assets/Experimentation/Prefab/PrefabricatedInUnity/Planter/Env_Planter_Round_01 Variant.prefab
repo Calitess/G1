@@ -19,7 +19,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5367124866496004524
 Transform:
   m_ObjectHideFlags: 0
@@ -33,7 +33,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2861367995962508484}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: -42.974, z: 0}
 --- !u!33 &9206141554212897571
 MeshFilter:
@@ -191,6 +191,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.0111245
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.0111245
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.0111245
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00033
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.00457
+      objectReference: {fileID: 0}
+    - target: {fileID: -5289318078144847870, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.00116
+      objectReference: {fileID: 0}
     - target: {fileID: -3959451670811022670, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
         type: 3}
       propertyPath: m_Layer
@@ -200,6 +235,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Planter_Round_01 Variant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.012176943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.012176943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.012176943
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.00028
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0009199962
+      objectReference: {fileID: 0}
+    - target: {fileID: 1328993517055481708, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.0012
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1c8c6b4d57e0cda42a23f4e1c5a13b2a, type: 3}
@@ -219,7 +289,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c121a6c4527cdf34497a355e7ad5c9c9,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c121a6c4527cdf34497a355e7ad5c9c9,
         type: 3}
