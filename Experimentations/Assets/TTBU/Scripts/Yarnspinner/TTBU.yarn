@@ -78,10 +78,10 @@ Manaia: Us servants?  #line:07100c3
 Fionn: I wanted to do it myself. From the inside. It was the only way I could think, but... god. #line:0b9315d 
 Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
--> Manaia: Slow down. Tell me from the beginning. 
+-> Manaia: Slow down. Tell me from the beginning.  #line:0e16e10 
  Manaia: Are you implying what I think you are? #line:06ef997 
  <<jump Result_C>>
--> Manaia: What have they been saying? 
+-> Manaia: What have they been saying?  #line:0b2df81 
  Manaia: What have they been saying? #line:0f92d02 
  <<jump Result_C>>
 ===
@@ -104,7 +104,7 @@ Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge me
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
--> Manaia: Are you implying what I think you are?  
+-> Manaia: Are you implying what I think you are?   #line:031b7a7 
 Manaia: Are you implying what I think you are?  #line:030a332
  <<jump Result_F>>
 -> Manaia: ... #line:017d916 
@@ -633,121 +633,121 @@ Manaia: *looks around intensely* this is strange... #line:S8L44
 
 title: Scene8
 ---
-Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books? 
-Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well…
-Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem. 
+Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books?  #line:03eddd0 
+Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well… #line:02ab129 
+Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem.  #line:0dc5230 
 
-Manaia: Someone blew up an airship? 
+Manaia: Someone blew up an airship?  #line:0af28b6 
 
-Manaia: You two know Faust? 
+Manaia: You two know Faust?  #line:0cdc820 
 
 
-Disgruntled Woman: Oh, that's old news. 
-Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it. 
-Disgruntled Woman: That someone would slight him like that.
-Disgruntled Woman: Calls it an "accident".
-Disgruntled Woman: Yes, an accident. 
-Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship.
-Her Husband: Very fine.
-Disgruntled Woman: And for it to go kerflooey, just like that?
-The woman's husband mimics an explosion with his hands.
-Disgruntled Woman: Well, that is when a conspiracy is afoot.
-Her Husband: Afoot indeed. 
-Disgruntled Woman: Percy?
-Her Husband: Yes dear?
-Disgruntled Woman: Shut up.
-Her Husband: Yes dear.
+Disgruntled Woman: Oh, that's old news.  #line:05d7972 
+Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
+Disgruntled Woman: That someone would slight him like that. #line:07f3102 
+Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
+Disgruntled Woman: Yes, an accident.  #line:0047fb7 
+Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
+Her Husband: Very fine. #line:006b59f 
+Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
+The woman's husband mimics an explosion with his hands. #line:0616dbc 
+Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
+Her Husband: Afoot indeed.  #line:03eff8c 
+Disgruntled Woman: Percy? #line:099583c 
+Her Husband: Yes dear? #line:01f232a 
+Disgruntled Woman: Shut up. #line:091aa6b 
+Her Husband: Yes dear. #line:02d754a 
 
 
 
 //result faust, change into new scene to jump to
-Disgruntled Woman: Know Faust? How else would we be here? 
-Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust. 
-Disgruntled Woman: Unless you're one of The Four. 
+Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
+Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
+Disgruntled Woman: Unless you're one of The Four.  #line:0204b2d 
 
 //result who?
-Disgruntled Woman: Who are you anyway? A first-timer?
+Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717 
 
-Manaia: Yep, that's me. A first-timer. 
-Manaia: Second time, actually. 
+Manaia: Yep, that's me. A first-timer.  #line:07994f0 
+Manaia: Second time, actually.  #line:0ff6860 
 
 
 //result first
-Disgruntled Woman: I see... 
-Disgruntled Woman: Well, I can't say I'd reccomend this year as your first. 
-Disgruntled Woman: Normally it's far more interesting.  
+Disgruntled Woman: I see...  #line:0a81a97 
+Disgruntled Woman: Well, I can't say I'd reccomend this year as your first.  #line:022dda4 
+Disgruntled Woman: Normally it's far more interesting.   #line:06af27a 
 
 //result second
-Disgruntled Woman: Hmm... I don't think I've seen you around here. 
-Disgruntled Woman: Though I suppose it's hard to tell with the mask. 
+Disgruntled Woman: Hmm... I don't think I've seen you around here.  #line:0ed04c9 
+Disgruntled Woman: Though I suppose it's hard to tell with the mask.  #line:067d627 
 
 
 
 //result bored 
-Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored.
-Her Husband: I don't think that wise, my sweet. 
-Disgruntled Woman: Pish posh. Don't be wet blanket.
-Her Husband: After the last event, I don't think they'll allow you or me near the bar. 
-<i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i>
+Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored. #line:01d7bca 
+Her Husband: I don't think that wise, my sweet.  #line:04e5d3d 
+Disgruntled Woman: Pish posh. Don't be wet blanket. #line:0b991bd 
+Her Husband: After the last event, I don't think they'll allow you or me near the bar.  #line:0d16258 
+<i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i> #line:0913116 
 
 
-Manaia: Who are <b>The Four</b>?
-Manaia: What else do you know about the accident? 
+Manaia: Who are <b>The Four</b>? #line:07b53f1 
+Manaia: What else do you know about the accident?  #line:0706f21 
 
 
 //result four
-Manaia: I've been hearing that title all around. 
+Manaia: I've been hearing that title all around.  #line:0a53a26 
 
 //firstime yes
-Disgruntled Woman: Oh, this really is your first time! How were you even invited?
+Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
 
 //not first time
-Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege! 
-Disgruntled Woman: These auctions really are going to the dogs. 
-Disgruntled Woman: If you expect me to tell you that, it would take all day. And I don't give out history classes for free. 
-Disgruntled Woman: All I'll tell you, is that our latest host is one of them. 
+Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
+Disgruntled Woman: These auctions really are going to the dogs.  #line:0aa88e7 
+Disgruntled Woman: If you expect me to tell you that, it would take all day. And I don't give out history classes for free.  #line:0685be2 
+Disgruntled Woman: All I'll tell you, is that our latest host is one of them.  #line:0a3d226 
 
-Manaia: Latest host?
+Manaia: Latest host? #line:041c591 
 
-Disgruntled Woman: Now, you're really asking too much of me. 
-Disgruntled Woman: I'm not a tutor.
+Disgruntled Woman: Now, you're really asking too much of me.  #line:0c3b74a 
+Disgruntled Woman: I'm not a tutor. #line:00e1c00 
 
 
 
 //result accident
-The woman sighs.
-Disgruntled Woman: Very well as much as anyone else, but more than you I presume.
-Disgruntled Woman:  I'll tell you what. 
-Disgruntled Woman: If you can sweet talk a drink for me from the bar, I'll say anything you very well please. 
-Disgruntled Woman: If I'm to be harassed like a presidential candidate with a mistress, I'd at least want something to swig while you're at it.
-The woman's husband begins to fidget, but seems to have given up on urging otherwise. 
+The woman sighs. #line:040b69f 
+Disgruntled Woman: Very well as much as anyone else, but more than you I presume. #line:03854a9 
+Disgruntled Woman:  I'll tell you what.  #line:010d76a 
+Disgruntled Woman: If you can sweet talk a drink for me from the bar, I'll say anything you very well please.  #line:0ca5a67 
+Disgruntled Woman: If I'm to be harassed like a presidential candidate with a mistress, I'd at least want something to swig while you're at it. #line:0963a50 
+The woman's husband begins to fidget, but seems to have given up on urging otherwise.  #line:04fc3a5 
 
-Manaia: Any drink preferences?
-Manaia: Thank you. I'll find you something. 
+Manaia: Any drink preferences? #line:0856a36 
+Manaia: Thank you. I'll find you something.  #line:06f65cd 
 
 
 //result preferred
-Disgruntled Woman: Surprise me! Whatever you do, just make it strong. 
-Disgruntled Woman: If if doesn't bite back, I will.
-The woman laughs, but something tells you she's not entirely joking. 
+Disgruntled Woman: Surprise me! Whatever you do, just make it strong.  #line:066c233 
+Disgruntled Woman: If if doesn't bite back, I will. #line:00a65fc 
+The woman laughs, but something tells you she's not entirely joking.  #line:02d7b19 
 ===
 
 title: Scene9
 ---
 //never spoken to bartender before
 
-Manaia: I've never seen a machine like that. 
-Bartender: The distiller? 
-Bartender:	You'll be hard-pressed to find another machine like it.
-Bartender:	It's custom-made.
-Bartender:	Runs on the highest quality Evergreen fuel and expertly processes plants from Sir Faust's private collection. 
-Bartender: The beverages on offer are one of a kind. 
-Bartender:	Carefully designed from the sowing of the ingredients themselves!
-Bartender:	Might I interest you in one? 
+Manaia: I've never seen a machine like that.  #line:03593c6 
+Bartender: The distiller?  #line:0ce5fc0 
+Bartender:	You'll be hard-pressed to find another machine like it. #line:0b55eda 
+Bartender:	It's custom-made. #line:0b52d2f 
+Bartender:	Runs on the highest quality Evergreen fuel and expertly processes plants from Sir Faust's private collection.  #line:0143e87 
+Bartender: The beverages on offer are one of a kind.  #line:03e27c1 
+Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:09ca98f 
+Bartender:	Might I interest you in one?  #line:0afc9d7 
 
 //talked to bartender before
-Bartender:	Our beverages are one of a kind!
-Bartender:	Carefully designed from the sowing of the ingredients themselves!
-Bartender:	Might I interest you in one? 
+Bartender:	Our beverages are one of a kind! #line:0b85861 
+Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:04c10df 
+Bartender:	Might I interest you in one?  #line:0900b63 
 
 ===
