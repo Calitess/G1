@@ -12,6 +12,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_WineGlass_WineglassBasse_01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 211502638325720764, guid: 8df2a361588f3074d8ac390b17a0d753,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 694882741384526854, guid: 8df2a361588f3074d8ac390b17a0d753,
         type: 3}
       propertyPath: m_RootOrder
@@ -166,6 +171,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 434cd3b4d83fb624b98f50a770041556, type: 2}
+    - target: {fileID: -3475434318405551629, guid: ec72555cf41b87e42929eacfb470da5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -1780853175406399021, guid: ec72555cf41b87e42929eacfb470da5e,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -196,10 +206,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_BarTable_Table_01 (2) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: ec72555cf41b87e42929eacfb470da5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5269558656060277382, guid: ec72555cf41b87e42929eacfb470da5e,
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 0.0587
+      objectReference: {fileID: 0}
+    - target: {fileID: 7910384718804658273, guid: ec72555cf41b87e42929eacfb470da5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec72555cf41b87e42929eacfb470da5e, type: 3}
@@ -255,6 +275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_WineGlass_WineglassBasse_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 211502638325720764, guid: 8df2a361588f3074d8ac390b17a0d753,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 694882741384526854, guid: 8df2a361588f3074d8ac390b17a0d753,
         type: 3}

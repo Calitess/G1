@@ -127,6 +127,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Walls Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 1974723114670882211, guid: 7e2fa2a243dd20648982b46b267564ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6437272685978343524, guid: 7e2fa2a243dd20648982b46b267564ea,
         type: 3}
       propertyPath: m_RootOrder
@@ -180,6 +185,11 @@ PrefabInstance:
     - target: {fileID: 6437272685978343524, guid: 7e2fa2a243dd20648982b46b267564ea,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7632801789351099977, guid: 7e2fa2a243dd20648982b46b267564ea,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

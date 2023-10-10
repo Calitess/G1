@@ -3204,10 +3204,50 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2245375174036776042}
     m_Modifications:
+    - target: {fileID: 1099866486523555650, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1121005240142761661, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1130999202235215328, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1139816534777745017, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 1565255700982225165, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2013017981329948635, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 2890663928149009545, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7324308378345943419, guid: 3231669e5a098bd4ea425f296231ca5e,
         type: 3}
       propertyPath: m_Name
       value: Env_Bar_AlcoholDistiller_01 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7324308378345943419, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7993602394334849985, guid: 3231669e5a098bd4ea425f296231ca5e,
         type: 3}
@@ -3263,6 +3303,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8411211739541736293, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8489978497909112412, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 8591920191205749523, guid: 3231669e5a098bd4ea425f296231ca5e,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3231669e5a098bd4ea425f296231ca5e, type: 3}
