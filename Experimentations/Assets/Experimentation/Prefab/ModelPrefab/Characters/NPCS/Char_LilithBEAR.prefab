@@ -135,6 +135,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lilith_Bear_Rigged
       objectReference: {fileID: 0}
+    - target: {fileID: 5537142322927283887, guid: c05c1ff9228e78b4fb1121f8053ed8a2,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6943efc22b579d148bf3a311fd1c7944, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c05c1ff9228e78b4fb1121f8053ed8a2, type: 3}
 --- !u!4 &6252830201439090537 stripped
