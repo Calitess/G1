@@ -87805,11 +87805,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6778420121750520548, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce0ce074871708a4581e53a870d1455f, type: 2}
+    - target: {fileID: 382669999344530120, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6678bd216017da242bace4be2884b8f8, type: 2}
     - target: {fileID: 919132149155446097, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
         type: 3}
       propertyPath: m_Name
       value: Env_DoorFrame_Frames_01
       objectReference: {fileID: 0}
+    - target: {fileID: 2743897218545717020, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: a6886e561870c97448797907906942aa, type: 2}
     - target: {fileID: 4782798343323704593, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
         type: 3}
       propertyPath: m_StaticEditorFlags
@@ -87820,6 +87835,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 2147483647
       objectReference: {fileID: 0}
+    - target: {fileID: 9002160963574116984, guid: 3c5dd92773e4f6740b24615c56ca8cd8,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ce0ce074871708a4581e53a870d1455f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c5dd92773e4f6740b24615c56ca8cd8, type: 3}
 --- !u!4 &8130845403313153175 stripped
