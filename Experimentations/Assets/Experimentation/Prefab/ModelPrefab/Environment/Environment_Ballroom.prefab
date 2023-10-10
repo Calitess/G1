@@ -37932,6 +37932,46 @@ PrefabInstance:
       propertyPath: m_Name
       value: Env_Upper_DisplayCase_01 Variant (2) Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 3942942718877908064, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.77
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942942718877908064, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3942942718877908064, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.673
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952877818474433462, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.512
+      objectReference: {fileID: 0}
+    - target: {fileID: 4952877818474433462, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.328
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036566527921825827, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 6.846
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036566527921825827, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.257
+      objectReference: {fileID: 0}
+    - target: {fileID: 9036566527921825827, guid: 9c33149d92c25f74882a6d70fb2029be,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.371
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9c33149d92c25f74882a6d70fb2029be, type: 3}
 --- !u!4 &1593499092198134781 stripped
@@ -88840,10 +88880,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4027166841713743865}
     m_Modifications:
+    - target: {fileID: 912556128332683543, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1570748844111288366, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 2227943945014538144, guid: fa5573a96b1702d48b9754c22b7c83f4,
         type: 3}
       propertyPath: m_RootOrder
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3161827647141356627, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3177314289333074875, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5774174790699370544, guid: fa5573a96b1702d48b9754c22b7c83f4,
         type: 3}
@@ -88914,6 +88974,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Env_Upper_DisplayCase_01 Variant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6842704320157361314, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 7478339748833095672, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8311478667687673848, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8856942343155942762, guid: fa5573a96b1702d48b9754c22b7c83f4,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 16
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa5573a96b1702d48b9754c22b7c83f4, type: 3}
