@@ -1,12 +1,18 @@
 ﻿title: Start
+position: -57,172
 ---
-<<set $intro = true>>
-<<set $companionStart = true>>
-<<set $warned = false>>
+<<declare $intro to true>>
+<<declare $companionStart to true>>
+<<declare $warned to false>>
+<<declare $drinks = "" as string>>
+<<declare $drinknumber = 0>>
+<<declare $bartenderSpeak to false>> //bool if has spoken to bartender
+<<declare $dwMission to false>> //bool if has spoken to disgruntelled woman
 ===
 
 
 title: Companion
+position: -1341,897
 ---
 <<if $companionStart == true>>
   <<set $companionStart = false>>
@@ -17,6 +23,7 @@ title: Companion
 ===
 
 title: Companion1
+position: 398,882
 ---
 //<<InDialogue NPC_Companion>>
 ???: I know what you did. #line:0aba378 
@@ -28,6 +35,7 @@ Manaia: Huh? #line:05f5df0
 
 
 title: Companion2
+position: 1036,801
 ---
 //<<InDialogue NPC_Companion>>
 ???: The name's Blorbo. #line:0a915a1 
@@ -38,6 +46,7 @@ Blorbo: Yes. #line:0f3ba87
 
 
 title: Brother
+position: -458,-1033
 ---
 <<InDialogue Char_Bro>>
 <<if $intro == true>>
@@ -53,7 +62,7 @@ title: Brother
 
 title: BrotherDialogue
 tags:
-position: -394,-598
+position: -438,-679
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
@@ -78,13 +87,16 @@ Manaia: Us servants?  #line:07100c3
 Fionn: I wanted to do it myself. From the inside. It was the only way I could think, but... god. #line:0b9315d 
 Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
--> Slow down. Tell me from the beginning.  #line:06ef997 
+-> Manaia: Slow down. Tell me from the beginning.  #line:0e16e10 
+ Manaia: Are you implying what I think you are? #line:06ef997 
  <<jump Result_C>>
--> What have they been saying? #line:0f92d02 
+-> Manaia: What have they been saying?  #line:0b2df81 
+ Manaia: What have they been saying? #line:0f92d02 
  <<jump Result_C>>
 ===
 
 title: Brother2
+position: 639,845
 ---
 <<InDialogue Char_Bro>>
 Fionn: Psh whateveerrrr #line:0f67ace 
@@ -102,7 +114,8 @@ Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge me
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
--> Manaia: Are you implying what I think you are?  #line:030a332 
+-> Manaia: Are you implying what I think you are?   #line:031b7a7 
+Manaia: Are you implying what I think you are?  #line:030a332
  <<jump Result_F>>
 -> Manaia: ... #line:017d916 
  <<jump Result_F>>
@@ -181,6 +194,7 @@ position: 152,-347
 
 
 title: Scene2_5
+position: -1064,1027
 ---
 <<InDialogue NPC_Companion>>
 
@@ -195,6 +209,7 @@ Strange Person: You’re foreign intelligence, aren’t you?  #line:02af4ab
     <<sprTalking SpriteController "R">>
     Strange Person: Ah, Silence. #line:036008f 
     Strange Person: It’s alright, I’m rather good at reading between the lines. #line:0e9cd4d 
+    Strange Person: No need to lie, you’ll only embarrass yourself. 
     <<jump ResultPartner>>
 -> Manaia: I'm really not.  #line:0c69541 
     <<sprTalking SpriteController "L">>
@@ -205,6 +220,7 @@ Strange Person: You’re foreign intelligence, aren’t you?  #line:02af4ab
 
 
 title: ResultPartner
+position: -780,1093
 ---
 <<sprTalking SpriteController "R">>
 Strange Person: You’re looking for your partner, right? Your fellow agent?  #line:040e7d8 
@@ -228,6 +244,7 @@ Manaia: I’m not a spy. #line:07610c4
 ===
 
 title: Cont2_5
+position: -626,1259
 ---
 -> Manaia: Are you going to tell someone? #line:06084ee 
    <<sprTalking SpriteController "L">>
@@ -244,6 +261,7 @@ title: Cont2_5
 ===
 
 title: Complete2_5
+position: -664,1492
 ---
 <<sprTalking SpriteController "R">>
 Strange Person: To see a professional at work, would be an unmissable opportunity.  #line:005c2ca 
@@ -307,7 +325,7 @@ position: 441,-143
 
 
 title: Terrarium
-position: 132,151
+position: 563,31
 ---
 <<InDialogue Interactor_Terrarium>>
 
@@ -335,7 +353,7 @@ Display Attendant: You only need a spoonful, to experience its full effects.  #l
 ===
 
 title: Scene4_Cont
-position: 399,145
+position: 589,223
 ---
 //Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
 <i></i> #line:0428891 
@@ -373,6 +391,7 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 ===
 
 title: Scene5
+position: -1003,620
 ---
 <<InDialogue Char_Bro>>  //change name of character/interactor
 Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
@@ -387,6 +406,7 @@ Servant 2: I had dibs on those! #line:0c856e8
 ===
 
 title: Scene6
+position: -1587,61
 ---
 <<InDialogue Interactor_Terrarium_Scene6>>  //change name of character/interactor
 Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold.  #line:0ad5c91 
@@ -402,6 +422,7 @@ Display Attendant: You ought to have many questions about it, I'm sure. #line:01
 ===
 
 title: Scene6_1
+position: -1580,292
 ---
 Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders.  #line:06d12ea 
 Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.    #line:048c6e1 
@@ -417,6 +438,7 @@ Display Attendant: Isn't that facinating? #line:00b5fd3
 ===
 
 title: Scene6_2
+position: -1584,499
 ---
 Display Attendant: And that's not all! #line:090d8de 
 Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself.  #line:0915ba6 
@@ -435,6 +457,7 @@ He takes a breath. Nows your chance! #line:0d65d2f
 ===
 
 title: Scene7
+position: 1045,576
 ---
 
 <<InDialogue NiamhHummingQuestion>>
@@ -448,6 +471,7 @@ Manaia: This song... #line:0e4879e
 ===
 
 title: Scene7_1
+position: 950,-420
 ---
 <<InDialogue WorkBitch>>
 ... #line:06a894f 
@@ -477,6 +501,7 @@ Niamh: Take Fionn and leave. You should have never come here.  #line:0680762
 
 
 title: Scene7_2
+position: 998,-137
 ---
 <<sprTalking SpriteController "L">>
 Manaia:What is this?  #line:0305342 
@@ -511,6 +536,7 @@ Niamh: Manaia. If I ever meant anything to you, you would listen. Give up.  #lin
 ===
 
 title: Scene7_3
+position: 1004,227
 ---
 
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
@@ -619,6 +645,7 @@ Servant: Though I heard it was a pain to get here. Goes to show how hard the Hos
 ===
 
 title: RiftCinemachine
+position: 1344,190
 ---
 <<InDialogue Interactor>>
 Manaia: This is........wait............what's happening #line:S7L40
@@ -628,3 +655,475 @@ Manaia: *looks around intensely* this is strange... #line:S8L44
 <<OutDialogue Interactor>> 
 ===
 
+title: Scene8
+position: -1112,367
+---
+Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books?  #line:03eddd0 
+Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well… #line:02ab129 
+Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem.  #line:0dc5230 
+
+Manaia: Someone blew up an airship?  #line:0af28b6 
+
+Manaia: You two know Faust?  #line:0cdc820 
+
+
+Disgruntled Woman: Oh, that's old news.  #line:05d7972 
+Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
+Disgruntled Woman: That someone would slight him like that. #line:07f3102 
+Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
+Disgruntled Woman: Yes, an accident.  #line:0047fb7 
+Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
+Her Husband: Very fine. #line:006b59f 
+Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
+The woman's husband mimics an explosion with his hands. #line:0616dbc 
+Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
+Her Husband: Afoot indeed.  #line:03eff8c 
+Disgruntled Woman: Percy? #line:099583c 
+Her Husband: Yes dear? #line:01f232a 
+Disgruntled Woman: Shut up. #line:091aa6b 
+Her Husband: Yes dear. #line:02d754a 
+
+
+
+//result faust, change into new scene to jump to
+Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
+Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
+Disgruntled Woman: Unless you're one of The Four.  #line:0204b2d 
+
+//result who?
+Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717 
+
+Manaia: Yep, that's me. A first-timer.  #line:07994f0 
+Manaia: Second time, actually.  #line:0ff6860 
+
+
+//result first
+Disgruntled Woman: I see...  #line:0a81a97 
+Disgruntled Woman: Well, I can't say I'd reccomend this year as your first.  #line:022dda4 
+Disgruntled Woman: Normally it's far more interesting.   #line:06af27a 
+
+//result second
+Disgruntled Woman: Hmm... I don't think I've seen you around here.  #line:0ed04c9 
+Disgruntled Woman: Though I suppose it's hard to tell with the mask.  #line:067d627 
+
+
+
+//result bored 
+Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored. #line:01d7bca 
+Her Husband: I don't think that wise, my sweet.  #line:04e5d3d 
+Disgruntled Woman: Pish posh. Don't be wet blanket. #line:0b991bd 
+Her Husband: After the last event, I don't think they'll allow you or me near the bar.  #line:0d16258 
+<i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i> #line:0913116 
+
+
+Manaia: Who are <b>The Four</b>? #line:07b53f1 
+Manaia: What else do you know about the accident?  #line:0706f21 
+
+
+//result four
+Manaia: I've been hearing that title all around.  #line:0a53a26 
+
+//firstime yes
+Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
+
+//not first time
+Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
+Disgruntled Woman: These auctions really are going to the dogs.  #line:0aa88e7 
+Disgruntled Woman: If you expect me to tell you that, it would take all day. And I don't give out history classes for free.  #line:0685be2 
+Disgruntled Woman: All I'll tell you, is that our latest host is one of them.  #line:0a3d226 
+
+Manaia: Latest host? #line:041c591 
+
+Disgruntled Woman: Now, you're really asking too much of me.  #line:0c3b74a 
+Disgruntled Woman: I'm not a tutor. #line:00e1c00 
+
+
+
+//result accident
+The woman sighs. #line:040b69f 
+Disgruntled Woman: Very well as much as anyone else, but more than you I presume. #line:03854a9 
+Disgruntled Woman:  I'll tell you what.  #line:010d76a 
+Disgruntled Woman: If you can sweet talk a drink for me from the bar, I'll say anything you very well please.  #line:0ca5a67 
+Disgruntled Woman: If I'm to be harassed like a presidential candidate with a mistress, I'd at least want something to swig while you're at it. #line:0963a50 
+The woman's husband begins to fidget, but seems to have given up on urging otherwise.  #line:04fc3a5 
+
+Manaia: Any drink preferences? #line:0856a36 
+<<set $dwMission = true>>
+Manaia: Thank you. I'll find you something.  #line:06f65cd 
+<<set $dwMission = true>>
+
+//result preferred
+Disgruntled Woman: Surprise me! Whatever you do, just make it strong.  #line:066c233 
+Disgruntled Woman: If if doesn't bite back, I will. #line:00a65fc 
+The woman laughs, but something tells you she's not entirely joking.  #line:02d7b19 
+===
+
+title: Scene9
+position: -1424,-873
+---
+
+<<if $bartenderSpeak == false>>
+ //never spoken to bartender before
+ Manaia: I've never seen a machine like that.  #line:03593c6 
+ Bartender: The distiller?  #line:0ce5fc0 
+ Bartender:	You'll be hard-pressed to find another machine like it. #line:0b55eda 
+ Bartender:	It's custom-made. #line:0b52d2f 
+ Bartender:	Runs on the highest quality Evergreen fuel and expertly processes plants from Sir Faust's private collection.  #line:0143e87 
+ Bartender: The beverages on offer are one of a kind.  #line:03e27c1 
+ Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:09ca98f 
+ Bartender:	Might I interest you in one?  #line:0afc9d7 
+ <<set $bartenderSpeak = true>>
+ 
+<<elseif $bartenderSpeak == true>>
+ //talked to bartender before
+ Bartender:	Our beverages are one of a kind! #line:0b85861 
+ Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:04c10df 
+ Bartender:	Might I interest you in one?  #line:0900b63 
+<<endif>>
+
+<<if $dwMission == false>>
+ //hasn't talked to DW
+ <i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
+ 
+ -> (Ask what they have.)
+   Manaia: What do you have? //choice have
+   <<jump AskingAboutDrinks>>
+ -> (Ask about the accident.) 
+   <<jump ResultKnow>>
+ -> (Leave.)
+   Manaia: No thanks. 
+ 
+<<elseif $dwMission == true>>
+ -> (Ask what they have.)
+   Manaia:	What do you have?//choice have
+   <<jump AskingAboutDrinks>>
+ -> Surprise me. 
+   Manaia:	Surprise me. //choice welkin
+   <<set $drinknumber += 1>>
+   <<set $drinks = "Welkin">>
+   <<jump DrinkOrdered>>
+ -> (Ask about the accident.) 
+   <<jump ResultKnow>>
+ ->  (Leave.)
+   Manaia:	No thanks. 
+<<endif>>
+
+===
+
+title:ResultKnow
+position: -1540,-642
+---
+
+//result know 
+Manaia:	Know anything about what happened to the docking area? 
+<i>The bartender just looks at you for a beat. Utterly still. </i>
+Bartender:	Sorry miss, I'm afraid I have no idea what you're talking about. 
+Bartender:	Would you like me to tell you about some of our drinks instead?
+<i>I get what Fionn meant. The other servants really won't talk. </i>
+<i>I'll have to find someone not under Faust's iron fist. </i>
+
+//go back to questions
+
+
+===
+
+title:AskingAboutDrinks
+position: -1065,-856
+---
+//result have
+Bartender:	We have three complementary specials today, Welkin's Gift, the virgin Will-o'-Wisp and the Devil on the rocks. 
+Bartender:	Would you like me to describe one?
+
+
+-> (Ask about Welkin's Gift.)
+ Manaia:	A Welkin's Gift.
+ <<set $drinks = "Welkin">>
+ <<jump DrinkAsk>>
+-> (Ask about the virgin Will-o'-Wisp.)
+ Manaia:	A virgin Will-o'-Wisp.
+ <<set $drinks = "Will">>
+ <<jump DrinkAsk>>
+-> (Ask about the Devil on the rocks.)
+ Manaia:	A Devil on the rocks.
+ <<set $drinks = "Devil">>
+ <<jump DrinkAsk>>
+-> (Order a drink)
+ Manaia:	Order a drink.
+ <<jump DrinkOrder>>
+-> Manaia:	Nevermind. (Leave.)
+
+
+===
+
+title: DrinkOrder
+position: -854,-657
+---
+//result order
+Manaia:	Could I get...
+-> A Welkin's Gift.
+ <<set $drinknumber += 1>>
+ <<set $drinks = "Welkin">>
+ <<jump DrinkOrdered>>
+-> A virgin Will-o'-Wisp.
+ <<set $drinknumber += 1>>
+ <<set $drinks = "Will">>
+ <<jump DrinkOrdered>>
+-> A Devil on the rocks.
+ <<set $drinknumber += 1>>
+ <<set $drinks = "Devil">>
+ <<jump DrinkOrdered>>
+-> Surprise me.
+ Manaia:	Surprise me. 
+ <<set $drinknumber += 1>>
+ <<set $drinks = "Welkin">>
+ <<jump DrinkOrdered>>
+-> Nevermind.
+ Manaia:	Nevermind. 
+
+===
+
+title: DrinkAsk
+position: -832,-1034
+---
+
+
+<<if $drinks == "Welkin">>
+ Bartender:	This drink is a limited edition. So get it while you can!
+ Bartender:	One of the main ingredients comes from a special sample in our auction catalogue! One hint. This drink uses that flower's red and white mottled petals as decoration.
+ Bartender:	Welkin's Gift is a bitingly tart yet delicious drink. With tangy, floral notes from our secret ingredient. 
+
+
+<<elseif $drinks == "Will">>
+ Bartender:	The virgin Will-o'-Wisp. What it doesn't have in intoxicants it makes up for in style. 
+ Bartender:	Enjoy the fruity, smoking goodness of the Will-o'-Wisp. A cool, berry cream float drink, topped with a smouldering sprig of pine. 
+
+
+<<elseif $drinks == "Devil">>
+ Bartender:	This chilled, Tequila-packed drink is not what it seems.
+ Bartender:	Appreciate the wicked symphony of flavour, the harmony of pineapple and chilli pepper, of fire on ice.
+<<endif>>
+
+<<jump AskingAboutDrinks>>
+
+===
+
+title:DrinkOrdered
+position: -1060,-413
+---
+<<if $dwMission == true>>
+ Bartender:	Your wish is my command.
+ Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
+ <i>Now to give this to that woman.<i> 
+
+ <<if $drinknumber <= 1>> //if this is the first time getting drink for the woman
+   <<jump ClaudeQuestion>>
+ <<endif>>
+
+<<elseif $dwMission == false>>
+ Bartender:	Your wish is my command.
+ Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
+ <<jump DrinkType>>
+<<endif>>
+
+===
+
+title:ClaudeQuestion
+position: -825,-135
+---
+Claude:	Are you going to put something in that?
+
+-> Why?
+ Manaia:	What? Why would I?
+ Claude: 	Spys in books always do something to get the upper hand. You're going to bug that right?
+ //Manaia:	How would that fit in a drink?
+ Manaia:	I don't have anything like that. 
+ <i>He sighs dramatically.<i> 
+ Claude:	You're not giving me very much to work with. I'll just write that you did. 
+  -> This isn't a biography, is it?
+  Manaia:	This isn't a biography is it?
+  <i>He's not listening, just busily scrawling something in his notes.<i> 
+  -> (Ignore it.)
+-> Like what?
+ Manaia:	Like what?
+ Claude:	An invisible wire, or mic! 
+ Manaia:	How would that fit in a drink?
+ Manaia:	I don't have anything like that. 
+ <i>He sighs dramatically.<i> 
+ Claude:	You're not giving me very much to work with. I'll just write that you did. 
+  -> This isn't a biography, is it?
+  Manaia:	This isn't a biography is it?
+  <i>He's not listening, just busily scrawling something in his notes.<i> 
+  -> (Ignore it.)
+===
+
+title:DrinkType
+position: -1281,-190
+---
+//only go to this node if dwMission == false
+<<if $drinks == "Welkin">>
+ You take the Welkin's Gift and are about to give it a sip when...
+ Barely placing it to your lips, you catch a whiff of a familiar noxious scent. 
+ The type you'd catch on your uncles breath. That which left your aunt mourning the mind of a man who was still alive. 
+ Lethe's Blessing... 
+ Manaia:	I'm not drinking this. 
+		
+<<elseif $drinks == "Will">>
+ You take the virgin Will-o'-Wisp.
+ One taste and...
+ Not bad. A tad too sweet for you though. 
+ Down the hatch. 
+<<elseif $drinks == "Devil">>
+ You take the Devil on the rocks. 
+ One taste and...
+ Eyes watering, you begin to cough. 
+ You're not very good with spice.
+ Claude:	Are you quite alright?
+ Manaia:	(Give him a thumbs up.)
+ Manaia:	(Shake your head.) 
+ You hand claude the drink. It'd be wasted on you. 
+<<endif>>
+
+===
+
+title: Scene10
+---
+//if not gotten drink
+Disgruntled Woman:	Well? 
+Disgruntled Woman:	No drink yet?
+Disgruntled Woman:	To the bar, Chop Chop. 
+
+
+
+//will o wisp
+Disgruntled Woman:	Well?
+You hand her the "virgin Will-o'-Wisp". 
+She takes a sip and... 
+Disgruntled Woma:n	What is this? A milkshake? 
+Disgruntled Woman:	Don't kid me, I know my drinks. 
+She passes it to her husband hurriedly, who takes it with glee, and waves you off. 
+Disgruntled Woman:	Go get something else.
+
+//devil on the rocks choice
+Disgruntled Woman:	Well?
+You hand her a "Devil on the rocks". 
+Disgruntled Woman:	Oh! This one has some kick. 
+Disgruntled Woman:	This will do just fine. 
+Manaia	Will you answer my question now?
+Disgruntled Woman:	What was it?
+Disgruntled Woman:	Oh yes, the accident. 
+Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
+Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
+Disgruntled Woman:	None of those robbers made it out.
+Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
+
+-> Sky mules? 
+ Manaia:	Sky mules?
+ Disgruntled Woman:	These ones were different. 
+ Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
+ Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
+ Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
+ She takes a long swig of her drink. 
+-> They all died?
+ Manaia:	They all died?
+ Manaia:	I didn't realise they took contract work. 
+ Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
+ Disgruntled Woman:	To scam him of his items and... their salary.
+ Disgruntled Woman:	I wouldn't—
+ Disgruntled Woman:	I wouldn't doubt it.
+ Manaia:	Do you know any of their names?
+ Disgruntled Woman:	The only one who could have known that is Faust himself, or...
+ Disgruntled Woman:	Possibly one of the four. 
+ Another drawn-out sip. 
+ Looking down at her emptied glass, she laughs silently. 
+ Disgruntled Woman:	Or— Or someone close to them. 
+ Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
+ Her head begins to sway. 
+ Is she drunk... already? 
+
+-> Do you know anything else?
+ Manaia: 	Do you know anything else? 
+	She just stares at you, thinking. 
+ Her Husband:	Regretfully, we haven't heard much else.
+	
+	// Result drink, Welkin's Gift
+	
+ Disgruntled Woman:	Well?
+ Disgruntled Woman:	You hand her a "Welkin's Gift". 
+ Disgruntled Woman:	Oh! That bite! This is good. 
+ Disgruntled Woman:	This is very good. 
+ Manaia: Will you answer my question now?
+ Disgruntled Woman:	What was it?
+ Disgruntled Woman:	Oh yes, the accident. 
+ Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
+ Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
+ Disgruntled Woman:	Seemingly, none of those robbers made it out.
+ Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
+ Manaia:	I didn't realise they took contract work.
+ Disgruntled Woman:	These ones were different. 
+ Her husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
+ Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
+ Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
+ She takes a long swig of her drink. 
+ Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
+ Disgruntled Woman:	To scam him of his items and... the salary.
+ Disgruntled Woman:	I wouldn't—
+ Disgruntled Woman:	I wouldn't doubt it.
+ Manaia:	Do you know any of their names?
+ Disgruntled Woman:	The only one who could have known that is Faust himself, or...
+ Disgruntled Woman:	Possibly one of the four.
+ Another drawn-out sip.
+ Looking down at her emptied glass, she laughs silently.
+ Disgruntled Woman:	Or— Or someone close to them.
+ Disgruntled Woman:	Which, I'll tell you. Fat chance—
+ Disgruntled Woman:	Fat chance... 
+ Disgruntled Woman:	Sorry what were we talking about again?
+ Her head begins to sway.
+ <i>Is she drunk... already?</i>
+
+-> The accident
+ Manaia:	The accident. 
+
+-> Are you feeling okay?
+ Manaia:	Are you feeling okay? 
+ Disgruntled Woman:	Not really. 
+ Disgruntled Woman:	 I don't...
+ Her Husband:	You were talking about the accident at the docking area. 
+
+===
+
+title: TheAccident
+---
+Manaia:	 We were talking about it. Just a minute ago. 
+Disgruntled Woman:	Mn. Maybe my boyfriend can tell you. 
+Disgruntled Woman:	I don't feel so good. 
+Her Husband:	Boyfriend? Don't be silly, dear. 
+She shakes her head slowly. 
+Disgruntled Woman:	I'm not being silly. 
+Her Husband:	Calling me your boyfriend, come now. 
+Her Husband:	Those days are long gone.    
+Disgruntled Woman:	What... 
+Disgruntled Woman:	What else would I call you? 
+Her Husband:	...
+You look at the emptied drink in her hand... then back to her. 
+Welkin's Gift. 
+Her Husband:	I'm your husband...
+She just looks at him for a moment, silent. 
+The two begin to argue. Neither agree about what their relationship "is". 
+You can't really follow it. 
+
+
+-> Is there anything else you know about the accident?
+ Manaia:	Is there anything else you know about the accident?
+ They seem a bit preoccupied right now. 
+
+-> I'll leave you both to it (End).
+ Manaia:	I'll leave you both to it.
+ Claude whispers to you. 
+ Claude:	You sly dog!
+ Claude:	And you said you weren't going to put anything in it. 
+	
+ Manaia:	It wasn't me. 
+ Manaia:	Something else is going on here. 
+//end convo
+
+===
