@@ -135,9 +135,9 @@ Material:
     - _Noise_Strength: 0.5
     - _OcclusionStrength: 1
     - _Parallax: 0.005
-    - _Primary_Ambient_Occlusion: 1.9
+    - _Primary_Ambient_Occlusion: 1
     - _Primary_Normal_Strength: 0
-    - _Primary_Smoothness: 0.67
+    - _Primary_Smoothness: 0.3
     - _QueueControl: 0
     - _QueueOffset: 0
     - _Radius_Noise_CutOff: 1.5

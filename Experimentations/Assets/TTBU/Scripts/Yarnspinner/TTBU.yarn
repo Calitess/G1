@@ -827,12 +827,17 @@ position: -1424,-873
  Bartender:	Our beverages are one of a kind! #line:0b85861 
  Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:04c10df 
  Bartender:	Might I interest you in one?  #line:0900b63 
+ <<jump AskingAboutDrinks>>
 <<endif>>
+<i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
 
+<<jump Scene9Con>>
+===
+
+title:Scene9Con
+---
 <<if $dwMission == false>>
  //hasn't talked to DW
- <i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
- 
  -> (Ask what they have.)
    Manaia: What do you have? //choice have
    <<jump AskingAboutDrinks>>
@@ -840,21 +845,22 @@ position: -1424,-873
    <<jump ResultKnow>>
  -> (Leave.)
    Manaia: No thanks. 
- 
-<<elseif $dwMission == true>>
- -> (Ask what they have.)
-   Manaia:	What do you have?//choice have
-   <<jump AskingAboutDrinks>>
- -> Surprise me. 
-   Manaia:	Surprise me. //choice welkin
-   <<set $drinknumber += 1>>
-   <<set $drinks = "Welkin">>
-   <<jump DrinkOrdered>>
- -> (Ask about the accident.) 
-   <<jump ResultKnow>>
- ->  (Leave.)
-   Manaia:	No thanks. 
    <<OutDialogue Interactor_Bartender>>
+
+<<elseif $dwMission == true>>
+  -> (Ask what they have.)
+    Manaia:	What do you have?//choice have
+    <<jump AskingAboutDrinks>>
+  -> Surprise me. 
+    Manaia:	Surprise me. //choice welkin
+    <<set $drinknumber += 1>>
+    <<set $drinks = "Welkin">>
+    <<jump DrinkOrdered>>
+  -> (Ask about the accident.) 
+    <<jump ResultKnow>>
+  ->  (Leave.)
+    Manaia:	No thanks. 
+    <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
 ===
@@ -870,7 +876,7 @@ Bartender:	Sorry miss, I'm afraid I have no idea what you're talking about.
 Bartender:	Would you like me to tell you about some of our drinks instead?
 <i>I get what Fionn meant. The other servants really won't talk. </i>
 <i>I'll have to find someone not under Faust's iron fist. </i>
-
+<<jump Scene9Con>>
 //go back to questions
 
 
@@ -893,16 +899,18 @@ Bartender:	Would you like me to describe one?
  <<set $drinks = "Will">>
  <<jump DrinkAsk>>
 -> (Ask about the Devil on the rocks.)
- Manaia:	A Devil on the rocks.
- <<set $drinks = "Devil">>
- <<jump DrinkAsk>>
--> (Order a drink)
- Manaia:	Order a drink.
-  <<jump DrinkOrder>>
--> Manaia:	Nevermind. (Leave.)
+  Manaia:	A Devil on the rocks.
+  <<set $drinks = "Devil">>
+  <<jump DrinkAsk>>
+-> (Leave.)
+ Manaia:	Nevermind.
   <<OutDialogue Interactor_Bartender>>
 
-
+<<if $dwMission == true>>
+  -> (Order a drink)
+    Manaia:	Order a drink.
+    <<jump DrinkOrder>>
+<<endif>>
 ===
 
 title: DrinkOrder
@@ -1017,12 +1025,13 @@ position: -1281,-190
  The type you'd catch on your uncles breath. That which left your aunt mourning the mind of a man who was still alive. 
  Lethe's Blessing... 
  Manaia:	I'm not drinking this. 
-		
+ <<OutDialogue Interactor_Bartender>>	
 <<elseif $drinks == "Will">>
  You take the virgin Will-o'-Wisp.
  One taste and...
  Not bad. A tad too sweet for you though. 
  Down the hatch. 
+ <<OutDialogue Interactor_Bartender>>
 <<elseif $drinks == "Devil">>
  You take the Devil on the rocks. 
  One taste and...
@@ -1032,6 +1041,7 @@ position: -1281,-190
  Manaia:	(Give him a thumbs up.)
  Manaia:	(Shake your head.) 
  You hand Claude the drink. It'd be wasted on you. 
+ <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
 ===
@@ -1189,7 +1199,11 @@ You can't really follow it. 
 	
  Manaia:	It wasn't me. 
  Manaia:	Something else is going on here. 
+
+
  <<OutDialogue DW>>
+//open new rift
+ <<ActivateRift Interactor_Bartender 1>>
 //end convo
 
 ===
