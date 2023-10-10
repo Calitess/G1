@@ -8,6 +8,10 @@ position: -57,172
 <<declare $drinknumber = 0>>
 <<declare $bartenderSpeak to false>> //bool if has spoken to bartender
 <<declare $dwMission to false>> //bool if has spoken to disgruntelled woman
+<<declare $firstTimer to false>>
+<<declare $RFaust to false>>
+<<declare $RBlew to false>>
+
 ===
 
 
@@ -655,59 +659,81 @@ Manaia: *looks around intensely* this is strange... #line:S8L44
 <<OutDialogue Interactor>> 
 ===
 
-title: Scene8
+title: Scene8Intro
 position: -1112,367
 ---
+<<InDialogue Interactor_Bartender>>
 Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books?  #line:03eddd0 
 Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well… #line:02ab129 
 Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem.  #line:0dc5230 
+<<jump Scene8>>
 
-Manaia: Someone blew up an airship?  #line:0af28b6 
+===
+title:Scene8
+---
 
-Manaia: You two know Faust?  #line:0cdc820 
+-> Someone blew up an airship?
+  <<set $RBlew = true>>
+  Manaia: Someone blew up an airship?  #line:0af28b6 
+  Disgruntled Woman: Oh, that's old news.  #line:05d7972 
+  Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
+  Disgruntled Woman: That someone would slight him like that. #line:07f3102 
+  Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
+  Disgruntled Woman: Yes, an accident.  #line:0047fb7 
+  Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
+  Her Husband: Very fine. #line:006b59f 
+  Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
+  The woman's husband mimics an explosion with his hands. #line:0616dbc 
+  Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
+  Her Husband: Afoot indeed.  #line:03eff8c 
+  Disgruntled Woman: Percy? #line:099583c 
+  Her Husband: Yes dear? #line:01f232a 
+  Disgruntled Woman: Shut up. #line:091aa6b 
+  Her Husband: Yes dear. #line:02d754a 
+  <<if $RBlew && $RFaust == true>>
+    <<jump ContFirst>>
+  <<endif>>
+  <<jump Scene8>>
+-> You two know Faust?
+ Manaia: You two know Faust?  #line:0cdc820 
+ //result faust, change into new scene to jump to
+ <<set $RFaust = true>>
+ Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
+ Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
+ Disgruntled Woman: Unless you're one of The Four.  #line:0204b2d 
+ <<if $RBlew && $RFaust == true>>
+   <<jump ContFirst>>
+ <<endif>>
+   <<jump Scene8>>
+ //go back to options
 
+===
 
-Disgruntled Woman: Oh, that's old news.  #line:05d7972 
-Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
-Disgruntled Woman: That someone would slight him like that. #line:07f3102 
-Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
-Disgruntled Woman: Yes, an accident.  #line:0047fb7 
-Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
-Her Husband: Very fine. #line:006b59f 
-Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
-The woman's husband mimics an explosion with his hands. #line:0616dbc 
-Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
-Her Husband: Afoot indeed.  #line:03eff8c 
-Disgruntled Woman: Percy? #line:099583c 
-Her Husband: Yes dear? #line:01f232a 
-Disgruntled Woman: Shut up. #line:091aa6b 
-Her Husband: Yes dear. #line:02d754a 
-
-
-
-//result faust, change into new scene to jump to
-Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
-Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
-Disgruntled Woman: Unless you're one of The Four.  #line:0204b2d 
-
-//result who?
+title:ContFirst
+---
+//result who? ONLY WHEN BOTH OPTIONS HAVE BEEN PICKED
 Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717 
+-> A first timer
+  Manaia: Yep, that's me. A first-timer.  #line:07994f0 
+  <<set $firstTimer = true>>
+  //result first
+  Disgruntled Woman: I see...  #line:0a81a97 
+  Disgruntled Woman: Well, I can't say I'd reccomend this year as your first.  #line:022dda4 
+  Disgruntled Woman: Normally it's far more interesting.   #line:06af27a 
+   <<jump ResultBored>>
+-> Second time, actually.
+  Manaia: Second time, actually.  #line:0ff6860 
+  //result second
+  Disgruntled Woman: Hmm... I don't think I've seen you around here.  #line:0ed04c9 
+  Disgruntled Woman: Though I suppose it's hard to tell with the mask.  #line:067d627 
+   <<jump ResultBored>>
 
-Manaia: Yep, that's me. A first-timer.  #line:07994f0 
-Manaia: Second time, actually.  #line:0ff6860 
 
 
-//result first
-Disgruntled Woman: I see...  #line:0a81a97 
-Disgruntled Woman: Well, I can't say I'd reccomend this year as your first.  #line:022dda4 
-Disgruntled Woman: Normally it's far more interesting.   #line:06af27a 
+===
 
-//result second
-Disgruntled Woman: Hmm... I don't think I've seen you around here.  #line:0ed04c9 
-Disgruntled Woman: Though I suppose it's hard to tell with the mask.  #line:067d627 
-
-
-
+title: ResultBored
+---
 //result bored 
 Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored. #line:01d7bca 
 Her Husband: I don't think that wise, my sweet.  #line:04e5d3d 
@@ -715,19 +741,35 @@ Disgruntled Woman: Pish posh. Don't be wet blanket. #line:0b991bd
 Her Husband: After the last event, I don't think they'll allow you or me near the bar.  #line:0d16258 
 <i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i> #line:0913116 
 
+<<jump WhoAre>>
 
-Manaia: Who are <b>The Four</b>? #line:07b53f1 
-Manaia: What else do you know about the accident?  #line:0706f21 
+===
+
+title:WhoAre
+---
+-> Who are The Four?
+ Manaia: Who are <b>The Four</b>? #line:07b53f1 
+ Manaia: I've been hearing that title all around.  #line:0a53a26 
+ <<jump FourQuestion>>
+-> What else do you know about the accident?
+ Manaia: What else do you know about the accident?  #line:0706f21 
+<<jump ResultAccident>>
 
 
+===
+
+title:FourQuestion
+---
 //result four
-Manaia: I've been hearing that title all around.  #line:0a53a26 
+
 
 //firstime yes
-Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
-
-//not first time
-Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
+<<if $firstTimer == true>>
+ Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
+ //not first time
+ <<else>>
+ Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
+<<endif>>
 Disgruntled Woman: These auctions really are going to the dogs.  #line:0aa88e7 
 Disgruntled Woman: If you expect me to tell you that, it would take all day. And I don't give out history classes for free.  #line:0685be2 
 Disgruntled Woman: All I'll tell you, is that our latest host is one of them.  #line:0a3d226 
@@ -736,8 +778,12 @@ Manaia: Latest host? #line:041c591
 
 Disgruntled Woman: Now, you're really asking too much of me.  #line:0c3b74a 
 Disgruntled Woman: I'm not a tutor. #line:00e1c00 
+<<jump WhoAre>>
 
+===
 
+title:ResultAccident
+---
 
 //result accident
 The woman sighs. #line:040b69f 
@@ -756,12 +802,14 @@ Manaia: Thank you. I'll find you something.  #line:06f65cd
 Disgruntled Woman: Surprise me! Whatever you do, just make it strong.  #line:066c233 
 Disgruntled Woman: If if doesn't bite back, I will. #line:00a65fc 
 The woman laughs, but something tells you she's not entirely joking.  #line:02d7b19 
+<<OutDialogue Interactor_Bartender>>
+//exit convo 
 ===
 
 title: Scene9
 position: -1424,-873
 ---
-
+<<InDialogue Interactor_Bartender>>
 <<if $bartenderSpeak == false>>
  //never spoken to bartender before
  Manaia: I've never seen a machine like that.  #line:03593c6 
@@ -806,6 +854,7 @@ position: -1424,-873
    <<jump ResultKnow>>
  ->  (Leave.)
    Manaia:	No thanks. 
+   <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
 ===
@@ -849,8 +898,9 @@ Bartender:	Would you like me to describe one?
  <<jump DrinkAsk>>
 -> (Order a drink)
  Manaia:	Order a drink.
- <<jump DrinkOrder>>
+  <<jump DrinkOrder>>
 -> Manaia:	Nevermind. (Leave.)
+  <<OutDialogue Interactor_Bartender>>
 
 
 ===
@@ -940,8 +990,8 @@ Claude:	Are you going to put something in that?
  <i>He sighs dramatically.<i> 
  Claude:	You're not giving me very much to work with. I'll just write that you did. 
   -> This isn't a biography, is it?
-  Manaia:	This isn't a biography is it?
-  <i>He's not listening, just busily scrawling something in his notes.<i> 
+   Manaia:	This isn't a biography is it?
+   <i>He's not listening, just busily scrawling something in his notes.<i> 
   -> (Ignore it.)
 -> Like what?
  Manaia:	Like what?
@@ -954,6 +1004,7 @@ Claude:	Are you going to put something in that?
   Manaia:	This isn't a biography is it?
   <i>He's not listening, just busily scrawling something in his notes.<i> 
   -> (Ignore it.)
+  <<OutDialogue Interactor_Bartender>>
 ===
 
 title:DrinkType
@@ -980,73 +1031,82 @@ position: -1281,-190
  Claude:	Are you quite alright?
  Manaia:	(Give him a thumbs up.)
  Manaia:	(Shake your head.) 
- You hand claude the drink. It'd be wasted on you. 
+ You hand Claude the drink. It'd be wasted on you. 
 <<endif>>
 
 ===
 
 title: Scene10
+position: -70,-17
 ---
+<<InDialogue Interactor_Bartender>>
 //if not gotten drink
-Disgruntled Woman:	Well? 
-Disgruntled Woman:	No drink yet?
-Disgruntled Woman:	To the bar, Chop Chop. 
+<<if $drink == "">>
+ Disgruntled Woman:	Well? 
+ Disgruntled Woman:	No drink yet?
+ Disgruntled Woman:	To the bar, Chop Chop. 
+
+<<OutDialogue Interactor_Bartender>>
+ //end convo
+
+<<elseif $drinks == "Will">>
+ //will o wisp
+ Disgruntled Woman:	Well?
+ You hand her the "virgin Will-o'-Wisp". 
+ She takes a sip and... 
+ Disgruntled Woma:n	What is this? A milkshake? 
+ Disgruntled Woman:	Don't kid me, I know my drinks. 
+ She passes it to her husband hurriedly, who takes it with glee, and waves you off. 
+ Disgruntled Woman:	Go get something else.
+ //end convo
 
 
-
-//will o wisp
-Disgruntled Woman:	Well?
-You hand her the "virgin Will-o'-Wisp". 
-She takes a sip and... 
-Disgruntled Woma:n	What is this? A milkshake? 
-Disgruntled Woman:	Don't kid me, I know my drinks. 
-She passes it to her husband hurriedly, who takes it with glee, and waves you off. 
-Disgruntled Woman:	Go get something else.
-
-//devil on the rocks choice
-Disgruntled Woman:	Well?
-You hand her a "Devil on the rocks". 
-Disgruntled Woman:	Oh! This one has some kick. 
-Disgruntled Woman:	This will do just fine. 
-Manaia	Will you answer my question now?
-Disgruntled Woman:	What was it?
-Disgruntled Woman:	Oh yes, the accident. 
-Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
-Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
-Disgruntled Woman:	None of those robbers made it out.
-Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
-
--> Sky mules? 
- Manaia:	Sky mules?
- Disgruntled Woman:	These ones were different. 
- Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
- Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
- Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
- She takes a long swig of her drink. 
--> They all died?
- Manaia:	They all died?
- Manaia:	I didn't realise they took contract work. 
- Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
- Disgruntled Woman:	To scam him of his items and... their salary.
- Disgruntled Woman:	I wouldn't—
- Disgruntled Woman:	I wouldn't doubt it.
- Manaia:	Do you know any of their names?
- Disgruntled Woman:	The only one who could have known that is Faust himself, or...
- Disgruntled Woman:	Possibly one of the four. 
- Another drawn-out sip. 
- Looking down at her emptied glass, she laughs silently. 
- Disgruntled Woman:	Or— Or someone close to them. 
- Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
- Her head begins to sway. 
- Is she drunk... already? 
-
--> Do you know anything else?
- Manaia: 	Do you know anything else? 
-	She just stares at you, thinking. 
- Her Husband:	Regretfully, we haven't heard much else.
+<<elseif $drinks == "Devil">>
+  //devil on the rocks choice
+  Disgruntled Woman:	Well?
+  You hand her a "Devil on the rocks". 
+  Disgruntled Woman:	Oh! This one has some kick. 
+  Disgruntled Woman:	This will do just fine. 
+  Manaia	Will you answer my question now?
+  Disgruntled Woman:	What was it?
+  Disgruntled Woman:	Oh yes, the accident. 
+  Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
+  Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
+  Disgruntled Woman:	None of those robbers made it out.
+  Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
+  
+  -> Sky mules? 
+   Manaia:	Sky mules?
+   Disgruntled Woman:	These ones were different. 
+   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
+   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
+   Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
+   She takes a long swig of her drink. 
+  -> They all died?
+   Manaia:	They all died?
+   Manaia:	I didn't realise they took contract work. 
+   Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
+   Disgruntled Woman:	To scam him of his items and... their salary.
+   Disgruntled Woman:	I wouldn't—
+   Disgruntled Woman:	I wouldn't doubt it.
+   Manaia:	Do you know any of their names?
+   Disgruntled Woman:	The only one who could have known that is Faust himself, or...
+   Disgruntled Woman:	Possibly one of the four. 
+   Another drawn-out sip. 
+   Looking down at her emptied glass, she laughs silently. 
+   Disgruntled Woman:	Or— Or someone close to them. 
+   Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
+   Her head begins to sway. 
+   Is she drunk... already? 
+  
+  -> Do you know anything else?
+   Manaia: 	Do you know anything else? 
+  	She just stares at you, thinking. 
+   Her Husband:	Regretfully, we haven't heard much else.
 	
 	// Result drink, Welkin's Gift
-	
+
+<<elseif $drinks == "Welkin">>
  Disgruntled Woman:	Well?
  Disgruntled Woman:	You hand her a "Welkin's Gift". 
  Disgruntled Woman:	Oh! That bite! This is good. 
@@ -1080,18 +1140,23 @@ Disgruntled Woman:	So it's difficult to implicate themselves in their own suicid
  Her head begins to sway.
  <i>Is she drunk... already?</i>
 
--> The accident
- Manaia:	The accident. 
+ -> The accident
+  Manaia:	The accident. 
+  <<jump TheAccident>>
+ -> Are you feeling okay?
+  Manaia:	Are you feeling okay? 
+  Disgruntled Woman:	Not really. 
+  Disgruntled Woman:	 I don't...
+  Her Husband:	You were talking about the accident at the docking area. 
+  <<jump TheAccident>>
 
--> Are you feeling okay?
- Manaia:	Are you feeling okay? 
- Disgruntled Woman:	Not really. 
- Disgruntled Woman:	 I don't...
- Her Husband:	You were talking about the accident at the docking area. 
 
+
+<<endif>>
 ===
 
 title: TheAccident
+position: 247,113
 ---
 Manaia:	 We were talking about it. Just a minute ago. 
 Disgruntled Woman:	Mn. Maybe my boyfriend can tell you. 
@@ -1124,6 +1189,7 @@ You can't really follow it. 
 	
  Manaia:	It wasn't me. 
  Manaia:	Something else is going on here. 
+ <<OutDialogue DW>>
 //end convo
 
 ===
