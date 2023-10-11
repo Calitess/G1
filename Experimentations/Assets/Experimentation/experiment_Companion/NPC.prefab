@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 5419238851719307162}
   - component: {fileID: 1456172202593488304}
   - component: {fileID: 3585070941063820271}
+  - component: {fileID: 5988849547712143759}
   m_Layer: 0
   m_Name: NPC
   m_TagString: Untagged
@@ -191,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 29cf89939bfc9284fa27a64ee5f00efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisIsPartOfTutorial: 0
   virtualCamera: {fileID: 0}
   playerCam: {fileID: 0}
   journalEntryText: {fileID: 0}
@@ -205,6 +207,7 @@ MonoBehaviour:
   newJournalEntry: {fileID: 0}
   newObjective: {fileID: 0}
   sequentialImage: {fileID: 0}
+  dialogueToTriggerAfterInteractionsFinish: {fileID: 0}
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -226,8 +229,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fb03eba69ac38e47bf403054e8c6a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueRunner: {fileID: 0}
-  disableThisDialogueRunner: {fileID: 0}
+  TalkDialogue: {fileID: 0}
+  ThoughtDialogue: {fileID: 0}
+  EavesdropDialogue: {fileID: 0}
+  Talk: 0
+  Thought: 0
+  Eavesdrop: 0
 --- !u!114 &3585070941063820271
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -422,6 +429,22 @@ MonoBehaviour:
   OnInvalidate:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &5988849547712143759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6161709409750980357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b3b2087bd58674a87e75bd2af68e22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pointToEavesdrop: {fileID: 0}
+  pointToWalk: {fileID: 0}
+  companionFollowScript: {fileID: 0}
+  companionAgent: {fileID: 0}
 --- !u!1001 &2297268311951258899
 PrefabInstance:
   m_ObjectHideFlags: 0

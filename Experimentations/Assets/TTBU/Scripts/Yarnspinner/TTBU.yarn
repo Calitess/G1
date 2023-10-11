@@ -286,6 +286,7 @@ Claude: You don't mind if I tag along right? For research?  #line:0b0b702
 Claude: Great! Don't mind me. Act as if I'm not even here.  #line:08da2af 
 <<ButtonInput NPC_Companion>>
 <<OutDialogue NPC_Companion>>
+<<FollowPlayer NPC_Companion>>
 ===
 
 

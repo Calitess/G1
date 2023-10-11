@@ -2,17 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CompanionState : MonoBehaviour
+public abstract class CompanionState
 {
-    // Start is called before the first frame update
-    void Start()
+
+    protected CompanionStateMachine stateMachine;
+
+    public CompanionState (CompanionStateMachine localStateMachine)
     {
-        
+        this.stateMachine = localStateMachine;
     }
 
-    // Update is called once per frame
-    void Update()
+    public abstract void EnterState();
+
+    public virtual void UpdateState()
     {
-        
+        //do nothing
     }
+    public abstract void ExitState();
 }

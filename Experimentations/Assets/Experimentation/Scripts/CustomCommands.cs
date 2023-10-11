@@ -8,6 +8,7 @@ using TMPro;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Unity.PlasticSCM.Editor.WebApi;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -324,5 +325,18 @@ public class CustomCommands : MonoBehaviour
     public void ButtonInput()
     {
         action.inputType = vTriggerGenericAction.InputType.GetButtonDown;
+    }
+
+    [YarnCommand("FollowPlayer")]
+    public void FollowPlayer()
+    {
+        
+        CompanionStateMachine companion = GetComponent<CompanionStateMachine>();
+
+        if(companion !=null)
+        {
+
+            companion.SetState(companion.FollowState);
+        }
     }
 }
