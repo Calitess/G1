@@ -135,6 +135,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lilith_Rabbit_Rigged
       objectReference: {fileID: 0}
+    - target: {fileID: 1313996587502730680, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313996587502730680, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313996587502730680, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1313996587502730680, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5465940246521907071, guid: 606b6c31ac7f1404d9b0fa200b93fbd8,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 606b6c31ac7f1404d9b0fa200b93fbd8, type: 3}
 --- !u!4 &602464238839948983 stripped
