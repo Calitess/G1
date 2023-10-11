@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     //camera stacking script to overlay the journal camera on top of the player camera
     [SerializeField] CameraStacking playerCamera;
 
-    //[SerializeField] Material blankPageMaterial;
+    [SerializeField] public RectTransform objectiveContent;
 
     //bool to check if the book is closing or not
     bool isClosing = false;
