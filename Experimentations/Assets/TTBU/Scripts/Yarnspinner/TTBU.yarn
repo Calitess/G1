@@ -843,8 +843,10 @@ position: -1424,-873
  Bartender:	Might I interest you in one?  #line:0900b63 
  <<jump AskingAboutDrinks>>
 <<endif>>
-<i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
 
+<<if $dwMission == false>>
+<i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
+<<endif>>
 <<jump Scene9Con>>
 ===
 
@@ -862,14 +864,14 @@ title:Scene9Con
    <<OutDialogue Interactor_Bartender>>
 
 <<elseif $dwMission == true>>
-  -> (Ask what they have.)
-    Manaia:	What do you have?//choice have
-    <<jump AskingAboutDrinks>>
   -> Surprise me. 
     Manaia:	Surprise me. //choice welkin
     <<set $drinknumber += 1>>
     <<set $drinks = "Welkin">>
     <<jump DrinkOrdered>>
+  -> (Ask what they have.)
+    Manaia:	What do you have?//choice have
+    <<jump AskingAboutDrinks>>
   -> (Ask about the accident.) 
     <<jump ResultKnow>>
   ->  (Leave.)
@@ -917,14 +919,12 @@ Bartender:	Would you like me to describe one?
   <<set $drinks = "Devil">>
   <<jump DrinkAsk>>
 -> (Leave.)
- Manaia:	Nevermind.
+  Manaia:	Nevermind.
   <<OutDialogue Interactor_Bartender>>
+-> (Order a drink)
+  Manaia:	Order a drink.
+  <<jump DrinkOrder>>
 
-<<if $dwMission == true>>
-  -> (Order a drink)
-    Manaia:	Order a drink.
-    <<jump DrinkOrder>>
-<<endif>>
 ===
 
 title: DrinkOrder
@@ -951,7 +951,7 @@ Manaia:	Could I get...
  <<jump DrinkOrdered>>
 -> Nevermind.
  Manaia:	Nevermind. 
-
+ <<OutDialogue Interactor_Bartender>>
 ===
 
 title: DrinkAsk
@@ -982,20 +982,20 @@ position: -832,-1034
 title:DrinkOrdered
 position: -1060,-413
 ---
-<<if $dwMission == true>>
- Bartender:	Your wish is my command.
- Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
- <i>Now to give this to that woman.<i> 
-
- <<if $drinknumber <= 1>> //if this is the first time getting drink for the woman
-   <<jump ClaudeQuestion>>
- <<endif>>
-
-<<elseif $dwMission == false>>
- Bartender:	Your wish is my command.
- Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
- <<jump DrinkType>>
-<<endif>>
+  <<if $dwMission == true>>
+   Bartender:	Your wish is my command.
+   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
+   <i>Now to give this to that woman.<i> 
+  
+   <<if $drinknumber <= 1>> //if this is the first time getting drink for the woman
+     <<jump ClaudeQuestion>>
+   <<endif>>
+  
+  <<elseif $dwMission == false>>
+   Bartender:	Your wish is my command.
+   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
+   <<jump DrinkType>>
+  <<endif>>
 
 ===
 
@@ -1014,8 +1014,9 @@ Claude:	Are you going to put something in that?
   -> This isn't a biography, is it?
    Manaia:	This isn't a biography is it?
    <i>He's not listening, just busily scrawling something in his notes.<i> 
+   <<OutDialogue Interactor_Bartender>>
   -> (Ignore it.)
-  <<OutDialogue Interactor_Bartender>>
+   <<OutDialogue Interactor_Bartender>>
 -> Like what?
  Manaia:	Like what?
  Claude:	An invisible wire, or mic! 
@@ -1024,10 +1025,11 @@ Claude:	Are you going to put something in that?
  <i>He sighs dramatically.<i> 
  Claude:	You're not giving me very much to work with. I'll just write that you did. 
   -> This isn't a biography, is it?
-  Manaia:	This isn't a biography is it?
-  <i>He's not listening, just busily scrawling something in his notes.<i> 
+    Manaia:	This isn't a biography is it?
+    <i>He's not listening, just busily scrawling something in his notes.<i>
+    <<OutDialogue Interactor_Bartender>> 
   -> (Ignore it.)
-  <<OutDialogue Interactor_Bartender>>
+   <<OutDialogue Interactor_Bartender>>
 ===
 
 title:DrinkType
@@ -1097,37 +1099,9 @@ position: -70,-17
   Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
   Disgruntled Woman:	None of those robbers made it out.
   Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
+  <<jump Skumules>>
+
   
-  -> Sky mules? 
-   Manaia:	Sky mules?
-   Disgruntled Woman:	These ones were different. 
-   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
-   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
-   Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
-   She takes a long swig of her drink. 
-   
-  -> They all died?
-   Manaia:	They all died?
-   Manaia:	I didn't realise they took contract work. 
-   Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
-   Disgruntled Woman:	To scam him of his items and... their salary.
-   Disgruntled Woman:	I wouldn't—
-   Disgruntled Woman:	I wouldn't doubt it.
-   Manaia:	Do you know any of their names?
-   Disgruntled Woman:	The only one who could have known that is Faust himself, or...
-   Disgruntled Woman:	Possibly one of the four. 
-   Another drawn-out sip. 
-   Looking down at her emptied glass, she laughs silently. 
-   Disgruntled Woman:	Or— Or someone close to them. 
-   Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
-   Her head begins to sway. 
-   Is she drunk... already? 
-  
-  -> Do you know anything else?
-    Manaia: 	Do you know anything else? 
-  	She just stares at you, thinking. 
-    Her Husband:	Regretfully, we haven't heard much else.
-	
 	// Result drink, Welkin's Gift
 
  <<elseif $drinks == "Welkin">>
@@ -1175,6 +1149,50 @@ position: -70,-17
      <<jump TheAccident>>
 
  <<endif>>
+===
+title:Skumules
+---
+-> Sky mules? 
+   Manaia:	Sky mules?
+   Disgruntled Woman:	These ones were different. 
+   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
+   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
+   Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
+   She takes a long swig of her drink. 
+   <<jump alldied>>
+-> They all died?
+   Manaia:	They all died?
+   Manaia:	I didn't realise they took contract work. 
+   <<jump alldied>>
+===
+
+
+title: alldied
+---
+ Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
+ Disgruntled Woman:	To scam him of his items and... their salary.
+ Disgruntled Woman:	I wouldn't—
+ Disgruntled Woman:	I wouldn't doubt it.
+ Manaia:	Do you know any of their names?
+ Disgruntled Woman:	The only one who could have known that is Faust himself, or...
+ Disgruntled Woman:	Possibly one of the four. 
+ Another drawn-out sip. 
+ Looking down at her emptied glass, she laughs silently. 
+ Disgruntled Woman:	Or— Or someone close to them. 
+ Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
+ Her head begins to sway. 
+ Is she drunk... already? 
+  
+-> Do you know anything else?
+    Manaia: 	Do you know anything else? 
+  	She just stares at you, thinking. 
+    Her Husband:	Regretfully, we haven't heard much else.
+-> (Leave)
+   Manaia: 	I'll leave you both to it.
+	 She just stares at you, thinking. 
+<<set $dwMission = false>>
+<<OutDialogue Interactor_DisgruntaledWoman>>
+<<ActivateRift Interactor_Bartender 1>>
 ===
 
 title: TheAccident
