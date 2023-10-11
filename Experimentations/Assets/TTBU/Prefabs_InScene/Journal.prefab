@@ -9946,6 +9946,8 @@ MonoBehaviour:
   - material: {fileID: 2100000, guid: 9e7d6a0111d6a3c4db3024ac8c488ae8, type: 2}
   - material: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
   - material: {fileID: 2100000, guid: 9e7d6a0111d6a3c4db3024ac8c488ae8, type: 2}
+  - material: {fileID: 2100000, guid: e6b63f8d7ff484a4a8520359f40f676d, type: 2}
+  - material: {fileID: 2100000, guid: 9e7d6a0111d6a3c4db3024ac8c488ae8, type: 2}
   - material: {fileID: 2100000, guid: f741140f9df1bdb488c2cde314c38b73, type: 2}
   pages:
   - {fileID: 7983969128283789406}
@@ -9956,7 +9958,7 @@ MonoBehaviour:
   currentPageNumber: 1
   maxPagesTurningCount: 4
   deltaTime: 1
-  pageFillerMaterial: {fileID: 2100000, guid: 994cb9cc3369e7046a93b91ab44ddfbb, type: 2}
+  pageFillerMaterial: {fileID: 2100000, guid: 9e7d6a0111d6a3c4db3024ac8c488ae8, type: 2}
 --- !u!1 &7983969130155351403
 GameObject:
   m_ObjectHideFlags: 0
@@ -10467,7 +10469,12 @@ PrefabInstance:
     - target: {fileID: 8517030477655335086, guid: c58d9ce7a25e8e840aa4b3870a038d8d,
         type: 3}
       propertyPath: m_Size
-      value: 0.56242967
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8517030477655335086, guid: c58d9ce7a25e8e840aa4b3870a038d8d,
+        type: 3}
+      propertyPath: m_Value
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8517030477717275173, guid: c58d9ce7a25e8e840aa4b3870a038d8d,
         type: 3}

@@ -37,6 +37,8 @@ public class GameManager : MonoBehaviour
     //camera stacking script to overlay the journal camera on top of the player camera
     [SerializeField] CameraStacking playerCamera;
 
+    //[SerializeField] Material blankPageMaterial;
+
     //bool to check if the book is closing or not
     bool isClosing = false;
 
@@ -51,6 +53,8 @@ public class GameManager : MonoBehaviour
     {
         //Make the game state as 'play' at start
         UpdateGameState(GameState.Play);
+
+        //endlessBook.pageFillerMaterial = blankPageMaterial;
     }
 
     //this is to fix the physX after unity 2019
