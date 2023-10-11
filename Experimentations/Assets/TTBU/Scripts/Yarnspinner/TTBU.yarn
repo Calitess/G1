@@ -529,24 +529,21 @@ Niamh: Manaia. If I ever meant anything to you, you would listen. Give up.  #lin
 -> Manaia: This isn’t real, I’m not listening to you. #line:0487fcf 
    <<sprTalking SpriteController "L">>
    Manaia: This isn’t real, I’m not listening to you. #line:05bd943 
-   <<sprTalking SpriteController "R">>
-   Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0c9c670 
-     <<jump Scene7_3>>
 -> Manaia: Let me help you.  #line:0f0abac 
    <<sprTalking SpriteController "L">>
    Manaia: Let me help you.  #line:02bf6d4 
-   <<sprTalking SpriteController "R">>
-   Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0ed489e 
-     <<jump Scene7_3>>
+<<sprTalking SpriteController "R">>
+Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0ed489e 
+<<FadeNiamh WorkBitch>>
+//  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
+Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
+Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
+<<jump Scene7_3>>
 ===
 
 title: Scene7_3
 position: 1004,227
 ---
-
-//  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
-Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
 
 Claude: Outstanding performance! Was that a monologue?  #line:063d9bf 
 Manaia: ...  #line:097902f 

@@ -15111,6 +15111,9 @@ MonoBehaviour:
   riftTrail1: {fileID: 0}
   riftTrail2: {fileID: 0}
   proximityDistortion: {fileID: 0}
+  OnRealmOpen:
+    m_PersistentCalls:
+      m_Calls: []
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -61336,7 +61339,10 @@ VisualEffect:
   m_ResourceVersion: 1
   m_PropertySheet:
     m_Float:
-      m_Array: []
+      m_Array:
+      - m_Value: 0.7
+        m_Name: Multiplier
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
@@ -61675,6 +61681,9 @@ MonoBehaviour:
   riftTrail1: {fileID: 0}
   riftTrail2: {fileID: 0}
   proximityDistortion: {fileID: 0}
+  OnRealmOpen:
+    m_PersistentCalls:
+      m_Calls: []
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -62948,6 +62957,9 @@ MonoBehaviour:
   riftTrail1: {fileID: 0}
   riftTrail2: {fileID: 0}
   proximityDistortion: {fileID: 0}
+  OnRealmOpen:
+    m_PersistentCalls:
+      m_Calls: []
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -64013,6 +64025,9 @@ MonoBehaviour:
   riftTrail1: {fileID: 0}
   riftTrail2: {fileID: 0}
   proximityDistortion: {fileID: 0}
+  OnRealmOpen:
+    m_PersistentCalls:
+      m_Calls: []
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -64975,18 +64990,6 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 7983969128130643460, guid: ccdc2e9c37d302d4d9dbc449652bc241, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: ccdc2e9c37d302d4d9dbc449652bc241, type: 3}
---- !u!114 &1914294301129008537 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1775101699460774674, guid: ccdc2e9c37d302d4d9dbc449652bc241,
-    type: 3}
-  m_PrefabInstance: {fileID: 158361635312131723}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &7853816565247310471 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7983969130152764428, guid: ccdc2e9c37d302d4d9dbc449652bc241,
@@ -65002,12 +65005,6 @@ MonoBehaviour:
 --- !u!4 &8398149546835940764 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8556458401538231063, guid: ccdc2e9c37d302d4d9dbc449652bc241,
-    type: 3}
-  m_PrefabInstance: {fileID: 158361635312131723}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8415491391127893326 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8573527422737935301, guid: ccdc2e9c37d302d4d9dbc449652bc241,
     type: 3}
   m_PrefabInstance: {fileID: 158361635312131723}
   m_PrefabAsset: {fileID: 0}
@@ -65385,7 +65382,7 @@ MonoBehaviour:
   thisIsPartOfTutorial: 0
   virtualCamera: {fileID: 0}
   playerCam: {fileID: 0}
-  journalEntryText: {fileID: 1914294301129008537}
+  journalObjectives: {fileID: 0}
   whatToWrite: 'Press Q or ESC to close the Journal
 
 
@@ -65408,7 +65405,7 @@ MonoBehaviour:
   hasInteracted: 0
   newJournalEntry: {fileID: 5168020406958121458}
   newObjective: {fileID: 6567295592258748698}
-  sequentialImage: {fileID: 8415491391127893326}
+  sequentialImage: {fileID: 0}
   dialogueToTriggerAfterInteractionsFinish: {fileID: 0}
   OnInteractorEnter:
     m_PersistentCalls:

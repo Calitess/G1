@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using UnityEngine.Events;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEditor.Rendering;
+using UnityEngine.VFX;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -37,6 +38,7 @@ public class CustomCommands : MonoBehaviour
     [Space]
     [SerializeField] GameObject sequentialImage;
 
+    [SerializeField] VisualEffect NiamhVFX;
 
     vTriggerGenericAction action;
     AudioSource scribbleSource;
@@ -346,5 +348,22 @@ public class CustomCommands : MonoBehaviour
 
             companion.SetState(companion.FollowState);
         }
+    }
+
+    [YarnCommand("FadeNiamh")]
+    public void FadeNiamh()
+    {
+        if(hasInteracted)
+        {
+            NiamhVFX.SetFloat("Multiplier", 5f);
+            StartCoroutine(StopNiamh());
+
+        }
+    }
+
+    IEnumerator StopNiamh()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        NiamhVFX.Stop();
     }
 }
