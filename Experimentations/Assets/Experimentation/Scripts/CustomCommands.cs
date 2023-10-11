@@ -8,16 +8,19 @@ using TMPro;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using Unity.PlasticSCM.Editor.WebApi;
+using UnityEditor.Rendering;
 
 public class CustomCommands : MonoBehaviour
 {
     Animator anim;
     GameManager gameManager;
+
     [SerializeField] bool thisIsPartOfTutorial;
     [SerializeField] public CinemachineVirtualCamera virtualCamera;
     [SerializeField] GameObject playerCam;
     [Space]
-    [SerializeField] TMP_Text journalEntryText;
+    [SerializeField] RectTransform journalObjectives;
     [SerializeField][TextArea] string whatToWrite;
     [Space]
     [SerializeField] EndlessBook book;
@@ -51,6 +54,7 @@ public class CustomCommands : MonoBehaviour
     {
         anim = gameObject.GetComponent<Animator>();
         gameManager = FindObjectOfType<GameManager>();
+        journalObjectives = gameManager.objectiveContent;
         scribbleSource = FindObjectOfType<vThirdPersonController>().gameObject.GetComponent<AudioSource>();
         //book = FindObjectOfType<EndlessBook>();
         action = this.gameObject.GetComponent<vTriggerGenericAction>();
@@ -246,7 +250,12 @@ public class CustomCommands : MonoBehaviour
 
         scribbleSource.Play();
         StartCoroutine(NewObjective());
-        journalEntryText.text = whatToWrite;
+        GameObject newObjective = Instantiate(new GameObject(), journalObjectives.transform);
+        TMP_Text journalObjectiveText = newObjective.AddComponent<TextMeshProUGUI>();
+        journalObjectiveText.name = "Objective";
+        journalObjectiveText.fontSize = 20;
+        journalObjectiveText.color = Color.black;
+        journalObjectiveText.text = whatToWrite;
 
     }
 
@@ -324,5 +333,18 @@ public class CustomCommands : MonoBehaviour
     public void ButtonInput()
     {
         action.inputType = vTriggerGenericAction.InputType.GetButtonDown;
+    }
+
+    [YarnCommand("FollowPlayer")]
+    public void FollowPlayer()
+    {
+        
+        CompanionStateMachine companion = GetComponent<CompanionStateMachine>();
+
+        if(companion !=null)
+        {
+
+            companion.SetState(companion.FollowState);
+        }
     }
 }

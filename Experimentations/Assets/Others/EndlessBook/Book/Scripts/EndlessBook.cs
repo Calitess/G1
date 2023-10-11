@@ -335,8 +335,9 @@
         /// this value will be used to populate the final even page number.
         /// This is also the default page material used when adding a new page.
         /// </summary>
+        
         [SerializeField]
-        protected Material pageFillerMaterial;
+        public Material pageFillerMaterial;
 
         /// <summary>
         /// If turning by dragging, this is the direction of the turn

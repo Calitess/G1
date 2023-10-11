@@ -7,7 +7,8 @@ public class simpleNavFollow : MonoBehaviour
 {
 
     [SerializeField] private NavMeshAgent agent;
-    [SerializeField] private Transform playerTransform;
+    [HideInInspector] public Transform targetPosition;
+    [HideInInspector] public float distanceFromTarget;
     [SerializeField] private Animator npcAnimator;
 
 
@@ -25,10 +26,10 @@ public class simpleNavFollow : MonoBehaviour
 
     public void FollowPlayer()
     {
-        if(Vector3.Distance(playerTransform.position, this.transform.position) > 2f)
+        if(Vector3.Distance(targetPosition.position, this.transform.position) > distanceFromTarget)
         {
             npcAnimator.SetFloat("InputMagnitude",0.4f);
-            agent.SetDestination(playerTransform.position);
+            agent.SetDestination(targetPosition.position);
         }
         else
         {
@@ -39,7 +40,7 @@ public class simpleNavFollow : MonoBehaviour
     private void StopFollowing()
     {
         npcAnimator.SetFloat("InputMagnitude", 0f);
-        agent.stoppingDistance = 2;
+        agent.stoppingDistance = distanceFromTarget;
     }
 
 
