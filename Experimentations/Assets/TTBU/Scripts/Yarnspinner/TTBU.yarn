@@ -483,6 +483,7 @@ title: SCene6_3
    Display Attendant: Bollocks. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
     <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
     //delete trigger after interaction NOT SURE IF CAN DO THAT BUT IF CAN, DO HERE
+    <<DeleteInteraction Interactor_Terrarium_Scene6>>
    
 -> Manaia: Walk away (End Conversation) #line:068590c 
 <<OutDialogue Interactor_Terrarium_Scene6>> 
