@@ -201,26 +201,12 @@ public class CustomCommands : MonoBehaviour
 
         gameManager.isInDialogue = false;
 
-
         if (deleteTriggeAfterDialogue)
         {
-            SphereCollider col = this.GetComponent<SphereCollider>();
-            if (action != null)
-            {
-                action.enabled = false;
-                
-            }
-            if (col != null)
-            {
-                col.enabled = false;
-
-            }
-
-
-
+            DeleteInteraction();
         }
 
-        if (thisIsPartOfTutorial)
+            if (thisIsPartOfTutorial)
         {
 
             //this looks at the index of TutorialInteraction and then removes it
@@ -243,6 +229,28 @@ public class CustomCommands : MonoBehaviour
 
     }
 
+    [YarnCommand("DeleteInteraction")]
+    public void DeleteInteraction()
+    {
+
+        if (deleteTriggeAfterDialogue)
+        {
+            SphereCollider col = this.GetComponent<SphereCollider>();
+            if (action != null)
+            {
+                action.enabled = false;
+
+            }
+            if (col != null)
+            {
+                col.enabled = false;
+
+            }
+
+
+
+        }
+    }
 
 
     [YarnCommand("JournalEntryText")]
