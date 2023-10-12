@@ -78,12 +78,12 @@ public class SpriteController : MonoBehaviour
         if(whichSprite == 'R' || whichSprite == 'r')
         {
             spriteController.spriteR.color = Color.white;
-            spriteController.spriteL.color = Color.grey;
+            spriteController.spriteL.color = new Color(0.2f,0.2f,0.2f);
         }
 
         else if (whichSprite == 'L' || whichSprite == 'l')
         {
-            spriteController.spriteR.color = Color.grey;
+            spriteController.spriteR.color = new Color(0.2f, 0.2f, 0.2f);
             spriteController.spriteL.color = Color.white;
         }
 
