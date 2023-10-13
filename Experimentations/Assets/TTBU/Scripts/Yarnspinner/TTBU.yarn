@@ -134,10 +134,13 @@ position: -835,-175
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>. #line:04ea975 
 Fionn: She <i>has</i> been working here though, told me herself.  #line:01cbb2b 
+<<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_DingyStuff>>
 Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it.  #line:0a172ab 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff Cam_Brother_DingyStuff2>>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of mystic junk.   #line:0b01533 
-Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff2 Cam_Brother_Scene1>>
+Fionn: Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
 <<sprTalking SpriteController "L">>
 Manaia: So this is where I come in?  #line:0ab85a5 
 <<sprTalking SpriteController "R">>
@@ -146,8 +149,10 @@ Fionn: Exactly... well.. that isn't to say it'll be easier for you.  #line:0920f
 Fionn: As an unknown here, it'll take a bit to get people to talk without causing suspicion. Get their trust. Tell them things they want to hear. Or find another way around. #line:094943b 
 //// A sound of a kerfuffle near the doorway (( the companion giving away his position slightly, apoligising to someone?))
  //cut the camera towards the doorway with nothing there. A few moments later, cut back to fionn
+ <<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_Eavesdrop>>
 <<sprTalking SpriteController "R">>
 Fionn: Look, it won't be long before the first night of bidding starts. Find out as much as you can and I'll get you after. We can't be seen together once we're inside.  #line:07825cd 
+ <<Cinematic Char_Bro Cam_Brother_Eavesdrop Cam_Brother_Scene1>>
 <<sprTalking SpriteController "L">>
 Manaia: I won't let you down.  #line:09cdc0a 
 <<sprTalking SpriteController "R">>
