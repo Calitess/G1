@@ -244,8 +244,6 @@ public class CustomCommands : MonoBehaviour
     public void DeleteInteraction()
     {
 
-        if (deleteTriggeAfterDialogue)
-        {
             SphereCollider col = this.GetComponent<SphereCollider>();
             if (action != null)
             {
@@ -258,9 +256,6 @@ public class CustomCommands : MonoBehaviour
 
             }
 
-
-
-        }
     }
 
 

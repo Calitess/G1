@@ -1518,7 +1518,7 @@ position: 140,910
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "L">>
-Manaia:	They won't talk if they see me listening.  #line:0613283 
+ //Manaia:	They won't talk if they see me listening.  #line:0613283 
 	// Maid talking to male servant in secrecy, One of the servants is consoling their weeping maid friend. 
 
 
@@ -1529,11 +1529,14 @@ Maid:	I can't help it, it's too much.  #line:028a4a6
 Servant:	Margot and Lucille both, neither of them deserved it.  #line:05b79a4 
 Maid:	They were just doing their jobs.  #line:0557112 
 Maid:	They didn't have anything to do with the accident, so why?  #line:0043b63 
-	
+<<OutDialogue Interactor_Eavesdrop_Maid>>
+===
+
+title: Scene7-5_1
+---
 Manaia:	Margot and Lucille... must be the maids who died.  #line:01349dc 
 Manaia:	I can't help but feel relieved... #line:0342906 
 Manaia:	For having not heard Niamh's name yet.  #line:029bad7 
 Manaia:	I will find her. #line:0a94897 
-
-<<OutDialogue Interactor_Eavesdrop_Maid>>
+<<OutDialogue Eavesdrop_Maid_Thoughts_Downstairs>>
 ===
