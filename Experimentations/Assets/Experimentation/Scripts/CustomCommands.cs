@@ -11,6 +11,7 @@ using UnityEngine.Events;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEditor.Rendering;
 using UnityEngine.VFX;
+using echo17.EndlessBook.Demo02;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -40,6 +41,8 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] VisualEffect NiamhVFX;
 
+    [SerializeField] PageView_02 pageView_02;
+
     vTriggerGenericAction action;
     AudioSource scribbleSource;
     SpriteController spriteController;
@@ -65,6 +68,7 @@ public class CustomCommands : MonoBehaviour
         tutorialInteractions = FindObjectOfType<TutorialInteractions>();
         InteractionIcon = GetComponent<ShowInteractable>();
         npcDialogue = GetComponent<npcDialogue>();
+        pageView_02 = FindObjectOfType<PageView_02>();
 
         if(thisIsPartOfTutorial)
         {
@@ -286,6 +290,7 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is addedd");
         book.AddPageData(leftPageMaterial);
         book.AddPageData(rightPageMaterial);
+        pageView_02.chapterJumps[2].pageNumber = book.LastPageNumber;
     }
 
     [YarnCommand("InsertEntry")]
@@ -297,6 +302,7 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is inserted");
         book.InsertPageData((pageNumber - 1), leftPageMaterial);
         book.InsertPageData(pageNumber, rightPageMaterial);
+
     }
 
     IEnumerator NewJournalEntry()
