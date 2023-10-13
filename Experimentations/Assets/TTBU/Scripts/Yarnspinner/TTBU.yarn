@@ -594,7 +594,8 @@ Manaia: ...  #line:097902f
 <<sprTalking SpriteController "R">>
 Claude: The determination! The confusion! It was like a punch to the gut!  #line:078043c 
 Claude: One piece of criticism though, your script was just awful. Made no sense.   #line:0acc0a6 
-
+<<NewPageEntry Interactor>>
+<<ShowImage Interactor>> 
 // Downstairs is now openn
 //rift opens, niamg fades into view
 //<<ShowImage ReachingOut>>  might need to change name of dialogue jump
