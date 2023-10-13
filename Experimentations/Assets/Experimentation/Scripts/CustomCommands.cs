@@ -290,7 +290,7 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is addedd");
         book.AddPageData(leftPageMaterial);
         book.AddPageData(rightPageMaterial);
-        pageView_02.chapterJumps[2].pageNumber = book.LastPageNumber;
+        pageView_02.chapterJumps[3].pageNumber = book.LastPageNumber;
     }
 
     [YarnCommand("InsertEntry")]
@@ -302,6 +302,7 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is inserted");
         book.InsertPageData((pageNumber - 1), leftPageMaterial);
         book.InsertPageData(pageNumber, rightPageMaterial);
+        pageView_02.chapterJumps[3].pageNumber = book.LastPageNumber;
 
     }
 

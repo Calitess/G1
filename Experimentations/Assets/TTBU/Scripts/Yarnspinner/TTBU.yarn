@@ -93,7 +93,7 @@ Fionn: I wanted to do it myself. From the inside. It was the only way I could th
 Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
 -> Manaia: Slow down. Tell me from the beginning.  #line:0e16e10 
- Manaia: Are you implying what I think you are? #line:06ef997 
+ Manaia: Slow down. Tell me from the beginning. #line:06ef997 
  <<jump Result_C>>
 -> Manaia: What have they been saying?  #line:0b2df81 
  Manaia: What have they been saying? #line:0f92d02 
@@ -115,13 +115,14 @@ position: -832,-368
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay. #line:0bd2c01 
-Fionn: Been an <b>accident/b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
+Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
 -> Manaia: Are you implying what I think you are?   #line:031b7a7 
-Manaia: Are you implying what I think you are?  #line:030a332
- <<jump Result_F>>
+  <<sprTalking SpriteController "L">>
+  Manaia: Are you implying what I think you are?  #line:030a332
+  <<jump Result_F>>
 -> Manaia: ... #line:017d916 
  <<jump Result_F>>
 ===
@@ -179,7 +180,7 @@ Manaia: Where to start? I suppose I should check my journal.  #line:0f5d477
 
 Press Q to check the journal for objectives.  #line:044524e 
 
-
+<<NewPageEntry JournalTrigger_Scene2>>
 <<JournalEntryText JournalTrigger_Scene2>>
 <<OutDialogue JournalTrigger_Scene2>>
 <<DeleteTrigger JournalTrigger_Scene2>>
