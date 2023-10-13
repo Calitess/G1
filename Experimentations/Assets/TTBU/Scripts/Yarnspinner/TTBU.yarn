@@ -278,6 +278,7 @@ He reaches for your journal. #line:062bb82
 <<sprTalking SpriteController "L">>
 Manaia: Wait, what are you— #line:08de669 
 Reaching into one pocket, he pulls out a pen and starts scrawling something on a blank page. #line:0c8e39b 
+<<NewPageEntry NPC_Companion>>
 He hands it back. It reads <b>Claude Dupont</b> in large, cursive lettering.  #line:0c9501e 
 <<sprTalking SpriteController "R">>
 Claude: My signature. After I release my next novel, this will be priceless.  #line:0569733 
