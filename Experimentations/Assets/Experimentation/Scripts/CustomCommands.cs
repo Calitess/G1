@@ -385,7 +385,7 @@ public class CustomCommands : MonoBehaviour
 
     IEnumerator StopNiamh()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(3f);
         NiamhVFX.Stop();
     }
 }

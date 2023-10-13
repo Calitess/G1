@@ -429,12 +429,12 @@ Servant 2: I had dibs on those! #line:0c856e8
 
 title: Scene5_1
 ---
-<i>A maid died while cleaning "The Four's" rooms. </i>
-<i>Is this one of the maid's Fionn was talking about? </i>
-<i>Was Niamh working as...</i>
-<i>No. I don't want to believe that. </i>
-<i>It doesn't make any sense...</i>
-<i>How would a gun, fit into an accident?</i>
+Manaia: <i>A maid died while cleaning "The Four's" rooms. </i>
+Manaia: <i>Is this one of the maid's Fionn was talking about? </i>
+Manaia: <i>Was Niamh working as...</i>
+Manaia: <i>No. I don't want to believe that. </i>
+Manaia: <i>It doesn't make any sense...</i>
+Manaia: <i>How would a gun, fit into an accident?</i>
 <<OutDialogue Eavesdrop_thoughts>>
 ===
 
@@ -546,13 +546,11 @@ Niamh: Take Fionn and leave. You should have never come.  #line:0680762
      <<jump Scene7_2>>
 -> Manaia: This isn't real.  #line:0d02979 
    <<sprTalking SpriteController "L">>
-   Manaia: This isn't real.  #line:0c0144d 
    Manaia: This isn't real.  #line:0330465 
      <<jump Scene7_2>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
 // Downstairs is now openn
 //rift opens, niamg fades into view
-<<OutDialogue WorkBitch>>
 ===
 
 
@@ -587,16 +585,20 @@ Niamh: Manaia. If I ever meant anything to you, you would listen. Give up.  #lin
 Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0ed489e 
 <<FadeNiamh WorkBitch>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
-Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
-<<jump Scene7_3>>
+<<NewPageEntry Interactor>>
+<<ShowImage Interactor>> 
+<<OutDialogue WorkBitch>>
 ===
 
 title: Scene7_3
 position: -3477,-23
 ---
+<<InDialogue AfterRift_Claude_Interaction>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "L">>
+Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
+Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
 <<sprTalking SpriteController "R">>
 Claude: Outstanding performance! Was that a monologue?  #line:063d9bf 
 <<sprTalking SpriteController "L">>
@@ -604,13 +606,12 @@ Manaia: ...  #line:097902f
 <<sprTalking SpriteController "R">>
 Claude: The determination! The confusion! It was like a punch to the gut!  #line:078043c 
 Claude: One piece of criticism though, your script was just awful. Made no sense.   #line:0acc0a6 
-<<NewPageEntry Interactor>>
-<<ShowImage Interactor>> 
+<<OutDialogue AfterRift_Claude_Interaction>>
 // Downstairs is now openn
 //rift opens, niamg fades into view
 //<<ShowImage ReachingOut>>  might need to change name of dialogue jump
 //<<NewPageEntry ReachingOut>>  might need to change name of dialogue jump
-<<OutDialogue WorkBitch>>
+
 ===
 
 title: RiftIntro
