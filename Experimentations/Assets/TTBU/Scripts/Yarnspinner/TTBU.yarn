@@ -115,7 +115,7 @@ position: -832,-368
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay. #line:0bd2c01 
-Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair.   #line:05df8e1 
+Fionn: Been an <b>accident/b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
@@ -135,7 +135,7 @@ Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked
 Fionn: She <i>has</i> been working here though, told me herself.  #line:01cbb2b 
 Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it.  #line:0a172ab 
 <<Talk Char_Bro CharacterTalk>>
-Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of junk.  #line:0b01533 
+Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of mystic junk.   #line:0b01533 
 Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
 <<sprTalking SpriteController "L">>
 Manaia: So this is where I come in?  #line:0ab85a5 
@@ -352,7 +352,7 @@ Display Attendant: You only need a spoonful, to experience its full effects.  #l
     <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
     <<sprTalking SpriteController "L">>
     Manaia: Thats not—  #line:05a6c2c 
-    <i>Before you can finish, you're interruppted by sharp laughter.</i> #line:08b9200 
+    <i>Before you can finish, you're interrupted by sharp laughter.</i> #line:08b9200 
     <<jump Scene4_Cont>>
 -> Stay Silent. #line:05247db 
   <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
@@ -410,9 +410,17 @@ Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0
 Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
-Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me so I could nab some of her hairpins? Not like I'd know she'd get <b>her brains blown out.</b> #line:08ae447 
+Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me? So I could nab some of her hairpins?  #line:08ae447 
+Servant 1: Not like I'd know she'd get a bullet to the head in the process.
 Servant 2: What! How could you?  #line:03d29a5 
 Servant 2: I had dibs on those! #line:0c856e8 
+
+<i>A maid died while cleaning "The Four's" rooms. </i>
+<i>Is this one of the maid's Fionn was talking about? </i>
+<i>Was Niamh working as...</i>
+<i>No. I don't want to believe that. </i>
+<i>It doesn't make any sense...</i>
+<i>How would a gun, fit into an accident?</i>
 
 <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
 ===
@@ -517,7 +525,7 @@ Niamh: You idiot! What are you doing here? #line:0660f2f
 <<sprTalking SpriteController "L">>
 Manaia: Niamh? #line:014273c 
 <<sprTalking SpriteController "R">>
-Niamh: Take Fionn and leave. You should have never come here.  #line:0680762 
+Niamh: Take Fionn and leave. You should have never come.  #line:0680762 
 -> Manaia: Is this real? #line:0ad2aa5 
    <<sprTalking SpriteController "L">>
    Manaia: Is this real? #line:031278a 
@@ -541,7 +549,7 @@ position: -3483,-387
 Manaia:What is this?  #line:0305342 
 <<sprTalking SpriteController "R">>
 Niamh: I’m not sure how you opened this… doorway, but I could care less.  #line:0ef5bb1 
-Niamh: I don't need you here. You're letting Fionn lead you both to your death.  #line:0e6f344 
+Niamh: You're letting Fionn lead you both to your death.  #line:0e6f344 
 <<sprTalking SpriteController "L">>
 Manaia: I’m not leaving you.  #line:0dbac27 
 <<sprTalking SpriteController "R">>
@@ -1489,6 +1497,8 @@ Manaia:	What happened to you?  #line:080bf99
 title: Scene7-5
 position: 140,910
 ---
+
+<<InDialogue Interactor_Eavesdrop_Maid>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "L">>
@@ -1508,4 +1518,6 @@ Manaia:	Margot and Lucille... must be the maids who died.  #line:01349dc
 Manaia:	I can't help but feel relieved... #line:0342906 
 Manaia:	For having not heard Niamh's name yet.  #line:029bad7 
 Manaia:	I will find her. #line:0a94897 
+
+<<OutDialogue Interactor_Eavesdrop_Maid>>
 ===
