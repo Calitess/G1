@@ -413,7 +413,7 @@ title: Scene5
 position: 95,1642
 ---
 <<InDialogue Interactor_Eavesdrop>>  //change name of character/interactor
-Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+//Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
 Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
@@ -421,19 +421,23 @@ Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for m
 Servant 1: Not like I'd know she'd get a bullet to the head in the process.
 Servant 2: What! How could you?  #line:03d29a5 
 Servant 2: I had dibs on those! #line:0c856e8 
+<<NewPageEntry Interactor_Eavesdrop>>
+<<ShowImage Interactor_Eavesdrop>>
 
+<<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+===
+
+title: Scene5_1
+---
 <i>A maid died while cleaning "The Four's" rooms. </i>
 <i>Is this one of the maid's Fionn was talking about? </i>
 <i>Was Niamh working as...</i>
 <i>No. I don't want to believe that. </i>
 <i>It doesn't make any sense...</i>
 <i>How would a gun, fit into an accident?</i>
-
-<<NewPageEntry Interactor_Eavesdrop>>
-<<ShowImage Interactor_Eavesdrop>>
-
-<<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
+<<OutDialogue Eavesdrop_thoughts>>
 ===
+
 
 title: Scene6
 position: -2663,-614

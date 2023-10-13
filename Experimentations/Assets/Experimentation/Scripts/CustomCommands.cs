@@ -52,6 +52,8 @@ public class CustomCommands : MonoBehaviour
     npcDialogue npcDialogue;
 
     [SerializeField] private vTriggerGenericAction dialogueToTriggerAfterInteractionsFinish;
+    [SerializeField] GameObject objectToTriggerAfterIntreactionFinish;
+    [SerializeField] bool objectToTriggerEnable = true;
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
 
@@ -227,6 +229,11 @@ public class CustomCommands : MonoBehaviour
 
             dialogueToTriggerAfterInteractionsFinish.enabled = true;
             dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
+        }
+
+        if(objectToTriggerAfterIntreactionFinish !=null)
+        {
+            objectToTriggerAfterIntreactionFinish.SetActive(objectToTriggerEnable);
         }
 
         spriteController.ClearSpriteContainers();
