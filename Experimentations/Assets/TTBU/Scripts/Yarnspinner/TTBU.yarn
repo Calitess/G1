@@ -71,7 +71,6 @@ position: -879,-637
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-<<VoiceEfforts Char_Bro "Assets/TTBU/Scripts/Yarnspinner/EN/MANAIA_SFX/Manaia_Efforts/Manaia_yes.wav">>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
@@ -81,7 +80,6 @@ Manaia: Fionn? What you said about your sister— #line:0d68b0a
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: No time. I won't be able to say the rest if we continue that.   #line:06a9a61 
-<<VoiceEfforts Char_Bro "Assets/TTBU/Scripts/Yarnspinner/EN/MANAIA_SFX/Manaia_Efforts/Manaia_yes.wav">>
 Fionn: <b>Pierre Jean Faust</b>, the host of this, has us servants under strict orders. The bastard. Before long someone'll come looking.  #line:0cb1d49 
 <<sprTalking SpriteController "L">>
 Manaia: Us servants?  #line:07100c3 
@@ -420,11 +418,14 @@ Servant 2: I had dibs on those! #line:0c856e8
 
 title: Scene5_1
 ---
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
 Manaia: <i>A maid died while cleaning "The Four's" rooms. </i>
 Manaia: <i>Is this one of the maid's Fionn was talking about? </i>
 Manaia: <i>Was Niamh working as...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/no">>
 Manaia: <i>No. I don't want to believe that. </i>
 Manaia: <i>It doesn't make any sense...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
 Manaia: <i>How would a gun, fit into an accident?</i>
 <<OutDialogue Eavesdrop_thoughts>>
 ===

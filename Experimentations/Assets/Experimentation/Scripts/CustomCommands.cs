@@ -392,6 +392,6 @@ public class CustomCommands : MonoBehaviour
 
         AudioClip effort = Resources.Load<AudioClip> (clipToPlay);
         voicelineAudioSource.PlayOneShot(effort);
-        Debug.Log(effort);
+        
     }
 }
