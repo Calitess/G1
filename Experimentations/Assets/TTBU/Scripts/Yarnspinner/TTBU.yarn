@@ -398,11 +398,18 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 //<<ActivateRift Interactor_Eavesdrop 0>>
 ===
 
+title: Scene5_Infront
+---
+Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+<<OutDialogue SensorBox_Thoughts>>
+===
+
+
 title: Scene5
 position: 95,1642
 ---
 <<InDialogue Interactor_Eavesdrop>>  //change name of character/interactor
-//Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+
 Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
@@ -462,9 +469,11 @@ position: -2656,-383
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
 <<set $talkAccident = true>>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_1>>
 Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders.  #line:06d12ea 
 Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.    #line:048c6e1 
 Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue.  #line:097c783 
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_1 Cam_Terrarium_Scene6_2>>
 Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age! #line:01ba6dd 
 Display Attendant: Isn't that facinating? #line:00b5fd3 
 
@@ -479,6 +488,7 @@ title: Scene6_2
 position: -2660,-176
 ---
 <<sprTalking SpriteController "R">>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_2 Cam_Terrarium_Scene6>>
 Display Attendant: And that's not all! #line:090d8de 
 Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself.  #line:0915ba6 
 Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined?  #line:001c9bd 
@@ -494,6 +504,7 @@ title: SCene6_3
    Manaia: I heard there was an accident in the docking area. What can you tell me about that? #line:098b8a1 
    <<sprTalking SpriteController "R">>
    Display Attendant: Eh? The explosion?  #line:093ddf8 
+   <<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_3>>
    Display Attendant: Bollocks. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
     <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
     //delete trigger after interaction NOT SURE IF CAN DO THAT BUT IF CAN, DO HERE
@@ -1418,6 +1429,7 @@ position: -2442,1009
 title: Scene11
 position: -117,1121
 ---
+<<InDialogue Manaia_Ending>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "R">>
@@ -1488,7 +1500,12 @@ Manaia:	I’m not leaving.  #line:0758222
 Niamh:	We can’t miss this.  #line:082b882 
 Niamh:	Eventually they’ll come looking for the ship.  #line:02b9839 
 Niamh:	I’ll wait for you.  #line:0508e3c 
-	
+<<OutDialogue Manaia_Ending>>	
+
+===
+
+title: Scene11_After
+---
 	//out  of rift
 <<sprTalking SpriteController "L">>	
 Manaia:	Why am I seeing this memory? #line:0aef8d2 
@@ -1496,6 +1513,13 @@ Manaia:	I’m sorry Niamh.  #line:01d5517
 Manaia:	I should have stopped you.  #line:03b0807 
 	... #line:08d9e44 
 Manaia:	What happened to you?  #line:080bf99 
+===
+
+
+title: Scene7-5_InFront
+---
+Manaia:	They won't talk if they see me listening.  #line:0613283 
+<<OutDialogue SensorBox_Thoughts_2>>
 ===
 
 title: Scene7-5
@@ -1506,7 +1530,7 @@ position: 140,910
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "L">>
- //Manaia:	They won't talk if they see me listening.  #line:0613283 
+ 
 	// Maid talking to male servant in secrecy, One of the servants is consoling their weeping maid friend. 
 
 

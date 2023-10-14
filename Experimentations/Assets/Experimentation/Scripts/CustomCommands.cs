@@ -72,7 +72,7 @@ public class CustomCommands : MonoBehaviour
         tutorialInteractions = FindObjectOfType<TutorialInteractions>();
         InteractionIcon = GetComponent<ShowInteractable>();
         npcDialogue = GetComponent<npcDialogue>();
-        pageView_02 = FindObjectOfType<PageView_02>();
+        pageView_02 = gameManager.pageView_02;
 
         if(thisIsPartOfTutorial)
         {
