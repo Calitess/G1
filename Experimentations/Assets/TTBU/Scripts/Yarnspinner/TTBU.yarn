@@ -733,7 +733,11 @@ position: -2403,266
 <<elseif $dwMission == false>>
  <<sprTalking SpriteController "R">>
  Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books?  #line:03eddd0 
+ <<changeSprR SpriteController "CharacterSprite_Husband">> 
+ <<sprTalking SpriteController "R">>
  Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well… #line:02ab129 
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
+ <<sprTalking SpriteController "R">>
  Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem.  #line:0dc5230 
  <<jump Scene8>>
 <<endif>>
@@ -751,7 +755,11 @@ position: -2220,610
   Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
   Disgruntled Woman: That someone would slight him like that. #line:07f3102 
   Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
+  <<changeSprR SpriteController "CharacterSprite_Husband">> 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: Yes, an accident.  #line:0047fb7 
+  <<changeSprR SpriteController "CharacterSprite_DW">> 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
   <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
