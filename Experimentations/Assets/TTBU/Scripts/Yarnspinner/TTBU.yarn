@@ -71,10 +71,7 @@ position: -879,-637
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0148e05 
--> Skip #line:08d94bc 
- <<jump Skip_Scene1>>
--> Continue  #line:0d5e095 
+<<VoiceEfforts Char_Bro "Assets/TTBU/Scripts/Yarnspinner/EN/MANAIA_SFX/Manaia_Efforts/Manaia_yes.wav">>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
@@ -84,6 +81,7 @@ Manaia: Fionn? What you said about your sister— #line:0d68b0a
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: No time. I won't be able to say the rest if we continue that.   #line:06a9a61 
+<<VoiceEfforts Char_Bro "Assets/TTBU/Scripts/Yarnspinner/EN/MANAIA_SFX/Manaia_Efforts/Manaia_yes.wav">>
 Fionn: <b>Pierre Jean Faust</b>, the host of this, has us servants under strict orders. The bastard. Before long someone'll come looking.  #line:0cb1d49 
 <<sprTalking SpriteController "L">>
 Manaia: Us servants?  #line:07100c3 
@@ -176,10 +174,7 @@ position: -2679,-1254
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:04f739d 
--> Skip #line:09a9d70 
- <<jump Skip_Scene2>>
--> Continue  #line:0e320ba 
+
 
 Manaia: Where to start? I suppose I should check my journal.  #line:0f5d477 
 
@@ -311,10 +306,6 @@ title: BarIntro
 position: -2259,-1271
 ---
 <<InDialogue Interactor_Bartender>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0a5beeb 
--> Skip #line:0daaf70 
- <<jump Skip_Scene4>>
--> Continue  #line:086528c 
 Manaia: Interesting, how did they get a hold of such extinct material. #line:06f5e99 
 Bartender: Could I be so kind in offering you a drink? #line:08f3b11 
 Manaia: I'm fine thank you, just taking a look at this instillation. #line:0c200e6 
@@ -618,10 +609,6 @@ title: RiftIntro
 position: -3267,-1300
 ---
 <<InDialogue ReachingOut>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:03445c3 
--> Skip #line:0a6598d 
- <<jump Skip_Scene8>>
--> Continue  #line:0d4e3e4 
 Niamh: You made it. You must find the answers  #line:S8L45
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47

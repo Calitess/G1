@@ -43,6 +43,8 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] PageView_02 pageView_02;
 
+    [SerializeField] AudioSource voicelineAudioSource;
+
     vTriggerGenericAction action;
     AudioSource scribbleSource;
     SpriteController spriteController;
@@ -382,5 +384,14 @@ public class CustomCommands : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(3f);
         NiamhVFX.Stop();
+    }
+
+    [YarnCommand("VoiceEfforts")]
+    public void VoiceEfforts(string clipToPlay)
+    {
+
+        AudioClip effort = Resources.Load<AudioClip> (clipToPlay);
+        voicelineAudioSource.PlayOneShot(effort);
+        Debug.Log(effort);
     }
 }
