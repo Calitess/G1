@@ -37,7 +37,7 @@ public class NPCRandomMove : MonoBehaviour
 
         }
 
-        if (Vector3.Distance(ranPos, this.transform.position) > 2f)
+        if (Vector3.Distance(ranPos, this.transform.position) > agent.stoppingDistance)
         {
             animator.SetFloat("InputMagnitude", 0.2f);
         }
