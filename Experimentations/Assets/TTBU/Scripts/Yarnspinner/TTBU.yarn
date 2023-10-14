@@ -1,5 +1,5 @@
 ﻿title: Start
-position: -57,172
+position: -390,1096
 ---
 <<declare $intro to true>>
 <<declare $companionStart to true>>
@@ -11,12 +11,13 @@ position: -57,172
 <<declare $firstTimer to false>>
 <<declare $RFaust to false>>
 <<declare $RBlew to false>>
+<<declare $talkAccident to false>>
 
 ===
 
 
 title: Companion
-position: -1341,897
+position: -3110,-837
 ---
 <<if $companionStart == true>>
   <<set $companionStart = false>>
@@ -27,7 +28,7 @@ position: -1341,897
 ===
 
 title: Companion1
-position: 398,882
+position: 407,923
 ---
 //<<InDialogue NPC_Companion>>
 ???: I know what you did. #line:0aba378 
@@ -50,7 +51,7 @@ Blorbo: Yes. #line:0f3ba87
 
 
 title: Brother
-position: -458,-1033
+position: -899,-991
 ---
 <<InDialogue Char_Bro>>
 <<if $intro == true>>
@@ -66,14 +67,10 @@ position: -458,-1033
 
 title: BrotherDialogue
 tags:
-position: -438,-679
+position: -879,-637
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0148e05 
--> Skip #line:08d94bc 
- <<jump Skip_Scene1>>
--> Continue  #line:0d5e095 
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
@@ -92,7 +89,7 @@ Fionn: I wanted to do it myself. From the inside. It was the only way I could th
 Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
 -> Manaia: Slow down. Tell me from the beginning.  #line:0e16e10 
- Manaia: Are you implying what I think you are? #line:06ef997 
+ Manaia: Slow down. Tell me from the beginning. #line:06ef997 
  <<jump Result_C>>
 -> Manaia: What have they been saying?  #line:0b2df81 
  Manaia: What have they been saying? #line:0f92d02 
@@ -100,7 +97,7 @@ Fionn: Sorry... I... you don't know what they've been saying round here.  #line:
 ===
 
 title: Brother2
-position: 639,845
+position: 630,767
 ---
 <<InDialogue Char_Bro>>
 Fionn: Psh whateveerrrr #line:0f67ace 
@@ -109,33 +106,37 @@ Fionn: Psh whateveerrrr #line:0f67ace
 
 
 title: Result_C
-position: -391,-410
+position: -832,-368
 ---
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay. #line:0bd2c01 
-Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for ships is still under repair.   #line:05df8e1 
+Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
 -> Manaia: Are you implying what I think you are?   #line:031b7a7 
-Manaia: Are you implying what I think you are?  #line:030a332
- <<jump Result_F>>
+  <<sprTalking SpriteController "L">>
+  Manaia: Are you implying what I think you are?  #line:030a332
+  <<jump Result_F>>
 -> Manaia: ... #line:017d916 
  <<jump Result_F>>
 ===
 
 title: Result_F
-position: -394,-217
+position: -835,-175
 ---
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>. #line:04ea975 
 Fionn: She <i>has</i> been working here though, told me herself.  #line:01cbb2b 
+<<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_DingyStuff>>
 Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it.  #line:0a172ab 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff Cam_Brother_DingyStuff2>>
 <<Talk Char_Bro CharacterTalk>>
-Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of junk.  #line:0b01533 
-Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
+Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of mystic junk.   #line:0b01533 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff2 Cam_Brother_Scene1>>
+Fionn: Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
 <<sprTalking SpriteController "L">>
 Manaia: So this is where I come in?  #line:0ab85a5 
 <<sprTalking SpriteController "R">>
@@ -144,8 +145,10 @@ Fionn: Exactly... well.. that isn't to say it'll be easier for you.  #line:0920f
 Fionn: As an unknown here, it'll take a bit to get people to talk without causing suspicion. Get their trust. Tell them things they want to hear. Or find another way around. #line:094943b 
 //// A sound of a kerfuffle near the doorway (( the companion giving away his position slightly, apoligising to someone?))
  //cut the camera towards the doorway with nothing there. A few moments later, cut back to fionn
+ <<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_Eavesdrop>>
 <<sprTalking SpriteController "R">>
 Fionn: Look, it won't be long before the first night of bidding starts. Find out as much as you can and I'll get you after. We can't be seen together once we're inside.  #line:07825cd 
+ <<Cinematic Char_Bro Cam_Brother_Eavesdrop Cam_Brother_Scene1>>
 <<sprTalking SpriteController "L">>
 Manaia: I won't let you down.  #line:09cdc0a 
 <<sprTalking SpriteController "R">>
@@ -158,27 +161,24 @@ Manaia: ... #line:0b763bb
 ===
 
 title: Skip_Scene1
-position: -142,-599
+position: -583,-557
 ---
 //to skip through dialogue from bro
 <<OutDialogue Char_Bro>>
 ===
 
 title: JournalStart
-position: -93,-352
+position: -2679,-1254
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:04f739d 
--> Skip #line:09a9d70 
- <<jump Skip_Scene2>>
--> Continue  #line:0e320ba 
+
 
 Manaia: Where to start? I suppose I should check my journal.  #line:0f5d477 
 
 Press Q to check the journal for objectives.  #line:044524e 
 
-
+<<NewPageEntry JournalTrigger_Scene2>>
 <<JournalEntryText JournalTrigger_Scene2>>
 <<OutDialogue JournalTrigger_Scene2>>
 <<DeleteTrigger JournalTrigger_Scene2>>
@@ -187,7 +187,7 @@ Press Q to check the journal for objectives.  #line:044524e
 
 
 title: Skip_Scene2
-position: 152,-347
+position: -2654,-1037
 ---
 //to skip through dialogue from journal
 <<JournalEntryText JournalTrigger_Scene2>>
@@ -198,7 +198,7 @@ position: 152,-347
 
 
 title: Scene2_5
-position: -1064,1027
+position: -3083,-623
 ---
 <<InDialogue NPC_Companion>>
 
@@ -213,7 +213,7 @@ Strange Person: You’re foreign intelligence, aren’t you?  #line:02af4ab
     <<sprTalking SpriteController "R">>
     Strange Person: Ah, Silence. #line:036008f 
     Strange Person: It’s alright, I’m rather good at reading between the lines. #line:0e9cd4d 
-    Strange Person: No need to lie, you’ll only embarrass yourself. 
+    Strange Person: No need to lie, you’ll only embarrass yourself.  #line:04d4691 
     <<jump ResultPartner>>
 -> Manaia: I'm really not.  #line:0c69541 
     <<sprTalking SpriteController "L">>
@@ -224,7 +224,7 @@ Strange Person: You’re foreign intelligence, aren’t you?  #line:02af4ab
 
 
 title: ResultPartner
-position: -780,1093
+position: -3133,-405
 ---
 <<sprTalking SpriteController "R">>
 Strange Person: You’re looking for your partner, right? Your fellow agent?  #line:040e7d8 
@@ -248,7 +248,7 @@ Manaia: I’m not a spy. #line:07610c4
 ===
 
 title: Cont2_5
-position: -626,1259
+position: -3081,-217
 ---
 -> Manaia: Are you going to tell someone? #line:06084ee 
    <<sprTalking SpriteController "L">>
@@ -265,7 +265,7 @@ position: -626,1259
 ===
 
 title: Complete2_5
-position: -664,1492
+position: -3119,-2
 ---
 <<sprTalking SpriteController "R">>
 Strange Person: To see a professional at work, would be an unmissable opportunity.  #line:005c2ca 
@@ -277,6 +277,7 @@ He reaches for your journal. #line:062bb82
 <<sprTalking SpriteController "L">>
 Manaia: Wait, what are you— #line:08de669 
 Reaching into one pocket, he pulls out a pen and starts scrawling something on a blank page. #line:0c8e39b 
+<<NewPageEntry NPC_Companion>>
 He hands it back. It reads <b>Claude Dupont</b> in large, cursive lettering.  #line:0c9501e 
 <<sprTalking SpriteController "R">>
 Claude: My signature. After I release my next novel, this will be priceless.  #line:0569733 
@@ -300,13 +301,9 @@ Manaia: Not yet. There's still some places I should check out on this floor.  #l
 
 
 title: BarIntro
-position: 169,-153
+position: -2259,-1271
 ---
 <<InDialogue Interactor_Bartender>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0a5beeb 
--> Skip #line:0daaf70 
- <<jump Skip_Scene4>>
--> Continue  #line:086528c 
 Manaia: Interesting, how did they get a hold of such extinct material. #line:06f5e99 
 Bartender: Could I be so kind in offering you a drink? #line:08f3b11 
 Manaia: I'm fine thank you, just taking a look at this instillation. #line:0c200e6 
@@ -319,7 +316,7 @@ Bartender: Oh yes, our Host is very fond of this new flora matter that they've d
 
 
 title: Skip_Scene4
-position: 441,-143
+position: -2228,-1056
 ---
 //to skip through dialogue from bartender
 <<ShowImage Interactor_Bartender>>
@@ -330,10 +327,12 @@ position: 441,-143
 
 
 title: Terrarium
-position: 563,31
+position: -3563,-1242
 ---
 <<InDialogue Interactor_Terrarium>>
-
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
+<<sprTalking SpriteController "R">>
 Display Attendant: What we have here is a catagory B item. Lethe's Blessing.  #line:0b57077 
 <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3 Cam_Terrarium_Scene3_1>>
 Display Attendant: A rare flower, local to the coastlines of <b>Mórport</b>, the City of Soot.  #line:0c49ec1 
@@ -347,8 +346,9 @@ Display Attendant: You only need a spoonful, to experience its full effects.  #l
 -> Warn them. #line:0cf0619 
   <<set $warned = true>>
     <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
+    <<sprTalking SpriteController "L">>
     Manaia: Thats not—  #line:05a6c2c 
-    <i>Before you can finish, you're interruppted by sharp laughter.</i> #line:08b9200 
+    <i>Before you can finish, you're interrupted by sharp laughter.</i> #line:08b9200 
     <<jump Scene4_Cont>>
 -> Stay Silent. #line:05247db 
   <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_1 Cam_Terrarium_Scene3_2>>
@@ -358,17 +358,20 @@ Display Attendant: You only need a spoonful, to experience its full effects.  #l
 ===
 
 title: Scene4_Cont
-position: 589,223
+position: -3537,-1050
 ---
 //Villain is the one laughing, should sound playful, but also like hes trying to cover for you, so you don't continue the sentence you're about to make.
 <i></i> #line:0428891 
+<<sprTalking SpriteController "R">>
 Display Attendent: Sir...? #line:02a5af0 
 <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_2 Cam_Terrarium_Scene3>>
 Display Attendant: I appreciate your glee, but I assure you this is no tent show.   #line:073cabb 
 Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.   #line:041f6cf 
 Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next.  #line:0f27493 
+<<sprTalking SpriteController "R">>
 Display Attendant: I'm sorry? #line:02e413e 
 Mysterious Stranger: Do go on. I can scarcely wait to see this completely run to seed. #line:026e204 
+<<sprTalking SpriteController "R">>
 Display Attendant: Ah... Well.  #line:07f16cc 
 Display Attendant: Lethe's Blessing is... This particular plant's history, yes. #line:0508a7a 
 
@@ -382,7 +385,7 @@ Display Attendant: Lethe's Blessing is... This particular plant's history, yes. 
 
 
 title: Eavesdrop_1
-position: 11,430
+position: 233,633
 ---
 <<InDialogue Interactor_Eavesdrop>>
 Servant1: We've had some strange things happen.  "That place" has been a lot more active...and not in a good way  #line:01f85f9 
@@ -395,43 +398,82 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 //<<ActivateRift Interactor_Eavesdrop 0>>
 ===
 
-title: Scene5
-position: -1003,620
+title: Scene5_Infront
 ---
-<<InDialogue Char_Bro>>  //change name of character/interactor
 Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+<<OutDialogue SensorBox_Thoughts>>
+===
+
+
+title: Scene5
+position: 95,1642
+---
+<<InDialogue Interactor_Eavesdrop>>  //change name of character/interactor
+
 Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
-Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me so I could nab some of her hairpins? Not like I'd know she'd get <b>her brains blown out.</b> #line:08ae447 
+Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me? So I could nab some of her hairpins?  #line:08ae447 
+Servant 1: Not like I'd know she'd get a bullet to the head in the process.
 Servant 2: What! How could you?  #line:03d29a5 
 Servant 2: I had dibs on those! #line:0c856e8 
+<<NewPageEntry Interactor_Eavesdrop>>
+<<ShowImage Interactor_Eavesdrop>>
 
 <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
 ===
 
+title: Scene5_1
+---
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
+Manaia: <i>A maid died while cleaning "The Four's" rooms. </i>
+Manaia: <i>Is this one of the maid's Fionn was talking about? </i>
+Manaia: <i>Was Niamh working as...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/no">>
+Manaia: <i>No. I don't want to believe that. </i>
+Manaia: <i>It doesn't make any sense...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
+Manaia: <i>How would a gun, fit into an accident?</i>
+<<OutDialogue Eavesdrop_thoughts>>
+===
+
+
 title: Scene6
-position: -1587,61
+position: -2663,-614
 ---
 <<InDialogue Interactor_Terrarium_Scene6>>  //change name of character/interactor
-Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold.  #line:0ad5c91 
-Display Attendant: You ought to have many questions about it, I'm sure. #line:012379a 
-
--> Manaia: I have a different question in mind. #line:0ee144d 
-    Manaia: Do you- #line:015fa13 
-    <<jump Scene6_1>>
--> Manaia: Not really. #line:0f6152d 
-    Display Attendant: Of course you do! You must be grateful Sir Faust has even allowed you to view an item such as this.  #line:0cd712d 
-    <<jump Scene6_1>>
-
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
+<<sprTalking SpriteController "R">>
+<<if $talkAccident == true>>
+ <<jump SCene6_3>>
+<<else>>
+ Display Attendant: Magnificent is it not? The Brimstone's Beacon flower is truely a sight to behold.  #line:0ad5c91 
+ Display Attendant: You ought to have many questions about it, I'm sure. #line:012379a 
+ 
+ -> Manaia: I have a different question in mind. #line:0ee144d 
+   <<sprTalking SpriteController "L">>
+     Manaia: Do you- #line:015fa13 
+     <<jump Scene6_1>>
+ -> Manaia: Not really. #line:0f6152d 
+  <<sprTalking SpriteController "R">>
+     Display Attendant: Of course you do! You must be grateful Sir Faust has even allowed you to view an item such as this.  #line:0cd712d 
+     <<jump Scene6_1>>
+ <<endif>>
 ===
 
 title: Scene6_1
-position: -1580,292
+position: -2656,-383
 ---
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
+<<sprTalking SpriteController "R">>
+<<set $talkAccident = true>>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_1>>
 Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders.  #line:06d12ea 
 Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.    #line:048c6e1 
 Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue.  #line:097c783 
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_1 Cam_Terrarium_Scene6_2>>
 Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age! #line:01ba6dd 
 Display Attendant: Isn't that facinating? #line:00b5fd3 
 
@@ -443,21 +485,33 @@ Display Attendant: Isn't that facinating? #line:00b5fd3
 ===
 
 title: Scene6_2
-position: -1584,499
+position: -2660,-176
 ---
+<<sprTalking SpriteController "R">>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_2 Cam_Terrarium_Scene6>>
 Display Attendant: And that's not all! #line:090d8de 
 Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself.  #line:0915ba6 
 Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined?  #line:001c9bd 
 He takes a breath. Nows your chance! #line:0d65d2f 
+<<jump SCene6_3>>
 
+===
+
+title: SCene6_3
+---
 -> Manaia: Ask about "recent events".  #line:031f430 
+ <<sprTalking SpriteController "L">>
    Manaia: I heard there was an accident in the docking area. What can you tell me about that? #line:098b8a1 
+   <<sprTalking SpriteController "R">>
    Display Attendant: Eh? The explosion?  #line:093ddf8 
-   Display Attendant: Crap. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
+   <<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_3>>
+   Display Attendant: Bollocks. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
     <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
+    //delete trigger after interaction NOT SURE IF CAN DO THAT BUT IF CAN, DO HERE
+    <<DeleteInteraction Interactor_Terrarium_Scene6>>
    
 -> Manaia: Walk away (End Conversation) #line:068590c 
-<<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
+<<OutDialogue Interactor_Terrarium_Scene6>> 
 
 ===
 
@@ -476,7 +530,7 @@ Manaia: This song... #line:0e4879e
 ===
 
 title: Scene7_1
-position: 950,-420
+position: -3531,-670
 ---
 <<InDialogue WorkBitch>>
 ... #line:06a894f 
@@ -488,31 +542,29 @@ Niamh: You idiot! What are you doing here? #line:0660f2f
 <<sprTalking SpriteController "L">>
 Manaia: Niamh? #line:014273c 
 <<sprTalking SpriteController "R">>
-Niamh: Take Fionn and leave. You should have never come here.  #line:0680762 
+Niamh: Take Fionn and leave. You should have never come.  #line:0680762 
 -> Manaia: Is this real? #line:0ad2aa5 
    <<sprTalking SpriteController "L">>
    Manaia: Is this real? #line:031278a 
      <<jump Scene7_2>>
 -> Manaia: This isn't real.  #line:0d02979 
    <<sprTalking SpriteController "L">>
-   Manaia: This isn't real.  #line:0c0144d 
    Manaia: This isn't real.  #line:0330465 
      <<jump Scene7_2>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
 // Downstairs is now openn
 //rift opens, niamg fades into view
-<<OutDialogue WorkBitch>>
 ===
 
 
 title: Scene7_2
-position: 998,-137
+position: -3483,-387
 ---
 <<sprTalking SpriteController "L">>
 Manaia:What is this?  #line:0305342 
 <<sprTalking SpriteController "R">>
 Niamh: I’m not sure how you opened this… doorway, but I could care less.  #line:0ef5bb1 
-Niamh: I don't need you here. You're letting Fionn lead you both to your death.  #line:0e6f344 
+Niamh: You're letting Fionn lead you both to your death.  #line:0e6f344 
 <<sprTalking SpriteController "L">>
 Manaia: I’m not leaving you.  #line:0dbac27 
 <<sprTalking SpriteController "R">>
@@ -536,35 +588,39 @@ Niamh: Manaia. If I ever meant anything to you, you would listen. Give up.  #lin
 Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0ed489e 
 <<FadeNiamh WorkBitch>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
-Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
-<<jump Scene7_3>>
+<<NewPageEntry Interactor>>
+<<ShowImage Interactor>> 
+<<OutDialogue WorkBitch>>
 ===
 
 title: Scene7_3
-position: 1004,227
+position: -3477,-23
 ---
-
+<<InDialogue AfterRift_Claude_Interaction>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "L">>
+Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
+Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
+<<sprTalking SpriteController "R">>
 Claude: Outstanding performance! Was that a monologue?  #line:063d9bf 
+<<sprTalking SpriteController "L">>
 Manaia: ...  #line:097902f 
+<<sprTalking SpriteController "R">>
 Claude: The determination! The confusion! It was like a punch to the gut!  #line:078043c 
 Claude: One piece of criticism though, your script was just awful. Made no sense.   #line:0acc0a6 
-
+<<OutDialogue AfterRift_Claude_Interaction>>
 // Downstairs is now openn
 //rift opens, niamg fades into view
 //<<ShowImage ReachingOut>>  might need to change name of dialogue jump
 //<<NewPageEntry ReachingOut>>  might need to change name of dialogue jump
-<<OutDialogue WorkBitch>>
+
 ===
 
 title: RiftIntro
-position: 372,-568
+position: -3267,-1300
 ---
 <<InDialogue ReachingOut>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:03445c3 
--> Skip #line:0a6598d 
- <<jump Skip_Scene8>>
--> Continue  #line:0d4e3e4 
 Niamh: You made it. You must find the answers  #line:S8L45
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
@@ -578,7 +634,7 @@ Manaia: Niamh?? Is it really you?  #line:S8L48
 
 
 title: Rift_Intro1
-position: 399,-356
+position: -3011,-1317
 ---
 //TO BE DELETED
 <<InDialogue WorkBitch>>
@@ -586,9 +642,8 @@ Skip is for debugging purposes for the devs, please continue the dialogue. #line
 -> Skip #line:09679bb 
  <<jump Skip_Scene81>>
 -> Continue  #line:00b3b27 
-Manaia: This is........wait............what's happening  #line:073b6f9 
-the world around Manaia start to shift and change.  #line:0682cd8 
-Manaia: *looks around intensely* this is strange...  #line:02a7e88 
+Manaia: This is...Wait...What's happening  #line:073b6f9 
+Manaia: This is strange...  #line:02a7e88 
 Niamh: You made it. You must find the answers   #line:04f8421 
 
 Manaia:Whos there?? Why do you sound so farmiliar. Wait.....  #line:0828135 
@@ -602,7 +657,7 @@ Manaia: Niamh?? Is it really you?   #line:017dcd5
 ===
 
 title: Skip_Scene8
-position: 635,-576
+position: -3221,-1068
 ---
 //to skip through dialogue from niamh intro 
 
@@ -615,7 +670,7 @@ position: 635,-576
 
 
 title: Skip_Scene81
-position: 639,-353
+position: -2948,-1091
 ---
 //to skip through dialogue from niamh intro 
 //TO BE DELETED
@@ -627,7 +682,7 @@ position: 639,-353
 ===
 
 title: RiftFirstExit
-position: 533,565
+position: 557,491
 ---
 Manaia: I need to hum to a rift to open up the rift ? Interesting #line:0a61647 
 Manaia: Let's see what the realm can help me find out #line:058f017 
@@ -635,7 +690,7 @@ Manaia: Let's see what the realm can help me find out #line:058f017
 
 
 title: ClueAsk_1
-position: -383,97
+position: -18,462
 ---
 Manaia: So, anything of interest lately?  #line:0a47104 
 Servant: What exactly do you mean.? #line:03478ef 
@@ -650,20 +705,26 @@ title: RiftCinemachine
 position: 1344,190
 ---
 <<InDialogue Interactor>>
-Manaia: This is........wait............what's happening #line:S7L40
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "L">>
+Manaia: This is...Wait..What's happening? #line:S7L40
 <<Cinematic Interactor Cam_Niamh_Scene8 Cam_Niamh_Scene8_1>>
-the world around Manaia start to shift and change.  #line:06761fd 
-Manaia: *looks around intensely* this is strange... #line:S8L44
+Manaia: This is strange... #line:S8L44
 <<OutDialogue Interactor>> 
 ===
 
 title: Scene8Intro
-position: -1112,367
+position: -2403,266
 ---
 <<InDialogue Interactor_DisgruntaledWoman>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">> //CHANGE TO NEW SPRITES
+<<sprTalking SpriteController "R">>
 <<if $dwMission == true>>
  <<jump Scene10>>
 <<elseif $dwMission == false>>
+ <<sprTalking SpriteController "R">>
  Disgruntled Woman: The catalogue is so limited this year. Plants this, flowers that. Where are the exotic animals, the ancient artefacts, the banned books?  #line:03eddd0 
  Her Husband: Apologies, dearest. I didn’t realise they’d only had Monsieur Faust’s botanic collection on hand, after well… #line:02ab129 
  Disgruntled Woman: How drab. One person blows up an airship and It becomes everyone else’s problem.  #line:0dc5230 
@@ -671,34 +732,46 @@ position: -1112,367
 <<endif>>
 ===
 title:Scene8
+position: -2220,610
 ---
 
--> Someone blew up an airship?
+-> Someone blew up an airship? #line:062697b 
   <<set $RBlew = true>>
+  <<sprTalking SpriteController "L">>
   Manaia: Someone blew up an airship?  #line:0af28b6 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: Oh, that's old news.  #line:05d7972 
   Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
   Disgruntled Woman: That someone would slight him like that. #line:07f3102 
   Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
   Disgruntled Woman: Yes, an accident.  #line:0047fb7 
   Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
+  <<sprTalking SpriteController "R">>
   Her Husband: Very fine. #line:006b59f 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
   The woman's husband mimics an explosion with his hands. #line:0616dbc 
   Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
+  <<sprTalking SpriteController "R">>
   Her Husband: Afoot indeed.  #line:03eff8c 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: Percy? #line:099583c 
+  <<sprTalking SpriteController "R">>
   Her Husband: Yes dear? #line:01f232a 
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: Shut up. #line:091aa6b 
+  <<sprTalking SpriteController "R">>
   Her Husband: Yes dear. #line:02d754a 
   <<if $RBlew && $RFaust == true>>
     <<jump ContFirst>>
   <<endif>>
   <<jump Scene8>>
--> You two know Faust?
+-> You two know Faust? #line:000dd7d 
+ <<sprTalking SpriteController "L">>
  Manaia: You two know Faust?  #line:0cdc820 
  //result faust, change into new scene to jump to
  <<set $RFaust = true>>
+ <<sprTalking SpriteController "R">>
  Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
  Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
  Disgruntled Woman: Unless you're one of The Four.  #line:0204b2d 
@@ -711,20 +784,26 @@ title:Scene8
 ===
 
 title:ContFirst
+position: -2138,940
 ---
 //result who? ONLY WHEN BOTH OPTIONS HAVE BEEN PICKED
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717 
--> A first timer
+-> A first timer #line:079ff06 
+ <<sprTalking SpriteController "L">>
   Manaia: Yep, that's me. A first-timer.  #line:07994f0 
   <<set $firstTimer = true>>
   //result first
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: I see...  #line:0a81a97 
   Disgruntled Woman: Well, I can't say I'd reccomend this year as your first.  #line:022dda4 
   Disgruntled Woman: Normally it's far more interesting.   #line:06af27a 
    <<jump ResultBored>>
--> Second time, actually.
+-> Second time, actually. #line:0bbb832 
+ <<sprTalking SpriteController "L">>
   Manaia: Second time, actually.  #line:0ff6860 
   //result second
+  <<sprTalking SpriteController "R">>
   Disgruntled Woman: Hmm... I don't think I've seen you around here.  #line:0ed04c9 
   Disgruntled Woman: Though I suppose it's hard to tell with the mask.  #line:067d627 
    <<jump ResultBored>>
@@ -734,11 +813,16 @@ Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717
 ===
 
 title: ResultBored
+position: -2036,1252
 ---
 //result bored 
+<<sprTalking SpriteController "R">>
 Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored. #line:01d7bca 
+<<sprTalking SpriteController "R">>
 Her Husband: I don't think that wise, my sweet.  #line:04e5d3d 
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: Pish posh. Don't be wet blanket. #line:0b991bd 
+<<sprTalking SpriteController "R">>
 Her Husband: After the last event, I don't think they'll allow you or me near the bar.  #line:0d16258 
 <i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i> #line:0913116 
 
@@ -747,12 +831,15 @@ Her Husband: After the last event, I don't think they'll allow you or me near th
 ===
 
 title:WhoAre
+position: -2087,1487
 ---
--> Who are The Four?
+-> Who are The Four? #line:0ee1e05 
+ <<sprTalking SpriteController "L">>
  Manaia: Who are <b>The Four</b>? #line:07b53f1 
  Manaia: I've been hearing that title all around.  #line:0a53a26 
  <<jump FourQuestion>>
--> What else do you know about the accident?
+-> What else do you know about the accident? #line:02c1ced 
+ <<sprTalking SpriteController "L">>
  Manaia: What else do you know about the accident?  #line:0706f21 
 <<jump ResultAccident>>
 
@@ -760,23 +847,27 @@ title:WhoAre
 ===
 
 title:FourQuestion
+position: -2343,1549
 ---
 //result four
 
 
 //firstime yes
 <<if $firstTimer == true>>
+ <<sprTalking SpriteController "R">>
  Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
  //not first time
  <<else>>
+ <<sprTalking SpriteController "R">>
  Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
 <<endif>>
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: These auctions really are going to the dogs.  #line:0aa88e7 
 Disgruntled Woman: If you expect me to tell you that, it would take all day. And I don't give out history classes for free.  #line:0685be2 
 Disgruntled Woman: All I'll tell you, is that our latest host is one of them.  #line:0a3d226 
-
+<<sprTalking SpriteController "L">>
 Manaia: Latest host? #line:041c591 
-
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: Now, you're really asking too much of me.  #line:0c3b74a 
 Disgruntled Woman: I'm not a tutor. #line:00e1c00 
 <<jump WhoAre>>
@@ -784,21 +875,25 @@ Disgruntled Woman: I'm not a tutor. #line:00e1c00
 ===
 
 title:ResultAccident
+position: -1784,1483
 ---
 
 //result accident
 The woman sighs. #line:040b69f 
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: Very well as much as anyone else, but more than you I presume. #line:03854a9 
 Disgruntled Woman:  I'll tell you what.  #line:010d76a 
 Disgruntled Woman: If you can sweet talk a drink for me from the bar, I'll say anything you very well please.  #line:0ca5a67 
 Disgruntled Woman: If I'm to be harassed like a presidential candidate with a mistress, I'd at least want something to swig while you're at it. #line:0963a50 
 The woman's husband begins to fidget, but seems to have given up on urging otherwise.  #line:04fc3a5 
 
--> Any drink preferences? 
+-> Any drink preferences?  #line:07341d8 
+ <<sprTalking SpriteController "L">>
  Manaia: Any drink preferences? #line:0856a36 
   <<set $dwMission = true>>
   <<jump acci_cont>>
-->Thank you. I'll find you something.  
+->Thank you. I'll find you something.   #line:0de25bd 
+ <<sprTalking SpriteController "L">>
  Manaia: Thank you. I'll find you something.  #line:06f65cd 
  <<set $dwMission = true>>
  <<OutDialogue Interactor_DisgruntaledWoman>>
@@ -807,8 +902,10 @@ The woman's husband begins to fidget, but seems to have given up on urging other
 ===
 
 title: acci_cont
+position: -1591,1244
 ---
 //result preferred
+<<sprTalking SpriteController "R">>
 Disgruntled Woman: Surprise me! Whatever you do, just make it strong.  #line:066c233 
 Disgruntled Woman: If if doesn't bite back, I will. #line:00a65fc 
 The woman laughs, but something tells you she's not entirely joking.  #line:02d7b19 
@@ -819,13 +916,18 @@ The woman laughs, but something tells you she's not entirely joking.  #line:02d
 
 
 title: Scene9
-position: -1424,-873
+position: -1774,-936
 ---
 <<InDialogue Interactor_Bartender>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
+<<sprTalking SpriteController "R">>
 <<if $bartenderSpeak == false>>
  //never spoken to bartender before
- Manaia: I've never seen a machine like that.  #line:03593c6 
- Bartender: The distiller?  #line:0ce5fc0 
+ <<sprTalking SpriteController "L">>
+ Manaia: I've never seen a machine like that.  #line:0ce5fc0 
+ <<sprTalking SpriteController "R">>
+ Bartender: The distiller?  #line:03593c6 //swapped with line ID ABOVE
  Bartender:	You'll be hard-pressed to find another machine like it. #line:0b55eda 
  Bartender:	It's custom-made. #line:0b52d2f 
  Bartender:	Runs on the highest quality Evergreen fuel and expertly processes plants from Sir Faust's private collection.  #line:0143e87 
@@ -836,6 +938,7 @@ position: -1424,-873
  
 <<elseif $bartenderSpeak == true>>
  //talked to bartender before
+ <<sprTalking SpriteController "R">>
  Bartender:	Our beverages are one of a kind! #line:0b85861 
  Bartender:	Carefully designed from the sowing of the ingredients themselves! #line:04c10df 
  Bartender:	Might I interest you in one?  #line:0900b63 
@@ -843,53 +946,61 @@ position: -1424,-873
 <<endif>>
 
 <<if $dwMission == false>>
-<i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i>
+<i>If the drinks are anything like the items in those displays, you'd rather stick clear. </i> #line:037fe65 
 <<endif>>
 <<jump Scene9Con>>
 ===
 
 title:Scene9Con
+position: -1890,-669
 ---
 <<if $dwMission == false>>
  //hasn't talked to DW
- -> (Ask what they have.)
-   Manaia: What do you have? //choice have
+ -> (Ask what they have.) #line:0880e2f 
+  <<sprTalking SpriteController "L">>
+   Manaia: What do you have?  #line:0b8204f //choice have
    <<jump AskingAboutDrinks>>
- -> (Ask about the accident.) 
+ -> (Ask about the accident.)  #line:06e6807 
    <<jump ResultKnow>>
- -> (Leave.)
-   Manaia: No thanks. 
+ -> (Leave.) #line:01c7c88 
+  <<sprTalking SpriteController "L">>
+   Manaia: No thanks.  #line:0db4c9a 
    <<OutDialogue Interactor_Bartender>>
 
 <<elseif $dwMission == true>>
-  -> Surprise me. 
-    Manaia:	Surprise me. //choice welkin
+  -> Surprise me.  #line:06f4cc3 
+   <<sprTalking SpriteController "L">>
+    Manaia:	Surprise me.  #line:08ab47d //choice welkin
     <<set $drinknumber += 1>>
     <<set $drinks = "Welkin">>
     <<jump DrinkOrdered>>
-  -> (Ask what they have.)
-    Manaia:	What do you have?//choice have
+  -> (Ask what they have.) #line:0955461 
+   <<sprTalking SpriteController "L">>
+    Manaia:	What do you have? #line:0dcdeb8 //choice have
     <<jump AskingAboutDrinks>>
-  -> (Ask about the accident.) 
+  -> (Ask about the accident.)  #line:033ab72 
     <<jump ResultKnow>>
-  ->  (Leave.)
-    Manaia:	No thanks. 
+  ->  (Leave.) #line:02c2b51 
+   <<sprTalking SpriteController "L">>
+    Manaia:	No thanks.  #line:088c5c5 
     <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
 ===
 
 title:ResultKnow
-position: -1540,-642
+position: -2181,-536
 ---
 
 //result know 
-Manaia:	Know anything about what happened to the docking area? 
-<i>The bartender just looks at you for a beat. Utterly still. </i>
-Bartender:	Sorry miss, I'm afraid I have no idea what you're talking about. 
-Bartender:	Would you like me to tell you about some of our drinks instead?
-<i>I get what Fionn meant. The other servants really won't talk. </i>
-<i>I'll have to find someone not under Faust's iron fist. </i>
+<<sprTalking SpriteController "L">>
+Manaia:	Know anything about what happened to the docking area?  #line:03b9113 
+<i>The bartender just looks at you for a beat. Utterly still. </i> #line:0cb7979 
+<<sprTalking SpriteController "R">>
+Bartender:	Sorry miss, I'm afraid I have no idea what you're talking about.  #line:0746a2a 
+Bartender:	Would you like me to tell you about some of our drinks instead? #line:086d7ca 
+<i>I get what Fionn meant. The other servants really won't talk. </i> #line:0fd4cc1 
+<i>I'll have to find someone not under Faust's iron fist. </i> #line:09f56d2 
 <<jump Scene9Con>>
 //go back to questions
 
@@ -897,80 +1008,90 @@ Bartender:	Would you like me to tell you about some of our drinks instead?
 ===
 
 title:AskingAboutDrinks
-position: -1065,-856
+position: -1489,-714
 ---
 //result have
-Bartender:	We have three complementary specials today, Welkin's Gift, the virgin Will-o'-Wisp and the Devil on the rocks. 
-Bartender:	Would you like me to describe one?
+<<sprTalking SpriteController "R">>
+Bartender:	We have three complementary specials today, Welkin's Gift, the virgin Will-o'-Wisp and the Devil on the rocks.  #line:04d3980 
+Bartender:	Would you like me to describe one? #line:05531c2 
 
 
--> (Ask about Welkin's Gift.)
- Manaia:	A Welkin's Gift.
+-> (Ask about Welkin's Gift.) #line:0f0972a 
+ <<sprTalking SpriteController "L">>
+ Manaia:	A Welkin's Gift. #line:08c133f 
  <<set $drinks = "Welkin">>
  <<jump DrinkAsk>>
--> (Ask about the virgin Will-o'-Wisp.)
- Manaia:	A virgin Will-o'-Wisp.
+-> (Ask about the virgin Will-o'-Wisp.) #line:0abda83 
+ <<sprTalking SpriteController "L">>
+ Manaia:	A virgin Will-o'-Wisp. #line:0d5a661 
  <<set $drinks = "Will">>
  <<jump DrinkAsk>>
--> (Ask about the Devil on the rocks.)
-  Manaia:	A Devil on the rocks.
+-> (Ask about the Devil on the rocks.) #line:01f5e3e 
+ <<sprTalking SpriteController "L">>
+  Manaia:	A Devil on the rocks. #line:0aa86b1 
   <<set $drinks = "Devil">>
   <<jump DrinkAsk>>
--> (Leave.)
-  Manaia:	Nevermind.
+-> (Leave.) #line:00dd022 
+ <<sprTalking SpriteController "L">>
+  Manaia:	Nevermind. #line:0016749 
   <<OutDialogue Interactor_Bartender>>
--> (Order a drink)
-  Manaia:	Order a drink.
+-> (Order a drink) #line:0358bbc 
+ <<sprTalking SpriteController "L">>
+  Manaia:	Order a drink. #line:05700cf 
   <<jump DrinkOrder>>
 
 ===
 
 title: DrinkOrder
-position: -854,-657
+position: -1434,-511
 ---
 //result order
-Manaia:	Could I get...
--> A Welkin's Gift.
+<<sprTalking SpriteController "L">>
+Manaia:	Could I get... #line:00c2331 
+-> A Welkin's Gift. #line:07b6169 
  <<set $drinknumber += 1>>
  <<set $drinks = "Welkin">>
  <<jump DrinkOrdered>>
--> A virgin Will-o'-Wisp.
+-> A virgin Will-o'-Wisp. #line:02dbdba 
  <<set $drinknumber += 1>>
  <<set $drinks = "Will">>
  <<jump DrinkOrdered>>
--> A Devil on the rocks.
+-> A Devil on the rocks. #line:0df2f22 
  <<set $drinknumber += 1>>
  <<set $drinks = "Devil">>
  <<jump DrinkOrdered>>
--> Surprise me.
- Manaia:	Surprise me. 
+-> Surprise me. #line:03ca45a 
+ Manaia:	Surprise me.  #line:00c6ffa 
  <<set $drinknumber += 1>>
  <<set $drinks = "Welkin">>
  <<jump DrinkOrdered>>
--> Nevermind.
- Manaia:	Nevermind. 
+-> Nevermind. #line:0568897 
+ <<sprTalking SpriteController "L">>
+ Manaia:	Nevermind.  #line:043acd0 
  <<OutDialogue Interactor_Bartender>>
 ===
 
 title: DrinkAsk
-position: -832,-1034
+position: -1378,-933
 ---
 
-
 <<if $drinks == "Welkin">>
- Bartender:	This drink is a limited edition. So get it while you can!
- Bartender:	One of the main ingredients comes from a special sample in our auction catalogue! One hint. This drink uses that flower's red and white mottled petals as decoration.
- Bartender:	Welkin's Gift is a bitingly tart yet delicious drink. With tangy, floral notes from our secret ingredient. 
+ <<sprTalking SpriteController "R">>
+ Bartender:	This drink is a limited edition. So get it while you can! #line:073743e 
+ Bartender:	One of the main ingredients comes from a special sample in our auction catalogue! One hint. This drink uses that flower's red and white mottled petals as decoration. #line:05bcd2e 
+ Bartender:	Welkin's Gift is a bitingly tart yet delicious drink. With tangy, floral notes from our secret ingredient.  #line:00ab8f9 
 
 
 <<elseif $drinks == "Will">>
- Bartender:	The virgin Will-o'-Wisp. What it doesn't have in intoxicants it makes up for in style. 
- Bartender:	Enjoy the fruity, smoking goodness of the Will-o'-Wisp. A cool, berry cream float drink, topped with a smouldering sprig of pine. 
+ <<sprTalking SpriteController "R">>
+ Bartender:	The virgin Will-o'-Wisp. What it doesn't have in intoxicants it makes up for in style.  #line:0dba3a0 
+ Bartender:	Enjoy the fruity, smoking goodness of the Will-o'-Wisp. A cool, berry cream float drink, topped with a smouldering sprig of pine.  #line:044b2e6 
 
 
 <<elseif $drinks == "Devil">>
- Bartender:	This chilled, Tequila-packed drink is not what it seems.
- Bartender:	Appreciate the wicked symphony of flavour, the harmony of pineapple and chilli pepper, of fire on ice.
+ <<sprTalking SpriteController "R">>
+ Bartender:	This chilled, Tequila-packed drink is not what it seems. #line:097c600 
+ Bartender:	Appreciate the wicked symphony of flavour, the harmony of pineapple and chilli pepper, of fire on ice. #line:0f3d6a5 
 <<endif>>
 
 <<jump AskingAboutDrinks>>
@@ -978,257 +1099,326 @@ position: -832,-1034
 ===
 
 title:DrinkOrdered
-position: -1060,-413
+position: -1787,-353
 ---
   <<if $dwMission == true>>
-   Bartender:	Your wish is my command.
-   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
-   <i>Now to give this to that woman.<i> 
+   <<sprTalking SpriteController "R">>
+   Bartender:	Your wish is my command. #line:0c480cc 
+   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink. #line:026d867 
+   <i>Now to give this to that woman.<i>  #line:0356404 
   
    <<if $drinknumber <= 1>> //if this is the first time getting drink for the woman
      <<jump ClaudeQuestion>>
    <<endif>>
-  
+  <<OutDialogue Interactor_Bartender>>
   <<elseif $dwMission == false>>
-   Bartender:	Your wish is my command.
-   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink.
+   <<sprTalking SpriteController "R">>
+   Bartender:	Your wish is my command. #line:00594db 
+   Bartender:	After a moment of shaking and pouring ingredients, he hands you a drink. #line:034e068 
    <<jump DrinkType>>
   <<endif>>
 
 ===
 
 title:ClaudeQuestion
-position: -825,-135
+position: -1649,-48
 ---
-Claude:	Are you going to put something in that?
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "R">>
+Claude:	Are you going to put something in that? #line:0f0d143 
 
--> Why?
- Manaia:	What? Why would I?
- Claude: 	Spys in books always do something to get the upper hand. You're going to bug that right?
+-> Why? #line:08cc61b 
+ <<sprTalking SpriteController "L">>
+ Manaia:	What? Why would I? #line:0260858 
+ <<sprTalking SpriteController "R">>
+ Claude: 	Spys in books always do something to get the upper hand. You're going to bug that right? #line:088f3fa 
  //Manaia:	How would that fit in a drink?
- Manaia:	I don't have anything like that. 
- <i>He sighs dramatically.<i> 
- Claude:	You're not giving me very much to work with. I'll just write that you did. 
-  -> This isn't a biography, is it?
-   Manaia:	This isn't a biography is it?
-   <i>He's not listening, just busily scrawling something in his notes.<i> 
+ <<sprTalking SpriteController "L">>
+ Manaia:	I don't have anything like that.  #line:047673a 
+ <i>He sighs dramatically.<i>  #line:0fbfaf0 
+ <<sprTalking SpriteController "R">>
+ Claude:	You're not giving me very much to work with. I'll just write that you did.  #line:00c45cb 
+  -> This isn't a biography, is it? #line:098c1a6 
+   <<sprTalking SpriteController "L">>
+   Manaia:	This isn't a biography is it? #line:0fd1e49 
+   <i>He's not listening, just busily scrawling something in his notes.<i>  #line:030c5e8 
    <<OutDialogue Interactor_Bartender>>
-  -> (Ignore it.)
+  -> (Ignore it.) #line:0617ca0 
    <<OutDialogue Interactor_Bartender>>
--> Like what?
- Manaia:	Like what?
- Claude:	An invisible wire, or mic! 
- Manaia:	How would that fit in a drink?
- Manaia:	I don't have anything like that. 
- <i>He sighs dramatically.<i> 
- Claude:	You're not giving me very much to work with. I'll just write that you did. 
-  -> This isn't a biography, is it?
-    Manaia:	This isn't a biography is it?
-    <i>He's not listening, just busily scrawling something in his notes.<i>
+-> Like what? #line:0894d34 
+ <<sprTalking SpriteController "L">>
+ Manaia:	Like what? #line:05fc8a5 
+ <<sprTalking SpriteController "R">>
+ Claude:	An invisible wire, or mic!  #line:085dde8 
+ <<sprTalking SpriteController "L">>
+ Manaia:	How would that fit in a drink? #line:0278840 
+ Manaia:	I don't have anything like that.  #line:0b0c9e7 
+ <i>He sighs dramatically.<i>  #line:05b080a 
+ <<sprTalking SpriteController "R">>
+ Claude:	You're not giving me very much to work with. I'll just write that you did.  #line:05c61f1 
+  -> This isn't a biography, is it? #line:08ed51e 
+   <<sprTalking SpriteController "L">>
+    Manaia:	This isn't a biography is it? #line:067fa30 
+    <i>He's not listening, just busily scrawling something in his notes.<i> #line:0304f32 
     <<OutDialogue Interactor_Bartender>> 
-  -> (Ignore it.)
+  -> (Ignore it.) #line:0b99ff1 
    <<OutDialogue Interactor_Bartender>>
 ===
 
 title:DrinkType
-position: -1281,-190
+position: -2013,-74
 ---
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Claude">> 
+
 //only go to this node if dwMission == false
 <<if $drinks == "Welkin">>
- You take the Welkin's Gift and are about to give it a sip when...
- Barely placing it to your lips, you catch a whiff of a familiar noxious scent. 
- The type you'd catch on your uncles breath. That which left your aunt mourning the mind of a man who was still alive. 
- Lethe's Blessing... 
- Manaia:	I'm not drinking this. 
+ You take the Welkin's Gift and are about to give it a sip when... #line:02be293 
+ Barely placing it to your lips, you catch a whiff of a familiar noxious scent.  #line:0f16c51 
+ The type you'd catch on your uncles breath. That which left your aunt mourning the mind of a man who was still alive.  #line:04a78c9 
+ Lethe's Blessing...  #line:014f389 
+ <<sprTalking SpriteController "L">>
+ Manaia:	I'm not drinking this.  #line:0476058 
  <<OutDialogue Interactor_Bartender>>	
 <<elseif $drinks == "Will">>
- You take the virgin Will-o'-Wisp.
- One taste and...
- Not bad. A tad too sweet for you though. 
- Down the hatch. 
+ You take the virgin Will-o'-Wisp. #line:0141483 
+ One taste and... #line:0e1cfbb 
+ Not bad. A tad too sweet for you though.  #line:05add72 
+ Down the hatch.  #line:083ae49 
  <<OutDialogue Interactor_Bartender>>
 <<elseif $drinks == "Devil">>
- You take the Devil on the rocks. 
- One taste and...
- Eyes watering, you begin to cough. 
- You're not very good with spice.
- Claude:	Are you quite alright?
- Manaia:	(Give him a thumbs up.)
- Manaia:	(Shake your head.) 
- You hand Claude the drink. It'd be wasted on you. 
+ You take the Devil on the rocks.  #line:0d86c1e 
+ One taste and... #line:0fbd26d 
+ Eyes watering, you begin to cough.  #line:000ab53 
+ You're not very good with spice. #line:0662f8b 
+ <<sprTalking SpriteController "R">>
+ Claude:	Are you quite alright? #line:07f5d16 
+ <<sprTalking SpriteController "L">>
+ Manaia:	(Give him a thumbs up.) #line:0555911 
+ Manaia:	(Shake your head.)  #line:0a4c9c0 
+ You hand Claude the drink. It'd be wasted on you.  #line:097c7e7 
  <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
 ===
 
 title: Scene10
-position: -70,-17
+position: -2604,681
 ---
 <<InDialogue Interactor_DisgruntaledWoman>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Fionn">> // CHANGE SPRITE LATER 
 //if not gotten drink
  <<if $drinks == "">>
-   Disgruntled Woman:	Well? 
-   Disgruntled Woman:	No drink yet?
-   Disgruntled Woman:	To the bar, Chop Chop. 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	Well?  #line:040a96a 
+   Disgruntled Woman:	No drink yet? #line:0002a2f 
+   Disgruntled Woman:	To the bar, Chop Chop.  #line:0bdc6f1 
   
    <<OutDialogue Interactor_DisgruntaledWoman>>
  <<elseif $drinks == "Will">>
   //will o wisp
-  Disgruntled Woman:	Well?
-  You hand her the "virgin Will-o'-Wisp". 
-  She takes a sip and... 
-  Disgruntled Woma:n	What is this? A milkshake? 
-  Disgruntled Woman:	Don't kid me, I know my drinks. 
-  She passes it to her husband hurriedly, who takes it with glee, and waves you off. 
-  Disgruntled Woman:	Go get something else.
+   <<sprTalking SpriteController "R">>
+  Disgruntled Woman:	Well? #line:0468e87 
+  You hand her the "virgin Will-o'-Wisp".  #line:042ae55 
+  She takes a sip and...  #line:0fa508e 
+   <<sprTalking SpriteController "R">>
+  Disgruntled Woma:	What is this? A milkshake?  #line:0816bc5 
+  Disgruntled Woman:	Don't kid me, I know my drinks.  #line:07bdafb 
+  She passes it to her husband hurriedly, who takes it with glee, and waves you off.  #line:0bed4fd 
+   <<sprTalking SpriteController "R">>
+  Disgruntled Woman:	Go get something else. #line:0703dc0 
   //end convo
+  <<set $drinks = "">>
   <<OutDialogue Interactor_DisgruntaledWoman>>
 
  <<elseif $drinks == "Devil">>
   //devil on the rocks choice
-  Disgruntled Woman:	Well?
-  You hand her a "Devil on the rocks". 
-  Disgruntled Woman:	Oh! This one has some kick. 
-  Disgruntled Woman:	This will do just fine. 
-  Manaia:	Will you answer my question now?
-  Disgruntled Woman:	What was it?
-  Disgruntled Woman:	Oh yes, the accident. 
-  Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
-  Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
-  Disgruntled Woman:	None of those robbers made it out.
-  Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
+   <<sprTalking SpriteController "R">>
+  Disgruntled Woman:	Well? #line:0430cbd 
+  You hand her a "Devil on the rocks".  #line:06978c2 
+  Disgruntled Woman:	Oh! This one has some kick.  #line:0ca7676 
+  Disgruntled Woman:	This will do just fine.  #line:0a68ee6 
+   <<sprTalking SpriteController "L">>
+  Manaia:	Will you answer my question now? #line:09d9aab 
+  Disgruntled Woman:	What was it? #line:0049135 
+  Disgruntled Woman:	Oh yes, the accident.  #line:0373152 
+  Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year. #line:060e387 
+  Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but... #line:0349c07 
+  Disgruntled Woman:	None of those robbers made it out. #line:03e7b30 
+  Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide.  #line:03273b1 
   <<jump Skumules>>
 
   
 	// Result drink, Welkin's Gift
 
  <<elseif $drinks == "Welkin">>
-   Disgruntled Woman:	Well?
-   Disgruntled Woman:	You hand her a "Welkin's Gift". 
-   Disgruntled Woman:	Oh! That bite! This is good. 
-   Disgruntled Woman:	This is very good. 
-   Manaia: Will you answer my question now?
-   Disgruntled Woman:	What was it?
-   Disgruntled Woman:	Oh yes, the accident. 
-   Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year.
-   Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but...
-   Disgruntled Woman:	Seemingly, none of those robbers made it out.
-   Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide. 
-   Manaia:	I didn't realise they took contract work.
-   Disgruntled Woman:	These ones were different. 
-   Her husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
-   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
-   Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
-   She takes a long swig of her drink. 
-   Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
-   Disgruntled Woman:	To scam him of his items and... the salary.
-   Disgruntled Woman:	I wouldn't—
-   Disgruntled Woman:	I wouldn't doubt it.
-   Manaia:	Do you know any of their names?
-   Disgruntled Woman:	The only one who could have known that is Faust himself, or...
-   Disgruntled Woman:	Possibly one of the four.
-   Another drawn-out sip.
-   Looking down at her emptied glass, she laughs silently.
-   Disgruntled Woman:	Or— Or someone close to them.
-   Disgruntled Woman:	Which, I'll tell you. Fat chance—
-   Disgruntled Woman:	Fat chance... 
-   Disgruntled Woman:	Sorry what were we talking about again?
-   Her head begins to sway.
-   <i>Is she drunk... already?</i>
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	Well? #line:0b49a97 
+   Disgruntled Woman:	You hand her a "Welkin's Gift".  #line:0f83148 
+   Disgruntled Woman:	Oh! That bite! This is good.  #line:0b6f1ea 
+   Disgruntled Woman:	This is very good.  #line:0a240d7 
+   <<sprTalking SpriteController "L">>
+   Manaia: Will you answer my question now? #line:0ad179f 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	What was it? #line:0891082 
+   Disgruntled Woman:	Oh yes, the accident.  #line:08d7ac6 
+   Disgruntled Woman:	Well from what I've heard, Sir Faust was cooperating with Sky Mules to get the items this year. #line:05f1d51 
+   Disgruntled Woman:	I wouldn't doubt sabotage from a group like that, but... #line:01fae5d 
+   Disgruntled Woman:	Seemingly, none of those robbers made it out. #line:0a82b29 
+   Disgruntled Woman:	So it's difficult to implicate themselves in their own suicide.  #line:05b70d6 
+   <<sprTalking SpriteController "L">>
+   Manaia:	I didn't realise they took contract work. #line:0b63e4a 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	These ones were different.  #line:0c49a09 
+   <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+   Her husband:	Anyone would be. Monsieur Faust drives a hard bargain.  #line:04e2bb4 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.   #line:067d000 
+   Disgruntled Woman:	The Faust legacy has only sunk since he took power.  #line:0728841 
+   She takes a long swig of her drink.  #line:073116a 
+   Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves.  #line:0e9343e 
+   Disgruntled Woman:	To scam him of his items and... the salary. #line:0f71bc3 
+   Disgruntled Woman:	I wouldn't— #line:0c90d04 
+   Disgruntled Woman:	I wouldn't doubt it. #line:099188d 
+   <<sprTalking SpriteController "L">>
+   Manaia:	Do you know any of their names? #line:0888b5b 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	The only one who could have known that is Faust himself, or... #line:0a3d6c2 
+   Disgruntled Woman:	Possibly one of the four. #line:09ec2fd 
+   Another drawn-out sip. #line:0f164af 
+   Looking down at her emptied glass, she laughs silently. #line:0b937d2 
+   Disgruntled Woman:	Or— Or someone close to them. #line:031dd38 
+   Disgruntled Woman:	Which, I'll tell you. Fat chance— #line:05e37c2 
+   Disgruntled Woman:	Fat chance...  #line:0fc1a1e 
+   Disgruntled Woman:	Sorry what were we talking about again? #line:02efe38 
+   Her head begins to sway. #line:01e798e 
+   <i>Is she drunk... already?</i> #line:020bd09 
   
-   -> The accident
-     Manaia:	The accident. 
+   -> The accident #line:0664e8f 
+     <<sprTalking SpriteController "L">>
+     Manaia:	The accident.  #line:0655436 
      <<jump TheAccident>>
-   -> Are you feeling okay?
-     Manaia:	Are you feeling okay? 
-     Disgruntled Woman:	Not really. 
-     Disgruntled Woman:	 I don't...
-     Her Husband:	You were talking about the accident at the docking area. 
+   -> Are you feeling okay? #line:08c0ed2 
+     <<sprTalking SpriteController "L">>
+     Manaia:	Are you feeling okay?  #line:007f8e6 
+     <<sprTalking SpriteController "R">>
+     Disgruntled Woman:	Not really.  #line:006d506 
+     Disgruntled Woman:	 I don't... #line:0a44daf 
+     <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+     Her Husband:	You were talking about the accident at the docking area.  #line:09596b6 
      <<jump TheAccident>>
 
  <<endif>>
 ===
 title:Skumules
+position: -2758,1016
 ---
--> Sky mules? 
-   Manaia:	Sky mules?
-   Disgruntled Woman:	These ones were different. 
-   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain. 
-   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.  
-   Disgruntled Woman:	The Faust legacy has only sunk since he took power. 
-   She takes a long swig of her drink. 
+-> Sky mules?  #line:071400b 
+   <<sprTalking SpriteController "L">>
+   Manaia:	Sky mules? #line:0f3f0fe 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	These ones were different.  #line:01cbdaa 
+   <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain.  #line:09f269f 
+   <<sprTalking SpriteController "R">>
+   Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.   #line:0c81296 
+   Disgruntled Woman:	The Faust legacy has only sunk since he took power.  #line:0e79be6 
+   She takes a long swig of her drink.  #line:0b33a77 
    <<jump alldied>>
--> They all died?
-   Manaia:	They all died?
-   Manaia:	I didn't realise they took contract work. 
+-> They all died? #line:005dc6d 
+   <<sprTalking SpriteController "L">>
+   Manaia:	They all died? #line:0586332 
+   Manaia:	I didn't realise they took contract work.  #line:035caaa 
    <<jump alldied>>
 ===
 
 
 title: alldied
+position: -2835,1314
 ---
- Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves. 
- Disgruntled Woman:	To scam him of his items and... their salary.
- Disgruntled Woman:	I wouldn't—
- Disgruntled Woman:	I wouldn't doubt it.
- Manaia:	Do you know any of their names?
- Disgruntled Woman:	The only one who could have known that is Faust himself, or...
- Disgruntled Woman:	Possibly one of the four. 
- Another drawn-out sip. 
- Looking down at her emptied glass, she laughs silently. 
- Disgruntled Woman:	Or— Or someone close to them. 
- Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out. 
- Her head begins to sway. 
- Is she drunk... already? 
+ <<sprTalking SpriteController "R">>
+ Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves.  #line:09208f3 
+ Disgruntled Woman:	To scam him of his items and... their salary. #line:0c41fe8 
+ Disgruntled Woman:	I wouldn't— #line:077af49 
+ Disgruntled Woman:	I wouldn't doubt it. #line:03d8044 
+ <<sprTalking SpriteController "L">>
+ Manaia:	Do you know any of their names? #line:0756e2c 
+ <<sprTalking SpriteController "R">>
+ Disgruntled Woman:	The only one who could have known that is Faust himself, or... #line:0995b23 
+ Disgruntled Woman:	Possibly one of the four.  #line:02c0f3b 
+ Another drawn-out sip.  #line:0545a85 
+ Looking down at her emptied glass, she laughs silently.  #line:0182eec 
+ Disgruntled Woman:	Or— Or someone close to them.  #line:0b0dc27 
+ Disgruntled Woman:	Which, I'll tell you. Fat chance— fat chance finding that out.  #line:0f3dfcc 
+ Her head begins to sway.  #line:057334a 
+ Is she drunk... already?  #line:02f4304 
   
--> Do you know anything else?
-    Manaia: 	Do you know anything else? 
-  	She just stares at you, thinking. 
-    Her Husband:	Regretfully, we haven't heard much else.
--> (Leave)
-   Manaia: 	I'll leave you both to it.
-	 She just stares at you, thinking. 
+-> Do you know anything else? #line:0630332 
+   <<sprTalking SpriteController "L">>
+    Manaia: 	Do you know anything else?  #line:0f0b024 
+  	She just stares at you, thinking.  #line:089b19b 
+    <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+    Her Husband:	Regretfully, we haven't heard much else. #line:03ab3cd 
+-> (Leave) #line:04fefbb 
+  <<sprTalking SpriteController "L">>
+   Manaia: 	I'll leave you both to it. #line:05f45d2 
+	 She just stares at you, thinking.  #line:0c21ce1 
 <<set $dwMission = false>>
+<<DeleteInteraction Interactor_DisgruntaledWoman>>
 <<OutDialogue Interactor_DisgruntaledWoman>>
 <<ActivateRift Interactor_Bartender 1>>
 ===
 
 title: TheAccident
-position: 247,113
+position: -2442,1009
 ---
- Manaia: We were talking about it. Just a minute ago. 
- Disgruntled Woman:	Mn. Maybe my boyfriend can tell you. 
- Disgruntled Woman:	I don't feel so good. 
- Her Husband:	Boyfriend? Don't be silly, dear. 
- She shakes her head slowly. 
- Disgruntled Woman:	I'm not being silly. 
- Her Husband:	Calling me your boyfriend, come now. 
- Her Husband:	Those days are long gone.    
- Disgruntled Woman:	What... 
- Disgruntled Woman:	What else would I call you? 
- Her Husband:	...
- You look at the emptied drink in her hand... then back to her. 
- Welkin's Gift. 
- Her Husband:	I'm your husband...
- She just looks at him for a moment, silent. 
- The two begin to argue. Neither agree about what their relationship "is". 
- You can't really follow it.
+ <<sprTalking SpriteController "L">>
+ Manaia: We were talking about it. Just a minute ago.  #line:05fd71a 
+ <<sprTalking SpriteController "R">>
+ Disgruntled Woman:	Mn. Maybe my boyfriend can tell you.  #line:06bb33b 
+ Disgruntled Woman:	I don't feel so good.  #line:0cec3ba 
+ <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+ Her Husband:	Boyfriend? Don't be silly, dear.  #line:0539d87 
+ She shakes her head slowly.  #line:085dbb7 
+ <<sprTalking SpriteController "R">>
+ Disgruntled Woman:	I'm not being silly.  #line:0d51c06 
+ <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+ Her Husband:	Calling me your boyfriend, come now.  #line:07c5ae2 
+ Her Husband:	Those days are long gone.     #line:0e964bc 
+ <<sprTalking SpriteController "R">>
+ Disgruntled Woman:	What...  #line:0dbc42c 
+ Disgruntled Woman:	What else would I call you?  #line:0b72716 
+ <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
+ Her Husband:	... #line:03e2a38 
+ You look at the emptied drink in her hand... then back to her.  #line:0b35b65 
+ Welkin's Gift.  #line:0d97a06 
+ Her Husband:	I'm your husband... #line:0286d17 
+ She just looks at him for a moment, silent.  #line:06a112a 
+ The two begin to argue. Neither agree about what their relationship "is".  #line:06ade50 
+ You can't really follow it. #line:0a6ca44 
  
  
- -> Is there anything else you know about the accident?
-  Manaia:	Is there anything else you know about the accident?
-  They seem a bit preoccupied right now. 
+ -> Is there anything else you know about the accident? #line:0e33cc5 
+  <<sprTalking SpriteController "L">>
+  Manaia:	Is there anything else you know about the accident? #line:0f0e062 
+  They seem a bit preoccupied right now.  #line:0cbf913 
   <<set $dwMission = false>>
- -> I'll leave you both to it (End).
-  Manaia:	I'll leave you both to it.
-  Claude whispers to you. 
-  Claude:	You sly dog!
-  Claude:	And you said you weren't going to put anything in it. 
-  Manaia:	It wasn't me. 
-  Manaia:	Something else is going on here. 
+ -> I'll leave you both to it (End). #line:05fff96 
+  <<sprTalking SpriteController "L">>
+  Manaia:	I'll leave you both to it. #line:0b39e60 
+  <<changeSprR SpriteController "CharacterSprite_Claude">> 
+  Claude whispers to you.  #line:0eea61a 
+  <<sprTalking SpriteController "R">>
+  Claude:	You sly dog! #line:0f37188 
+  Claude:	And you said you weren't going to put anything in it.  #line:0a1b6ea 
+  <<sprTalking SpriteController "L">>
+  Manaia:	It wasn't me.  #line:01a0cc1 
+  Manaia:	Something else is going on here.  #line:0c4adf9 
   <<set $dwMission = false>>
  
- 
+  <<DeleteInteraction Interactor_DisgruntaledWoman>>
   <<OutDialogue Interactor_DisgruntaledWoman>>
  //open new rift
   <<ActivateRift Interactor_Bartender 1>>
@@ -1237,62 +1427,130 @@ position: 247,113
 ===
 
 title: Scene11
+position: -117,1121
 ---
-Niamh:	Have you ever thought of doing something else?
-Manaia:	What do you mean?
-Niamh:	All we do is pack cargo, go home, sleep, repeat. Ad infinitum. 
+<<InDialogue Manaia_Ending>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Niamh">>
+<<sprTalking SpriteController "R">>
+Niamh:	Have you ever thought of doing something else? #line:0b9ba77 
+<<sprTalking SpriteController "L">>
+Manaia:	What do you mean? #line:0ae767a 
+<<sprTalking SpriteController "R">>
+Niamh:	All we do is pack cargo, go home, sleep, repeat. Ad infinitum.  #line:03e60fa 
 
-Niamh:	Don’t you want something different? Something more? 
-Manaia:	 I like the life we have.
-Niamh:	There’s the entire world out there, and we never get to see it. 
-Niamh:	Only if you’re a helmsman. 
-Niamh:	Or you’re lucky enough to work for a Fluer du Cielian. Or… I don’t know. 
-Niamh:	Go rogue. Become a Sky Mule. 
-Manaia:	What are you saying?
-Niamh:	Think about it. They’re free to do whatever they want. 
+Niamh:	Don’t you want something different? Something more?  #line:0ace819 
+<<sprTalking SpriteController "L">>
+Manaia:	 I like the life we have. #line:0634abc 
+<<sprTalking SpriteController "R">>
+Niamh:	There’s the entire world out there, and we never get to see it.  #line:0a6969b 
+Niamh:	Only if you’re a helmsman.  #line:0964650 
+Niamh:	Or you’re lucky enough to work for a Fluer du Cielian. Or… I don’t know.  #line:0d5f390 
+Niamh:	Go rogue. Become a Sky Mule.  #line:02655b8 
+<<sprTalking SpriteController "L">>
+Manaia:	What are you saying? #line:0f55c2d 
+<<sprTalking SpriteController "R">>
+Niamh:	Think about it. They’re free to do whatever they want.  #line:02411c2 
 
-Niamh:	No enforcers telling them what to do. When to work. Where to be. 
-Niamh:	We could leave Mórport. The three of us. 
-Manaia:	A Sky Mule? Niamh, they’re robbers. 
-Manaia:	Murderers. 
-Manaia:	They’re the reason so many people disappear in the fog. 
-Niamh:	That’s just what the enforcers say. 
-Niamh:	People go missing because they have shit guides. 
-Niamh:	Who can’t operate a compass to save their life. 
-Manaia:	You seriously want to become a Sky Mule? Why? 
-Niamh:	What? No. No, I don’t—
-Niamh:	I just want us to get out of here. Together. 
-Niamh:	 Listen, I’ve been talking to a helmsman. 
-Niamh:	I took one of the tiny, wrecked postal ships. I fixed it and I got him to teach me to use the compass. 
-Niamh:	I’ve been riding with him, learning the ropes and I’m ready. 
-Niamh:	We can do it. We can. 
-Manaia:	You stole an airship?
-Manaia:	We could get put away for life. 
-Manaia:	Did you even think about that?
-Niamh:	We won’t. I know what I’m doing. 
-Manaia:	You need to bring it back. 
-Niamh:	I wasn’t—
-Niamh:	I thought you’d be excited 
-Niamh:	You love reading about scenarios just like this. Traveling to far places, seeing more than just the cold machinery and smoke. 
-Niamh:	Getting away from the humdrum.
-Manaia:	It's never been boring with you. 
-	...
-Manaia:	You and Fionn.
-Niamh:	Then come with me. 
-Niamh:	Look, I’ve already planned it out. 
-Niamh:	I know it’s soon, but they won’t be checking up on us in a while. 
-Niamh:	The ship's behind the landfill, I want you to meet me there tonight. 
-Niamh:	Be there twenty minutes before curfew. 
-Manaia:	I’m not leaving. 
-Niamh:	We can’t miss this. 
-Niamh:	Eventually they’ll come looking for the ship. 
-Niamh:	I’ll wait for you. 
-	
+Niamh:	No enforcers telling them what to do. When to work. Where to be.  #line:0b7a48c 
+Niamh:	We could leave Mórport. The three of us.  #line:0a05226 
+<<sprTalking SpriteController "L">>
+Manaia:	A Sky Mule? Niamh, they’re robbers.  #line:01d0040 
+Manaia:	Murderers.  #line:042aa7f 
+Manaia:	They’re the reason so many people disappear in the fog.  #line:0789659 
+<<sprTalking SpriteController "R">>
+Niamh:	That’s just what the enforcers say.  #line:06107d5 
+Niamh:	People go missing because they have shit guides.  #line:072b1ee 
+Niamh:	Who can’t operate a compass to save their life.  #line:0408466 
+<<sprTalking SpriteController "L">>
+Manaia:	You seriously want to become a Sky Mule? Why?  #line:07db944 
+<<sprTalking SpriteController "R">>
+Niamh:	What? No. No, I don’t— #line:006d5ec 
+Niamh:	I just want us to get out of here. Together.  #line:0f8f207 
+Niamh:	 Listen, I’ve been talking to a helmsman.  #line:085d1d4 
+Niamh:	I took one of the tiny, wrecked postal ships. I fixed it and I got him to teach me to use the compass.  #line:0e2e756 
+Niamh:	I’ve been riding with him, learning the ropes and I’m ready.  #line:0577707 
+Niamh:	We can do it. We can.  #line:05f0f58 
+<<sprTalking SpriteController "L">>
+Manaia:	You stole an airship? #line:0934cbf 
+Manaia:	We could get put away for life.  #line:0621d4a 
+Manaia:	Did you even think about that? #line:0ac38b9 
+<<sprTalking SpriteController "R">>
+Niamh:	We won’t. I know what I’m doing.  #line:07d0d20 
+<<sprTalking SpriteController "L">>
+Manaia:	You need to bring it back.  #line:0db5231 
+<<sprTalking SpriteController "R">>
+Niamh:	I wasn’t— #line:0b1e69d 
+Niamh:	I thought you’d be excited  #line:06bcef5 
+Niamh:	You love reading about scenarios just like this. Traveling to far places, seeing more than just the cold machinery and smoke.  #line:0106e0c 
+Niamh:	Getting away from the humdrum. #line:0c2a06a 
+<<sprTalking SpriteController "L">>
+Manaia:	It's never been boring with you.  #line:03aee41 
+	... #line:09d6331 
+Manaia:	You and Fionn. #line:00a3efd 
+<<sprTalking SpriteController "R">>
+Niamh:	Then come with me.  #line:0dadf7c 
+Niamh:	Look, I’ve already planned it out.  #line:00cc4c9 
+Niamh:	I know it’s soon, but they won’t be checking up on us in a while.  #line:04333b5 
+Niamh:	The ship's behind the landfill, I want you to meet me there tonight.  #line:0527987 
+Niamh:	Be there twenty minutes before curfew.  #line:043bb72 
+<<sprTalking SpriteController "L">>
+Manaia:	I’m not leaving.  #line:0758222 
+<<sprTalking SpriteController "R">>
+Niamh:	We can’t miss this.  #line:082b882 
+Niamh:	Eventually they’ll come looking for the ship.  #line:02b9839 
+Niamh:	I’ll wait for you.  #line:0508e3c 
+<<OutDialogue Manaia_Ending>>	
+
+===
+
+title: Scene11_After
+---
 	//out  of rift
-	
-Manaia:	Why am I seeing this memory?
-Manaia:	I’m sorry Niamh. 
-Manaia:	I should have stopped you. 
-	...
-Manaia:	What happened to you? 
+<<sprTalking SpriteController "L">>	
+Manaia:	Why am I seeing this memory? #line:0aef8d2 
+Manaia:	I’m sorry Niamh.  #line:01d5517 
+Manaia:	I should have stopped you.  #line:03b0807 
+<<EndGame FadeToBlack_Parent>>
+	... #line:08d9e44 
+Manaia:	What happened to you?  #line:080bf99 
+<<ChangeScene FadeToBlack_Parent>>
+===
+
+
+title: Scene7-5_InFront
+---
+Manaia:	They won't talk if they see me listening.  #line:0613283 
+<<OutDialogue SensorBox_Thoughts_2>>
+===
+
+title: Scene7-5
+position: 140,910
+---
+
+<<InDialogue Interactor_Eavesdrop_Maid>>
+<<changeSprL SpriteController "Manaia_CharacterSprite">>
+<<changeSprR SpriteController "CharacterSprite_Niamh">>
+<<sprTalking SpriteController "L">>
+ 
+	// Maid talking to male servant in secrecy, One of the servants is consoling their weeping maid friend. 
+
+
+Maid:	I just don't understand. #line:09c537d 
+Maid:	Why her? Why shoot her? #line:0bdd80c 
+Servant:	Shh... not so loud.  #line:0c0c86f 
+Maid:	I can't help it, it's too much.  #line:028a4a6 
+Servant:	Margot and Lucille both, neither of them deserved it.  #line:05b79a4 
+Maid:	They were just doing their jobs.  #line:0557112 
+Maid:	They didn't have anything to do with the accident, so why?  #line:0043b63 
+<<OutDialogue Interactor_Eavesdrop_Maid>>
+===
+
+title: Scene7-5_1
+---
+Manaia:	Margot and Lucille... must be the maids who died.  #line:01349dc 
+Manaia:	I can't help but feel relieved... #line:0342906 
+Manaia:	For having not heard Niamh's name yet.  #line:029bad7 
+Manaia:	I will find her. #line:0a94897 
+<<OutDialogue Eavesdrop_Maid_Thoughts_Downstairs>>
 ===

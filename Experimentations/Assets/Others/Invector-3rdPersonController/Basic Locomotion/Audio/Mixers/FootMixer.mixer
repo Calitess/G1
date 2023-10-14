@@ -15,7 +15,9 @@ AudioMixerController:
   m_SuspendThreshold: -80
   m_EnableSuspend: 1
   m_UpdateMode: 0
-  m_ExposedParameters: []
+  m_ExposedParameters:
+  - guid: 73b092ba4aaa1574992cf5fdd53f2c4a
+    name: FootstepsVolume
   m_AudioMixerGroupViews:
   - guids:
     - f55327eb9133a0140a4d54742de60edc
@@ -481,7 +483,7 @@ AudioMixerSnapshotController:
     324c2f7a1969e334e9741cf69b55776a: 1.99
     8ea5d98a514789248913ca30607a2011: 0
     20bd9d8a3b5466b4ebfdac570e2219ea: 0
-    73b092ba4aaa1574992cf5fdd53f2c4a: 5.1526933
+    73b092ba4aaa1574992cf5fdd53f2c4a: 0.44032478
     4c7a911b6c2cdcd438035c67ab275695: -100
     b9f1f43b10d596845bff40b53ed25903: -0.02577689
     027d355b16e9b2f44a1bea445976bbd6: 20

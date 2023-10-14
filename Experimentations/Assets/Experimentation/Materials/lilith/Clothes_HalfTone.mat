@@ -122,7 +122,7 @@ Material:
     - _Softness: -0.83
     - _USE_SCREEN_SPACE: 0
     m_Colors:
-    - _Base_Color: {r: 1, g: 1, b: 1, a: 0}
+    - _Base_Color: {r: 0.7921569, g: 0.7921569, b: 0.8980392, a: 0}
     - _Highlight_Colour: {r: 0.8113208, g: 0.8113208, b: 0.8113208, a: 0}
     - _Rim_Light_Colour: {r: 1, g: 0.9386792, b: 0.9386792, a: 0}
     - _Shadow_Colour: {r: 1.11, g: 1.1, b: 1, a: 0}
