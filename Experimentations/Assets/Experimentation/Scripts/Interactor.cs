@@ -148,6 +148,7 @@ public class Interactor : MonoBehaviour
 
     }
 
+
     public void CloseRealm()
     {
         for (int i = 0; i < manaiaVfx.Length; i++)
