@@ -25,6 +25,7 @@ public class GameManager : MonoBehaviour
 
     //Journal - endless book asset
     [SerializeField] private EndlessBook endlessBook;
+    [SerializeField] public PageView_02 pageView_02;
 
     //The colliders that has the touchpad script to click on pages of the journal
     [SerializeField] private TouchPad touchPad;

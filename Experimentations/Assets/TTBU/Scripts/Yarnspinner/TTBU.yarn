@@ -71,10 +71,6 @@ position: -879,-637
 ---
 <<InDialogue Char_Bro>> //make sure to put at the start of every dialogue sequence. it tells the gamestate to be inside dialoguestate
 <<Talk Char_Bro CharacterTalk>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0148e05 
--> Skip #line:08d94bc 
- <<jump Skip_Scene1>>
--> Continue  #line:0d5e095 
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
@@ -93,7 +89,7 @@ Fionn: I wanted to do it myself. From the inside. It was the only way I could th
 Fionn: Sorry... I... you don't know what they've been saying round here.  #line:007ee35 
 //choices
 -> Manaia: Slow down. Tell me from the beginning.  #line:0e16e10 
- Manaia: Are you implying what I think you are? #line:06ef997 
+ Manaia: Slow down. Tell me from the beginning. #line:06ef997 
  <<jump Result_C>>
 -> Manaia: What have they been saying?  #line:0b2df81 
  Manaia: What have they been saying? #line:0f92d02 
@@ -115,13 +111,14 @@ position: -832,-368
 <<sprTalking SpriteController "R">>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They've been trying to <b>cover something up</b>. Don't want anyone talking about it during the festivities. But that hasn't stopped some of the hearsay. #line:0bd2c01 
-Fionn: Been an <b>accident/b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
+Fionn: Been an <b>accident</b> round the time Niamh went missing.  Was a huge mess of a thing. Took lives from some maids and nearly the whole underbelly of the Mansion.  The usual docking area for airships is still under repair.  #line:05df8e1 
 Fionn: Even so, other than me 'an the few working, the rest couldn't give two dog licks. I'd bleach their tongues clean if I could. #line:07d2b97 
 
 //choices
 -> Manaia: Are you implying what I think you are?   #line:031b7a7 
-Manaia: Are you implying what I think you are?  #line:030a332
- <<jump Result_F>>
+  <<sprTalking SpriteController "L">>
+  Manaia: Are you implying what I think you are?  #line:030a332
+  <<jump Result_F>>
 -> Manaia: ... #line:017d916 
  <<jump Result_F>>
 ===
@@ -133,10 +130,13 @@ position: -835,-175
 <<Talk Char_Bro CharacterTalk>>
 Fionn: They're calling it an <b>accident</b> but it's muddier than that. I asked some of the others about Niamh but <b>none of 'em could even recall her name</b>. #line:04ea975 
 Fionn: She <i>has</i> been working here though, told me herself.  #line:01cbb2b 
+<<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_DingyStuff>>
 Fionn: The problem is, Sir Faust and all these other rich pricks are interested in some dingy stuff. This whole auction's underground, not many Fleur du Cielian's could tell you about it.  #line:0a172ab 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff Cam_Brother_DingyStuff2>>
 <<Talk Char_Bro CharacterTalk>>
 Fionn: Ain't hard to recognise the guests here though, even from voice alone. He's invited every bigshot around to bid on his strange collection of mystic junk.   #line:0b01533 
-Fionn:Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
+<<Cinematic Char_Bro Cam_Brother_DingyStuff2 Cam_Brother_Scene1>>
+Fionn: Not much I can do. I'd be sent, ass first, off the ledge if I tried talking to any of 'em.  #line:04b0c2b 
 <<sprTalking SpriteController "L">>
 Manaia: So this is where I come in?  #line:0ab85a5 
 <<sprTalking SpriteController "R">>
@@ -145,8 +145,10 @@ Fionn: Exactly... well.. that isn't to say it'll be easier for you.  #line:0920f
 Fionn: As an unknown here, it'll take a bit to get people to talk without causing suspicion. Get their trust. Tell them things they want to hear. Or find another way around. #line:094943b 
 //// A sound of a kerfuffle near the doorway (( the companion giving away his position slightly, apoligising to someone?))
  //cut the camera towards the doorway with nothing there. A few moments later, cut back to fionn
+ <<Cinematic Char_Bro Cam_Brother_Scene1 Cam_Brother_Eavesdrop>>
 <<sprTalking SpriteController "R">>
 Fionn: Look, it won't be long before the first night of bidding starts. Find out as much as you can and I'll get you after. We can't be seen together once we're inside.  #line:07825cd 
+ <<Cinematic Char_Bro Cam_Brother_Eavesdrop Cam_Brother_Scene1>>
 <<sprTalking SpriteController "L">>
 Manaia: I won't let you down.  #line:09cdc0a 
 <<sprTalking SpriteController "R">>
@@ -170,16 +172,13 @@ position: -2679,-1254
 ---
 
 <<InDialogue JournalTrigger_Scene2>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:04f739d 
--> Skip #line:09a9d70 
- <<jump Skip_Scene2>>
--> Continue  #line:0e320ba 
+
 
 Manaia: Where to start? I suppose I should check my journal.  #line:0f5d477 
 
 Press Q to check the journal for objectives.  #line:044524e 
 
-
+<<NewPageEntry JournalTrigger_Scene2>>
 <<JournalEntryText JournalTrigger_Scene2>>
 <<OutDialogue JournalTrigger_Scene2>>
 <<DeleteTrigger JournalTrigger_Scene2>>
@@ -305,10 +304,6 @@ title: BarIntro
 position: -2259,-1271
 ---
 <<InDialogue Interactor_Bartender>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:0a5beeb 
--> Skip #line:0daaf70 
- <<jump Skip_Scene4>>
--> Continue  #line:086528c 
 Manaia: Interesting, how did they get a hold of such extinct material. #line:06f5e99 
 Bartender: Could I be so kind in offering you a drink? #line:08f3b11 
 Manaia: I'm fine thank you, just taking a look at this instillation. #line:0c200e6 
@@ -403,11 +398,18 @@ Servant2: No, no, we're not talking occult during work time again. Let's just ge
 //<<ActivateRift Interactor_Eavesdrop 0>>
 ===
 
+title: Scene5_Infront
+---
+Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+<<OutDialogue SensorBox_Thoughts>>
+===
+
+
 title: Scene5
 position: 95,1642
 ---
 <<InDialogue Interactor_Eavesdrop>>  //change name of character/interactor
-Manaia: <i>Three's a crowd, huh? Seems they won't talk with me here.</i> #line:0135a14 
+
 Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tripping over nothing, I broke five plates yesterday. She has it out for me!  #line:0c75789 
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
@@ -415,19 +417,26 @@ Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for m
 Servant 1: Not like I'd know she'd get a bullet to the head in the process.
 Servant 2: What! How could you?  #line:03d29a5 
 Servant 2: I had dibs on those! #line:0c856e8 
-
-<i>A maid died while cleaning "The Four's" rooms. </i>
-<i>Is this one of the maid's Fionn was talking about? </i>
-<i>Was Niamh working as...</i>
-<i>No. I don't want to believe that. </i>
-<i>It doesn't make any sense...</i>
-<i>How would a gun, fit into an accident?</i>
-
 <<NewPageEntry Interactor_Eavesdrop>>
 <<ShowImage Interactor_Eavesdrop>>
 
 <<OutDialogue Interactor_Eavesdrop>> //change name of character/interactor
 ===
+
+title: Scene5_1
+---
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
+Manaia: <i>A maid died while cleaning "The Four's" rooms. </i>
+Manaia: <i>Is this one of the maid's Fionn was talking about? </i>
+Manaia: <i>Was Niamh working as...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/no">>
+Manaia: <i>No. I don't want to believe that. </i>
+Manaia: <i>It doesn't make any sense...</i>
+<<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
+Manaia: <i>How would a gun, fit into an accident?</i>
+<<OutDialogue Eavesdrop_thoughts>>
+===
+
 
 title: Scene6
 position: -2663,-614
@@ -460,9 +469,11 @@ position: -2656,-383
 <<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
 <<set $talkAccident = true>>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_1>>
 Display Attendant: To think, a plant could survive in the Sepulchral Fog. So near to core of our planet, to The Veiled Maw.  It is a wonder of wonders.  #line:06d12ea 
 Display Attendant: Only the most seasoned of helmsman could have navigated their crew through those thick turbulent mists. And only one with a ship built for the pressure. Not many have been so lucky.    #line:048c6e1 
 Display Attendant: This is truely a one of a kind item, the highest ranking in our catalogue.  #line:097c783 
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_1 Cam_Terrarium_Scene6_2>>
 Display Attendant: When distilled, it creates a biofuel beyond any we've seen before.  As an energy source it is thought to be capable of commencing an entirely new technological age! #line:01ba6dd 
 Display Attendant: Isn't that facinating? #line:00b5fd3 
 
@@ -477,6 +488,7 @@ title: Scene6_2
 position: -2660,-176
 ---
 <<sprTalking SpriteController "R">>
+<<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6_2 Cam_Terrarium_Scene6>>
 Display Attendant: And that's not all! #line:090d8de 
 Display Attendant: It has been rumoured to carry some of the illusionary qualities of the fog itself.  #line:0915ba6 
 Display Attendant: Though perhaps less dramatic than the cries for help one might hear while flying through the Sepulchral fog, it is still quite a coveted item for anyone interested in the occult. Or perhaps the scientifically inclined?  #line:001c9bd 
@@ -492,6 +504,7 @@ title: SCene6_3
    Manaia: I heard there was an accident in the docking area. What can you tell me about that? #line:098b8a1 
    <<sprTalking SpriteController "R">>
    Display Attendant: Eh? The explosion?  #line:093ddf8 
+   <<Cinematic Interactor_Terrarium_Scene6 Cam_Terrarium_Scene6 Cam_Terrarium_Scene6_3>>
    Display Attendant: Bollocks. You made me lose my train of thought. What part of the script was I up to?  #line:0411d5a //set bool explosion = true
     <<OutDialogue Interactor_Terrarium_Scene6>> //change name of character/interactor
     //delete trigger after interaction NOT SURE IF CAN DO THAT BUT IF CAN, DO HERE
@@ -536,13 +549,11 @@ Niamh: Take Fionn and leave. You should have never come.  #line:0680762
      <<jump Scene7_2>>
 -> Manaia: This isn't real.  #line:0d02979 
    <<sprTalking SpriteController "L">>
-   Manaia: This isn't real.  #line:0c0144d 
    Manaia: This isn't real.  #line:0330465 
      <<jump Scene7_2>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
 // Downstairs is now openn
 //rift opens, niamg fades into view
-<<OutDialogue WorkBitch>>
 ===
 
 
@@ -577,16 +588,20 @@ Niamh: Manaia. If I ever meant anything to you, you would listen. Give up.  #lin
 Niamh: You’re a fool. This is so much bigger than you and your stupid hero complex. #line:0ed489e 
 <<FadeNiamh WorkBitch>>
 //  Niamhs ghosts dissapears abrubtly, manaia goes offbalance from the force of it <-- is there an animation available for this? if not ignore
-Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
-Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
-<<jump Scene7_3>>
+<<NewPageEntry Interactor>>
+<<ShowImage Interactor>> 
+<<OutDialogue WorkBitch>>
 ===
 
 title: Scene7_3
 position: -3477,-23
 ---
+<<InDialogue AfterRift_Claude_Interaction>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Claude">>
+<<sprTalking SpriteController "L">>
+Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
+Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
 <<sprTalking SpriteController "R">>
 Claude: Outstanding performance! Was that a monologue?  #line:063d9bf 
 <<sprTalking SpriteController "L">>
@@ -594,23 +609,18 @@ Manaia: ...  #line:097902f
 <<sprTalking SpriteController "R">>
 Claude: The determination! The confusion! It was like a punch to the gut!  #line:078043c 
 Claude: One piece of criticism though, your script was just awful. Made no sense.   #line:0acc0a6 
-<<NewPageEntry Interactor>>
-<<ShowImage Interactor>> 
+<<OutDialogue AfterRift_Claude_Interaction>>
 // Downstairs is now openn
 //rift opens, niamg fades into view
 //<<ShowImage ReachingOut>>  might need to change name of dialogue jump
 //<<NewPageEntry ReachingOut>>  might need to change name of dialogue jump
-<<OutDialogue WorkBitch>>
+
 ===
 
 title: RiftIntro
 position: -3267,-1300
 ---
 <<InDialogue ReachingOut>>
-Skip is for debugging purposes for the devs, please continue the dialogue. #line:03445c3 
--> Skip #line:0a6598d 
- <<jump Skip_Scene8>>
--> Continue  #line:0d4e3e4 
 Niamh: You made it. You must find the answers  #line:S8L45
 Manaia:Whos there?? Why do you sound so farmiliar. Wait..... #line:S8L46
 Niamh: It's the only way... #line:S8L47
@@ -1419,6 +1429,7 @@ position: -2442,1009
 title: Scene11
 position: -117,1121
 ---
+<<InDialogue Manaia_Ending>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "R">>
@@ -1489,14 +1500,28 @@ Manaia:	I’m not leaving.  #line:0758222
 Niamh:	We can’t miss this.  #line:082b882 
 Niamh:	Eventually they’ll come looking for the ship.  #line:02b9839 
 Niamh:	I’ll wait for you.  #line:0508e3c 
-	
+<<OutDialogue Manaia_Ending>>	
+
+===
+
+title: Scene11_After
+---
 	//out  of rift
 <<sprTalking SpriteController "L">>	
 Manaia:	Why am I seeing this memory? #line:0aef8d2 
 Manaia:	I’m sorry Niamh.  #line:01d5517 
 Manaia:	I should have stopped you.  #line:03b0807 
+<<EndGame FadeToBlack_Parent>>
 	... #line:08d9e44 
 Manaia:	What happened to you?  #line:080bf99 
+<<ChangeScene FadeToBlack_Parent>>
+===
+
+
+title: Scene7-5_InFront
+---
+Manaia:	They won't talk if they see me listening.  #line:0613283 
+<<OutDialogue SensorBox_Thoughts_2>>
 ===
 
 title: Scene7-5
@@ -1507,7 +1532,7 @@ position: 140,910
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "L">>
-Manaia:	They won't talk if they see me listening.  #line:0613283 
+ 
 	// Maid talking to male servant in secrecy, One of the servants is consoling their weeping maid friend. 
 
 
@@ -1518,11 +1543,14 @@ Maid:	I can't help it, it's too much.  #line:028a4a6
 Servant:	Margot and Lucille both, neither of them deserved it.  #line:05b79a4 
 Maid:	They were just doing their jobs.  #line:0557112 
 Maid:	They didn't have anything to do with the accident, so why?  #line:0043b63 
-	
+<<OutDialogue Interactor_Eavesdrop_Maid>>
+===
+
+title: Scene7-5_1
+---
 Manaia:	Margot and Lucille... must be the maids who died.  #line:01349dc 
 Manaia:	I can't help but feel relieved... #line:0342906 
 Manaia:	For having not heard Niamh's name yet.  #line:029bad7 
 Manaia:	I will find her. #line:0a94897 
-
-<<OutDialogue Interactor_Eavesdrop_Maid>>
+<<OutDialogue Eavesdrop_Maid_Thoughts_Downstairs>>
 ===
