@@ -366,11 +366,17 @@ position: -3537,-1050
 Display Attendent: Sir...? #line:02a5af0 
 <<Cinematic Interactor_Terrarium Cam_Terrarium_Scene3_2 Cam_Terrarium_Scene3>>
 Display Attendant: I appreciate your glee, but I assure you this is no tent show.   #line:073cabb 
+<<changeSprR SpriteController "CharacterSprite_Green">>
+<<sprTalking SpriteController "R">>
 Mysterious Stranger: Oh, no no. This is good stuff. Lethe's blessing was it? Delightful. Pierre is simply showing anything this year.   #line:041f6cf 
 Mysterious Stranger: Can't very well expect him to outdo himself every time I suppose. Merely plants more dullards for the next.  #line:0f27493 
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
 Display Attendant: I'm sorry? #line:02e413e 
+<<changeSprR SpriteController "CharacterSprite_Green">>
+<<sprTalking SpriteController "R">>
 Mysterious Stranger: Do go on. I can scarcely wait to see this completely run to seed. #line:026e204 
+<<changeSprR SpriteController "CharacterSprite_Fionn">>
 <<sprTalking SpriteController "R">>
 Display Attendant: Ah... Well.  #line:07f16cc 
 Display Attendant: Lethe's Blessing is... This particular plant's history, yes. #line:0508a7a 
@@ -598,10 +604,11 @@ position: -3477,-23
 ---
 <<InDialogue AfterRift_Claude_Interaction>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
-<<changeSprR SpriteController "CharacterSprite_Claude">>
+
 <<sprTalking SpriteController "L">>
 Manaia: If it’s like the fog, that must've been a mirage.  #line:0d09fc3 
 Manaia: A waking dream fabricated by the universe. Just to trick me into giving up on her. But why?  #line:085dcc2 
+<<changeSprR SpriteController "CharacterSprite_Claude">>
 <<sprTalking SpriteController "R">>
 Claude: Outstanding performance! Was that a monologue?  #line:063d9bf 
 <<sprTalking SpriteController "L">>
@@ -719,7 +726,7 @@ position: -2403,266
 ---
 <<InDialogue Interactor_DisgruntaledWoman>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
-<<changeSprR SpriteController "CharacterSprite_Fionn">> //CHANGE TO NEW SPRITES
+<<changeSprR SpriteController "CharacterSprite_DW">> //CHANGE TO NEW SPRITES
 <<sprTalking SpriteController "R">>
 <<if $dwMission == true>>
  <<jump Scene10>>
@@ -746,20 +753,27 @@ position: -2220,610
   Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
   Disgruntled Woman: Yes, an accident.  #line:0047fb7 
   Disgruntled Woman: A man with that sort of money? Ought to have brought a fine ship. #line:0cd45a2 
+  <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
   Her Husband: Very fine. #line:006b59f 
+  <<changeSprR SpriteController "CharacterSprite_DW">> 
   <<sprTalking SpriteController "R">>
   Disgruntled Woman: And for it to go kerflooey, just like that? #line:005a29d 
   The woman's husband mimics an explosion with his hands. #line:0616dbc 
   Disgruntled Woman: Well, that is when a conspiracy is afoot. #line:0246943 
+  <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
   Her Husband: Afoot indeed.  #line:03eff8c 
+  <<changeSprR SpriteController "CharacterSprite_DW">> 
   <<sprTalking SpriteController "R">>
   Disgruntled Woman: Percy? #line:099583c 
+  <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
   Her Husband: Yes dear? #line:01f232a 
+  <<changeSprR SpriteController "CharacterSprite_DW">> 
   <<sprTalking SpriteController "R">>
   Disgruntled Woman: Shut up. #line:091aa6b 
+  <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
   Her Husband: Yes dear. #line:02d754a 
   <<if $RBlew && $RFaust == true>>
@@ -771,6 +785,7 @@ position: -2220,610
  Manaia: You two know Faust?  #line:0cdc820 
  //result faust, change into new scene to jump to
  <<set $RFaust = true>>
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman: Know Faust? How else would we be here?  #line:0c251da 
  Disgruntled Woman: If I take it you mean intimately, well... one does not simply "know" Sir Faust.  #line:0d81b9d 
@@ -787,6 +802,7 @@ title:ContFirst
 position: -2138,940
 ---
 //result who? ONLY WHEN BOTH OPTIONS HAVE BEEN PICKED
+<<changeSprR SpriteController "CharacterSprite_DW">> 
 <<sprTalking SpriteController "R">>
 Disgruntled Woman: Who are you anyway? A first-timer? #line:0aed717 
 -> A first timer #line:079ff06 
@@ -822,6 +838,7 @@ Disgruntled Women: Percy, be a darling and get me a drink. I'm getting bored. #l
 Her Husband: I don't think that wise, my sweet.  #line:04e5d3d 
 <<sprTalking SpriteController "R">>
 Disgruntled Woman: Pish posh. Don't be wet blanket. #line:0b991bd 
+<<changeSprR SpriteController "CharacterSprite_Husband">> 
 <<sprTalking SpriteController "R">>
 Her Husband: After the last event, I don't think they'll allow you or me near the bar.  #line:0d16258 
 <i> You wonder if you can squeeze any information from of them. Before they get distracted any further. </i> #line:0913116 
@@ -854,6 +871,7 @@ position: -2343,1549
 
 //firstime yes
 <<if $firstTimer == true>>
+<<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
  //not first time
@@ -905,6 +923,7 @@ title: acci_cont
 position: -1591,1244
 ---
 //result preferred
+<<changeSprR SpriteController "CharacterSprite_DW">> 
 <<sprTalking SpriteController "R">>
 Disgruntled Woman: Surprise me! Whatever you do, just make it strong.  #line:066c233 
 Disgruntled Woman: If if doesn't bite back, I will. #line:00a65fc 
@@ -1208,7 +1227,7 @@ position: -2604,681
 ---
 <<InDialogue Interactor_DisgruntaledWoman>>
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
-<<changeSprR SpriteController "CharacterSprite_Fionn">> // CHANGE SPRITE LATER 
+<<changeSprR SpriteController "CharacterSprite_DW">>  
 //if not gotten drink
  <<if $drinks == "">>
    <<sprTalking SpriteController "R">>
@@ -1272,8 +1291,10 @@ position: -2604,681
    Manaia:	I didn't realise they took contract work. #line:0b63e4a 
    <<sprTalking SpriteController "R">>
    Disgruntled Woman:	These ones were different.  #line:0c49a09 
+   <<changeSprR SpriteController "CharacterSprite_Husband">> 
    <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
-   Her husband:	Anyone would be. Monsieur Faust drives a hard bargain.  #line:04e2bb4 
+   Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain.  #line:04e2bb4 
+   <<changeSprR SpriteController "CharacterSprite_DW">> 
    <<sprTalking SpriteController "R">>
    Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.   #line:067d000 
    Disgruntled Woman:	The Faust legacy has only sunk since he took power.  #line:0728841 
@@ -1306,6 +1327,7 @@ position: -2604,681
      <<sprTalking SpriteController "R">>
      Disgruntled Woman:	Not really.  #line:006d506 
      Disgruntled Woman:	 I don't... #line:0a44daf 
+     <<changeSprR SpriteController "CharacterSprite_Husband">> 
      <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
      Her Husband:	You were talking about the accident at the docking area.  #line:09596b6 
      <<jump TheAccident>>
@@ -1318,10 +1340,13 @@ position: -2758,1016
 -> Sky mules?  #line:071400b 
    <<sprTalking SpriteController "L">>
    Manaia:	Sky mules? #line:0f3f0fe 
+   <<changeSprR SpriteController "CharacterSprite_DW">> 
    <<sprTalking SpriteController "R">>
    Disgruntled Woman:	These ones were different.  #line:01cbdaa 
+   <<changeSprR SpriteController "CharacterSprite_Husband">> 
    <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
    Her Husband:	Anyone would be. Monsieur Faust drives a hard bargain.  #line:09f269f 
+   <<changeSprR SpriteController "CharacterSprite_DW">> 
    <<sprTalking SpriteController "R">>
    Disgruntled Woman:	I never thought he'd stoop to it, in past auctions he never had.   #line:0c81296 
    Disgruntled Woman:	The Faust legacy has only sunk since he took power.  #line:0e79be6 
@@ -1338,6 +1363,7 @@ position: -2758,1016
 title: alldied
 position: -2835,1314
 ---
+<<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman:	Who knows maybe the entire explosion was orchestrated by the mules themselves.  #line:09208f3 
  Disgruntled Woman:	To scam him of his items and... their salary. #line:0c41fe8 
@@ -1359,6 +1385,7 @@ position: -2835,1314
    <<sprTalking SpriteController "L">>
     Manaia: 	Do you know anything else?  #line:0f0b024 
   	She just stares at you, thinking.  #line:089b19b 
+    <<changeSprR SpriteController "CharacterSprite_Husband">> 
     <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
     Her Husband:	Regretfully, we haven't heard much else. #line:03ab3cd 
 -> (Leave) #line:04fefbb 
@@ -1376,20 +1403,26 @@ position: -2442,1009
 ---
  <<sprTalking SpriteController "L">>
  Manaia: We were talking about it. Just a minute ago.  #line:05fd71a 
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman:	Mn. Maybe my boyfriend can tell you.  #line:06bb33b 
  Disgruntled Woman:	I don't feel so good.  #line:0cec3ba 
+ <<changeSprR SpriteController "CharacterSprite_Husband">> 
  <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
  Her Husband:	Boyfriend? Don't be silly, dear.  #line:0539d87 
  She shakes her head slowly.  #line:085dbb7 
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman:	I'm not being silly.  #line:0d51c06 
+ <<changeSprR SpriteController "CharacterSprite_Husband">> 
  <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
  Her Husband:	Calling me your boyfriend, come now.  #line:07c5ae2 
  Her Husband:	Those days are long gone.     #line:0e964bc 
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman:	What...  #line:0dbc42c 
  Disgruntled Woman:	What else would I call you?  #line:0b72716 
+ <<changeSprR SpriteController "CharacterSprite_Husband">> 
  <<sprTalking SpriteController "R">> //CHANGE SPRITE HERE
  Her Husband:	... #line:03e2a38 
  You look at the emptied drink in her hand... then back to her.  #line:0b35b65 
@@ -1408,8 +1441,8 @@ position: -2442,1009
  -> I'll leave you both to it (End). #line:05fff96 
   <<sprTalking SpriteController "L">>
   Manaia:	I'll leave you both to it. #line:0b39e60 
-  <<changeSprR SpriteController "CharacterSprite_Claude">> 
   Claude whispers to you.  #line:0eea61a 
+  <<changeSprR SpriteController "CharacterSprite_Claude">> 
   <<sprTalking SpriteController "R">>
   Claude:	You sly dog! #line:0f37188 
   Claude:	And you said you weren't going to put anything in it.  #line:0a1b6ea 
