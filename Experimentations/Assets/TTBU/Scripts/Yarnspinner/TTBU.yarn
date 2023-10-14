@@ -420,7 +420,7 @@ Servant 1: I’m telling you. Ever since that day, I’ve been losing things, tr
 Servant 2: That’s just you being a clutz.  #line:019a693 
 Servant 1: No, honest.  Everytime it happens, I keep seeing her. Drab as always and scowling at me something terrible.  #line:07c7377 
 Servant 1: You think it's cause I made her clean <b>The Four’s</b> rooms for me? So I could nab some of her hairpins?  #line:08ae447 
-Servant 1: Not like I'd know she'd get a bullet to the head in the process.
+Servant 1: Not like I'd know she'd get a bullet to the head in the process. #line:0e2c48d 
 Servant 2: What! How could you?  #line:03d29a5 
 Servant 2: I had dibs on those! #line:0c856e8 
 <<NewPageEntry Interactor_Eavesdrop>>
@@ -432,14 +432,14 @@ Servant 2: I had dibs on those! #line:0c856e8
 title: Scene5_1
 ---
 <<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
-Manaia: <i>A maid died while cleaning "The Four's" rooms. </i>
-Manaia: <i>Is this one of the maid's Fionn was talking about? </i>
-Manaia: <i>Was Niamh working as...</i>
+Manaia: <i>A maid died while cleaning "The Four's" rooms. </i> #line:0f9df12 
+Manaia: <i>Is this one of the maid's Fionn was talking about? </i> #line:0302eb1 
+Manaia: <i>Was Niamh working as...</i> #line:00d31ca 
 <<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/no">>
-Manaia: <i>No. I don't want to believe that. </i>
-Manaia: <i>It doesn't make any sense...</i>
+Manaia: <i>No. I don't want to believe that. </i> #line:0dcb3ff 
+Manaia: <i>It doesn't make any sense...</i> #line:032ab95 
 <<VoiceEfforts Eavesdrop_thoughts "Manaia_Efforts/thinking_hmm">>
-Manaia: <i>How would a gun, fit into an accident?</i>
+Manaia: <i>How would a gun, fit into an accident?</i> #line:0257c81 
 <<OutDialogue Eavesdrop_thoughts>>
 ===
 
