@@ -1511,8 +1511,10 @@ title: Scene11_After
 Manaia:	Why am I seeing this memory? #line:0aef8d2 
 Manaia:	I’m sorry Niamh.  #line:01d5517 
 Manaia:	I should have stopped you.  #line:03b0807 
+<<EndGame FadeToBlack_Parent>>
 	... #line:08d9e44 
 Manaia:	What happened to you?  #line:080bf99 
+<<ChangeScene FadeToBlack_Parent>>
 ===
 
 
