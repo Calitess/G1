@@ -2063,11 +2063,7 @@ MonoBehaviour:
   newObjective: {fileID: 0}
   sequentialImage: {fileID: 0}
   NiamhVFX: {fileID: 0}
-  pageView_02: {fileID: 0}
-  voicelineAudioSource: {fileID: 0}
   dialogueToTriggerAfterInteractionsFinish: {fileID: 0}
-  objectToTriggerAfterIntreactionFinish: {fileID: 0}
-  objectToTriggerEnable: 1
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -7642,11 +7638,7 @@ MonoBehaviour:
   newObjective: {fileID: 0}
   sequentialImage: {fileID: 0}
   NiamhVFX: {fileID: 0}
-  pageView_02: {fileID: 0}
-  voicelineAudioSource: {fileID: 0}
   dialogueToTriggerAfterInteractionsFinish: {fileID: 0}
-  objectToTriggerAfterIntreactionFinish: {fileID: 0}
-  objectToTriggerEnable: 1
   OnInteractorEnter:
     m_PersistentCalls:
       m_Calls: []
@@ -81105,19 +81097,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7204606420742025103}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &1622085057859540159
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5014906163143816288}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.8615236, y: 2.214851, z: 0.59074694}
-  m_Center: {x: -0.007509649, y: 0.29833266, z: 0.05798056}
 --- !u!208 &5642682294537688040
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -81134,6 +81113,19 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: -0.008, y: 0.298, z: 0.058000002}
   m_TimeToStationary: 0.5
+--- !u!65 &1622085057859540159
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5014906163143816288}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.8615236, y: 2.214851, z: 0.59074694}
+  m_Center: {x: -0.007509649, y: 0.29833266, z: 0.05798056}
 --- !u!4 &7237669581793183844 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c3d7ae1c9e00df5479cb71e7c9f2dd26,

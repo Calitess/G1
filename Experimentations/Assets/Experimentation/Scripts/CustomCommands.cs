@@ -11,7 +11,6 @@ using UnityEngine.Events;
 using Unity.PlasticSCM.Editor.WebApi;
 using UnityEditor.Rendering;
 using UnityEngine.VFX;
-using echo17.EndlessBook.Demo02;
 
 public class CustomCommands : MonoBehaviour
 {
@@ -41,10 +40,6 @@ public class CustomCommands : MonoBehaviour
 
     [SerializeField] VisualEffect NiamhVFX;
 
-    [SerializeField] PageView_02 pageView_02;
-
-    [SerializeField] AudioSource voicelineAudioSource;
-
     vTriggerGenericAction action;
     AudioSource scribbleSource;
     SpriteController spriteController;
@@ -54,8 +49,6 @@ public class CustomCommands : MonoBehaviour
     npcDialogue npcDialogue;
 
     [SerializeField] private vTriggerGenericAction dialogueToTriggerAfterInteractionsFinish;
-    [SerializeField] GameObject objectToTriggerAfterIntreactionFinish;
-    [SerializeField] bool objectToTriggerEnable = true;
     [SerializeField] UnityEvent OnInteractorEnter, OnInteractorStay, OnInteractorExit;
 
 
@@ -72,7 +65,6 @@ public class CustomCommands : MonoBehaviour
         tutorialInteractions = FindObjectOfType<TutorialInteractions>();
         InteractionIcon = GetComponent<ShowInteractable>();
         npcDialogue = GetComponent<npcDialogue>();
-        pageView_02 = gameManager.pageView_02;
 
         if(thisIsPartOfTutorial)
         {
@@ -233,11 +225,6 @@ public class CustomCommands : MonoBehaviour
             dialogueToTriggerAfterInteractionsFinish.gameObject.GetComponent<SphereCollider>().enabled = true;
         }
 
-        if(objectToTriggerAfterIntreactionFinish !=null)
-        {
-            objectToTriggerAfterIntreactionFinish.SetActive(objectToTriggerEnable);
-        }
-
         spriteController.ClearSpriteContainers();
 
     }
@@ -246,6 +233,8 @@ public class CustomCommands : MonoBehaviour
     public void DeleteInteraction()
     {
 
+        if (deleteTriggeAfterDialogue)
+        {
             SphereCollider col = this.GetComponent<SphereCollider>();
             if (action != null)
             {
@@ -258,6 +247,9 @@ public class CustomCommands : MonoBehaviour
 
             }
 
+
+
+        }
     }
 
 
@@ -294,7 +286,6 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is addedd");
         book.AddPageData(leftPageMaterial);
         book.AddPageData(rightPageMaterial);
-        pageView_02.chapterJumps[3].pageNumber = book.LastPageNumber;
     }
 
     [YarnCommand("InsertEntry")]
@@ -306,8 +297,6 @@ public class CustomCommands : MonoBehaviour
         //Debug.Log("page entry is inserted");
         book.InsertPageData((pageNumber - 1), leftPageMaterial);
         book.InsertPageData(pageNumber, rightPageMaterial);
-        pageView_02.chapterJumps[3].pageNumber = book.LastPageNumber;
-
     }
 
     IEnumerator NewJournalEntry()
@@ -382,16 +371,7 @@ public class CustomCommands : MonoBehaviour
 
     IEnumerator StopNiamh()
     {
-        yield return new WaitForSecondsRealtime(3f);
+        yield return new WaitForSecondsRealtime(5f);
         NiamhVFX.Stop();
-    }
-
-    [YarnCommand("VoiceEfforts")]
-    public void VoiceEfforts(string clipToPlay)
-    {
-
-        AudioClip effort = Resources.Load<AudioClip> (clipToPlay);
-        voicelineAudioSource.PlayOneShot(effort);
-        
     }
 }
