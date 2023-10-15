@@ -1478,73 +1478,73 @@ position: -117,1121
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
 <<changeSprR SpriteController "CharacterSprite_Niamh">>
 <<sprTalking SpriteController "R">>
-Niamh:	Have you ever thought of doing something else? #line:0b9ba77 
+Past Niamh:	Have you ever thought of doing something else? #line:0b9ba77 
 <<sprTalking SpriteController "L">>
-Manaia:	What do you mean? #line:0ae767a 
+Past Manaia:	What do you mean? #line:0ae767a 
 <<sprTalking SpriteController "R">>
-Niamh:	All we do is pack cargo, go home, sleep, repeat. Ad infinitum.  #line:03e60fa 
+Past Niamh:	All we do is pack cargo, go home, sleep, repeat. Ad infinitum.  #line:03e60fa 
 
-Niamh:	Don’t you want something different? Something more?  #line:0ace819 
+Past Niamh:	Don’t you want something different? Something more?  #line:0ace819 
 <<sprTalking SpriteController "L">>
-Manaia:	 I like the life we have. #line:0634abc 
+Past Manaia:	 I like the life we have. #line:0634abc 
 <<sprTalking SpriteController "R">>
-Niamh:	There’s the entire world out there, and we never get to see it.  #line:0a6969b 
-Niamh:	Only if you’re a helmsman.  #line:0964650 
-Niamh:	Or you’re lucky enough to work for a Fluer du Cielian. Or… I don’t know.  #line:0d5f390 
-Niamh:	Go rogue. Become a Sky Mule.  #line:02655b8 
+Past Niamh:	There’s the entire world out there, and we never get to see it.  #line:0a6969b 
+Past Niamh:	Only if you’re a helmsman.  #line:0964650 
+Past Niamh:	Or you’re lucky enough to work for a Fluer du Cielian. Or… I don’t know.  #line:0d5f390 
+Past Niamh:	Go rogue. Become a Sky Mule.  #line:02655b8 
 <<sprTalking SpriteController "L">>
-Manaia:	What are you saying? #line:0f55c2d 
+Past Manaia:	What are you saying? #line:0f55c2d 
 <<sprTalking SpriteController "R">>
-Niamh:	Think about it. They’re free to do whatever they want.  #line:02411c2 
+Past Niamh:	Think about it. They’re free to do whatever they want.  #line:02411c2 
 
-Niamh:	No enforcers telling them what to do. When to work. Where to be.  #line:0b7a48c 
-Niamh:	We could leave Mórport. The three of us.  #line:0a05226 
+Past Niamh:	No enforcers telling them what to do. When to work. Where to be.  #line:0b7a48c 
+Past Niamh:	We could leave Mórport. The three of us.  #line:0a05226 
 <<sprTalking SpriteController "L">>
-Manaia:	A Sky Mule? Niamh, they’re robbers.  #line:01d0040 
-Manaia:	Murderers.  #line:042aa7f 
-Manaia:	They’re the reason so many people disappear in the fog.  #line:0789659 
+Past Manaia:	A Sky Mule? Niamh, they’re robbers.  #line:01d0040 
+Past Manaia:	Murderers.  #line:042aa7f 
+Past Manaia:	They’re the reason so many people disappear in the fog.  #line:0789659 
 <<sprTalking SpriteController "R">>
-Niamh:	That’s just what the enforcers say.  #line:06107d5 
-Niamh:	People go missing because they have shit guides.  #line:072b1ee 
-Niamh:	Who can’t operate a compass to save their life.  #line:0408466 
+Past Niamh:	That’s just what the enforcers say.  #line:06107d5 
+Past Niamh:	People go missing because they have shit guides.  #line:072b1ee 
+Past Niamh:	Who can’t operate a compass to save their life.  #line:0408466 
 <<sprTalking SpriteController "L">>
-Manaia:	You seriously want to become a Sky Mule? Why?  #line:07db944 
+Past Manaia:	You seriously want to become a Sky Mule? Why?  #line:07db944 
 <<sprTalking SpriteController "R">>
-Niamh:	What? No. No, I don’t— #line:006d5ec 
-Niamh:	I just want us to get out of here. Together.  #line:0f8f207 
-Niamh:	 Listen, I’ve been talking to a helmsman.  #line:085d1d4 
-Niamh:	I took one of the tiny, wrecked postal ships. I fixed it and I got him to teach me to use the compass.  #line:0e2e756 
-Niamh:	I’ve been riding with him, learning the ropes and I’m ready.  #line:0577707 
-Niamh:	We can do it. We can.  #line:05f0f58 
+Past Niamh:	What? No. No, I don’t— #line:006d5ec 
+Past Niamh:	I just want us to get out of here. Together.  #line:0f8f207 
+Past Niamh:	 Listen, I’ve been talking to a helmsman.  #line:085d1d4 
+Past Niamh:	I took one of the tiny, wrecked postal ships. I fixed it and I got him to teach me to use the compass.  #line:0e2e756 
+Past Niamh:	I’ve been riding with him, learning the ropes and I’m ready.  #line:0577707 
+Past Niamh:	We can do it. We can.  #line:05f0f58 
 <<sprTalking SpriteController "L">>
-Manaia:	You stole an airship? #line:0934cbf 
-Manaia:	We could get put away for life.  #line:0621d4a 
-Manaia:	Did you even think about that? #line:0ac38b9 
+Past Manaia:	You stole an airship? #line:0934cbf 
+Past Manaia:	We could get put away for life.  #line:0621d4a 
+Past Manaia:	Did you even think about that? #line:0ac38b9 
 <<sprTalking SpriteController "R">>
-Niamh:	We won’t. I know what I’m doing.  #line:07d0d20 
+Past Niamh:	We won’t. I know what I’m doing.  #line:07d0d20 
 <<sprTalking SpriteController "L">>
-Manaia:	You need to bring it back.  #line:0db5231 
+Past Manaia:	You need to bring it back.  #line:0db5231 
 <<sprTalking SpriteController "R">>
-Niamh:	I wasn’t— #line:0b1e69d 
-Niamh:	I thought you’d be excited  #line:06bcef5 
-Niamh:	You love reading about scenarios just like this. Traveling to far places, seeing more than just the cold machinery and smoke.  #line:0106e0c 
-Niamh:	Getting away from the humdrum. #line:0c2a06a 
+Past Niamh:	I wasn’t— #line:0b1e69d 
+Past Niamh:	I thought you’d be excited  #line:06bcef5 
+Past Niamh:	You love reading about scenarios just like this. Traveling to far places, seeing more than just the cold machinery and smoke.  #line:0106e0c 
+Past Niamh:	Getting away from the humdrum. #line:0c2a06a 
 <<sprTalking SpriteController "L">>
-Manaia:	It's never been boring with you.  #line:03aee41 
+Past Manaia:	It's never been boring with you.  #line:03aee41 
 	... #line:09d6331 
-Manaia:	You and Fionn. #line:00a3efd 
+Past Manaia:	You and Fionn. #line:00a3efd 
 <<sprTalking SpriteController "R">>
-Niamh:	Then come with me.  #line:0dadf7c 
-Niamh:	Look, I’ve already planned it out.  #line:00cc4c9 
-Niamh:	I know it’s soon, but they won’t be checking up on us in a while.  #line:04333b5 
-Niamh:	The ship's behind the landfill, I want you to meet me there tonight.  #line:0527987 
-Niamh:	Be there twenty minutes before curfew.  #line:043bb72 
+Past Niamh:	Then come with me.  #line:0dadf7c 
+Past Niamh:	Look, I’ve already planned it out.  #line:00cc4c9 
+Past Niamh:	I know it’s soon, but they won’t be checking up on us in a while.  #line:04333b5 
+Past Niamh:	The ship's behind the landfill, I want you to meet me there tonight.  #line:0527987 
+Past Niamh:	Be there twenty minutes before curfew.  #line:043bb72 
 <<sprTalking SpriteController "L">>
-Manaia:	I’m not leaving.  #line:0758222 
+Past Manaia:	I’m not leaving.  #line:0758222 
 <<sprTalking SpriteController "R">>
-Niamh:	We can’t miss this.  #line:082b882 
-Niamh:	Eventually they’ll come looking for the ship.  #line:02b9839 
-Niamh:	I’ll wait for you.  #line:0508e3c 
+Past Niamh:	We can’t miss this.  #line:082b882 
+Past Niamh:	Eventually they’ll come looking for the ship.  #line:02b9839 
+Past Niamh:	I’ll wait for you.  #line:0508e3c 
 <<OutDialogue Manaia_Ending>>	
 
 ===
