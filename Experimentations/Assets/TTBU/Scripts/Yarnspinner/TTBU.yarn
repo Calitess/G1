@@ -1208,12 +1208,14 @@ position: -2013,-74
  Lethe's Blessing...  #line:014f389 
  <<sprTalking SpriteController "L">>
  Manaia:	I'm not drinking this.  #line:0476058 
+ <<set $drinks = "">>
  <<OutDialogue Interactor_Bartender>>	
 <<elseif $drinks == "Will">>
  You take the virgin Will-o'-Wisp. #line:0141483 
  One taste and... #line:0e1cfbb 
  Not bad. A tad too sweet for you though.  #line:05add72 
  Down the hatch.  #line:083ae49 
+ <<set $drinks = "">>
  <<OutDialogue Interactor_Bartender>>
 <<elseif $drinks == "Devil">>
  You take the Devil on the rocks.  #line:0d86c1e 
@@ -1226,6 +1228,7 @@ position: -2013,-74
  Manaia:	(Give him a thumbs up.) #line:0555911 
  Manaia:	(Shake your head.)  #line:0a4c9c0 
  You hand Claude the drink. It'd be wasted on you.  #line:097c7e7 
+ <<set $drinks = "">>
  <<OutDialogue Interactor_Bartender>>
 <<endif>>
 
