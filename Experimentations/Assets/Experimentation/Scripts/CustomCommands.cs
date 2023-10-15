@@ -8,7 +8,6 @@ using TMPro;
 using Invector.vCharacterController.vActions;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEditor.Rendering;
 using UnityEngine.VFX;
 using echo17.EndlessBook.Demo02;
@@ -315,7 +314,7 @@ public class CustomCommands : MonoBehaviour
 
 
         newJournalEntry.gameObject.SetActive(true);
-        yield return new WaitForSecondsRealtime(1f);
+        yield return new WaitForSecondsRealtime(3f);
         newJournalEntry.gameObject.SetActive(false);
     }
 

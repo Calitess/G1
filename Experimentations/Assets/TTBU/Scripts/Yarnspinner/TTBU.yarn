@@ -953,9 +953,11 @@ position: -1774,-936
 <<if $bartenderSpeak == false>>
  //never spoken to bartender before
  <<sprTalking SpriteController "L">>
+ <<Cinematic Char_Bro Cam_Bartender_View Cam_Bartender_Distiller>>
  Manaia: I've never seen a machine like that.  #line:0ce5fc0 
  <<sprTalking SpriteController "R">>
  Bartender: The distiller?  #line:03593c6 //swapped with line ID ABOVE
+ <<Cinematic Char_Bro Cam_Bartender_Distiller Cam_Bartender_View>>
  Bartender:	You'll be hard-pressed to find another machine like it. #line:0b55eda 
  Bartender:	It's custom-made. #line:0b52d2f 
  Bartender:	Runs on the highest quality Evergreen fuel and expertly processes plants from Sir Faust's private collection.  #line:0143e87 
