@@ -884,6 +884,7 @@ position: -2343,1549
  Disgruntled Woman: Oh, this really is your first time! How were you even invited? #line:0f56007 
  //not first time
  <<else>>
+ <<changeSprR SpriteController "CharacterSprite_DW">> 
  <<sprTalking SpriteController "R">>
  Disgruntled Woman: Have you <i>absolutely</i> gone to one of these before? That's common knowlege!  #line:0eb49fc 
 <<endif>>
