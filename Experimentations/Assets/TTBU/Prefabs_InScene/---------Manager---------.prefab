@@ -240,6 +240,51 @@ MonoBehaviour:
   emptySprite: {fileID: 0}
   spriteL: {fileID: 0}
   spriteR: {fileID: 0}
+--- !u!1 &8303108638992681640
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1628755008657880124}
+  - component: {fileID: 8619771669487526696}
+  m_Layer: 0
+  m_Name: CursorManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1628755008657880124
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303108638992681640}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -111.7908, y: -60.70522, z: 139.52904}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8780432549218628647}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8619771669487526696
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8303108638992681640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74b11b1403c9e154f944bfffd7b253a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cursor: {fileID: 2800000, guid: bc4751f31a9daaf44af4f347a32ada28, type: 3}
 --- !u!1 &8780432548224044982
 GameObject:
   m_ObjectHideFlags: 0
@@ -383,9 +428,11 @@ MonoBehaviour:
   State: 0
   thirdPersonInput: {fileID: 0}
   endlessBook: {fileID: 0}
+  pageView_02: {fileID: 0}
   touchPad: {fileID: 0}
   isInDialogue: 0
   playerCamera: {fileID: 0}
+  objectiveContent: {fileID: 0}
   ignoreFixedFrame: -1
 --- !u!114 &4615140406513077403
 MonoBehaviour:
@@ -499,6 +546,7 @@ Transform:
   - {fileID: 6850820671181444777}
   - {fileID: 7749010277661182259}
   - {fileID: 6167651606366059176}
+  - {fileID: 1628755008657880124}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
