@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: ManInGreen
+  m_Name: barlethe'sblessing
   m_Shader: {fileID: 4800000, guid: 8d2bb70cbf9db8d4da26e15b26e74248, type: 3}
   m_ValidKeywords: []
   m_InvalidKeywords: []
@@ -35,7 +35,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BaseMap:
-        m_Texture: {fileID: 2800000, guid: 27d34a1f2c9382a49836b8a536c9a678, type: 3}
+        m_Texture: {fileID: 2800000, guid: a7eda222d13935d438403bd1ae46f5d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -59,7 +59,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 27d34a1f2c9382a49836b8a536c9a678, type: 3}
+        m_Texture: {fileID: 2800000, guid: a7eda222d13935d438403bd1ae46f5d9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
