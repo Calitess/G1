@@ -755,7 +755,6 @@ position: -2220,610
   Disgruntled Woman: Quite the scandal. I think he's rather embarrased about it.  #line:0d80ad3 
   Disgruntled Woman: That someone would slight him like that. #line:07f3102 
   Disgruntled Woman: Calls it an "accident". #line:02b2c8a 
-  <<changeSprR SpriteController "CharacterSprite_Husband">> 
   <<sprTalking SpriteController "R">>
   Disgruntled Woman: Yes, an accident.  #line:0047fb7 
   <<changeSprR SpriteController "CharacterSprite_DW">> 
@@ -1200,7 +1199,6 @@ title:DrinkType
 position: -2013,-74
 ---
 <<changeSprL SpriteController "Manaia_CharacterSprite">>
-<<changeSprR SpriteController "CharacterSprite_Claude">> 
 
 //only go to this node if dwMission == false
 <<if $drinks == "Welkin">>
@@ -1224,15 +1222,23 @@ position: -2013,-74
  One taste and... #line:0fbd26d 
  Eyes watering, you begin to cough.  #line:000ab53 
  You're not very good with spice. #line:0662f8b 
+ <<changeSprR SpriteController "CharacterSprite_Claude">> 
  <<sprTalking SpriteController "R">>
  Claude:	Are you quite alright? #line:07f5d16 
  <<sprTalking SpriteController "L">>
- Manaia:	(Give him a thumbs up.) #line:0555911 
- Manaia:	(Shake your head.)  #line:0a4c9c0 
- You hand Claude the drink. It'd be wasted on you.  #line:097c7e7 
+ -> (Give him a thumbs up.) #line:0555911 
+   <<jump drinkcontjfkd>>
+ -> (Shake your head.)  #line:0a4c9c0 
+   <<jump drinkcontjfkd>>
+<<endif>>
+===
+
+title: drinkcontjfkd
+--- 
+You hand Claude the drink. It'd be wasted on you. 
  <<set $drinks = "">>
  <<OutDialogue Interactor_Bartender>>
-<<endif>>
+
 
 ===
 
