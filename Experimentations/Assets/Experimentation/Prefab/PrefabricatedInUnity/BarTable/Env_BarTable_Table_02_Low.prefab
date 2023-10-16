@@ -7,6 +7,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 615733830872877117, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.0948
+      objectReference: {fileID: 0}
+    - target: {fileID: 2846185369456323393, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1189
+      objectReference: {fileID: 0}
     - target: {fileID: 5053043699620900176, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
         type: 3}
       propertyPath: m_RootOrder
@@ -65,17 +75,22 @@ PrefabInstance:
     - target: {fileID: 5078785679345776272, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.35423815
+      value: 0.60450745
       objectReference: {fileID: 0}
     - target: {fileID: 5078785679345776272, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.0415
+      value: 0.0587
       objectReference: {fileID: 0}
     - target: {fileID: 5578786572118898666, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
         type: 3}
       propertyPath: m_Name
       value: Env_BarTable_Table_02_Low
+      objectReference: {fileID: 0}
+    - target: {fileID: 8332987209058528268, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.12269999
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c8e1bf8a2ed17648b7e411adc1b09e6, type: 3}
