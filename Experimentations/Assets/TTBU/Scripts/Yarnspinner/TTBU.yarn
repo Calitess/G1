@@ -1235,7 +1235,7 @@ position: -2013,-74
 
 title: drinkcontjfkd
 --- 
-You hand Claude the drink. It'd be wasted on you. 
+You hand Claude the drink. It'd be wasted on you.  #line:0c60c50 
  <<set $drinks = "">>
  <<OutDialogue Interactor_Bartender>>
 
